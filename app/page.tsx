@@ -52,7 +52,7 @@ export default function HomePage() {
 
   // --- منطق السلايدر (بديل الـ Script) ---
   const sliderRef = useRef(null);
-  const clientSliderRef = useRef(null);
+  const clientSliderRef = useRef<HTMLDivElement>(null);
   const [isDown, setIsDown] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
