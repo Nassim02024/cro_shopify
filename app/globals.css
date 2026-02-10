@@ -12,15 +12,118 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@layer components {
+  @keyframes horizontal-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* التحرك لنصف عرض الحاوية المكررة */
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.animate-horizontal {
+  display: flex;
+  width: max-content; /* مهم جداً لضمان عدم انضغاط الكروت */
+  animation: horizontal-scroll 30s linear infinite;
 }
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+  .itim-regular {
+  font-family: "Itim", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.abhaya-libre-regular {
+  font-family: "Abhaya Libre", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.abhaya-libre-medium {
+  font-family: "Abhaya Libre", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.abhaya-libre-semibold {
+  font-family: "Abhaya Libre", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.abhaya-libre-bold {
+  font-family: "Abhaya Libre", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.abhaya-libre-extrabold {
+  font-family: "Abhaya Libre", serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+.poly-regular {
+  font-family: "Poly", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poly-regular-italic {
+  font-family: "Poly", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+  body{
+    background-color: #F8F8F8;
+  }
+  .card-ser{
+    transition: all 0.3s ease-in-out;
+    display: none;
+  }
+  li:hover .card-ser{
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
+    display: block;
+
+  }
+  .sameserves{  
+   border-radius: 8px;
+   padding: 8px;
+  }
+  .sameserves:hover{  
+   background-color: #D9D9D9;
+  }
+  .nav-links.open{
+    transform: translateX(120%);
+    transition:all 1s ease-in-out;
+  }
+  .nav-links{
+    transition:all 0.5s ease-in-out;
+  }
+
+  .active-color-page{
+    color: #31F691;
+  }
+  .active-nav:hover{
+    color: #31F691;
+  }
+  .nav-container{
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    
+  }
+  }
