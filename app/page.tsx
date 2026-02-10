@@ -54,47 +54,52 @@ export default function HomePage() {
   };
 
   // --- منطق السلايدر (بديل الـ Script) ---
-  const sliderRef = useRef(null);
+  const sliderRef = useRef<HTMLDivElement>(null)
   const clientSliderRef = useRef<HTMLDivElement>(null);
   const [isDown, setIsDown] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
 
-  const handleMouseDown = (e) => {
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     const slider = sliderRef.current;
+    if (!slider) return;
     setIsDown(true);
     setStartX(e.pageX - slider.offsetLeft);
     setScrollLeft(slider.scrollLeft);
   };
 
-  const handleMouseLeaveOrUp = () => {
-    setIsDown(false);
-  };
-
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!isDown) return;
     e.preventDefault();
     const slider = sliderRef.current;
+    if (!slider) return;
     const x = e.pageX - slider.offsetLeft;
     const walk = (x - startX) * 2;
     slider.scrollLeft = scrollLeft - walk;
   };
 
-  // أضفت منطق اللمس للهواتف
-  const handleTouchStart = (e) => {
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     const slider = sliderRef.current;
+    if (!slider) return;
     setIsDown(true);
     setStartX(e.touches[0].pageX - slider.offsetLeft);
     setScrollLeft(slider.scrollLeft);
   };
 
-  const handleTouchMove = (e) => {
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
     if (!isDown) return;
     const slider = sliderRef.current;
+    if (!slider) return;
     const x = e.touches[0].pageX - slider.offsetLeft;
     const walk = (x - startX) * 2;
     slider.scrollLeft = scrollLeft - walk;
   };
+  const handleMouseLeaveOrUp = () => {
+    setIsDown(false);
+  };
+
+
+
 
   return (
     <main className="mt-10 overflow-x-hidden h-fit overflow-y-hidden">
@@ -216,7 +221,7 @@ export default function HomePage() {
       
 <section className="flex flex-col w-full m-auto justify-center mt-[104px] ">
       <p className="flex justify-center items-center text-center px-5 sm:px-[400px] text-[clamp(21px,5vw,31px)] mb-[24px] text-[#969593]">
-        Our clients' testimonials after working with us
+        Our clients testimonials after working with us
       </p>
 
       {/* الحاوية التي تحتوي على الصور */}
@@ -343,11 +348,11 @@ export default function HomePage() {
               <div className="flex flex-col justify-center text-white text-[23px] text-center font-medium">
                 {card.title}
               </div>
-              {card.description && (
+              {/* {card.description && (
                 <div className="text-stone-300 text-base text-center">
                   {card.description}
                 </div>
-              )}
+              )} */}
             </div>
           </div>
         ))}
