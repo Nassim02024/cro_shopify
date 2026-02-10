@@ -40,13 +40,16 @@ export default function HomePage() {
   };
 
   // 3. دالة للتحريك عبر الأسهم
-  const scroll = (direction) => {
+  const scroll = (direction: 'left' | 'right') => {
     const slider = clientSliderRef.current;
-    const scrollAmount = slider.offsetWidth;
-    if (direction === 'left') {
-      slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-    } else {
-      slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    
+    if (slider) {
+      const scrollAmount = slider.offsetWidth;
+      if (direction === 'left') {
+        slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      } else {
+        slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
     }
   };
 
