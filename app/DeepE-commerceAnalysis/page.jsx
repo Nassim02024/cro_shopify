@@ -37,7 +37,7 @@ const DeepEcommerceAnalysis = () => {
 
         <section className="flex flex-col space-y-[100px] items-center text-center space-y-[30px] w-full ">
         <div className='w-full  mt-20'>
-           <p className='text-[31px] sm:text-[61px] text-[#757575] text-4xl font-light tracking-tight'>Deep E-commerce Analysis</p>
+           <p className='text-[31px] sm:text-[61px] text-[#757575] text-4xl '>Deep E-commerce Analysis</p>
         </div>
        <span className='space-y-[40px]  text-base text-[#1E1E1E] leading-relaxed'>
         <p className=''>In the complex landscape of e-commerce, the difference between global brands and transient stores lies not in budget size, but in strategic depth and structural integrity.</p>

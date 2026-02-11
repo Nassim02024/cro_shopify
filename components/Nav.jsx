@@ -89,7 +89,7 @@ const Nav = () => {
                 </div>
              </li>
              <li><Link href="/Project" className={`hover:text-[#31F691] ${pathname === '/Project' ? 'text-[#31F691]' : ''}`}>Projects</Link></li>
-             <li><Link href="/blog" className={`hover:text-[#31F691] ${pathname === '/blog' ? 'text-[#31F691]' : ''}`}>Blog</Link></li>
+             {/* <li><Link href="/blog" className={`hover:text-[#31F691] ${pathname === '/blog' ? 'text-[#31F691]' : ''}`}>Blog</Link></li> */}
              <li><Link href="/about" className={`hover:text-[#31F691] ${pathname === '/about' ? 'text-[#31F691]' : ''}`}>About Us</Link></li>
            </ul>
         </div>

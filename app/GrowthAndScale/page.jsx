@@ -16,7 +16,7 @@ const GrowthAndScale = () => {
         {/* Hero Section */}
         <section className="flex flex-col   items-center text-center space-y-[44px] w-full ">
         <div className='w-full  mt-20'>
-           <p className='text-[31px] sm:text-[61px] text-[#757575] text-4xl font-light tracking-tight'>Growth & Scale</p>
+           <p className='text-[31px] sm:text-[61px] text-[#757575] text-4xl'>Growth & Scale</p>
         </div>
        <span className='space-y-[40px]  text-base text-[#1E1E1E] leading-relaxed'>
         <p className=''>In a fast-paced commerce world, expansion is not just an option—it is a necessity for leadership.</p>

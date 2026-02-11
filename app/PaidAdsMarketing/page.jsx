@@ -31,7 +31,7 @@ const PaidAdsLanding = () => {
         {/* Hero Section */}
         <section className="flex flex-col items-center text-center space-y-[100px] w-full px-6 md:px-[10%] lg:px-[20%]">
           <div className='w-full space-y-[60px] md:space-y-[100px] mt-20'>
-            <p className="text-[31px] sm:text-[61px] text-[#757575] text-4xl  font-light   tracking-tight">
+            <p className="text-[31px] sm:text-[61px] text-[#757575] text-4xl">
               Paid Ads Marketing
             </p>
           </div>

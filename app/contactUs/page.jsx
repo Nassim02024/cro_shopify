@@ -66,8 +66,8 @@ const ContactUs = () => {
 
   return (
     <main className="mt-[100px] h-fit">
-      <section className="m-auto mt-20 md:10 flex flex-col items-center text-center space-y-3 px-[15%]">
-        <p className="text-[clamp(23px,3vw,70px)] sm:w-[70%] w-[90%] text-[#757575]">
+      <section className="m-auto mt-20 md:10 flex flex-col items-center text-center space-y-3 px4 sm:px-[15%]">
+        <p className="text-[clamp(26px,3vw,70px)] w-[90%] sm:w-[70%]  text-[#757575]">
           Contact us
         </p>
 
@@ -77,10 +77,7 @@ const ContactUs = () => {
             {/* الخطوة الأولى */}
             {step === 1 && (
               <div className="w-full flex flex-col items-center animate-in fade-in duration-500">
-                <div className="w-full flex flex-col items-center gap-3 mb-11 text-center">
-                  {/* <span className="text-stone-400 text-base">1 of 2</span> */}
-                  <h2 className="text-stone-400 text-2xl font-normal leading-8">Personal information</h2>
-                </div>
+                
 
                 <div className="w-full max-w-sm flex flex-col gap-6">
                   <form action="/" className="flex flex-col gap-6">
@@ -145,7 +142,7 @@ const ContactUs = () => {
                         )}
                       </div>
                       {/* <input type="email" placeholder="Email" className="w-full h-12 px-4 rounded-xl border border-stone-400 bg-transparent outline-none text-stone-600 placeholder:text-stone-400 text-base" required /> */}
-                      <input type="tel" placeholder="WhatsApp number (optional)" className="w-full h-12 px-4 rounded-xl border border-stone-400 bg-transparent outline-none text-stone-600 placeholder:text-stone-400 text-base" />
+                      {/* <input type="tel" placeholder="WhatsApp number (optional)" className="w-full h-12 px-4 rounded-xl border border-stone-400 bg-transparent outline-none text-stone-600 placeholder:text-stone-400 text-base" /> */}
                     </div>
                     <button type="submit" className="cursor-pointer w-full h-12 bg-green-700 hover:bg-green-800 transition-colors text-rose-100 rounded-xl">
                       Submit
