@@ -36,7 +36,7 @@ const GrowthAndScale = () => {
         
         {/* Pillar 1 */}
         <div className="space-y-12">
-          <h3 className="text-[28px] uppercase tracking-wide border-b border-gray-100 pb-4 inline-block">
+          <h3 className="text-[25px] uppercase tracking-wide border-b border-gray-100 pb-4 inline-block">
             Financial Governance & Profit Engineering
           </h3>
           <div className="grid gap-10 text-[#1E1E1E]">
@@ -53,7 +53,7 @@ const GrowthAndScale = () => {
 
         {/* Pillar 2 */}
         <div className="space-y-12 text-[#1E1E1E] ">
-          <h3 className="text-[28px] uppercase tracking-wide border-b border-gray-100 pb-4 inline-block">
+          <h3 className="text-[25px] uppercase tracking-wide border-b border-gray-100 pb-4 inline-block">
             Market Dominance & Omnichannel Acquisition
           </h3>
           <div className="grid gap-10">
@@ -70,7 +70,7 @@ const GrowthAndScale = () => {
 
         {/* Pillar 3 */}
         <div className="space-y-12">
-          <h3 className="text-[28px] uppercase tracking-wide border-b border-gray-100 pb-4 inline-block">
+          <h3 className="text-[25px] uppercase tracking-wide border-b border-gray-100 pb-4 inline-block">
             Value Sustainability & Customer Experience Optimization
           </h3>
           <div className="grid gap-10">
@@ -87,7 +87,7 @@ const GrowthAndScale = () => {
 
         {/* Pillar 4 */}
         <div className="space-y-12">
-          <h3 className="text-[28px] uppercase tracking-wide border-b border-gray-100 pb-4 inline-block">
+          <h3 className="text-[25px] uppercase tracking-wide border-b border-gray-100 pb-4 inline-block">
             Operational Modeling & Automation
           </h3>
           <div className="grid gap-10">
@@ -103,7 +103,7 @@ const GrowthAndScale = () => {
 
       {/* 4. Dark Strategy Section */}
         <div className=' px-4 md:px-[10%] lg:px-[20%] bg-[#212422] w-full mt-24 py-20  md:px-[15%]  '>
-            <div className=' max-w-5xl mx-auto space-y-[47px]'>
+            <div className=' mx-auto space-y-[47px]'>
               <div className='space-y-[30px]'>
                 <p className='text-[24px] md:text-[31px] text-[#F3F3F3] font-semibold'>Why Is This Framework the Only Strategic Choice for Expansion?</p>
               </div>
