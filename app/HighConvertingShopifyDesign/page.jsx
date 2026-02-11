@@ -21,90 +21,76 @@ const GrowthAndScale = () => {
   ]
 
   return (
-    <div className='relative w-full overflow-x-hidden'>
-      {/* Background Layer */}
-      <div className='bg-[#F8F8F8] w-full h-[100vh] absolute top-0 left-0 -z-10'></div>
+  <div className='relative w-full overflow-x-hidden'>
+    {/* Background Layer */}
+    <div className='bg-[#F8F8F8] w-full h-[100vh] absolute top-0 left-0 -z-10'></div>
 
-      <main className="w-full pt-10">
-        {/* Hero Section */}
-        <section className="flex flex-col items-center text-center w-full px-4 md:px-[10%] lg:px-[20%]">
-          <div className='w-full space-y-[60px] md:space-y-[100px] mt-20'>
-            <p className="text-[31px] sm:text-[61px] text-[#757575] text-4xl">
-              High-Converting Shopify Design
-            </p>
-            
-            <div className='space-y-[30px] md:space-y-[47px] text-[clamp(16px,1.5vw,24px)] text-[#1E1E1E]'>
-              <p className="text-[clamp(25px,4vw,31px)]">Your Store Isn't Just a Storefront—It’s a 24/7 Sales Machine</p>
-              <div className='space-y-6 max-w-4xl mx-auto'>
-                <p>Most e-commerce stores "look good," but very few are engineered to convert.</p>
-                <p>We don’t just design pages; we build Frictionless Shopping Experiences designed to eliminate buyer hesitation and maximize your net profit.</p>
-              </div>
+    <main className="w-full pt-10">
+      {/* Hero Section */}
+      <section className="flex flex-col items-center text-center w-full px-6 md:px-[10%] lg:px-[20%]">
+        <div className='w-full space-y-[60px] md:space-y-[100px] mt-20'>
+          <p className="text-[clamp(32px,8vw,61px)] text-[#757575] font-semibold leading-tight">
+            High-Converting Shopify Design
+          </p>
+          
+          <div className='space-y-[30px] md:space-y-[47px] text-[#1E1E1E]'>
+            <p className="text-[clamp(24px,5vw,31px)] font-semibold">Your Store Isn't Just a Storefront—It’s a 24/7 Sales Machine</p>
+            <div className='space-y-6 max-w-4xl mx-auto text-[clamp(16px,3vw,19px)] leading-relaxed'>
+              <p>Most e-commerce stores "look good," but very few are engineered to convert.</p>
+              <p>We don’t just design pages; we build Frictionless Shopping Experiences designed to eliminate buyer hesitation and maximize your net profit.</p>
             </div>
           </div>
-         </section>
+        </div>
+      </section>
 
-         <section>
-          {/* Framework Section */}
-          <div className='  bg-[#212422] w-full mt-24 py-20  md:px-[15%]  '>
-            <div className='px-4 md:px-[10%] lg:px-[20%] max-w-5xl mx-auto space-y-[47px]'>
-              <div className='space-y-[30px]'>
-                <p className='text-[24px] md:text-[31px] text-[#F3F3F3] font-semibold'>The 5-Step Framework: Turning Visitors into Loyal Customers</p>
-                <p className='text-base text-gray-400'>We follow a rigorous engineering process to ensure every pixel on your store is backed by marketing data and sales psychology:</p>
-              </div>
+      <section>
+        {/* Framework Section (Dark) - تم تعديل الـ Padding ليناسب الصفحات السابقة */}
+        <div className='bg-[#212422] w-full mt-24 py-20 px-6 md:px-[10%] lg:px-[20%]'>
+          <div className='max-w-5xl mx-auto space-y-[47px]'>
+            <div className='space-y-[30px] text-center'>
+              <p className='text-[clamp(24px,5vw,31px)] text-[#F3F3F3] font-semibold'>The 5-Step Framework: Turning Visitors into Loyal Customers</p>
+              <p className='text-base text-gray-400'>We follow a rigorous engineering process to ensure every pixel on your store is backed by marketing data and sales psychology:</p>
+            </div>
 
-              <div className='space-y-[60px] md:space-y-[100px] text-start'>
-                {titleADNdescription.map((item, index) => (
-                  <div key={index} className='space-y-[15px] border-l-2 border-gray-100 pl-6'>
-                    <p className='text-[22px] md:text-[25px] font-bold text-[#F3F3F3]'>{item.title}</p>
-                    <p className='text-base text-gray-400 leading-relaxed'>{item.description}</p>
-                  </div>
-                ))}
-              </div>
+            <div className='space-y-[60px] md:space-y-[100px] text-start'>
+              {titleADNdescription.map((item, index) => (
+                <div key={index} className='space-y-[15px] border-l-2 border-gray-100 pl-6'>
+                  <p className='text-[clamp(20px,4vw,25px)] font-semibold text-[#F3F3F3]'>{item.title}</p>
+                  <p className='text-base text-gray-400 leading-relaxed'>{item.description}</p>
+                </div>
+              ))}
             </div>
           </div>
+        </div>
 
-          {/* Performance Section */}
-          <div className='bg-[#F8F8F8] w-screen relative text-center py-[80px] md:py-[134px] px-6 md:px-[10%]'>
-            <div className='max-w-6xl mx-auto space-y-[80px] md:space-y-[100px]'>
-              <div className='space-y-[30px] md:space-y-[44px]  md:px-[15%]'>
-                <p className='text-[26px] md:text-[31px] '>Performance Proof: Results That Speak Numbers</p>
-                <p className='text-base '>We believe that "Numbers Don't Lie." Here, we showcase how we’ve transformed stores from simple websites into high-value commercial assets:</p>
-              </div>
+        {/* Performance Section */}
+        <div className='bg-[#F8F8F8] w-full text-center py-[80px] md:py-[134px] px-6 md:px-[10%] lg:px-[20%]'>
+          <div className='max-w-6xl mx-auto space-y-[80px] md:space-y-[100px]'>
+            <div className='space-y-[30px] md:space-y-[44px]'>
+              <p className='text-[clamp(24px,5vw,31px)] font-semibold text-[#1E1E1E]'>Performance Proof: Results That Speak Numbers</p>
+              <p className='text-base text-[#1E1E1E]'>We believe that "Numbers Don't Lie." Here, we showcase how we’ve transformed stores from simple websites into high-value commercial assets:</p>
+            </div>
 
-              <div className='space-y-[120px] md:space-y-[200px]'>
-                {cardProject.map((item, index) => (
-                  <div key={index} className='flex flex-col space-y-[70px] sm:space-y-[100px]'>
-                    <div className=' md:px-[15%] space-y-[30px] '>
-                      <p className='text-[22px] md:text-[25px]  text-[#1E1E1E]'>{item.title}</p>
-                      <p className='text-base '>{item.description}</p>
-                    </div>
-                    <div className='flex flex-col md:flex-row gap-6 justify-center items-center'>
-                      <div className='w-full md:w-1/2 overflow-hidden rounded-2xl'>
-                        <Image src={item.img1} alt="Project" width={800} height={450} className="w-full object-cover" />
-                      </div>
-                      <div className='w-full md:w-1/2 overflow-hidden rounded-2xl'>
-                        <Image src={item.img2} alt="Project" width={800} height={450} className="w-full object-cover" />
-                      </div>
-                    </div>
+            <div className='space-y-[70px] md:space-y-[100px]'>
+              {cardProject.map((item, index) => (
+                <div key={index} className='flex flex-col space-y-[30px]'>
+                  <div className='space-y-[20px]'>
+                    <p className='text-[clamp(20px,4vw,25px)] font-semibold text-[#1E1E1E]'>{item.title}</p>
+                    <p className='text-base text-[#1E1E1E] leading-relaxed'>{item.description}</p>
                   </div>
-                ))}
-                                                                  
-
-              </div>
-
+                </div>
+              ))}
             </div>
+          </div>
+        </div>
 
-           </div>
- 
-
-          <div className='px-4 sm:px-0'>
-             <DownSection/>
-            </div>
-
-        </section>
-      </main>
-    </div>
-  )
+        <div className='px-4 sm:px-0'>
+          <DownSection/>
+        </div>
+      </section>
+    </main>
+  </div>
+)
 }
 
 export default GrowthAndScale

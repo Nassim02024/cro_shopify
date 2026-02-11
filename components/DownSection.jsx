@@ -22,7 +22,7 @@ const DownSection = () => {
   return (
     <div>
       {/* FAQ Section */}
-      <div className="max-w-4xl mx-auto flex flex-col items-center gap-10 mt-[120px] md:mt-[190px]">
+      <div className="max-w-4xl mx-auto flex flex-col items-center gap-10 mt-[50px] md:mt-[70px]">
         <p className='text-[28px] text-center md:text-[31px] font-semibold'>FAQ</p>
         <div className="w-full space-y-4">
           {cardDown.map((item, index) => (

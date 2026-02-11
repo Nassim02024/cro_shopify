@@ -24,18 +24,19 @@ const PaidAdsLanding = () => {
   const [activeDescription, setActiveDescription] = useState(null)
   
   return (
-      <div className='relative w-full overflow-x-hidden text-center'>
-      {/* Background Layer */}
+  <div className='relative w-full overflow-x-hidden text-center'>
+    {/* Background Layer */}
 
-      <main className="w-full pt-10">
-        {/* Hero Section */}
-        <section className="flex flex-col items-center text-center space-y-[100px] w-full px-6 md:px-[10%] lg:px-[20%]">
-          <div className='w-full space-y-[60px] md:space-y-[100px] mt-20'>
-            <p className="text-[31px] sm:text-[61px] text-[#757575] text-4xl">
-              Paid Ads Marketing
-            </p>
-          </div>
-        <div className="space-y-6 text-[#1E1E1E] leading-relaxed text-[clamp(18px,5vw,20px)] ">
+    <main className="w-full pt-10">
+      {/* Hero Section */}
+      <section className="flex flex-col items-center text-center space-y-[60px] md:space-y-[100px] w-full px-6 md:px-[10%] lg:px-[20%]">
+        <div className='w-full mt-20'>
+          {/* تعديل الخط ليكون مرناً */}
+          <p className="text-[clamp(32px,8vw,61px)] text-[#757575] font-medium leading-tight">
+            Paid Ads Marketing
+          </p>
+        </div>
+        <div className="space-y-6 text-[#1E1E1E] leading-relaxed text-[clamp(16px,4vw,19px)] max-w-3xl">
           <p>
             We do not view paid advertising as a mere tool for increasing "views." Instead, we treat it 
             as an investment ecosystem aimed at achieving tangible financial growth.
@@ -49,98 +50,97 @@ const PaidAdsLanding = () => {
       </section>
 
       {/* قسم الركائز الأساسية */}
-      <section className=" px-4 md:px-[10%] lg:px-[20%] py-12 bg-gray-50/50">
-        <h2 className="text-xl md:text-2xl text-[#1E1E1E]  mb-12">
-          Our service is built upon two fundamental pillars  <br className="hidden md:block"/> that guarantee both clarity and results
+      <section className="px-4 md:px-[10%] lg:px-[20%] py-12 bg-gray-50/50 mt-[80px]">
+        <h2 className="text-[clamp(18px,4vw,24px)] text-[#1E1E1E] mb-12 leading-snug">
+          Our service is built upon two fundamental pillars <br className="hidden md:block"/> that guarantee both clarity and results
         </h2>
 
         {/* Level 1 */}
-        <div className="mb-20 space-y-[70px] mt-[100px]">
+        <div className="mb-20 space-y-[40px] md:space-y-[70px] mt-[60px] md:mt-[100px]">
           <div>
-          <span className="text-gray-400 block mb-2 uppercase tracking-widest text-[31px]">Level 1</span>
-          <h3 className="text-[28px] text-[#1E1E1E] mb-10">Content Strategy & Sales Messaging</h3>      
+            <span className="text-gray-400 block mb-2 uppercase tracking-widest text-[clamp(20px,5vw,31px)]">Level 1</span>
+            <h3 className="text-[clamp(22px,5vw,28px)] text-[#1E1E1E] mb-10 font-semibold">Content Strategy & Sales Messaging</h3>      
           </div>
           
           <div className="grid gap-12 max-w-2xl mx-auto">
-            <div className='gap-[12px]'>
-              <h4 className=" text-[#1E1E1E] mb-2 text-[25px] sm:uppercase">Crafting Compelling Offers</h4>
-              <p className="text-[#1E1E1E] text-base">Transforming your product features into solutions that matter to the customer and drive purchase decisions.</p>
+            <div className='space-y-3'>
+              <h4 className="text-[#1E1E1E] font-semibold text-[clamp(18px,4vw,23px)] sm:uppercase">Crafting Compelling Offers</h4>
+              <p className="text-[#1E1E1E] text-base leading-relaxed text-gray-700">Transforming your product features into solutions that matter to the customer and drive purchase decisions.</p>
             </div>
-            <div className='gap-[12px]'>
-              <h4 className=" text-[#1E1E1E] text-[25px] sm:uppercase">Designing Impactful Ad Identities</h4>
-              <p className="text-[#1E1E1E] text-base">Developing visual concepts and copy that address consumer needs and enhance your brand's credibility.</p>
+            <div className='space-y-3'>
+              <h4 className="text-[#1E1E1E] font-semibold text-[clamp(18px,4vw,23px)] sm:uppercase">Designing Impactful Ad Identities</h4>
+              <p className="text-[#1E1E1E] text-base leading-relaxed text-gray-700">Developing visual concepts and copy that address consumer needs and enhance your brand's credibility.</p>
             </div>
-            <div className='gap-[12px]'>
-              <h4 className=" text-[#1E1E1E] mb-2 text-[25px] sm:uppercase">A/B Testing & Optimization</h4>
-              <p className="text-[#1E1E1E] text-base">Comparing multiple ad variations to identify the most efficient and cost-effective models.</p>
+            <div className='space-y-3'>
+              <h4 className="text-[#1E1E1E] font-semibold text-[clamp(18px,4vw,23px)] sm:uppercase">A/B Testing & Optimization</h4>
+              <p className="text-[#1E1E1E] text-base leading-relaxed text-gray-700">Comparing multiple ad variations to identify the most efficient and cost-effective models.</p>
             </div>
           </div>
         </div>
 
+
+        
+<div className="h-[1px] w-full bg-gray-200 mt-10"></div>
+
+
+
         {/* Level 2 */}
-        <div className="pb-16 space-y-[70px] mt-[100px]">
-          <span className="text-gray-400 block mb-2 uppercase tracking-widest text-[31px]">Level 2</span>
-          <h3 className="text-[28px] text-[#1E1E1E] mb-10">Digital Management & Continuous Optimization</h3>
+        <div className="pb-16 space-y-[40px] md:space-y-[70px] mt-[60px] md:mt-[100px]">
+          <div>
+            <span className="text-gray-400 block mb-2 uppercase tracking-widest text-[clamp(20px,5vw,31px)]">Level 2</span>
+            <h3 className="text-[clamp(22px,5vw,28px)] text-[#1E1E1E] mb-10 font-semibold">Digital Management & Continuous Optimization</h3>
+          </div>
           
           <div className="grid gap-12 max-w-2xl mx-auto">
-            <div>
-              <h4 className="gap-[12px] text-[#1E1E1E] mb-2 text-[25px] sm:uppercase">Intelligent Budget Allocation</h4>
-              <p className="text-[#1E1E1E] text-base">Directing spend toward channels and audiences that generate the highest purchase rates, while immediately eliminating financial waste.</p>
+            <div className='space-y-3'>
+              <h4 className="text-[#1E1E1E] font-semibold text-[clamp(18px,4vw,23px)] sm:uppercase">Intelligent Budget Allocation</h4>
+              <p className="text-[#1E1E1E] text-base leading-relaxed text-gray-700">Directing spend toward channels and audiences that generate the highest purchase rates, while immediately eliminating financial waste.</p>
             </div>
-            <div>
-              <h4 className="gap-[12px] text-[#1E1E1E] mb-2 text-[25px] sm:uppercase">Data-Driven Scaling</h4>
-              <p className="text-[#1E1E1E] text-base">When a winning ad is identified, we gradually increase the spend to multiply sales while maintaining cost stability.</p>
+            <div className='space-y-3'>
+              <h4 className="text-[#1E1E1E] font-semibold text-[clamp(18px,4vw,23px)] sm:uppercase">Data-Driven Scaling</h4>
+              <p className="text-[#1E1E1E] text-base leading-relaxed text-gray-700">When a winning ad is identified, we gradually increase the spend to multiply sales while maintaining cost stability.</p>
             </div>
-            <div>
-              <h4 className="gap-[12px] text-[#1E1E1E] mb-2 text-[25px] sm:uppercase">Transparent Reporting</h4>
-              <p className="text-[#1E1E1E] text-base">Providing you with simplified, periodic reports that clearly explain: "How much was spent? And what profit was generated?"—away from technical jargon.</p>
+            <div className='space-y-3'>
+              <h4 className="text-[#1E1E1E] font-semibold text-[clamp(18px,4vw,23px)] sm:uppercase">Transparent Reporting</h4>
+              <p className="text-[#1E1E1E] text-base leading-relaxed text-gray-700">Providing you with simplified, periodic reports that clearly explain: "How much was spent? And what profit was generated?"—away from technical jargon.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* قسم الفوائد الاستراتيجية (الخلفية الداكنة) */}
-      
-      <div className='  min-h-screen font-sans text-center '>
-        <section className="px-4 md:px-[10%] lg:px-[20%] py-20 bg-[#212422] text-white ">
-            <div className=' max-w-5xl mx-auto space-y-[47px]'>
-              <div className='space-y-[30px]'>
-                <p className='text-[24px] md:text-[31px] text-[#F3F3F3] font-semibold'>Strategic Benefits & Outcomes</p>
-              </div>
+      <div className='font-sans text-center'>
+        <section className="px-6 md:px-[10%] lg:px-[20%] py-24 bg-[#212422] text-white">
+            <div className='max-w-5xl mx-auto space-y-12'>
+              <p className='text-[clamp(22px,5vw,31px)] text-[#F3F3F3] font-semibold'>Strategic Benefits & Outcomes</p>
 
-              <div className='space-y-[60px] md:space-y-[100px] text-start'>
+              <div className='space-y-12 md:space-y-20 text-start'>
                 {titleADNdescription.map((item, index) => (
-                  <div key={index} className='space-y-[15px] border-l-2 border-gray-100 pl-6'>
-                    <p className='text-[22px] md:text-[25px] font-bold text-[#F3F3F3]'>{item.title}</p>
-                    <p className='text-base  text-gray-400 leading-relaxed'>{item.description}</p>
+                  <div key={index} className='space-y-4 border-l-2 border-[#2F6F4E] pl-6'>
+                    <p className='text-[clamp(18px,4vw,23px)] font-semibold text-[#F3F3F3]'>{item.title}</p>
+                    <p className='text-[clamp(15px,3vw,16px)] text-gray-400 leading-relaxed'>{item.description}</p>
                   </div>
                 ))}
               </div>
             </div>
         </section>
 
-        <section className="px-4 md:px-[10%] lg:px-[20%] py-20 max-w-4xl mx-auto ">
-          <h2 className="text-[25px] text-gray-400 font-light mb-8 uppercase tracking-[0.2em]">Our Commitment</h2>
-          <p className="text-gray-600 text-base leading-loose max-w-3xl mx-auto">
+        <section className="px-6 md:px-[10%] lg:px-[20%] py-24 max-w-4xl mx-auto">
+          <h2 className="text-[clamp(20px,4vw,25px)] text-gray-400 font-semibold mb-8 uppercase tracking-[0.2em]">Our Commitment</h2>
+          <p className="text-gray-600 text-[clamp(16px,3vw,17px)] leading-loose max-w-3xl mx-auto italic">
             We act as your strategic partner in growth; our success is inherently linked to yours. Our 
             objective is not just to run ads, but to build a "sales machine" that operates efficiently to 
             serve your major commercial goals.
           </p>
-                  
-
         </section>
 
-        
         <div className='px-4 sm:px-0'>
          <DownSection/>
         </div>
-
       </div>
-      
-      </main>
-      
-    </div>
-  );
+    </main>
+  </div>
+);
 };
 
 export default PaidAdsLanding;

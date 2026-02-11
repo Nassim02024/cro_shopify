@@ -28,58 +28,85 @@ const DeepEcommerceAnalysis = () => {
     }
   ]
 
-  return (
+return (
     <div>
-    <div className='relative w-full overflow-x-hidden text-center px-6 md:px-[10%] lg:px-[20%]'>
-      {/* Background Layer */}
-      <main className="w-full pt-10">
-        {/* Hero Section */}
+      <div className='relative w-full overflow-x-hidden text-center px-6 md:px-[10%] lg:px-[20%]'>
+        <main className="w-full pt-10">
+          {/* Hero Section */}
+          <section className="flex flex-col items-center text-center w-full space-y-8">
+            <div className='w-full mt-20'>
+              {/* تعديل حجم العنوان الرئيسي */}
+              <h1 className='text-[#757575] text-[clamp(32px,7vw,56px)] font-medium leading-tight'>
+                Deep E-commerce Analysis
+              </h1>
+            </div>
+            <div className='space-y-6 text-[#1E1E1E] leading-relaxed max-w-3xl'>
+              <p className='text-[clamp(16px,3vw,19px)]'>
+                In the complex landscape of e-commerce, the difference between global brands and transient stores lies not in budget size, but in strategic depth and structural integrity.
+              </p>
+              <p className='text-[clamp(16px,3vw,19px)] font-medium'>
+                We offer you the "Deep Strategic Analysis"—a solution that provides the absolute certainty required to make your next big moves based on indisputable structural facts.
+              </p>
+            </div>
+          </section>
 
-        <section className="flex flex-col space-y-[100px] items-center text-center space-y-[30px] w-full ">
-        <div className='w-full  mt-20'>
-           <p className='text-[31px] sm:text-[61px] text-[#757575] text-4xl '>Deep E-commerce Analysis</p>
-        </div>
-       <span className='space-y-[40px]  text-base text-[#1E1E1E] leading-relaxed'>
-        <p className=''>In the complex landscape of e-commerce, the difference between global brands and transient stores lies not in budget size, but in strategic depth and structural integrity.</p>
-        <p>We offer you the "Deep Strategic Analysis"—a solution that provides the absolute certainty required to make your next big moves based on indisputable structural facts.</p>
-       </span>
-      </section>
+          <section className='mt-[80px] mb-[60px]'>
+            <p className='text-[clamp(20px,4vw,28px)] text-[#1E1E1E] leading-snug'>
+              Our methodology deconstructs your business through two integrated strategic levels
+            </p>
+          </section>
 
-      <section className='text-[clamp(20px,5vw,31px)] mt-[100px] mb-[100px]'>
-        <p className=''>Our methodology deconstructs your business through two integrated strategic levels</p>
-      </section>
+          {livle.map((item, index) => (
+  <section key={index} className='flex flex-col gap-[40px] text-[#1E1E1E] mt-[80px]'>
+    {/* ليفل وهيدينج */}
+    <span className='sm:mb-[30px] space-y-3'>
+      <p className='text-[#757575] text-[clamp(18px,4vw,22px)] uppercase tracking-widest font-semibold'>
+        {item.livle}
+      </p>
+      <p className='text-[clamp(26px,5vw,48px)] font-medium leading-tight'>
+        {item.headning}
+      </p>
+    </span>
 
-      
-        {livle.map((livle , index) =>(
-          <section key={index} className='flex flex-col gap-[40px] text-[#1E1E1E] mt-[50px]  '>
-          <span className='sm:mb-[30px]  sm:space-y-[12Px]'>
-            <p className='text-[#757575] text-[31px]  uppercase'>{livle.livle}</p>
-            <p className=' text-[clamp(22px,5vw,31px)]'>{livle.headning}</p>
-          </span>
-          <span className='space-y-[12Px]'>
-            <p  className=' text-[clamp(20px,5vw,25px)] uppercase'>{livle.text1}</p>
-            <p  className='text-[clamp(16px,5vw,18px)]'>{livle.description1}</p>
-          </span>
-          <span className='space-y-[12Px]'>
-            <p className='text-[clamp(20px,5vw,25px)] uppercase'>{livle.text2}</p>
-            <p className="text-[clamp(16px,5vw,18px)]">{livle.description2}</p>
-          </span>
-          <span className='space-y-[12Px]'>
-            <p className='text-[clamp(20px,5vw,25px)] uppercase'>{livle.text3}</p>
-            <p className="text-[clamp(16px,5vw,18px)]">{livle.description3}</p>
-          </span>
-      </section>
-      
-        ))
-      }
-      
-      
-    </main>
+    {/* الفقرة الأولى */}
+    <span className='space-y-3'>
+      <p className='text-[clamp(19px,4vw,24px)] font-semibold uppercase text-[#1E1E1E]'>
+        {item.text1}
+      </p>
+      <p className='text-[clamp(16px,3vw,18px)] text-[#4A4A4A] leading-relaxed'>
+        {item.description1}
+      </p>
+    </span>
+
+    {/* الفقرة الثانية */}
+    <span className='space-y-3'>
+      <p className='text-[clamp(19px,4vw,24px)] font-semibold uppercase text-[#1E1E1E]'>
+        {item.text2}
+      </p>
+      <p className='text-[clamp(16px,3vw,18px)] text-[#4A4A4A] leading-relaxed'>
+        {item.description2}
+      </p>
+    </span>
+
+    {/* الفقرة الثالثة */}
+    <span className='space-y-3'>
+      <p className='text-[clamp(19px,4vw,24px)] font-semibold uppercase text-[#1E1E1E]'>
+        {item.text3}
+      </p>
+      <p className='text-[clamp(16px,3vw,18px)] text-[#4A4A4A] leading-relaxed'>
+        {item.description3}
+      </p>
+    </span>
     
-    </div>
-    <div className='px-4 sm:px-0'>
-      <DownSection/>
-    </div>
+    {/* فاصل جمالي بين المستويين */}
+    {index === 0 && <div className="h-[1px] w-full bg-gray-200 mt-10"></div>}
+  </section>
+))}
+        </main>
+      </div>
+      <div className='px-4 sm:px-0 mt-20'>
+        <DownSection />
+      </div>
     </div>
   )
 }
