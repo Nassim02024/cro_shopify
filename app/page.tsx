@@ -240,7 +240,7 @@ export default function HomePage() {
       <div className="flex justify-center text-center items-center sm:space-x-[20px] text-[39px]  mt-[24px]">
         <Image 
           width={24} height={24}
-          src="/row-left.svg" 
+          src="/row-lef1t.svg" 
           alt="left" 
           className="cursor-pointer active:scale-90 transition-transform"
           onClick={() => scroll('left')}
