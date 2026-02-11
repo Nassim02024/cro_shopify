@@ -35,9 +35,9 @@ const DeepEcommerceAnalysis = () => {
       <main className="w-full pt-10">
         {/* Hero Section */}
 
-        <section className="flex flex-col space-y-[100px] items-center text-center space-y-[44px] w-full ">
+        <section className="flex flex-col space-y-[100px] items-center text-center space-y-[30px] w-full ">
         <div className='w-full  mt-20'>
-           <p className='text-[29px] sm:text-[61px] text-[#757575] text-4xl font-light tracking-tight'>Deep E-commerce Analysis</p>
+           <p className='text-[31px] sm:text-[61px] text-[#757575] text-4xl font-light tracking-tight'>Deep E-commerce Analysis</p>
         </div>
        <span className='space-y-[40px]  text-base text-[#1E1E1E] leading-relaxed'>
         <p className=''>In the complex landscape of e-commerce, the difference between global brands and transient stores lies not in budget size, but in strategic depth and structural integrity.</p>
@@ -45,7 +45,7 @@ const DeepEcommerceAnalysis = () => {
        </span>
       </section>
 
-      <section className='text-[clamp(25px,5vw,31px)] mt-[100px] mb-[100px]'>
+      <section className='text-[clamp(20px,5vw,31px)] mt-[100px] mb-[100px]'>
         <p className=''>Our methodology deconstructs your business through two integrated strategic levels</p>
       </section>
 
@@ -54,18 +54,18 @@ const DeepEcommerceAnalysis = () => {
           <section key={index} className='flex flex-col gap-[40px] text-[#1E1E1E] mt-[50px]  '>
           <span className='sm:mb-[30px]  sm:space-y-[12Px]'>
             <p className='text-[#757575] text-[31px]  uppercase'>{livle.livle}</p>
-            <p className=' text-[clamp(25px,5vw,31px)]'>{livle.headning}</p>
+            <p className=' text-[clamp(22px,5vw,31px)]'>{livle.headning}</p>
           </span>
           <span className='space-y-[12Px]'>
-            <p  className=' text-[clamp(25px,5vw,25px)] uppercase'>{livle.text1}</p>
+            <p  className=' text-[clamp(20px,5vw,25px)] uppercase'>{livle.text1}</p>
             <p  className='text-[clamp(16px,5vw,18px)]'>{livle.description1}</p>
           </span>
           <span className='space-y-[12Px]'>
-            <p className='text-[clamp(25px,5vw,25px)] uppercase'>{livle.text2}</p>
+            <p className='text-[clamp(20px,5vw,25px)] uppercase'>{livle.text2}</p>
             <p className="text-[clamp(16px,5vw,18px)]">{livle.description2}</p>
           </span>
           <span className='space-y-[12Px]'>
-            <p className='text-[clamp(25px,5vw,25px)] uppercase'>{livle.text3}</p>
+            <p className='text-[clamp(20px,5vw,25px)] uppercase'>{livle.text3}</p>
             <p className="text-[clamp(16px,5vw,18px)]">{livle.description3}</p>
           </span>
       </section>

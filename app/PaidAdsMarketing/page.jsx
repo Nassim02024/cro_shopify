@@ -31,7 +31,7 @@ const PaidAdsLanding = () => {
         {/* Hero Section */}
         <section className="flex flex-col items-center text-center space-y-[100px] w-full px-6 md:px-[10%] lg:px-[20%]">
           <div className='w-full space-y-[60px] md:space-y-[100px] mt-20'>
-            <p className="text-[29px] sm:text-[61px] text-[#757575] text-4xl  font-light   tracking-tight">
+            <p className="text-[31px] sm:text-[61px] text-[#757575] text-4xl  font-light   tracking-tight">
               Paid Ads Marketing
             </p>
           </div>
@@ -58,7 +58,7 @@ const PaidAdsLanding = () => {
         <div className="mb-20 space-y-[70px] mt-[100px]">
           <div>
           <span className="text-gray-400 block mb-2 uppercase tracking-widest text-[31px]">Level 1</span>
-          <h3 className="text-[31px] text-[#1E1E1E] mb-10">Content Strategy & Sales Messaging</h3>      
+          <h3 className="text-[28px] text-[#1E1E1E] mb-10">Content Strategy & Sales Messaging</h3>      
           </div>
           
           <div className="grid gap-12 max-w-2xl mx-auto">
@@ -80,7 +80,7 @@ const PaidAdsLanding = () => {
         {/* Level 2 */}
         <div className="pb-16 space-y-[70px] mt-[100px]">
           <span className="text-gray-400 block mb-2 uppercase tracking-widest text-[31px]">Level 2</span>
-          <h3 className="text-[31px] text-[#1E1E1E] mb-10">Digital Management & Continuous Optimization</h3>
+          <h3 className="text-[28px] text-[#1E1E1E] mb-10">Digital Management & Continuous Optimization</h3>
           
           <div className="grid gap-12 max-w-2xl mx-auto">
             <div>

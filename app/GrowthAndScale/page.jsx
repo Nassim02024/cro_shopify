@@ -16,7 +16,7 @@ const GrowthAndScale = () => {
         {/* Hero Section */}
         <section className="flex flex-col   items-center text-center space-y-[44px] w-full ">
         <div className='w-full  mt-20'>
-           <p className='text-[29px] sm:text-[61px] text-[#757575] text-4xl font-light tracking-tight'>Growth & Scale</p>
+           <p className='text-[31px] sm:text-[61px] text-[#757575] text-4xl font-light tracking-tight'>Growth & Scale</p>
         </div>
        <span className='space-y-[40px]  text-base text-[#1E1E1E] leading-relaxed'>
         <p className=''>In a fast-paced commerce world, expansion is not just an option—it is a necessity for leadership.</p>
@@ -36,16 +36,16 @@ const GrowthAndScale = () => {
         
         {/* Pillar 1 */}
         <div className="space-y-12">
-          <h3 className="text-[31px] uppercase tracking-wide border-b border-gray-100 pb-4 inline-block">
+          <h3 className="text-[28px] uppercase tracking-wide border-b border-gray-100 pb-4 inline-block">
             Financial Governance & Profit Engineering
           </h3>
           <div className="grid gap-10 text-[#1E1E1E]">
             <div>
-              <h4 className="text-[25px]  mb-2 uppercase ">Structural Financial Audit</h4>
+              <h4 className="text-[20px]  mb-2 uppercase ">Structural Financial Audit</h4>
               <p className=" text-base max-w-xl mx-auto">A rigorous analysis of contribution margins to ensure the quality and health of cash flows.</p>
             </div>
             <div>
-              <h4 className="text-[25px]  mb-2 uppercase text-base">Spend Efficiency Management</h4>
+              <h4 className="text-[20px]  mb-2 uppercase text-base">Spend Efficiency Management</h4>
               <p className=" text-base max-w-xl mx-auto">Balancing operational expenditures with investment returns to guarantee that net profit grows in parallel with revenue.</p>
             </div>
           </div>
@@ -53,16 +53,16 @@ const GrowthAndScale = () => {
 
         {/* Pillar 2 */}
         <div className="space-y-12 text-[#1E1E1E] ">
-          <h3 className="text-[31px] uppercase tracking-wide border-b border-gray-100 pb-4 inline-block">
+          <h3 className="text-[28px] uppercase tracking-wide border-b border-gray-100 pb-4 inline-block">
             Market Dominance & Omnichannel Acquisition
           </h3>
           <div className="grid gap-10">
             <div>
-              <h4 className="text-[25px]  mb-2 uppercase text-base">Multi-Platform Campaign Management</h4>
+              <h4 className="text-[20px]  mb-2 uppercase text-base">Multi-Platform Campaign Management</h4>
               <p className=" text-base max-w-xl mx-auto">Building an integrated advertising ecosystem that captures the customer across all digital touch-points.</p>
             </div>
             <div>
-              <h4 className="text-[25px]  mb-2 uppercase text-base">Systematic Scaling</h4>
+              <h4 className="text-[20px]  mb-2 uppercase text-base">Systematic Scaling</h4>
               <p className=" text-base max-w-xl mx-auto">Utilizing predictive models to intelligently increase advertising budgets while maintaining a stable Cost Per Acquisition (CPA).</p>
             </div>
           </div>
@@ -70,16 +70,16 @@ const GrowthAndScale = () => {
 
         {/* Pillar 3 */}
         <div className="space-y-12">
-          <h3 className="text-[31px] uppercase tracking-wide border-b border-gray-100 pb-4 inline-block">
+          <h3 className="text-[28px] uppercase tracking-wide border-b border-gray-100 pb-4 inline-block">
             Value Sustainability & Customer Experience Optimization
           </h3>
           <div className="grid gap-10">
             <div>
-              <h4 className="text-[25px]  mb-2 uppercase ">Conversion Rate Optimization (CRO)</h4>
+              <h4 className="text-[20px]  mb-2 uppercase ">Conversion Rate Optimization (CRO)</h4>
               <p className="text-base  max-w-xl mx-auto">Re-engineering the customer journey—both technically and psychologically—to maximize on-site conversion rates.</p>
             </div>
             <div>
-              <h4 className="text-[25px] mb-2 uppercase ">Lifetime Value (LTV) Maximization</h4>
+              <h4 className="text-[20px] mb-2 uppercase ">Lifetime Value (LTV) Maximization</h4>
               <p className="text-base  max-w-xl mx-auto">Building communication strategies that ensure customer retention and increase Average Order Value (AOV).</p>
             </div>
           </div>
@@ -87,12 +87,12 @@ const GrowthAndScale = () => {
 
         {/* Pillar 4 */}
         <div className="space-y-12">
-          <h3 className="text-[31px] uppercase tracking-wide border-b border-gray-100 pb-4 inline-block">
+          <h3 className="text-[28px] uppercase tracking-wide border-b border-gray-100 pb-4 inline-block">
             Operational Modeling & Automation
           </h3>
           <div className="grid gap-10">
             <div>
-              <h4 className="text-[25px]  mb-2 uppercase ">Smart System Integration</h4>
+              <h4 className="text-[20px]  mb-2 uppercase ">Smart System Integration</h4>
               <p className="text-base  max-w-xl mx-auto">Transitioning exhaustive manual processes into automated technical systems, reducing human error and lowering fixed operational costs.</p>
             </div>
           </div>
@@ -112,7 +112,7 @@ const GrowthAndScale = () => {
                 {titleADNdescription.map((item, index) => (
                   <div key={index} className='space-y-[15px] border-l-2 border-gray-100 pl-6'>
                     <p className='text-[22px] md:text-[25px] font-bold text-[#F3F3F3]'>{item.title}</p>
-                    <p className='text-[1px] md:text-base text-gray-400 leading-relaxed'>{item.description}</p>
+                    <p className='text-base text-gray-400 leading-relaxed'>{item.description}</p>
                   </div>
                 ))}
               </div>
