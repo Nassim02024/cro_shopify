@@ -21,16 +21,16 @@ const ProjectShowcase = async ({params}) => {
             height={600} 
             src={project?.imgBaner}
             alt="Hero"
-            className="w-full h-auto rounded-2xl md:rounded-[30px] overflow-hidden object-cover"
+            className="w-full h-auto rounded-[25px] md:rounded-[30px] overflow-hidden object-cover"
             priority
           />
         </section>
       </div>
 
       {/* 2. Strategy & Analysis - البطاقة البيضاء */}
-      <section className="relative z-10 -mt-12 sm:-mt-32 md:-mt-40 bg-[#F8F8F8] rounded-[30px] md:rounded-[40px]  shadow-[0_20px_50px_rgba(0,0,0,0.05)]   mx-2 sm:mx-0">
+      <section className="relative z-10  sm:-mt-32 md:-mt-40 bg-[#F8F8F8] rounded-[30px] md:rounded-[40px]  shadow-[0_20px_50px_rgba(0,0,0,0.05)]   mx-2 sm:mx-0">
         <div className="px-4 md:px-0 ">
-          <div className="flex flex-col justify-center m-auto sm:max-w-[80%] md:max-w-[70%] px-4 sm:px-[3%] py-10 sm:py-[8%] text-[#1E1E1E]">
+          <div className="flex flex-col justify-center m-auto sm:max-w-[80%] md:max-w-[70%] px-4 sm:px-[3%] py-5 sm:py-[8%] text-[#1E1E1E]">
             
             {/* Header داخل الكارد */}
             <div className='space-y-2 mb-12 sm:mb-[100px]'>

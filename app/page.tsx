@@ -168,7 +168,7 @@ export default function HomePage() {
       {/* Projects Section */}
       <section className="flex flex-col w-full m-auto justify-center items-center mt-[88px] space-y-11">
         <p className="text-[29px] sm:text-[39px] text-[#969593]">Discover our Projects</p>
-          <div className="flex flex-col w-full gap-5 sm:flex-row md:px-[5%] ">
+          <div className="flex flex-col w-full gap-5 sm:flex-row px-4 sm:px-[5%] ">
           
           {/* Card 1 */}
           <Link href="/Project/one" className="group border border-[#a5a4a4] relative w-full h-[270px] sm:h-[400px] md:h-[371px] bg-gradient-to-b from-[#F6F6F6] to-[#DCDADA] rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 hover:shadow-xl">
