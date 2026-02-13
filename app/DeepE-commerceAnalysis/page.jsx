@@ -41,10 +41,10 @@ return (
               </h1>
             </div>
             <div className='space-y-6 text-[#1E1E1E] leading-relaxed max-w-3xl'>
-              <p className='text-[clamp(16px,3vw,19px)]'>
+              <p className='text-[clamp(16px,3vw,16px)]'>
                 In the complex landscape of e-commerce, the difference between global brands and transient stores lies not in budget size, but in strategic depth and structural integrity.
               </p>
-              <p className='text-[clamp(16px,3vw,19px)] font-medium'>
+              <p className='text-[clamp(16px,3vw,16px)] '>
                 We offer you the "Deep Strategic Analysis"—a solution that provides the absolute certainty required to make your next big moves based on indisputable structural facts.
               </p>
             </div>
@@ -63,7 +63,7 @@ return (
       <p className='text-[#757575] text-[clamp(18px,4vw,22px)] uppercase tracking-widest font-semibold'>
         {item.livle}
       </p>
-      <p className='text-[clamp(26px,5vw,48px)] font-medium leading-tight'>
+      <p className='text-[clamp(26px,5vw,48px)] font-medium leading-tight text-[#2F6F4E]'>
         {item.headning}
       </p>
     </span>

@@ -110,7 +110,7 @@ const GrowthAndScale = () => {
       </main>
 
       {/* 4. Dark Strategy Section */}
-      <div className='px-6 bg-[#212422] w-full mt-24 py-24'>
+      <div className='bg-[#212422] w-full mt-24 py-20 px-6 md:px-[10%] lg:px-[20%]'>
           <div className='max-w-4xl mx-auto space-y-12'>
             <p className='text-[clamp(22px,5vw,31px)] text-[#F3F3F3] font-semibold'>
               Why Is This Framework the Only Strategic Choice?

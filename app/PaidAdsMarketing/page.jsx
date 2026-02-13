@@ -29,14 +29,14 @@ const PaidAdsLanding = () => {
 
     <main className="w-full pt-10">
       {/* Hero Section */}
-      <section className="flex flex-col items-center text-center space-y-[60px] md:space-y-[100px] w-full px-6 md:px-[10%] lg:px-[20%]">
+      <section className="flex flex-col items-center text-center  md:space-y-8 w-full px-6 md:px-[10%] lg:px-[20%]">
         <div className='w-full mt-20'>
           {/* تعديل الخط ليكون مرناً */}
           <p className="text-[clamp(32px,8vw,61px)] text-[#757575] font-medium leading-tight">
             Paid Ads Marketing
           </p>
         </div>
-        <div className="space-y-6 text-[#1E1E1E] leading-relaxed text-[clamp(16px,4vw,19px)] max-w-3xl">
+        <div className="space-y-6 text-[#1E1E1E] leading-relaxed text-[clamp(16px,4vw,16px)] max-w-3xl">
           <p>
             We do not view paid advertising as a mere tool for increasing "views." Instead, we treat it 
             as an investment ecosystem aimed at achieving tangible financial growth.
@@ -50,29 +50,29 @@ const PaidAdsLanding = () => {
       </section>
 
       {/* قسم الركائز الأساسية */}
-      <section className="px-4 md:px-[10%] lg:px-[20%] py-12 bg-gray-50/50 mt-[80px]">
-        <h2 className="text-[clamp(18px,4vw,24px)] text-[#1E1E1E] mb-12 leading-snug">
+      <section className="px-4 md:px-[10%] lg:px-[20%]  bg-gray-50/50 mt-[80px]">
+        <h2 className="text-[clamp(18px,4vw,28px)] text-[#1E1E1E] mb-12 leading-snug">
           Our service is built upon two fundamental pillars <br className="hidden md:block"/> that guarantee both clarity and results
         </h2>
 
         {/* Level 1 */}
         <div className="mb-20 space-y-[40px] md:space-y-[70px] mt-[60px] md:mt-[100px]">
           <div>
-            <span className="text-gray-400 block mb-2 uppercase tracking-widest text-[clamp(20px,5vw,31px)]">Level 1</span>
-            <h3 className="text-[clamp(22px,5vw,28px)] text-[#1E1E1E] mb-10 font-semibold">Content Strategy & Sales Messaging</h3>      
+            <span className="text-[#757575] text-[clamp(18px,4vw,22px)] uppercase tracking-widest font-semibold">Level 1</span>
+            <h3 className="text-[clamp(26px,5vw,48px)] font-medium leading-tight text-[#2F6F4E]">Content Strategy & Sales Messaging</h3>      
           </div>
           
           <div className="grid gap-12 max-w-2xl mx-auto">
             <div className='space-y-3'>
-              <h4 className="text-[#1E1E1E] font-semibold text-[clamp(18px,4vw,23px)] sm:uppercase">Crafting Compelling Offers</h4>
+              <h4 className="text-[clamp(19px,4vw,24px)] font-semibold uppercase text-[#1E1E1E]">Crafting Compelling Offers</h4>
               <p className="text-[#1E1E1E] text-base leading-relaxed text-gray-700">Transforming your product features into solutions that matter to the customer and drive purchase decisions.</p>
             </div>
             <div className='space-y-3'>
-              <h4 className="text-[#1E1E1E] font-semibold text-[clamp(18px,4vw,23px)] sm:uppercase">Designing Impactful Ad Identities</h4>
+              <h4 className="text-[clamp(19px,4vw,24px)] font-semibold uppercase text-[#1E1E1E]">Designing Impactful Ad Identities</h4>
               <p className="text-[#1E1E1E] text-base leading-relaxed text-gray-700">Developing visual concepts and copy that address consumer needs and enhance your brand's credibility.</p>
             </div>
             <div className='space-y-3'>
-              <h4 className="text-[#1E1E1E] font-semibold text-[clamp(18px,4vw,23px)] sm:uppercase">A/B Testing & Optimization</h4>
+              <h4 className="text-[clamp(19px,4vw,24px)] font-semibold uppercase text-[#1E1E1E]">A/B Testing & Optimization</h4>
               <p className="text-[#1E1E1E] text-base leading-relaxed text-gray-700">Comparing multiple ad variations to identify the most efficient and cost-effective models.</p>
             </div>
           </div>
@@ -87,8 +87,8 @@ const PaidAdsLanding = () => {
         {/* Level 2 */}
         <div className="pb-16 space-y-[40px] md:space-y-[70px] mt-[60px] md:mt-[100px]">
           <div>
-            <span className="text-gray-400 block mb-2 uppercase tracking-widest text-[clamp(20px,5vw,31px)]">Level 2</span>
-            <h3 className="text-[clamp(22px,5vw,28px)] text-[#1E1E1E] mb-10 font-semibold">Digital Management & Continuous Optimization</h3>
+            <span className="text-[#757575] text-[clamp(18px,4vw,22px)] uppercase tracking-widest font-semibold">Level 2</span>
+            <h3 className="text-[clamp(26px,5vw,48px)] font-medium leading-tight text-[#2F6F4E]">Digital Management & Continuous Optimization</h3>
           </div>
           
           <div className="grid gap-12 max-w-2xl mx-auto">

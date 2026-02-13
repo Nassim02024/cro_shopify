@@ -28,7 +28,7 @@ const DownSection = () => {
           {cardDown.map((item, index) => (
             <div key={index} 
                   onClick={() => setActiveDescription(activeDescription === index ? null : index)} 
-                  className="w-full cursor-pointer px-6 py-5 rounded-2xl outline outline-1 outline-gray-200 bg-white hover:bg-gray-50 transition-all">
+                  className="w-full cursor-pointer px-6 py-5 rounded-2xl outline outline-1 outline-gray-200 bg-white  transition-all">
               <div className='flex justify-between items-center gap-4'>
                 <div className="text-start text-[#1E1E1E] text-base  font-medium leading-snug">
                   {item.title}

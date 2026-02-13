@@ -80,7 +80,6 @@ return (
           {step === 1 && (
             <div className="w-full flex flex-col items-center animate-in fade-in slide-in-from-bottom-4 duration-500">
               
-              {/* رسالة توضيحية بسيطة بخط سمي-بولد */}
               <h2 className="text-[clamp(18px,3vw,22px)] text-[#1E1E1E] font-semibold mb-8">
                 Start your growth journey
               </h2>

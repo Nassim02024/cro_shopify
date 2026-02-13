@@ -71,7 +71,7 @@ const Nav = () => {
         </div>
 
         <div className="hidden sm:flex">
-           <ul className="flex flex-row items-center gap-8 font-medium text-[#F3F3F3] font-normal">
+           <ul className="flex flex-row items-center gap-8 font-medium text-[#F3F3F3] font-light">
              <li><Link href="/" className={`hover:text-[#31F691] transition-colors  ${pathname === '/' ? 'text-[#31F691]' : ''}`}>Home</Link></li>
              <li className="relative group">
                 <button className={`flex items-center gap-1 hover:text-[#31F691]  ${isServiceActive ? 'text-[#31F691]' : '' } ${pathname === '/services' ? 'text-[#31F691]' : ''}`}>

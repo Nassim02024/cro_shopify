@@ -54,7 +54,7 @@ const GrowthAndScale = () => {
 
             <div className='space-y-[60px] md:space-y-[100px] text-start'>
               {titleADNdescription.map((item, index) => (
-                <div key={index} className='space-y-[15px] border-l-2 border-gray-100 pl-6'>
+                <div key={index} className='space-y-4 border-l-2 border-[#2F6F4E] pl-6'>
                   <p className='text-[clamp(20px,4vw,25px)] font-semibold text-[#F3F3F3]'>{item.title}</p>
                   <p className='text-base text-gray-400 leading-relaxed'>{item.description}</p>
                 </div>

@@ -8,7 +8,7 @@ return (
     <section className="mt-[100px] flex flex-col gap-[44px]">
       <p className="text-[clamp(40px,8vw,61px)] text-[#969593] font-semibold leading-tight">About us</p>
       <div className="space-y-6 text-[#1E1E1E] leading-relaxed">
-        <p className="text-[clamp(16px,2.5vw,19px)] font-medium">
+        <p className="text-[clamp(16px,2.5vw,18px)] ">
           While traditional agencies prioritize "reach," we focus on profitability. We specialize in supporting Shopify brands that have transitioned past the foundational phase and are now navigating the complexities of the Growing Stage.
           Our mission is to bridge the gap between financial data and marketing decisions, ensuring sustainable expansion rooted in real-world numbers.
         </p>

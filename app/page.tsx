@@ -104,42 +104,63 @@ export default function HomePage() {
   return (
     <main className="mt-10 overflow-x-hidden h-fit overflow-y-hidden">
       <section className="m-auto mt-20 md:10 flex flex-col items-center text-center space-y-[12px] sm:space-y-3 px-[2%] sm:px-[10%]">
-        <p className="text-[clamp(30px,5vw,39px)] leading-[1.2] sm:w-[70%] w-[95%]">
+        <p className="text-[clamp(30px,5vw,39px)] leading-[1.2] sm:w-[70%] w-[100%]">
           Scale your Shopify business to 2–4X profits in 90 days using our proven system
         </p>
-        <p className="text-[clamp(16px,5vw,25px)] sm:w-[70%] w-[90%]  flex items-center text-center">
-           Our 3-step system — Analyze, Optimize, and Scale — We focus on analyzing financial data and integrating it with marketing decisions.        
-        </p>
+    <div className="text-[clamp(16px,4vw,20px)] flex flex-wrap  items-center justify-center sm:w-[80%] w-[90%] mx-auto leading-relaxed">
+      <span>Our 3-step system Analyze, Optimize, and Scale  </span>
+      <span className="text-[#2F6F4E] mx-2">
+         We focus on analyzing financial data
+      </span>
+      <span>and integrating it with marketing decisions.</span>
+    </div>
         <div className="flex flex-col justify-center items-center sm:space-x-3  flex-col-reverse md:relative md:flex-row w-full px-6">
-          <Link href="/" className=" w-[100%] sm:w-[222px] mt-4 sm:mt-8 px-7 py-[13px] text-base cursor-pointer bg-white rounded-full border border-gray-300">
+          {/* <Link href="/" className=" w-[100%] sm:w-[222px] mt-4 sm:mt-8 px-7 py-[13px] text-base cursor-pointer bg-white rounded-full border border-gray-300">
             <p className=' '>Get Free Checklist</p>
-          </Link>
-          <Link href="/contactUs" className=" w-[100%] sm:w-[222px] text-base mt-8 px-7 py-[13px] cursor-pointer bg-[#2F6F4E] rounded-full border border-gray-300 text-white">
+          </Link> */}
+          <Link href="/contactUs" className="font-semibold w-[100%] sm:w-[222px] text-base mt-5 px-7 py-[13px] cursor-pointer bg-[#2F6F4E] rounded-full border border-gray-300 text-white">
             <p className=''>Contact us</p>
           </Link>
         </div>
       </section>
 
-      {/* Slider Section */}
-    <section className="relative items-center justify-center m-auto w-full overflow-hidden mt-[35px] sm:mt-[77px]">
-  <div className="absolute left-0 top-[40px] w-[15%] h-[300px] sm:h-[85%] bg-gradient-to-r from-white to-transparent z-10 pointer-events-none "></div>
-  <div className="absolute right-0 top-[40px] w-[15%] h-[300px] sm:h-[85%] bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+  {/* Slider Section */}
+  <section className="relative items-center justify-center m-auto  overflow-hidden mt-[35px] sm:mt-[77px]">
+  {/* Gradient Overlays */}
+  <div className="absolute left-0 top-0 w-[15%] h-full bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+  <div className="absolute right-0 top-0 w-[15%] h-full bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
   
-  <div 
-    className="flex space-x-5 py-10 animate-horizontal "
-  >
-    {[1, 2, 3, 4, 5, 6].map((i) => (
-      <div 
-        key={i}
-        className="shrink-0 border-4 border-white border-solid w-[210px] sm:w-[324px] h-[305px] sm:h-[470px] bg-linear-to-b from-[#F6F6F6] to-[#DCDADA] rounded-[30px] shadow-lg"
-      ></div>
-    ))}
+  <div className="flex space-x-5  px-10 animate-horizontal ">
+    {[
+      "/p1/Banner-main1.svg",
+      "/p1/Banner-phone.svg",
+      "/p2/Banner-main.svg",
+      "/p2/Banner-mobile.svg",
+      "/p3/Banner-main.svg",
+      "/p4/Banner.svg",
+      "/p4/mobile.svg",
 
-    {[1, 2, 3, 4, 5, 6].map((i) => (
+    ].concat([      
+      "/p1/Banner-main1.svg",
+      "/p1/Banner-phone.svg",
+      "/p2/Banner-main.svg",
+      "/p2/Banner-mobile.svg",
+      "/p3/Banner-main.svg",
+      "/p4/Banner.svg",
+      "/p4/mobile.svg",
+    ]).map((imgSrc, index) => (
       <div 
-        key={`repeat-${i}`}
-        className="shrink-0 border-4 border-white border-solid w-[210px] sm:w-[324px] h-[305px] sm:h-[470px] bg-linear-to-b from-[#F6F6F6] to-[#DCDADA] rounded-[30px] shadow-lg"
-      ></div>
+        key={index}
+        className="shrink-0 p-2 sm:p-4 border-4 border-white border-solid  h-[273px] sm:h-[470px] bg-linear-to-b from-[#F6F6F6] to-[#DCDADA] rounded-[20px] sm:rounded-[30px] shadow-lg overflow-hidden flex items-center justify-center"
+      >
+        <Image 
+          width={324} 
+          height={470} 
+          src={imgSrc} 
+          alt={`Gallery Image ${index}`} 
+          className="w-full h-full object-cover" 
+        />
+      </div>
     ))}
   </div>
 </section>
@@ -148,8 +169,27 @@ export default function HomePage() {
       <section className="flex flex-col w-full m-auto justify-center items-center mt-[88px] space-y-11">
         <p className="text-[29px] sm:text-[39px] text-[#969593]">Discover our Projects</p>
         <div className="flex flex-col w-full px-5 sm:flex-row space-y-5 sm:space-x-5 md:px-[5%] sm:px-[100px] sm:w-full">
-          <Link href="/projects/some-id" className="w-full h-[420px] sm:h-[471px] md:h-[371px] bg-linear-to-b from-[#F6F6F6] to-[#DCDADA] rounded-2xl"><div className="someproject"></div></Link>
-          <Link href="/projects/some-id" className="w-full h-[420px] sm:h-[471px] md:h-[371px] bg-linear-to-b from-[#F6F6F6] to-[#DCDADA] rounded-2xl"><div className="someproject"></div></Link>
+            <Link  href="/projects/some-id"  className="group border border-[#a5a4a4] relative w-full h-[270px] sm:h-[471px] md:h-[371px] bg-linear-to-b from-[#F6F6F6] to-[#DCDADA] rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 hover:shadow-2xl">
+            <Image  className="w-full  p-2 sm:p-8 relative z-10 transition-all duration-700 ease-out group-hover:scale-110 group-hover:-translate-y-1 " 
+              width={300}  height={300}  alt="img"  src="/p1/Banner-main1.svg"
+            />
+              <div className="absolute bottom-8 left-6 text-white z-30 transition-all   opacity-90 group-hover:opacity-100">
+              <div className="text-[18px] sm:text-[25px]  leading-tight">Website Design</div>
+            </div>
+            <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500 z-20"></div>
+            <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-25"></div>
+          </Link>
+
+          <Link  href="/projects/some-id"  className="group border border-[#a5a4a4] relative w-full h-[270px] sm:h-[471px] md:h-[371px] bg-linear-to-b from-[#F6F6F6] to-[#DCDADA] rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 hover:shadow-2xl">
+            <Image  className="w-full p-2 sm:p-8 relative z-10 transition-all duration-700 ease-out group-hover:scale-110 group-hover:-translate-y-1 " 
+              width={300}  height={300}  alt="img"  src="/p4/Banner-main.svg"
+            />
+              <div className="absolute bottom-8 left-6 text-white z-30 transition-all   opacity-90 group-hover:opacity-100">
+              <div className="text-[18px] sm:text-[25px] leading-tight">Website Design</div>
+            </div>
+            <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500 z-20"></div>
+            <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-25"></div>
+          </Link>
         </div>
         <p className="text-[#2F6F4E] cursor-pointer">See all</p>
       </section>
@@ -170,7 +210,7 @@ export default function HomePage() {
      {titleCardServireSection.map((card, index) => (
     <div
       key={index}
-      className="relative flex w-full max-w-[295px] mx-auto min-h-[280px] sm:min-h-[199px] h-full p-7 bg-white/10 rounded-[10px] outline outline-1 outline-green-300 backdrop-blur-2xl flex-col transition-transform hover:scale-105"
+      className="relative flex w-full max-w-[295px] mx-auto min-h-[280px] sm:min-h-[199px] h-full p-7 bg-white/10 rounded-[10px] outline outline-1 outline-green-300 backdrop-blur-2xl flex-col "
     >
       <div className="flex-grow flex flex-col items-center text-center space-y-4">
         <div className="text-white text-xl font-semibold leading-tight">
@@ -181,7 +221,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      <div className="mt-auto pt-8 w-full">
+      <div className="mt-auto pt-8 w-full transition-transform hover:scale-105">
         <button className="w-full flex justify-center items-center bg-white text-neutral-800 h-[44px] rounded-[24px] font-medium transition-colors hover:bg-gray-100 cursor-pointer">
           Learn more
         </button>
@@ -202,32 +242,31 @@ export default function HomePage() {
             <p>By leveraging our proven three-step model — Analyze, Optimize , and Scale</p>
           </div>
         </div>
-      <div className='flex flex-col text-[#1E1E1E] mt-[80px] sm:mt-[120px] space-y-[50px] sm:space-y-[70px] justify-center items-center text-center px-[20px] md:px-[100px] lg:px-[300px]'>
+      <div className='flex flex-col text-[#1E1E1E] mt-[80px] sm:mt-[60px] space-y-[50px] sm:space-y-[70px] justify-center items-center text-center px-[20px] md:px-[100px] lg:px-[300px]'>
         <div>
             <p className='text-[31px] '>Analyze</p>
-            <p className='text-base'>We analyze your e-commerce business variables, from net margins to customer behavior, to pinpoint financial leaks and real growth opportunities.</p>
+            <p className='text-base sm:text-[18px] leading-relaxed'>We analyze your e-commerce business variables, from net margins to customer behavior, to pinpoint financial leaks and real growth opportunities.</p>
           </div>
           <div>
             <p className='text-[31px] '>Optimize</p>
-            <p className='text-base' >We optimize your entire business model and conversion rates to ensure every marketing dollar is converted into tangible cash returns.</p>
+            <p className='text-base sm:text-[18px]' >We optimize your entire business model and conversion rates to ensure every marketing dollar is converted into tangible cash returns.</p>
           </div>
           <div>
             <p className='text-[31px]' >Scale</p>
-            <p className='text-base' >We transform your business into a predictable growth system backed by financial rigor, building a commercial asset with high market value.</p>
+            <p className='text-base sm:text-[18px]' >We transform your business into a predictable growth system backed by financial rigor, building a commercial asset with high market value.</p>
           </div>
         </div>
       </section>
 
       
 <section className="flex flex-col w-full m-auto justify-center mt-[104px] ">
-      <p className="flex justify-center items-center text-center px-5 sm:px-[400px] text-[clamp(21px,5vw,31px)] mb-[24px] text-[#969593]">
+      <p className="flex justify-center items-center text-center px-5 sm:px-[400px] text-[clamp(21px,5vw,25px)] mb-[24px] text-[#969593]">
         Our clients testimonials after working with us
       </p>
 
-      {/* الحاوية التي تحتوي على الصور */}
       <div 
         ref={clientSliderRef}
-        onScroll={handleScroll} // تحديث الاسم عند السحب باليد
+        onScroll={handleScroll}
         className="flex flex-row overflow-x-auto w-full items-center justify-start  sm:mt-[0px] overflow-x-hidden snap-x snap-mandatory"
       >
         {clients.map((client, index) => (
@@ -246,7 +285,7 @@ export default function HomePage() {
           onClick={() => scroll('left')}
         />
 
-        <p className="text-[clamp(18px,5vw,25px)]  min-w-[200px]">
+        <p className="text-[clamp(18px,5vw,25px)]  min-w-[250px]">
           <span className="text-[#2F6F4E] p-0 m-0">{clients[currentIndex].name}</span> from {clients[currentIndex].location}
         </p>
           
@@ -317,8 +356,10 @@ export default function HomePage() {
       <section className="flex flex-col   items-center text-center w-full m-auto justify-center mt-[100px] sm:mt-[106px] space-y-[24px] space-y-[11px]">
         <p className="flex justify-center items-center text-[39px] text-[#969593]">About us</p>
         <div className="px-[20px] md:px-[100px] lg:px-[300px]">
-            <p className=" text-[clamp(16px,5vw,22px)] leading-8">At Flaylor, we believe that any marketing decision not based on Data is simply a gamble. That is why we have built a unique system that combines deep financial analysis with high-impact marketing creativity.</p>      
+            <p className=" text-[clamp(16px,5vw,20px)] leading-relaxed">At Flaylor, we believe that any marketing decision not based on Data is simply a gamble. That is why we have built a unique system that combines deep financial analysis with high-impact marketing creativity.</p>      
         </div>
+        <Link href="/about" className="text-[#2F6F4E] cursor-pointer">Learn more</Link>
+
         <div>
 
         </div>
@@ -362,14 +403,14 @@ export default function HomePage() {
   </div>
 </section>
 
-  <section className="flex flex-col w-full m-auto justify-center items-center px-[3%] mt-[88px] space-y-11">
+  {/* <section className="flex flex-col w-full m-auto justify-center items-center px-[3%] mt-[88px] space-y-11">
         <p className="text-[29px] sm:text-[39px] text-[#969593]">Blog</p>
         <div className="flex flex-col w-full px-5 sm:flex-row space-y-5 sm:space-x-5 md:px-[30px] sm:px-[100px] sm:w-full">
           <Link href="/projects/some-id" className="w-full h-[420px] sm:h-[471px] md:h-[371px] bg-linear-to-b from-[#F6F6F6] to-[#DCDADA] rounded-[30px] relative"><div className="someproject absolute bottom-[20px] left-[20px] sm:bottom-[48px] sm:left-[48px] text-base text-white w-[90%] sm:w-[45%]">How to boost your store is sales with one decision</div></Link>
           <Link href="/projects/some-id" className="w-full h-[420px] sm:h-[471px] md:h-[371px] bg-linear-to-b from-[#F6F6F6] to-[#DCDADA] rounded-[30px] relative"><div className="someproject absolute bottom-[20px] left-[20px] sm:bottom-[48px] sm:left-[48px] text-base text-white w-[90%] sm:w-[45%]">How to boost your store is sales with one decision</div></Link>
         </div>
         <p className="text-[#2F6F4E] cursor-pointer">Learn more</p>
-  </section>
+  </section> */}
 
 
 {/* <section className="mt-[100px] sm:mt-[220px]">
@@ -416,9 +457,9 @@ export default function HomePage() {
 
 
     {/* CTA Text */}
-      <section className="w-full sm:w-[60%] justify-center items-center m-auto pt-20">
+      <section className="w-full sm:w-[60%] justify-center items-center m-auto pt-50">
         <div className="max-w-5xl mx-auto text-start px-4">
-          <p className="text-[#A0A0A0] text-[24px] md:text-[31px] leading-relaxed font-light ">
+          <p className="text-[#A0A0A0] text-[24px] md:text-[25px] leading-relaxed font-light ">
             If you want to grow your Shopify store, unlock higher profits, and turn your e-commerce business into a predictable growth engine, get in touch with us today.
           </p>
         </div>
