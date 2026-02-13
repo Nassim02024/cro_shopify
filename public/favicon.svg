@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="51" height="51"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="51" height="51"><svg width="51" height="51" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_d_512_1221)">
+<circle cx="25.5" cy="21.5" r="21.5" fill="white"></circle>
+<circle cx="25.5" cy="21.5" r="21" stroke="black"></circle>
+</g>
+<path d="M22.585 34.524C22.503 34.934 22.257 35.2893 21.847 35.59C21.4643 35.8633 20.9177 36 20.207 36C19.6057 36 19.1273 35.836 18.772 35.508C18.444 35.18 18.2663 34.8383 18.239 34.483C18.403 33.335 18.485 31.613 18.485 29.317C18.485 27.9503 18.403 25.8457 18.239 23.003C18.0477 20.3243 17.952 17.9463 17.952 15.869C17.952 14.7483 18.0067 13.6003 18.116 12.425C18.116 12.0423 18.3347 11.6323 18.772 11.195C19.2367 10.7577 19.8653 10.4843 20.658 10.375C23.2547 10.1017 26.439 9.965 30.211 9.965H31.523C32.507 9.965 33.4637 10.1427 34.393 10.498C35.3497 10.8533 35.828 11.4683 35.828 12.343C35.828 12.917 35.6913 13.368 35.418 13.696C35.1447 14.024 34.639 14.188 33.901 14.188C33.5457 14.188 33.1357 14.1607 32.671 14.106C32.2063 14.0513 31.8783 14.0103 31.687 13.983C30.6483 13.819 29.842 13.737 29.268 13.737C26.0973 13.737 23.7057 13.9557 22.093 14.393C22.093 15.295 22.1203 16.7573 22.175 18.78L22.216 21.404C23.6373 21.404 24.9083 21.3493 26.029 21.24C27.1497 21.1033 27.792 21.0213 27.956 20.994C29.3773 20.83 30.3203 20.748 30.785 20.748C31.441 20.748 31.9877 20.8983 32.425 21.199C32.8897 21.4723 33.122 21.9097 33.122 22.511C33.122 23.8777 32.1653 24.561 30.252 24.561C29.7873 24.561 29.3773 24.5747 29.022 24.602C28.6667 24.6293 28.366 24.6567 28.12 24.684C27.136 24.7933 26.357 24.848 25.783 24.848C24.5257 24.848 23.4597 24.889 22.585 24.971C22.585 25.9823 22.626 27.0483 22.708 28.169C22.708 28.5243 22.7217 29.071 22.749 29.809C22.8037 30.547 22.831 31.2167 22.831 31.818C22.831 32.3373 22.8173 32.8157 22.79 33.253C22.7627 33.6903 22.6943 34.114 22.585 34.524Z" fill="#31F691"></path>
+<defs>
+<filter id="filter0_d_512_1221" x="0" y="0" width="51" height="51" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
+<feOffset dy="4"></feOffset>
+<feGaussianBlur stdDeviation="2"></feGaussianBlur>
+<feComposite in2="hardAlpha" operator="out"></feComposite>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></feColorMatrix>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_512_1221"></feBlend>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_512_1221" result="shape"></feBlend>
+</filter>
+</defs>
+</svg></svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
+@media (prefers-color-scheme: dark) { :root { filter: none; } }
+</style></svg>

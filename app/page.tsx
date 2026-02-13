@@ -104,9 +104,9 @@ export default function HomePage() {
   return (
     <main className="mt-10 overflow-x-hidden h-fit overflow-y-hidden">
       <section className="m-auto mt-20 md:10 flex flex-col items-center text-center space-y-[12px] sm:space-y-3 px-[2%] sm:px-[10%]">
-        <p className="text-[clamp(30px,5vw,39px)] leading-[1.2] sm:w-[70%] w-[100%]">
+        <h1 className="text-[clamp(30px,5vw,39px)] leading-[1.2] sm:w-[70%] w-[100%]">
           Scale your Shopify business to 2–4X profits in 90 days using our proven system
-        </p>
+        </h1>
     <div className="text-[clamp(16px,4vw,20px)] flex flex-wrap  items-center justify-center sm:w-[80%] w-[90%] mx-auto leading-relaxed">
       <span>Our 3-step system Analyze, Optimize, and Scale  </span>
       <span className="text-[#2F6F4E] mx-2">

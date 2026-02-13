@@ -29,14 +29,14 @@ const GrowthAndScale = () => {
       {/* Hero Section */}
       <section className="flex flex-col items-center text-center w-full px-6 md:px-[10%] lg:px-[20%]">
         <div className='w-full space-y-[60px] md:space-y-[100px] mt-20'>
-          <p className="text-[clamp(32px,8vw,61px)] text-[#757575] font-semibold leading-tight">
+          <h1 className="text-[clamp(32px,8vw,61px)] text-[#757575] font-semibold leading-tight">
             High-Converting Shopify Design
-          </p>
+          </h1>
           
           <div className='space-y-[30px] md:space-y-[47px] text-[#1E1E1E]'>
-            <p className="text-[clamp(24px,5vw,31px)] font-semibold">Your Store Isn't Just a Storefront—It’s a 24/7 Sales Machine</p>
+            <p className="text-[clamp(24px,5vw,31px)] font-semibold">Your Store Isn not Just a Storefront—It’s a 24/7 Sales Machine</p>
             <div className='space-y-6 max-w-4xl mx-auto text-[clamp(16px,3vw,19px)] leading-relaxed'>
-              <p>Most e-commerce stores "look good," but very few are engineered to convert.</p>
+              <h2>Most e-commerce stores look good, but very few are engineered to convert.</h2>
               <p>We don’t just design pages; we build Frictionless Shopping Experiences designed to eliminate buyer hesitation and maximize your net profit.</p>
             </div>
           </div>
@@ -56,7 +56,7 @@ const GrowthAndScale = () => {
               {titleADNdescription.map((item, index) => (
                 <div key={index} className='space-y-4 border-l-2 border-[#2F6F4E] pl-6'>
                   <p className='text-[clamp(20px,4vw,25px)] font-semibold text-[#F3F3F3]'>{item.title}</p>
-                  <p className='text-base text-gray-400 leading-relaxed'>{item.description}</p>
+                  <h3 className='text-base text-gray-400 leading-relaxed'>{item.description}</h3>
                 </div>
               ))}
             </div>

@@ -32,9 +32,9 @@ const PaidAdsLanding = () => {
       <section className="flex flex-col items-center text-center  md:space-y-8 w-full px-6 md:px-[10%] lg:px-[20%]">
         <div className='w-full mt-20'>
           {/* تعديل الخط ليكون مرناً */}
-          <p className="text-[clamp(32px,8vw,61px)] text-[#757575] font-medium leading-tight">
+          <h1 className="text-[clamp(32px,8vw,61px)] text-[#757575] font-medium leading-tight">
             Paid Ads Marketing
-          </p>
+          </h1>
         </div>
         <div className="space-y-6 text-[#1E1E1E] leading-relaxed text-[clamp(16px,4vw,16px)] max-w-3xl">
           <p>
