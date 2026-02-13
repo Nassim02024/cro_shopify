@@ -6,10 +6,10 @@ import Link from 'next/link';
 
 export default function HomePage() {
   const titleCardServireSection = [
-    { title: "Growth & Scale", description: "Strategic scaling that grows market share while securing net profit margins", link: "/thisPage" },
-    { title: "High-Converting Shopify Design", description: "Engineering frictionless shopping experiences to maximize conversion rates and revenue.", link: "/thisPage" },
-    { title: "Paid Ads Marketing", description: "Performance-driven ad management focusing on high LTV and optimized acquisition costs.", link: "/thisPage" },
-    { title: "Deep E-commerce Analysis", description: "Deep-dive auditing to eliminate financial leaks and unlock hidden profit potential", link: "/thisPage" },
+    { title: "Growth & Scale", description: "Strategic scaling that grows market share while securing net profit margins", link: "/GrowthAndScale" },
+    { title: "High-Converting Shopify Design", description: "Engineering frictionless shopping experiences to maximize conversion rates and revenue.", link: "/HighConvertingShopifyDesign" },
+    { title: "Paid Ads Marketing", description: "Performance-driven ad management focusing on high LTV and optimized acquisition costs.", link: "/PaidAdsMarketing" },
+    { title: "Deep E-commerce Analysis", description: "Deep-dive auditing to eliminate financial leaks and unlock hidden profit potential", link: "/DeepE-commerceAnalysis" },
   ];
 
   const WhyChoosCardSection = [
@@ -238,9 +238,9 @@ export default function HomePage() {
       </div>
 
       <div className="mt-auto pt-8 w-full transition-transform hover:scale-105">
-        <button className="w-full flex justify-center items-center bg-white text-neutral-800 h-[44px] rounded-[24px] font-medium transition-colors hover:bg-gray-100 cursor-pointer">
+        <Link href={card.link} className="w-full flex justify-center items-center bg-white text-neutral-800 h-[44px] rounded-[24px] font-medium transition-colors hover:bg-gray-100 cursor-pointer">
           Learn more
-        </button>
+        </Link>
       </div>
     </div>
   ))}
@@ -374,7 +374,7 @@ export default function HomePage() {
         <div className="px-[20px] md:px-[100px] lg:px-[300px]">
             <p className=" text-[clamp(16px,5vw,20px)] leading-relaxed">At Flaylor, we believe that any marketing decision not based on Data is simply a gamble. That is why we have built a unique system that combines deep financial analysis with high-impact marketing creativity.</p>      
         </div>
-        <Link href="/about" className="text-[#2F6F4E] cursor-pointer">Learn more</Link>
+        <Link href="/about" className="text-[#2F6F4E] cursor-pointer">Learn more </Link>
 
         <div>
 
