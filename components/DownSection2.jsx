@@ -14,7 +14,6 @@ const DownSection2 = ()=> {
           You may like it
         </p>
 
-        {/* الحاوية: أضفنا gap بدل space-x لتسهيل التحكم */}
         <div className="flex flex-col w-full gap-5 sm:flex-row md:px-[5%] ">
           
           {/* Card 1 */}

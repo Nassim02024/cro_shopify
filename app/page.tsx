@@ -168,28 +168,44 @@ export default function HomePage() {
       {/* Projects Section */}
       <section className="flex flex-col w-full m-auto justify-center items-center mt-[88px] space-y-11">
         <p className="text-[29px] sm:text-[39px] text-[#969593]">Discover our Projects</p>
-        <div className="flex flex-col w-full px-5 sm:flex-row space-y-5 sm:space-x-5 md:px-[5%] sm:px-[100px] sm:w-full">
-            <Link  href="/projects/some-id"  className="group border border-[#a5a4a4] relative w-full h-[270px] sm:h-[471px] md:h-[371px] bg-linear-to-b from-[#F6F6F6] to-[#DCDADA] rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 hover:shadow-2xl">
-            <Image  className="w-full  p-2 sm:p-8 relative z-10 transition-all duration-700 ease-out group-hover:scale-110 group-hover:-translate-y-1 " 
-              width={300}  height={300}  alt="img"  src="/p1/Banner-main1.svg"
+          <div className="flex flex-col w-full gap-5 sm:flex-row md:px-[5%] ">
+          
+          {/* Card 1 */}
+          <Link href="/Project/one" className="group border border-[#a5a4a4] relative w-full h-[270px] sm:h-[400px] md:h-[371px] bg-gradient-to-b from-[#F6F6F6] to-[#DCDADA] rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 hover:shadow-xl">
+            <Image 
+              className="w-[85%] sm:w-full  sm:p-8 relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2" 
+              width={300} height={300} alt="img" src="/p1/Banner-main1.svg"
             />
-              <div className="absolute bottom-8 left-6 text-white z-30 transition-all   opacity-90 group-hover:opacity-100">
-              <div className="text-[18px] sm:text-[25px]  leading-tight">Website Design</div>
+            
+            {/* نصوص الكارد */}
+            <div className="absolute bottom-6 left-6 text-white z-30 transition-all">
+              <div className="text-lg sm:text-[22px] md:text-[25px]  leading-tight shadow-sm">
+                Website Design
+              </div>
             </div>
-            <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500 z-20"></div>
+
+            {/* التراكبات (Overlays) */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-50 group-hover:opacity-80 transition-opacity duration-500 z-20"></div>
             <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-25"></div>
           </Link>
 
-          <Link  href="/projects/some-id"  className="group border border-[#a5a4a4] relative w-full h-[270px] sm:h-[471px] md:h-[371px] bg-linear-to-b from-[#F6F6F6] to-[#DCDADA] rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 hover:shadow-2xl">
-            <Image  className="w-full p-2 sm:p-8 relative z-10 transition-all duration-700 ease-out group-hover:scale-110 group-hover:-translate-y-1 " 
-              width={300}  height={300}  alt="img"  src="/p4/Banner-main.svg"
+          {/* Card 2 */}
+          <Link href="/Project/catre" className="group border border-[#a5a4a4] relative w-full h-[270px] sm:h-[400px] md:h-[371px] bg-gradient-to-b from-[#F6F6F6] to-[#DCDADA] rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 hover:shadow-xl">
+            <Image 
+              className="w-[85%] sm:w-full  sm:p-8 relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2" 
+              width={300} height={300} alt="img" src="/p4/Banner-main.svg"
             />
-              <div className="absolute bottom-8 left-6 text-white z-30 transition-all   opacity-90 group-hover:opacity-100">
-              <div className="text-[18px] sm:text-[25px] leading-tight">Website Design</div>
+            
+            <div className="absolute bottom-6 left-6 text-white z-30 transition-all">
+              <div className="text-lg sm:text-[22px] md:text-[25px] leading-tight shadow-sm">
+                Website Design
+              </div>
             </div>
-            <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500 z-20"></div>
+
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-50 group-hover:opacity-80 transition-opacity duration-500 z-20"></div>
             <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-25"></div>
           </Link>
+
         </div>
         <p className="text-[#2F6F4E] cursor-pointer">See all</p>
       </section>
