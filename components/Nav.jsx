@@ -133,7 +133,7 @@ const Nav = () => {
             </div>
           </li>
           <li><Link className='' href="/Project" onClick={() => setIsOpen(false)}>Projects</Link></li>
-          <li><Link className='' href="/blog" onClick={() => setIsOpen(false)}>Blog</Link></li>
+          {/* <li><Link className='' href="/blog" onClick={() => setIsOpen(false)}>Blog</Link></li> */}
           <li><Link className='' href="/about" onClick={() => setIsOpen(false)}>About Us</Link></li>
         </ul>
       </div>
