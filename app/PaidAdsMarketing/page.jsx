@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react'
 import DownSection from '@/components/DownSection';
+import DownSection3 from '@/components/DownSection3';
 
 // text-[clamp(31px,5vw,39px)]
 // px-[20px] md:px-[100px] lg:px-[300px]
@@ -134,6 +135,9 @@ const PaidAdsLanding = () => {
           </p>
         </section>
 
+       <div>
+        <DownSection3 />
+       </div>
         <div className='px-4 sm:px-0'>
          <DownSection/>
         </div>

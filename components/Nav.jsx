@@ -79,7 +79,7 @@ const Nav = () => {
                   <svg className="hidden sm:flex  w-4 h-4 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
                 </button>
                 {/* دروب داون الحاسوب - يخرج خارج الناف */}
-                <div className="absolute top-[50px] left-[-100px] opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0 transition-all duration-300 w-[280px] bg-white text-black rounded-2xl shadow-xl p-2 flex flex-col">
+                <div className="absolute top-[50px] left-[-100px] opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0 transition-all duration-300 w-[320px] bg-white text-black rounded-2xl shadow-xl p-2 flex flex-col">
                   {services.map((s) => (
                     <Link key={s.href} href={s.href} className={`px-4 py-3 rounded-xl hover:bg-gray-100 flex justify-between items-center ${pathname === s.href ? 'bg-gray-200' : ''}`}>
                       <span className="text-base font-semibold">{s.name}</span>
@@ -106,7 +106,7 @@ const Nav = () => {
         ${isOpen ? 'opacity-100 translate-y-0 visible shadow-2xl' : 'opacity-0 -translate-y-5 invisible'}
         max-h-[80vh] overflow-y-auto
       `}>
-        <ul className="flex flex-col px-[24px] gap-4 sm:gap-6 text-[21px]">
+        <ul className="flex flex-col px-[10px] gap-4 sm:gap-6 text-[21px]">
           <li><Link href="/" onClick={() => setIsOpen(false)}>Home</Link></li>
           <li className="w-full">
             <button onClick={() => setIsServicesOpen(!isServicesOpen)} className=" flex items-center justify-between w-full">

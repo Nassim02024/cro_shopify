@@ -2,6 +2,8 @@
 import React from 'react'
 import DownSection from "@/components/DownSection"
 import { useState } from 'react'
+import DownSection3 from '@/components/DownSection3';
+
 
 const GrowthAndScale = () => {
     const titleADNdescription = [
@@ -139,7 +141,9 @@ const GrowthAndScale = () => {
           </p>
         </div>
       </section>
-
+      <div>
+        <DownSection3 />
+       </div>
       <div className='px-4 sm:px-0'>
         <DownSection/>
       </div>

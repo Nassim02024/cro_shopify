@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 import Link from 'next/link'
 import DownSection from "@/components/DownSection"
+import DownSection3 from '@/components/DownSection3';
 
 const GrowthAndScale = () => {
   const titleADNdescription = [
@@ -83,7 +84,9 @@ const GrowthAndScale = () => {
             </div>
           </div>
         </div>
-
+      <div>
+        <DownSection3 />
+       </div>
         <div className='px-4 sm:px-0'>
           <DownSection/>
         </div>

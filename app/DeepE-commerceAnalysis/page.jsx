@@ -2,30 +2,37 @@
 import React from 'react'
 import DownSection from "@/components/DownSection"
 import { useState } from 'react'
+import DownSection3 from '@/components/DownSection3';
+
 
 const DeepEcommerceAnalysis = () => {
   const livle = [
     {
       livle : "Level 1",
-      headning : "Business Infrastructure & Operational Audit",
-      text1 : "Financial Transparency & Net Profitability",
-      description1: "Moving beyond superficial cash flow monitoring to understand the true economic viability of every transaction, ensuring long-term net profit sustainability.",
-      text2 : "Resource Efficiency & Automation",
-      description2: "Assessing team performance and aligning human capital with growth objectives, while identifying automation opportunities to reduce manual overhead and financial waste.",
-      text3 : "Value Chain Sustainability",
-      description3: "Auditing the supply chain and fulfillment ecosystems to ensure seamless logistics and the reduction of unnecessary fixed costs.",
+      headning : "Business & Operations",
+      text1 : "Governance of fixed costs and supply chain structuring to ensure infrastructure efficiency. We secure operational readiness for scaling without compromising cash flow",
 
     },
     {
       livle : "Level 2",
-      headning : "Market Dynamics & Strategic Expansion",
-      text1 : "Acquisition Strategy & Creative Messaging",
-      description1 : "Analyzing the effectiveness of creative assets in influencing target audience behavior, ensuring the right message reaches the right person at the optimal time.",
-      text2 : "UX Optimization & Customer Journey",
-      description2 : "Identifying friction points within the conversion funnel and removing psychological and technical barriers to guarantee a seamless shopping experience.",
-      text3 : "Maximizing Customer Lifetime Value (LTV)",
-      description3 : "Developing frameworks to build genuine loyalty and ensure repeat purchase behavior, reducing total dependency on paid acquisition channels.",
-    }
+      headning : "Unit Economics",
+      text1 : "Dissecting single-product profitability and balancing  against . We guarantee sustainable growth through precise contribution margin analysis",
+      },
+    {
+      livle : "Level 3",
+      headning : "Shopify Audit",
+      text1 : "Optimizing technical performance and basket engineering to increase . We focus on closing funnel leakages to maximize technical ",
+      },
+    {
+      livle : "Level 4",
+      headning : "Paid Ads & Social Media Audit",
+      text1 : " Auditing ad spend efficiency and linking platform data to actual bank returns. We detect financial waste and redirect budgets toward the most profitable segments",
+      },
+    {
+      livle : "Level 5",
+      headning : "Brand Audi",
+      text1 : "Evaluating the brand as a financial asset that lowers acquisition costs and builds equity. We align pricing positioning with visual identity to drive higher retention",
+      }
   ]
 
 return (
@@ -41,69 +48,45 @@ return (
               </h1>
             </div>
             <div className='space-y-6 text-[#1E1E1E] leading-relaxed max-w-3xl'>
-              <p className='text-[clamp(16px,3vw,16px)]'>
-                In the complex landscape of e-commerce, the difference between global brands and transient stores lies not in budget size, but in strategic depth and structural integrity.
-              </p>
+          
               <p className='text-[clamp(16px,3vw,16px)] '>
                 We offer you the "Deep Strategic Analysis"—a solution that provides the absolute certainty required to make your next big moves based on indisputable structural facts.
               </p>
             </div>
           </section>
 
-          <section className='mt-[80px] mb-[60px]'>
+          <section className='mt-[50px] mb-[60px]'>
             <p className='text-[clamp(20px,4vw,28px)] text-[#1E1E1E] leading-snug'>
-              Our methodology deconstructs your business through two integrated strategic levels
-            </p>
+              Our methodology analyzes your business across 5 levels and links it to marketing decisions to achieve maximum efficiency.            </p>
           </section>
 
-          {livle.map((item, index) => (
-  <section key={index} className='flex flex-col gap-[40px] text-[#1E1E1E] mt-[80px]'>
+  {livle.map((item, index) => (
+   <section key={index} className='flex flex-col text-[#1E1E1E]   mt-[100px]'>
+    <div className='flex flex-col gap-[30px]'>
     {/* ليفل وهيدينج */}
-    <span className='sm:mb-[30px] space-y-3'>
+    <span className=''>
       <p className='text-[#757575] text-[clamp(18px,4vw,22px)] uppercase tracking-widest font-semibold'>
         {item.livle}
       </p>
-      <p className='text-[clamp(26px,5vw,48px)] font-medium leading-tight text-[#2F6F4E]'>
+      <p className='text-[clamp(26px,5vw,30px)] font-medium leading-tight text-[#2F6F4E]'>
         {item.headning}
       </p>
     </span>
-
     {/* الفقرة الأولى */}
-    <span className='space-y-3'>
-      <p className='text-[clamp(19px,4vw,24px)] font-semibold uppercase text-[#1E1E1E]'>
+    <span className=''>
+      <p className='text-[clamp(16px,4vw,20px)]  text-[#1E1E1E]'>
         {item.text1}
       </p>
-      <p className='text-[clamp(16px,3vw,18px)] text-[#4A4A4A] leading-relaxed'>
-        {item.description1}
-      </p>
-    </span>
 
-    {/* الفقرة الثانية */}
-    <span className='space-y-3'>
-      <p className='text-[clamp(19px,4vw,24px)] font-semibold uppercase text-[#1E1E1E]'>
-        {item.text2}
-      </p>
-      <p className='text-[clamp(16px,3vw,18px)] text-[#4A4A4A] leading-relaxed'>
-        {item.description2}
-      </p>
     </span>
-
-    {/* الفقرة الثالثة */}
-    <span className='space-y-3'>
-      <p className='text-[clamp(19px,4vw,24px)] font-semibold uppercase text-[#1E1E1E]'>
-        {item.text3}
-      </p>
-      <p className='text-[clamp(16px,3vw,18px)] text-[#4A4A4A] leading-relaxed'>
-        {item.description3}
-      </p>
-    </span>
-    
-    {/* فاصل جمالي بين المستويين */}
-    {index === 0 && <div className="h-[1px] w-full bg-gray-200 mt-10"></div>}
+    </div>
   </section>
 ))}
         </main>
       </div>
+       <div>
+        <DownSection3 />
+       </div>
       <div className='px-4 sm:px-0 mt-20'>
         <DownSection />
       </div>

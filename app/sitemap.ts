@@ -1,7 +1,6 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  // الرابط الأساسي لموقعك - قم بتغييره لرابط موقعك الحقيقي لاحقاً
   const baseUrl = 'https://www.flaylor.com' 
 
   return [

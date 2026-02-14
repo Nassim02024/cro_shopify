@@ -26,7 +26,6 @@ export const metadata: Metadata = {
   // الوصف الذي صغناه سابقاً بناءً على معلوماتك
   description: "Scale your Shopify business to 2–4X profits in 90 days. We bridge the gap between financial data and marketing to ensure sustainable expansion.",
   
-  // الكلمات المفتاحية التي يبحث عنها عملاؤك
   keywords: [
     "Shopify Profit Optimization",
     "E-commerce Financial Analysis",
@@ -45,7 +44,6 @@ export const metadata: Metadata = {
     },
   },
 
-  // مظهر الموقع عند مشاركة الرابط (Open Graph)
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -115,7 +113,6 @@ export default function RootLayout({
   };
   return (
     <html lang="en">
-      <head>
         {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet"></link>
@@ -142,7 +139,6 @@ export default function RootLayout({
           {/* رابط الأيقونات الشامل - بدون تحديد أسماء معينة */}
           <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         </head>
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
