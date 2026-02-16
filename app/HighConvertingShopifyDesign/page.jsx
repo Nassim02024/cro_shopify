@@ -7,6 +7,18 @@ import DownSection from "@/components/DownSection"
 import DownSection3 from '@/components/DownSection3';
 
 const GrowthAndScale = () => {
+  
+      const cardDown = [
+{title: "Why does FLAYLOR focus on 'Frictionless' experiences rather than just aesthetics?", description: "Because beauty doesn't guarantee a sale, but removing obstacles does. We design shopping experiences that eliminate buyer hesitation and streamline the checkout process, naturally increasing your conversion rate (CR) and net profit."},
+
+{title: "How does the store design contribute to increasing 'Revenue Per Session'?", description: "Through our Strategic Audit, we analyze visitor behavior and reposition sales elements strategically. This encourages customers to add more to their carts, increasing Average Order Value (AOV) without additional ad spend."},
+
+{title: "What is the importance of the 'Wireframing' stage before starting the visual design?", description: "This stage is the 'Logic of Conversion.' We focus exclusively on consumer psychology and CTA placement to ensure the store guides the visitor toward a purchase based on scientific principles before any visual styling is applied."},
+
+{title: "Will the new design affect my store’s loading speed and mobile performance?", description: "Absolutely. We develop High-Fidelity prototypes that balance premium aesthetics with rigorous technical performance, ensuring a lightning-fast mobile experience that improves SEO rankings and prevents bounce rates caused by slow load times."},
+
+{title: "How does the agency ensure the design aligns with my financial goals and brand growth?", description: "In our 'Goal Alignment' stage, we link your brand identity with your financial targets. This ensures your store isn't just a pretty interface, but a strategic financial asset that serves your bottom line and enhances your market equity."},
+  ]
   const titleADNdescription = [
     { title: '1 Strategy (The Strategic Audit)', description: 'We don’t draw a single pixel before understanding your customers. We analyze user behavior and friction points in your current store to create a growth plan that increases Revenue Per Session.' },
     { title: '2 The Brief (Goal Alignment)', description: 'We align your brand identity with your financial growth targets. This stage defines the "Success Roadmap" for your store, ensuring the design serves both your image and your bottom line.' },
@@ -29,15 +41,13 @@ const GrowthAndScale = () => {
     <main className="w-full pt-10">
       {/* Hero Section */}
       <section className="flex flex-col items-center text-center w-full px-6 md:px-[10%] lg:px-[20%]">
-        <div className='w-full space-y-[60px] md:space-y-[100px] mt-20'>
+        <div className='w-full space-y-8 mt-20'>
           <h1 className="text-[clamp(32px,8vw,61px)] text-[#757575] font-semibold leading-tight">
             High-Converting Shopify Design
           </h1>
           
-          <div className='space-y-[30px] md:space-y-[47px] text-[#1E1E1E]'>
-            <p className="text-[clamp(24px,5vw,31px)] font-semibold">Your Store Isn not Just a Storefront—It’s a 24/7 Sales Machine</p>
+          <div className=' text-[#1E1E1E]'>
             <div className='space-y-6 max-w-4xl mx-auto text-[clamp(16px,3vw,19px)] leading-relaxed'>
-              <h2>Most e-commerce stores look good, but very few are engineered to convert.</h2>
               <p>We don’t just design pages; we build Frictionless Shopping Experiences designed to eliminate buyer hesitation and maximize your net profit.</p>
             </div>
           </div>
@@ -47,10 +57,9 @@ const GrowthAndScale = () => {
       <section>
         {/* Framework Section (Dark) - تم تعديل الـ Padding ليناسب الصفحات السابقة */}
         <div className='bg-[#212422] w-full mt-24 py-20 px-6 md:px-[10%] lg:px-[20%]'>
-          <div className='max-w-5xl mx-auto space-y-[47px]'>
+          <div className='max-w-5xl mx-auto space-y-[100px]'>
             <div className='space-y-[30px] text-center'>
-              <p className='text-[clamp(24px,5vw,31px)] text-[#F3F3F3] font-semibold'>The 5-Step Framework: Turning Visitors into Loyal Customers</p>
-              <p className='text-base text-gray-400'>We follow a rigorous engineering process to ensure every pixel on your store is backed by marketing data and sales psychology:</p>
+              <p className='text-[clamp(24px,5vw,31px)] text-[#F3F3F3] font-semibold'>We follow a five-step framework: converting visitors into loyal customers.</p>
             </div>
 
             <div className='space-y-[60px] md:space-y-[100px] text-start'>
@@ -64,31 +73,12 @@ const GrowthAndScale = () => {
           </div>
         </div>
 
-        {/* Performance Section */}
-        <div className='bg-[#F8F8F8] w-full text-center py-[80px] md:py-[134px] px-6 md:px-[10%] lg:px-[20%]'>
-          <div className='max-w-6xl mx-auto space-y-[80px] md:space-y-[100px]'>
-            <div className='space-y-[30px] md:space-y-[44px]'>
-              <p className='text-[clamp(24px,5vw,31px)] font-semibold text-[#1E1E1E]'>Performance Proof: Results That Speak Numbers</p>
-              <p className='text-base text-[#1E1E1E]'>We believe that "Numbers Don't Lie." Here, we showcase how we’ve transformed stores from simple websites into high-value commercial assets:</p>
-            </div>
-
-            <div className='space-y-[70px] md:space-y-[100px]'>
-              {cardProject.map((item, index) => (
-                <div key={index} className='flex flex-col space-y-[30px]'>
-                  <div className='space-y-[20px]'>
-                    <p className='text-[clamp(20px,4vw,25px)] font-semibold text-[#1E1E1E]'>{item.title}</p>
-                    <p className='text-base text-[#1E1E1E] leading-relaxed'>{item.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+      
       <div>
         <DownSection3 />
        </div>
         <div className='px-4 sm:px-0'>
-          <DownSection/>
+          <DownSection data={cardDown} />
         </div>
       </section>
     </main>

@@ -11,17 +11,31 @@ import DownSection3 from '@/components/DownSection3';
 // text-[clamp(31px,5vw,39px)]
 // px-[20px] md:px-[100px] lg:px-[300px]
 const PaidAdsLanding = () => {
+  const cardDown = [
+{title: "How does FLAYLOR ensure the ad budget isn't wasted on unproductive experiments?", description: "We operate on the principle of 'Intelligent Allocation.' We test offers and messaging with limited budgets first (A/B Testing). Once financial efficiency is validated, we direct capital toward the most profitable channels while immediately cutting off any financial leakage."},
+
+{title: "Does the agency focus on increasing views or achieving actual sales?", description: "At FLAYLOR, we do not recognize views as a metric for success. Our primary objective is 'Return on Ad Spend' (ROAS) linked to net profit. We design our strategies to be direct engines for sales growth, not just vanity engagement."},
+
+{title: "What does 'Data-Driven Scaling' mean in your system?", description: "For us, scaling is a financial engineering process, not just increasing spend. When a winning ad is identified, we increase the budget gradually and cautiously to ensure sales multiply while maintaining stable acquisition costs and protecting your profit margins."},
+
+{title: "How do your transparent reports assist my decision-making as a business owner?", description: "Our reports are designed to answer the one question every business leader cares about: 'How much was spent, and what profit was generated?' We strip away technical jargon to provide total financial clarity, making it seamless for you to plan and forecast cash flow."},
+
+{title: "Why does the agency insist on linking ads to sales messaging and offer development?", description: "Because a successful ad is a 'Compelling Offer' before it is a beautiful design. We refine the sales messaging to transform product features into solutions that resonate with the customer, naturally increasing conversion rates and lowering your Customer Acquisition Cost (CAC)."},
+  ]
   const titleADNdescription = [
     {title : "Financial Clarity" , description : "You will know exactly the cost of acquiring each new customer, making financial planning for your business seamless."},
     {title : "Time & Effort Efficiency" , description : "We handle all technical and complex tasks, allowing you to focus on product development and core business operations."},
     {title : "Stable & Guarded Growth" , description : "We adopt strategies that ensure a steady flow of orders while protecting your profit margins during expansion."},
     {title : "Access to Expertise" , description : "Partnering with a professional team that stays ahead of platform updates (Meta, Google, Snapchat ....) ensures you remain at the forefront of the market."},
   ];
-    const cardDown = [
-    { title: "How long does a full redesign take?", description: "The duration depends on the store's size and strategy complexity, but typically the journey from strategy to launch takes 4 to 8 weeks to ensure precision and full conversion path testing." },
-    { title: "Will my current store go down during the redesign?", description: "No, we work on a development theme so your current store remains fully operational until launch day." },
-    { title: "Do you offer post-launch support?", description: "Yes, we provide technical support and optimization monitoring to ensure everything runs perfectly." },
-  ];
+
+  const livle = [
+    {title : "Historical Performance Audit" , description : "We perform a financial autopsy on your past campaigns to detect leakage. We eliminate waste and identify which strategies actually protected your liquidity."} ,
+    {title : "High-Efficiency Execution" , description : "We deploy campaigns engineered for maximum unit economics. Every dollar is directed toward high-value audiences and offers that accelerate your cash conversion cycle."} ,
+    {title : "Financial Oversight & Monitoring" , description : "We track performance in real-time to ensure profitability guardrails are met. You receive transparent reports on total spend versus net profit—zero technical jargon."} ,
+
+  ]
+
   const [activeDescription, setActiveDescription] = useState(null)
   
   return (
@@ -38,10 +52,7 @@ const PaidAdsLanding = () => {
           </h1>
         </div>
         <div className="space-y-6 text-[#1E1E1E] leading-relaxed text-[clamp(16px,4vw,16px)] max-w-3xl">
-          <p>
-            We do not view paid advertising as a mere tool for increasing "views." Instead, we treat it 
-            as an investment ecosystem aimed at achieving tangible financial growth.
-          </p>
+          
           <p>
             We take full responsibility for managing your advertising budget with the highest level of 
             professionalism, ensuring your brand reaches the right customer, at the right time, and at 
@@ -52,61 +63,21 @@ const PaidAdsLanding = () => {
 
       {/* قسم الركائز الأساسية */}
       <section className="px-4 md:px-[10%] lg:px-[20%]  bg-gray-50/50 mt-[80px]">
-        <h2 className="text-[clamp(18px,4vw,28px)] text-[#1E1E1E] mb-12 leading-snug">
-          Our service is built upon two fundamental pillars <br className="hidden md:block"/> that guarantee both clarity and results
-        </h2>
+      
 
         {/* Level 1 */}
         <div className="mb-20 space-y-[40px] md:space-y-[70px] mt-[60px] md:mt-[100px]">
-          <div>
-            <span className="text-[#757575] text-[clamp(18px,4vw,22px)] uppercase tracking-widest font-semibold">Level 1</span>
-            <h3 className="text-[clamp(26px,5vw,48px)] font-medium leading-tight text-[#2F6F4E]">Content Strategy & Sales Messaging</h3>      
+          {livle.map((item, index) => (
+          <div key={index} className='flex flex-col gap-[30px]'>
+            <h3 className="text-[clamp(26px,5vw,30px)] font-medium leading-tight text-[#2F6F4E]">{item.title}</h3>      
+            <p className="text-[clamp(16px,4vw,20px)]  text-[#1E1E1E]">{item.description}</p>
           </div>
-          
-          <div className="grid gap-12 max-w-2xl mx-auto">
-            <div className='space-y-3'>
-              <h4 className="text-[clamp(19px,4vw,24px)] font-semibold uppercase text-[#1E1E1E]">Crafting Compelling Offers</h4>
-              <p className="text-[#1E1E1E] text-base leading-relaxed text-gray-700">Transforming your product features into solutions that matter to the customer and drive purchase decisions.</p>
-            </div>
-            <div className='space-y-3'>
-              <h4 className="text-[clamp(19px,4vw,24px)] font-semibold uppercase text-[#1E1E1E]">Designing Impactful Ad Identities</h4>
-              <p className="text-[#1E1E1E] text-base leading-relaxed text-gray-700">Developing visual concepts and copy that address consumer needs and enhance your brand's credibility.</p>
-            </div>
-            <div className='space-y-3'>
-              <h4 className="text-[clamp(19px,4vw,24px)] font-semibold uppercase text-[#1E1E1E]">A/B Testing & Optimization</h4>
-              <p className="text-[#1E1E1E] text-base leading-relaxed text-gray-700">Comparing multiple ad variations to identify the most efficient and cost-effective models.</p>
-            </div>
-          </div>
+          ))}
+      
         </div>
 
 
-        
-<div className="h-[1px] w-full bg-gray-200 mt-10"></div>
-
-
-
-        {/* Level 2 */}
-        <div className="pb-16 space-y-[40px] md:space-y-[70px] mt-[60px] md:mt-[100px]">
-          <div>
-            <span className="text-[#757575] text-[clamp(18px,4vw,22px)] uppercase tracking-widest font-semibold">Level 2</span>
-            <h3 className="text-[clamp(26px,5vw,48px)] font-medium leading-tight text-[#2F6F4E]">Digital Management & Continuous Optimization</h3>
-          </div>
-          
-          <div className="grid gap-12 max-w-2xl mx-auto">
-            <div className='space-y-3'>
-              <h4 className="text-[#1E1E1E] font-semibold text-[clamp(18px,4vw,23px)] sm:uppercase">Intelligent Budget Allocation</h4>
-              <p className="text-[#1E1E1E] text-base leading-relaxed text-gray-700">Directing spend toward channels and audiences that generate the highest purchase rates, while immediately eliminating financial waste.</p>
-            </div>
-            <div className='space-y-3'>
-              <h4 className="text-[#1E1E1E] font-semibold text-[clamp(18px,4vw,23px)] sm:uppercase">Data-Driven Scaling</h4>
-              <p className="text-[#1E1E1E] text-base leading-relaxed text-gray-700">When a winning ad is identified, we gradually increase the spend to multiply sales while maintaining cost stability.</p>
-            </div>
-            <div className='space-y-3'>
-              <h4 className="text-[#1E1E1E] font-semibold text-[clamp(18px,4vw,23px)] sm:uppercase">Transparent Reporting</h4>
-              <p className="text-[#1E1E1E] text-base leading-relaxed text-gray-700">Providing you with simplified, periodic reports that clearly explain: "How much was spent? And what profit was generated?"—away from technical jargon.</p>
-            </div>
-          </div>
-        </div>
+  
       </section>
 
       {/* قسم الفوائد الاستراتيجية (الخلفية الداكنة) */}
@@ -126,12 +97,10 @@ const PaidAdsLanding = () => {
             </div>
         </section>
 
-        <section className="px-6 md:px-[10%] lg:px-[20%] py-24 max-w-4xl mx-auto">
+        <section className="px-6 md:px-[10%] lg:px-[20%] pt-24 ">
           <h2 className="text-[clamp(20px,4vw,25px)] text-gray-400 font-semibold mb-8 uppercase tracking-[0.2em]">Our Commitment</h2>
-          <p className="text-gray-600 text-[clamp(16px,3vw,17px)] leading-loose max-w-3xl mx-auto italic">
-            We act as your strategic partner in growth; our success is inherently linked to yours. Our 
-            objective is not just to run ads, but to build a "sales machine" that operates efficiently to 
-            serve your major commercial goals.
+          <p className="text-gray-600 text-[clamp(16px,3vw,17px)]   mx-auto ">
+            We treat advertising as a financial investment, not a cost. At FLAYLOR, we manage your budget with CFO-level precision to turn every dollar into a high-yield asset.
           </p>
         </section>
 
@@ -139,7 +108,7 @@ const PaidAdsLanding = () => {
         <DownSection3 />
        </div>
         <div className='px-4 sm:px-0'>
-         <DownSection/>
+         <DownSection data={cardDown} />
         </div>
       </div>
     </main>

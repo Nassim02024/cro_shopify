@@ -46,13 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.9,
     },
-    {
-      // صفحة التواصل - مهمة جداً للتحويل
-      url: `${baseUrl}/contactUs`, 
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
+
 
   ]
 }

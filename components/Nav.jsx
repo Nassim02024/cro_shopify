@@ -65,13 +65,13 @@ const Nav = () => {
             />   
             <p className='text-[#31F691] text-[25px] sm:text-[30px] itim-regular'>Flaylor</p>
           </div>
-          <Link className="sm:hidden bg-white text-black relative left-3.5 px-4 py-[2.5%] rounded-full text-base " href="/contactUs">
-            Contact Us
+          <Link className="sm:hidden bg-white text-black relative left-3.5 px-4 py-[2.5%] rounded-full text-base " href="https://calendly.com/aminemd/new-meeting">
+            Book a call
           </Link>
         </div>
 
         <div className="hidden sm:flex">
-           <ul className="flex flex-row items-center gap-8 font-medium text-[#F3F3F3] font-light">
+           <ul className="flex flex-row items-center gap-8  text-[#F3F3F3] font-light">
              <li><Link href="/" className={`hover:text-[#31F691] transition-colors  ${pathname === '/' ? 'text-[#31F691]' : ''}`}>Home</Link></li>
              <li className="relative group">
                 <button className={`flex items-center gap-1 hover:text-[#31F691]  ${isServiceActive ? 'text-[#31F691]' : '' } ${pathname === '/services' ? 'text-[#31F691]' : ''}`}>
@@ -94,8 +94,8 @@ const Nav = () => {
            </ul>
         </div>
 
-        <Link className="hidden sm:flex bg-white text-black relative left-3.5 px-6 py-2.5 rounded-full  hover:bg-[#e4e3e3] transition-all" href="/contactUs">
-          Contact Us
+        <Link className="hidden sm:flex bg-white text-black relative left-3.5 px-6 py-2.5 rounded-full  hover:bg-[#e4e3e3] transition-all" href="https://calendly.com/aminemd/new-meeting">
+           Book a call
         </Link>
       </div>
 
@@ -107,7 +107,7 @@ const Nav = () => {
         max-h-[80vh] overflow-y-auto
       `}>
         <ul className="flex flex-col px-[10px] gap-4 sm:gap-6 text-[21px]">
-          <li><Link href="/" onClick={() => setIsOpen(false)}>Home</Link></li>
+          <Link href="/" onClick={() => setIsOpen(false)} className={`${pathname === '/' ? "text-[#31F691] " : '' }`}><li> Home </li></Link>
           <li className="w-full">
             <button onClick={() => setIsServicesOpen(!isServicesOpen)} className=" flex items-center justify-between w-full">
               Services
@@ -132,9 +132,9 @@ const Nav = () => {
                </div>
             </div>
           </li>
-          <li><Link className='' href="/Project" onClick={() => setIsOpen(false)}>Projects</Link></li>
+          <Link  href="/Project" onClick={() => setIsOpen(false)} className={` ${pathname === '/Project' ? "text-[#31F691] " : '' }`}><li>Projects</li></Link>
           {/* <li><Link className='' href="/blog" onClick={() => setIsOpen(false)}>Blog</Link></li> */}
-          <li><Link className='' href="/about" onClick={() => setIsOpen(false)}>About Us</Link></li>
+          <Link href="/about" onClick={() => setIsOpen(false)} className={`${pathname === '/about' ? "text-[#31F691] " : '' }`}><li>About Us </li></Link>
         </ul>
       </div>
     </nav>

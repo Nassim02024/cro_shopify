@@ -114,8 +114,8 @@ export default function HomePage() {
           {/* <Link href="/" className=" w-[100%] sm:w-[222px] mt-4 sm:mt-8 px-7 py-[13px] text-base cursor-pointer bg-white rounded-full border border-gray-300">
             <p className=' '>Get Free Checklist</p>
           </Link> */}
-          <Link href="/contactUs" className="font-semibold w-[100%] sm:w-[222px] text-base mt-5 px-7 py-[13px] cursor-pointer bg-[#2F6F4E] rounded-full border border-gray-300 text-white">
-            <p className=''>Contact us</p>
+          <Link href="https://calendly.com/aminemd/new-meeting" className="font-semibold w-[100%] sm:w-[222px] text-base mt-5 px-7 py-[13px] cursor-pointer bg-[#2F6F4E] rounded-full border border-gray-300 text-white">
+            <p className=''>Book a call</p>
           </Link>
         </div>
       </section>
@@ -206,7 +206,7 @@ export default function HomePage() {
           </Link>
 
         </div>
-        <p className="text-[#2F6F4E] cursor-pointer">See all</p>
+        <Link href="/Project" className="text-[#2F6F4E] cursor-pointer">See all</Link>
       </section>
 
       {/* Services Section */}
@@ -272,7 +272,12 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
+      
+      <section className='flex flex-col justify-center text-center items-center mt-[100px] space-y-[12px] px-[10px]  md:px-[100px] lg:px-[250px]'>
+       <p className='text-[clamp(31px,4vw,39px)] text-[#969593]'>About Us</p>
+       <p className='text-[clamp(16px,4vw,20px)]' >At FLAYLOR, we serve as the strategic growth engine for Shopify D2C brands navigating the high-stakes "Growing Stage."</p>
+       <Link href="/about" className="text-[#2F6F4E] cursor-pointer">Learn more</Link>
+      </section>
       
    <DownSection3 />
 

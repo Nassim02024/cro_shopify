@@ -8,13 +8,9 @@ import DownSection2 from "@/components/DownSection2"
 
 
 
-const DownSection = () => {
+const DownSection = ({data = []}) => {
   
-  const cardDown = [
-    { title: "How long does a full redesign take?", description: "The duration depends on the store's size and strategy complexity, but typically the journey from strategy to launch takes 4 to 8 weeks to ensure precision and full conversion path testing." },
-    { title: "Will my current store go down during the redesign?", description: "No, we work on a development theme so your current store remains fully operational until launch day." },
-    { title: "Do you offer post-launch support?", description: "Yes, we provide technical support and optimization monitoring to ensure everything runs perfectly." },
-  ]
+
 
   const [activeDescription, setActiveDescription] = useState(null)
 
@@ -25,7 +21,7 @@ const DownSection = () => {
       <div className="max-w-4xl mx-auto flex flex-col items-center gap-10 mt-[50px] md:mt-[70px]">
         <p className='text-[28px] text-center md:text-[31px] font-semibold'>FAQ</p>
         <div className="w-full space-y-4">
-          {cardDown.map((item, index) => (
+          {data?.map((item, index) => (
             <div key={index} 
                   onClick={() => setActiveDescription(activeDescription === index ? null : index)} 
                   className="w-full cursor-pointer px-6 py-5 rounded-2xl outline outline-1 outline-gray-200 bg-white  transition-all">

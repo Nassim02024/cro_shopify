@@ -7,10 +7,13 @@ return (
     {/* About us Section */}
     <section className="mt-[100px] flex flex-col gap-[44px]">
       <p className="text-[clamp(40px,8vw,61px)] text-[#969593] font-semibold leading-tight">About us</p>
-      <div className="space-y-6 text-[#1E1E1E] leading-relaxed">
-        <p className="text-[clamp(16px,2.5vw,18px)] ">
-          While traditional agencies prioritize "reach," we focus on profitability. We specialize in supporting Shopify brands that have transitioned past the foundational phase and are now navigating the complexities of the Growing Stage.
-          Our mission is to bridge the gap between financial data and marketing decisions, ensuring sustainable expansion rooted in real-world numbers.
+      <div className="space-y-6 text-[#1E1E1E] leading-relaxed text-[clamp(16px,2.5vw,18px)]">
+        <p className="">
+           At FLAYLOR, we serve as the strategic growth engine for <span className='text-[#2F6F4E] font-semibold'>Shopify D2C brands</span>  navigating the high-stakes "Growing Stage." We specialize in scaling brands that have moved past foundations and now require sophisticated, data-driven leadership to secure their market position.
+           
+        </p>
+        <p className=" ">
+          While traditional agencies chase "reach" and vanity metrics, we focus exclusively on net profitability and cash flow efficiency. We bridge the critical gap between financial governance and marketing execution, ensuring your expansion is rooted in real-world numbers and sustainable asset growth.
         </p>
       </div>
     </section>
@@ -64,14 +67,12 @@ return (
         <p className="text-[clamp(16px,2.5vw,19px)] text-neutral-800 leading-relaxed">
           We are committed to absolute transparency. Our role is to take off the "many hats" you wear daily, allowing you to focus on the creative leadership of your brand.
         </p>
-        <p className="text-[clamp(16px,2.5vw,19px)] text-gray-700 font-medium leading-relaxed">
-          We act as your Strategic Back Office, ensuring your numbers are accurate, your decisions are sound, and your growth is sustainable.
-        </p>
+
       </div>
     </section>
 
     {/* CTA Text Section */}
-    <section className="w-full pt-40 pb-20">
+    <section className="w-full pt-20 sm:pt-40 sm:pb-20">
       <div className="max-w-5xl mx-auto text-start px-4   pl-6">
         <p className="text-[#A0A0A0] text-[clamp(20px,4vw,31px)] leading-relaxed font-light">
           If you want to grow your Shopify store, unlock higher profits, and turn your e-commerce business into a predictable growth engine, get in touch with us today.

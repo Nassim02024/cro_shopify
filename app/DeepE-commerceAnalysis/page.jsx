@@ -3,9 +3,18 @@ import React from 'react'
 import DownSection from "@/components/DownSection"
 import { useState } from 'react'
 import DownSection3 from '@/components/DownSection3';
+import { title } from 'process';
 
 
 const DeepEcommerceAnalysis = () => {
+    const cardDown = [
+    { title: "1. What differentiates FLAYLOR’s \"Deep Analysis\" from standard marketing reports?", description:"While most agencies focus on $ROAS$ and platform metrics, we dissect your business as a complete financial entity. We link operational efficiency and unit economics to marketing decisions, revealing the true profitability behind every spent dollar—beyond superficial platform data." },
+    { title: "2. Why does your methodology prioritize Operations and Unit Economics over Advertising?", description: "Scaling marketing for a product with thin margins or weak infrastructure is calculated capital depletion. We first ensure your business \"engine\" is structurally profitable and scaling-ready to guarantee that every sales increase translates into actual cash flow growth." },
+    { title: "3. How do the Shopify and Brand audits contribute to financial performance?", description: "We treat your store and brand as financial assets designed to lower $CAC$. By closing funnel leakages and enhancing brand equity, we drive higher conversion rates and $AOV$, reducing reliance on ad spend and increasing net profitability." },
+    { title: "4. Does the Deep Analysis require access to my sensitive business data?" , description: "Yes. To provide \"indisputable structural facts,\" we require access to operational, financial, and ad platform data. We adhere to the strictest governance and confidentiality standards; our goal is to build an honest \"financial mirror\" that helps you make critical decisions based on bank returns, not just dashboard metrics."},
+    { title: "5. What are the final deliverables after completing the 5 levels of analysis?" , description : "You will receive a comprehensive strategic report identifying your \"Negative Revenue Threshold\" and untapped growth opportunities. This report provides a definitive executive roadmap to align your future marketing budget with Net Profit ($EBITDA$) goals, ensuring safe and sustainable scaling."}
+  ]
+  
   const livle = [
     {
       livle : "Level 1",
@@ -56,7 +65,7 @@ return (
           </section>
 
           <section className='mt-[50px] mb-[60px]'>
-            <p className='text-[clamp(20px,4vw,28px)] text-[#1E1E1E] leading-snug'>
+            <p className='text-[clamp(16px,4vw,18px)] text-[#1E1E1E] leading-snug'>
               Our methodology analyzes your business across 5 levels and links it to marketing decisions to achieve maximum efficiency.            </p>
           </section>
 
@@ -88,7 +97,7 @@ return (
         <DownSection3 />
        </div>
       <div className='px-4 sm:px-0 mt-20'>
-        <DownSection />
+        <DownSection data={cardDown} />
       </div>
     </div>
   )

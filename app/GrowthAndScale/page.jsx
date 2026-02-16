@@ -6,6 +6,17 @@ import DownSection3 from '@/components/DownSection3';
 
 
 const GrowthAndScale = () => {
+      const cardDown = [
+{title: "How does FLAYLOR’s methodology ensure net profit grows in parallel with revenue?", description: "Through our 'Profit Engineering' pillar, we rigorously balance operational expenditures with investment returns. We don’t just scale top-line sales; we ensure your net profit margins remain healthy and stable throughout aggressive expansion."},
+
+{title: "Why is your 'Centralized Management' model superior to working with multiple specialized agencies?", description: "Because we provide full visibility by integrating marketing, finance, and operations into a single growth engine. This synergy eliminates decision friction and ensures every marketing investment serves your company's broader financial and operational objectives."},
+
+{title: "What role does Automation play in your scaling strategy?", description: "Automation is our tool for reducing fixed costs. We transition exhaustive manual processes into smart technical systems, minimizing human error and allowing your store to process thousands of additional orders efficiently without a linear increase in overhead."},
+
+{title: "How does FLAYLOR handle platform fluctuations to ensure stable growth?", description: "We build an 'Institutional Entity' that transcends reliance on a single platform. By utilizing omnichannel acquisition and maximizing Lifetime Value (LTV), we secure a steady profit flow that protects your business from sudden shifts in ad platform algorithms."},
+
+{title: "When is my store ready to transition to the 'Growth & Scale' phase with your agency?", description: "When you have moved past proof-of-concept and are seeking market leadership. we look for brands with strong foundations that require a growth engine linking Business Intelligence (BI) to financial and operational decisions to transform potential into sustainable wealth."},
+  ]
     const titleADNdescription = [
     { title: 'Centralized Management', description: ' Partnering with a single entity that possesses full visibility—marketing, financial, and operational—eliminating the friction of disjointed service providers.' },
     { title: 'Data-Driven Growth', description: 'Scaling decisions are never based on intuition; they are driven by Business Intelligence (BI) reports that link auction performance to your company’s real-world financial data.' },
@@ -31,9 +42,7 @@ const GrowthAndScale = () => {
 
         {/* 2. Introduction to Pillars */}
         <section className="pb-16 max-w-3xl mx-auto mt-[100px]">
-          <h2 className="text-[clamp(20px,5vw,28px)] leading-snug font-medium text-[#1E1E1E]">
-             We take full responsibility for leading your growth through four operational pillars working in perfect harmony to achieve your ultimate business objectives:
-          </h2>
+  
         </section>
 
         {/* 3. Operational Pillars */}
@@ -41,7 +50,7 @@ const GrowthAndScale = () => {
           
           {/* Pillar 1 */}
           <div className="space-y-10">
-            <h3 className="text-[clamp(22px,5vw,26px)] font-semibold uppercase tracking-wide border-b-2 border-[#e0e0e0] pb-4 inline-block text-[#1E1E1E]">
+            <h3 className="text-[clamp(26px,5vw,30px)] font-medium leading-tight text-[#2F6F4E] tracking-wide  pb-4 inline-block ">
               Financial Governance & Profit Engineering
             </h3>
             <div className="grid gap-12 text-[#1E1E1E]">
@@ -58,7 +67,7 @@ const GrowthAndScale = () => {
 
           {/* Pillar 2 */}
           <div className="space-y-10">
-            <h3 className="text-[clamp(22px,5vw,26px)] font-semibold uppercase tracking-wide border-b-2 border-[#e0e0e0] pb-4 inline-block text-[#1E1E1E]">
+            <h3 className="text-[clamp(26px,5vw,30px)] font-medium leading-tight text-[#2F6F4E] tracking-wide  pb-4 inline-block ">
               Market Dominance & Omnichannel Acquisition
             </h3>
             <div className="grid gap-12 text-[#1E1E1E]">
@@ -76,7 +85,7 @@ const GrowthAndScale = () => {
 
           {/* Pillar 3 */}
           <div className="space-y-10">
-            <h3 className="text-[clamp(22px,5vw,26px)] font-semibold uppercase tracking-wide border-b-2 border-[#e0e0e0] pb-4 inline-block text-[#1E1E1E]">
+            <h3 className="text-[clamp(26px,5vw,30px)] font-medium leading-tight text-[#2F6F4E] tracking-wide  pb-4 inline-block ">
               Value Sustainability & Customer Experience Optimization
             </h3>
             <div className="grid gap-12 text-[#1E1E1E]">
@@ -94,7 +103,7 @@ const GrowthAndScale = () => {
 
           {/* Pillar 4 */}
           <div className="space-y-10">
-            <h3 className="text-[clamp(22px,5vw,26px)] font-semibold uppercase tracking-wide border-b-2 border-[#e0e0e0] pb-4 inline-block text-[#1E1E1E]">
+            <h3 className="text-[clamp(26px,5vw,30px)] font-medium leading-tight text-[#2F6F4E] tracking-wide  pb-4 inline-block ">
               Operational Modeling & Automation
             </h3>
             <div className="grid gap-12 text-[#1E1E1E]">
@@ -145,7 +154,7 @@ const GrowthAndScale = () => {
         <DownSection3 />
        </div>
       <div className='px-4 sm:px-0'>
-        <DownSection/>
+        <DownSection data={cardDown} />
       </div>
     </div>  
 );
