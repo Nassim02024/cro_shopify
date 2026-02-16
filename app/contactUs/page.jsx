@@ -2,7 +2,15 @@
 // import { useState , useRef , useEffect } from "react";
 // import Image from "next/image";
 
+import React from 'react'
 
+const ContactUs = () => {
+  return (<p>contact us</p>
+)
+}
+
+
+export default ContactUs;
 
 
 // const ContactUs = () => {
@@ -179,7 +187,6 @@
 //       </div>
 //     </section>
 //   </main>
-// );
-// };
+// )
+// }
 
-// export default ContactUs;
