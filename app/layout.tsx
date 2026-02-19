@@ -136,10 +136,15 @@ export default function RootLayout({
           <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Itim&display=swap" rel="stylesheet" />
 
           <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />          <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Itim&family=Poly:ital@0;1&display=swap" rel="stylesheet"></link>
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />          
+          <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Itim&family=Poly:ital@0;1&display=swap" rel="stylesheet"></link>
 
           {/* رابط الأيقونات الشامل - بدون تحديد أسماء معينة */}
           <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+          {/* رابط التحقق من ملكية الموقع في Google Search Console */}
+          <meta name="google-site-verification" content="-vY6Rj44c5AWAKvRSN7Mt6-6akJ3qT44UWexCkS4Ld0" />
+          
         </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
