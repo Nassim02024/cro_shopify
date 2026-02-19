@@ -47,13 +47,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://www.flaylor.com", // استبدله برابط موقعك الحقيقي
+    url: "flaylor-agency.online", 
     siteName: "Flaylor",
     title: "Flaylor | Bridge the Gap Between Finance & Marketing",
     description: "Scale your Shopify business to 2–4X profits using our proven 3-step system: Analyze, Optimize, and Scale.",
     images: [
       {
-        url: "/og-image.jpg", // يفضل تصميم صورة 1200x630 بكسل ووضعها في مجلد public
+        url: "/favicon.svg", // يفضل تصميم صورة 1200x630 بكسل ووضعها في مجلد public
         width: 1200,
         height: 630,
         alt: "Flaylor Strategic Growth",
@@ -66,14 +66,14 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Flaylor | Scale Your Shopify Profits",
     description: "Our 3-step system integrates financial analysis with marketing decisions for sustainable growth.",
-    images: ["/og-image.jpg"],
+    images: ["/favicon.svg"],
   },
 
   icons: {
     icon: '/favicon.svg', 
   },
   alternates: {
-    canonical: 'https://www.flaylor.com',
+    canonical: 'flaylor-agency.online',
   },
 };
 
@@ -87,15 +87,15 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "ProfessionalService", // تحديد نوع النشاط كخدمة مهنية
     "name": "Flaylor",
-    "image": "https://www.flaylor.com/og-image.jpg", // رابط صورة الشعار أو صورة OG
-    "@id": "https://www.flaylor.com",
-    "url": "https://www.flaylor.com",
+    "image": "flaylor-agency.online/favicon.svg", // رابط صورة الشعار أو صورة OG
+    "@id": "flaylor-agency.online",
+    "url": "flaylor-agency.online",
     "telephone": "+123456789", // ضع رقم هاتف الوكالة هنا
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Street Name",
-      "addressLocality": "City",
-      "addressCountry": "AE" // رمز الدولة (مثلاً AE للإمارات)
+      "streetAddress": "Touggourt, Algeria", // العنوان الكامل
+      "addressLocality": "Touggourt", // المدينة
+      "addressCountry": "DZ" // رمز الدولة (مثلاً AE الجزائر)
     },
     "description": "Strategic Financial Growth for Shopify Brands. We bridge the gap between financial data and marketing decisions.",
     "brand": {
@@ -107,8 +107,10 @@ export default function RootLayout({
       "description": "Scale your Shopify business to 2–4X profits in 90 days."
     },
     "sameAs": [
-      "https://www.linkedin.com/company/flaylor", // روابط السوشيال ميديا الخاصة بك
-      "https://twitter.com/flaylor"
+       // روابط السوشيال ميديا الخاصة بك
+      "https://www.linkedin.com/in/nassim-ben-1261772b9/", // رابط لينكدإن </NASSIM>
+      "https://www.linkedin.com/in/mohammedlamine", // رابط لينكدإن </MOHAMMEDLAMINE>
+      
     ]
   };
   return (

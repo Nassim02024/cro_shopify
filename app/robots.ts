@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/', // الصفحات التي لا تريد ظهورها في البحث
     },
-    sitemap: 'https://www.flaylor.com/sitemap.xml',
+    sitemap: 'flaylor-agency.online/sitemap.xml',
   }
 }
