@@ -19,10 +19,10 @@ const Footer = () => {
     <Image width={30} height={30} className="z-40   " src="/x.png" alt="" />
 </div> */}
 </div>
-<div className="flex flex-row gap-6 text-[#E6E3E3] text-[13px]">
+{/* <div className="flex flex-row gap-6 text-[#E6E3E3] text-[13px]">
   <p >Terms of Service</p>
   <p >Privacy Policy</p>
-</div>
+</div> */} 
 <div className=" text-[#E6E3E3] text-[13px]">
   <p>© 2026 Pixelic, Inc. dba Relate.</p>
 </div>

@@ -165,42 +165,42 @@ export default function HomePage() {
       {/* Projects Section */}
       <section className="flex flex-col w-full m-auto justify-center items-center mt-[88px] space-y-11">
         <p className="text-[29px] sm:text-[39px] text-[#969593]">Discover our Projects</p>
-            <div className="flex flex-col w-full gap-5  sm:flex-row px-[10px]  md:px-[100px] lg:px-[200px] ">
+            <div className="flex flex-col w-full gap-5  sm:flex-row px-[10px]  md:px-[50px] ">
           
           {/* Card 1 */}
-          <Link href="/Project/catre" className="group border border-[#a5a4a4] relative w-full h-[200px] p-2  sm:h-[331px] bg-gradient-to-b from-[#F6F6F6] to-[#DCDADA] rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 hover:shadow-xl">
+          <Link href="/Project/catre" className="group border border-[#a5a4a4] relative w-full h-[200px] p-2  sm:h-[331px] bg-gradient-to-b from-[#F6F6F6] to-[#DCDADA] rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 shadow-xl">
             <Image 
               className="w-full   relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2" 
               width={300} height={300} alt="img" src="/p4/TempProject4.svg"
             /> 
             
             {/* نصوص الكارد */}
-            <div className="absolute bottom-1 left-6 text-white z-30 transition-all">
-              <div className="text-lg sm:text-[22px] md:text-[25px]  leading-tight ">
-                Website Design
-              </div>
-            </div>
+            <div className="absolute bottom-5 left-5   text-white w-[90%] text-start z-30">
+          <p className="text-[clamp(12px,2vw,18px)]  leading-tight transition-transform duration-500 group-hover:-translate-y-2 ">
+            How Custom Landing Page Engineering...
+          </p>
+        </div>
 
             {/* التراكبات (Overlays) */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-50 group-hover:opacity-80 transition-opacity duration-500 z-20"></div>
-            <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-25"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-50 opacity-80 transition-opacity duration-500 z-20"></div>
+            <div className="absolute inset-0 bg-white/5 opacity-0 opacity-100 transition-opacity duration-500 z-25"></div>
           </Link>
 
           {/* Card 2 */}
-          <Link href="/Project/three" className="group border border-[#a5a4a4] relative w-full h-[200px] p-2  sm:h-[331px] bg-gradient-to-b from-[#F6F6F6] to-[#DCDADA] rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 hover:shadow-xl">
+          <Link href="/Project/three" className="group border border-[#a5a4a4] relative w-full h-[200px] p-2  sm:h-[331px] bg-gradient-to-b from-[#F6F6F6] to-[#DCDADA] rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 shadow-xl">
             <Image 
               className="w-full   relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2" 
               width={300} height={300} alt="img" src="/p3/TempProject3.svg"
             />
             
-            <div className="absolute bottom-1 left-6 text-white z-30 transition-all">
-              <div className="text-lg sm:text-[22px] md:text-[25px] leading-tight ">
-                Website Design
-              </div>
-            </div>
+            <div className="absolute bottom-5 left-5   text-white w-[90%] text-start z-30">
+          <p className="text-[clamp(12px,2vw,18px)]  leading-tight transition-transform duration-500 group-hover:-translate-y-2 ">
+            Custom Skincare Landing Page Built ...
+          </p>
+        </div>
 
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-50 group-hover:opacity-80 transition-opacity duration-500 z-20"></div>
-            <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-25"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-50 opacity-80 transition-opacity duration-500 z-20"></div>
+            <div className="absolute inset-0 bg-white/5 opacity-0 opacity-100 transition-opacity duration-500 z-25"></div>
           </Link>
 
         </div>

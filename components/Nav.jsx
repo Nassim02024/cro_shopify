@@ -71,7 +71,7 @@ const Nav = () => {
         </div>
 
         <div className="hidden sm:flex">
-           <ul className="flex flex-row items-center gap-8  text-[#F3F3F3] font-light">
+           <ul className="flex flex-row items-center gap-8  text-[#F3F3F3]">
              <li><Link href="/" className={`hover:text-[#31F691] transition-colors  ${pathname === '/' ? 'text-[#31F691]' : ''}`}>Home</Link></li>
              <li className="relative group">
                 <button className={`flex items-center gap-1 hover:text-[#31F691]  ${isServiceActive ? 'text-[#31F691]' : '' } ${pathname === '/services' ? 'text-[#31F691]' : ''}`}>
@@ -106,7 +106,7 @@ const Nav = () => {
         ${isOpen ? 'opacity-100 translate-y-0 visible shadow-2xl' : 'opacity-0 -translate-y-5 invisible'}
         max-h-[80vh] overflow-y-auto
       `}>
-        <ul className="flex flex-col px-[10px] gap-4 sm:gap-6 text-[21px]">
+        <ul className="flex flex-col px-[10px] gap-4 sm:gap-6 ">
           <Link href="/" onClick={() => setIsOpen(false)} className={`${pathname === '/' ? "text-[#31F691] " : '' }`}><li> Home </li></Link>
           <li className="w-full">
             <button onClick={() => setIsServicesOpen(!isServicesOpen)} className=" flex items-center justify-between w-full">

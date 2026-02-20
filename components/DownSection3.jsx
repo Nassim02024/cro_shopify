@@ -7,9 +7,9 @@ import Link from 'next/link';
 const DownSection3 = ()=> {
   
     const clients = [
-      { name: "Ricardo", img: "/phone.png", location: "Georgia" },
-      { name: "Nassim", img: "/phone.png", location: "Algeria" },
-      { name: "Amine", img: "/phone.png", location: "France" },
+      // { name: "Ricardo", img: "/phone.png", location: "Georgia" },
+      { name: "Mark", img: "/mobileMark.svg", location: "Algeria" },
+      { name: "Amine", img: "/mobileAmine.svg", location: "France" },
     ];
     const [currentIndex, setCurrentIndex] = useState(0);
   
@@ -107,7 +107,7 @@ const DownSection3 = ()=> {
       >
         {clients.map((client, index) => (
           <div key={index} className="flex shrink-0 w-full flex-col items-center justify-center text-center space-y-3 snap-center">
-            <Image width={250} height={250} src={client.img} alt={client.name} />
+            <Image width={270} height={270} src={client.img} alt={client.name} />
           </div>
         ))}
       </div>
