@@ -42,7 +42,7 @@ const ProjectShowcase = async ({params}) => {
 
             {/* نصوص القسم الأول */}
             <h2 className="text-lg sm:text-xl md:text-2xl font-medium mb-6">{project.section1_title}</h2>
-            <div className="space-y-6 text-sm sm:text-base md:text-[17px] leading-relaxed font-light opacity-90">
+            <div className="space-y-6 text-sm sm:text-base md:text-[17px] leading-relaxed  opacity-90">
               <div dangerouslySetInnerHTML={{ __html: project?.section1_line2 }} />
               <div dangerouslySetInnerHTML={{ __html: project?.section1_line3 }} />
             </div>
@@ -86,7 +86,7 @@ const ProjectShowcase = async ({params}) => {
           <div className="flex flex-col w-full max-w-3xl text-start mb-12 gap-5 text-[#1E1E1E]">
             <p className="text-xl sm:text-2xl font-medium">{project?.section2_title}</p>
             
-            <div className="space-y-4 text-sm sm:text-base leading-relaxed font-light opacity-90">
+            <div className="space-y-4 text-sm sm:text-base leading-relaxed  opacity-90">
               <p>{project?.section2_line1}</p>
               <div dangerouslySetInnerHTML={{ __html: project?.section2_line2 }} />
               <div dangerouslySetInnerHTML={{ __html: project?.section2_line3 }} />
@@ -115,7 +115,7 @@ const ProjectShowcase = async ({params}) => {
         {/* Section 3 */}
         <div className="flex flex-col gap-5 text-[#1E1E1E]">
           <p className="text-xl sm:text-2xl font-medium">{project.section3_line1}</p>
-          <div className="space-y-4 text-sm sm:text-base leading-relaxed font-light opacity-90">
+          <div className="space-y-4 text-sm sm:text-base leading-relaxed  opacity-90">
             <p>{project?.section3_line2_Desc}</p>
             {project.section3_line2 && <div dangerouslySetInnerHTML={{ __html: project.section3_line2 }} />}
             <div dangerouslySetInnerHTML={{ __html: project?.section3_line3 }} />
@@ -128,7 +128,7 @@ const ProjectShowcase = async ({params}) => {
           {project.section4_line1 && (
             <p className="text-xl sm:text-2xl font-medium">{project.section4_line1}</p>
           )} 
-          <div className="space-y-4 text-sm sm:text-base leading-relaxed font-light opacity-90">
+          <div className="space-y-4 text-sm sm:text-base leading-relaxed  opacity-90">
             {project.section4_line2 && <p>{project.section4_line2}</p>}
             {project?.section4_line3 && <div dangerouslySetInnerHTML={{ __html: project?.section4_line3 }} />}
             {project?.section4_line4 && <div dangerouslySetInnerHTML={{ __html: project?.section4_line4 }} />}
