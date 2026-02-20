@@ -18,13 +18,13 @@ const Project = async ({params}) => {
       <Link 
         key={projecto.id} 
         href={`/Project/${projecto.slug}`} 
-        className="group relative w-full h-[280px] sm:h-[400px] md:h-[371px] bg-gradient-to-b from-[#F6F6F6] to-[#DCDADA] rounded-[25px] sm:rounded-[20px] overflow-hidden transition-all duration-500 hover:shadow-xl"
+        className="group relative w-full h-[250px]  sm:h-[331px] bg-gradient-to-b from-[#F6F6F6] to-[#DCDADA] rounded-[15px] sm:rounded-[20px] overflow-hidden transition-all duration-500 hover:shadow-xl border border-[#969593] "
       >
         {/* Overlay الداكن لتحسين قراءة النص */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-60 z-10"></div>
 
         {/* النص - Slug أو Title */}
-        <div className="absolute bottom-5 left-5 sm:bottom-10 sm:left-10 text-white w-[90%] text-start z-20">
+        <div className="absolute bottom-1 left-5   text-white w-[90%] text-start z-20">
           <p className="text-lg sm:text-2xl font-medium leading-tight transition-transform duration-500 group-hover:-translate-y-2">
             {projecto.slug}
           </p>
@@ -32,11 +32,11 @@ const Project = async ({params}) => {
 
         {/* الصورة */}
         <Image 
-          width={600} 
-          height={400} 
-          src={projecto.imgBaner}
+          width={300} 
+          height={300} 
+          src={projecto.TempProject1}
           alt={projecto.title || "Project Image"} 
-          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" 
+              className="w-full   relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2" 
         />
       </Link>
     ))}

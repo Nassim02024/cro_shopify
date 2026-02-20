@@ -110,7 +110,7 @@ export default function RootLayout({
        // روابط السوشيال ميديا الخاصة بك
       "https://www.linkedin.com/in/nassim-ben-1261772b9/", // رابط لينكدإن </NASSIM>
       "https://www.linkedin.com/in/mohammedlamine", // رابط لينكدإن </MOHAMMEDLAMINE>
-      
+      "https://x.com/minou_patrick", // رابط منصة X (تويتر سابقاً) </MINOU_PATRICK>
     ]
   };
   return (

@@ -17,11 +17,11 @@ const ProjectShowcase = async ({params}) => {
       <div className="overflow-hidden font-sans text-[#1A1A1A] mt-[80px] sm:mt-[100px]">
         <section className="relative w-full overflow-hidden px-4">
           <Image 
-            width={1200} 
-            height={600} 
+            width={300} 
+            height={300} 
             src={project?.imgBaner}
             alt="Hero"
-            className="w-full h-auto rounded-[25px] md:rounded-[30px] overflow-hidden object-cover"
+            className="w-full rounded-[25px] md:rounded-[30px]  "
             priority
           />
         </section>
