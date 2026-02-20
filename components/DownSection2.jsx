@@ -17,7 +17,7 @@ const DownSection2 = ()=> {
         <div className="flex flex-col w-full gap-5 sm:flex-row md:px-[5%] ">
           
           {/* Card 1 */}
-          <Link href="/Project/catre" className="group border border-[#a5a4a4] relative w-full h-[250px]  sm:h-[331px] bg-gradient-to-b from-[#F6F6F6] to-[#DCDADA] rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 hover:shadow-xl">
+          <Link href="/Project/catre" className="group border border-[#a5a4a4] relative w-full h-[200px] p-2  sm:h-[331px] bg-gradient-to-b from-[#F6F6F6] to-[#DCDADA] rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 hover:shadow-xl">
             <Image 
               className="w-full   relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2" 
               width={300} height={300} alt="img" src="/p4/TempProject4.svg"
@@ -36,7 +36,7 @@ const DownSection2 = ()=> {
           </Link>
 
           {/* Card 2 */}
-          <Link href="/Project/three" className="group border border-[#a5a4a4] relative w-full h-[250px]  sm:h-[331px] bg-gradient-to-b from-[#F6F6F6] to-[#DCDADA] rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 hover:shadow-xl">
+          <Link href="/Project/three" className="group border border-[#a5a4a4] relative w-full h-[200px] p-2  sm:h-[331px] bg-gradient-to-b from-[#F6F6F6] to-[#DCDADA] rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 hover:shadow-xl">
             <Image 
               className="w-full   relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2" 
               width={300} height={300} alt="img" src="/p3/TempProject3.svg"

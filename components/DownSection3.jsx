@@ -107,7 +107,7 @@ const DownSection3 = ()=> {
       >
         {clients.map((client, index) => (
           <div key={index} className="flex shrink-0 w-full flex-col items-center justify-center text-center space-y-3 snap-center">
-            <Image width={200} height={200} src={client.img} alt={client.name} />
+            <Image width={250} height={250} src={client.img} alt={client.name} />
           </div>
         ))}
       </div>
@@ -121,7 +121,7 @@ const DownSection3 = ()=> {
           onClick={() => scroll('left')}
         />
 
-        <p className="text-[clamp(18px,5vw,25px)]  min-w-[250px]">
+        <p className="text-[clamp(18px,5vw,20px)]  min-w-[250px]">
           <span className="text-[#2F6F4E] p-0 m-0">{clients[currentIndex].name}</span> from {clients[currentIndex].location}
         </p>
           
@@ -188,7 +188,7 @@ const DownSection3 = ()=> {
 </section>
 
 
-{/* <section className="flex justify-center items-center mt-[100px] px-4">
+<section className="flex justify-center items-center mt-[100px] px-4">
   <div className="w-full min-h-[524px] sm:min-h-[724px] relative bg-neutral-800 overflow-hidden rounded-2xl py-16 flex items-center">
     
     <div className="w-full h-full left-0 top-0 absolute bg-green-300/10 rounded-full blur-[187.60px] z-10 pointer-events-none"></div>
@@ -217,7 +217,7 @@ const DownSection3 = ()=> {
       
     </div>
   </div>
-</section> */}
+</section> 
     </>
   ); 
 }

@@ -18,7 +18,7 @@ const Project = async ({params}) => {
       <Link 
         key={projecto.id} 
         href={`/Project/${projecto.slug}`} 
-        className="group relative w-full h-[250px]  sm:h-[331px] bg-gradient-to-b from-[#F6F6F6] to-[#DCDADA] rounded-[15px] sm:rounded-[20px] overflow-hidden transition-all duration-500 hover:shadow-xl border border-[#969593] "
+        className="group relative w-full h-[200px] p-2  sm:h-[331px] bg-gradient-to-b from-[#F6F6F6] to-[#DCDADA] rounded-[15px] sm:rounded-[20px] overflow-hidden transition-all duration-500 hover:shadow-xl border border-[#969593] "
       >
         {/* Overlay الداكن لتحسين قراءة النص */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-60 z-10"></div>
