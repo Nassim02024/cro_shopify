@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Footer = () => {
   return (
@@ -15,14 +16,14 @@ const Footer = () => {
 <div className="transition-transform hover:scale-105 cursor-pointer w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] relative rounded-[999px] shadow-[inset_1px_1px_4px_0px_rgba(255,255,255,0.60)] outline outline-zinc-400 inline-flex justify-center items-center ">
     <Image width={30} height={30} className="z-40   " src="/whatsapp.png" alt="" />
 </div>
-{/* <div className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] relative rounded-[999px] shadow-[inset_1px_1px_4px_0px_rgba(255,255,255,0.60)] outline outline-zinc-400 inline-flex justify-center items-center ">
+ {/* <div className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] relative rounded-[999px] shadow-[inset_1px_1px_4px_0px_rgba(255,255,255,0.60)] outline outline-zinc-400 inline-flex justify-center items-center ">
     <Image width={30} height={30} className="z-40   " src="/x.png" alt="" />
-</div> */}
+</div>  */}
 </div>
-{/* <div className="flex flex-row gap-6 text-[#E6E3E3] text-[13px]">
-  <p >Terms of Service</p>
-  <p >Privacy Policy</p>
-</div> */} 
+<div className="flex flex-row gap-6 text-[#E6E3E3] text-[13px]">
+  <Link href="/TermsOfService" >Terms of Service</Link>
+  <Link href="/PrivacyPolicy" >Privacy Policy</Link>
+</div> 
 <div className=" text-[#E6E3E3] text-[13px]">
   <p>© 2026 Pixelic, Inc. dba Relate.</p>
 </div>

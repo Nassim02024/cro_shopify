@@ -7,9 +7,10 @@ import Link from 'next/link';
 const DownSection3 = ()=> {
   
     const clients = [
-      // { name: "Ricardo", img: "/phone.png", location: "Georgia" },
-      { name: "Mark", img: "/mobileMark.svg", location: "Algeria" },
-      { name: "Amine", img: "/mobileAmine.svg", location: "France" },
+      { name: "George", img: "/george.svg", location: "Georgia" },
+      { name: "Jennifer", img: "/jennifer.svg", location: "United Kingdom" },
+      { name: "Mark", img: "/mobileMark.svg", location: "Germany" },
+      { name: "Ahlam", img: "/Ahlam.svg", location: "France" },
     ];
     const [currentIndex, setCurrentIndex] = useState(0);
   
@@ -107,12 +108,12 @@ const DownSection3 = ()=> {
       >
         {clients.map((client, index) => (
           <div key={index} className="flex shrink-0 w-full flex-col items-center justify-center text-center space-y-3 snap-center">
-            <Image width={270} height={270} src={client.img} alt={client.name} />
+            <Image width={260} height={260} src={client.img} alt={client.name} />
           </div>
         ))}
       </div>
 
-      <div className="flex justify-center text-center items-center sm:space-x-[20px] text-[39px]  mt-[24px]">
+      <div className="flex justify-center text-center items-center sm:space-x-[10px] text-[39px]  ">
         <Image 
           width={24} height={24}
           src="/row-lef1t.svg" 
@@ -121,7 +122,7 @@ const DownSection3 = ()=> {
           onClick={() => scroll('left')}
         />
 
-        <p className="text-[clamp(18px,5vw,20px)]  min-w-[250px]">
+        <p className="text-[clamp(18px,5vw,20px)]  min-w-[270px]">
           <span className="text-[#2F6F4E] p-0 m-0">{clients[currentIndex].name}</span> from {clients[currentIndex].location}
         </p>
           

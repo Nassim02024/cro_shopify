@@ -18,13 +18,13 @@ const Project = async ({params}) => {
       <Link 
         key={projecto.id} 
         href={`/Project/${projecto.slug}`} 
-        className="group border border-[#a5a4a4] relative w-full h-[600px] p-2  sm:h-[361px] bg-gradient-to-b from-[#F6F6F6] to-[#DCDADA] rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 shadow-xl"      >
+        className="group border border-[#a5a4a4] relative w-full  p-2  sm:h-[361px] bg-gradient-to-b from-[#F6F6F6] to-[#DCDADA] rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 shadow-xl"      >
         {/* Overlay الداكن لتحسين قراءة النص */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-60 z-10"></div>
 
         {/* النص - Slug أو Title */}
         <div className="absolute bottom-5 left-5   text-white w-[90%] text-start z-30">
-          <p className="text-[clamp(12px,2vw,18px)]  leading-tight transition-transform duration-500 group-hover:-translate-y-2 ">
+          <p className="text-[clamp(16px,2vw,18px)]  leading-tight transition-transform duration-500 group-hover:-translate-y-2 ">
             {projecto.titletemp}
           </p>
         </div>

@@ -176,7 +176,7 @@ export default function HomePage() {
             
             {/* نصوص الكارد */}
             <div className="absolute bottom-5 left-5   text-white w-[90%] text-start z-30">
-          <p className="text-[clamp(12px,2vw,18px)]  leading-tight transition-transform duration-500 group-hover:-translate-y-2 ">
+          <p className="text-[clamp(16px,2vw,18px)]  leading-tight transition-transform duration-500 group-hover:-translate-y-2 ">
             How Custom Landing Page Engineering...
           </p>
         </div>
@@ -194,7 +194,7 @@ export default function HomePage() {
             />
             
             <div className="absolute bottom-5 left-5   text-white w-[90%] text-start z-30">
-          <p className="text-[clamp(12px,2vw,18px)]  leading-tight transition-transform duration-500 group-hover:-translate-y-2 ">
+          <p className="text-[clamp(16px,2vw,18px)]  leading-tight transition-transform duration-500 group-hover:-translate-y-2 ">
             Custom Skincare Landing Page Built ...
           </p>
         </div>
