@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   // العنوان المثالي للسيو (Brand + Focus Keywords)
   title: {
-    default: "Flaylor | Strategic Financial Growth for Shopify Brands",
+    default: "Flaylor | Shopify marketing agency specializing in D2C Brands",
     template: "%s | Flaylor"
   },
   

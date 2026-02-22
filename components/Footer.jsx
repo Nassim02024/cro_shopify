@@ -10,12 +10,12 @@ const Footer = () => {
 {/* <div className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] relative rounded-[999px] shadow-[inset_1px_1px_4px_0px_rgba(255,255,255,0.60)] outline outline-zinc-400 inline-flex justify-center items-center ">
     <Image width={30} height={30} className="z-40   " src="/inst.png" alt="" />
 </div> */}
-<div className="transition-transform hover:scale-105 cursor-pointer w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] relative rounded-[999px] shadow-[inset_1px_1px_4px_0px_rgba(255,255,255,0.60)] outline outline-zinc-400 inline-flex justify-center items-center ">
+<Link href="https://www.linkedin.com/in/mohammedlamine" target='_blank' className="transition-transform hover:scale-105 cursor-pointer w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] relative rounded-[999px] shadow-[inset_1px_1px_4px_0px_rgba(255,255,255,0.60)] outline outline-zinc-400 inline-flex justify-center items-center ">
     <Image width={30} height={30}  className="z-40   " src="/linkdin.png" alt="" />
-</div>
-<div className="transition-transform hover:scale-105 cursor-pointer w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] relative rounded-[999px] shadow-[inset_1px_1px_4px_0px_rgba(255,255,255,0.60)] outline outline-zinc-400 inline-flex justify-center items-center ">
+</Link>
+<Link href="https://wa.me/213542029084" target='_blank' className="transition-transform hover:scale-105 cursor-pointer w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] relative rounded-[999px] shadow-[inset_1px_1px_4px_0px_rgba(255,255,255,0.60)] outline outline-zinc-400 inline-flex justify-center items-center ">
     <Image width={30} height={30} className="z-40   " src="/whatsapp.png" alt="" />
-</div>
+</Link>
  {/* <div className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] relative rounded-[999px] shadow-[inset_1px_1px_4px_0px_rgba(255,255,255,0.60)] outline outline-zinc-400 inline-flex justify-center items-center ">
     <Image width={30} height={30} className="z-40   " src="/x.png" alt="" />
 </div>  */}
