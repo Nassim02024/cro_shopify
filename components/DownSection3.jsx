@@ -8,9 +8,9 @@ const DownSection3 = ()=> {
   
     const clients = [
       { name: "George", img: "/george.svg", location: "Georgia" },
-      { name: "Jennifer", img: "/jennifer.svg", location: "United Kingdom" },
+      { name: "Jennifer", img: "/jennifer.svg", location: "UK" },
       { name: "Mark", img: "/mobileMark.svg", location: "Germany" },
-      { name: "Ahlam", img: "/Ahlam.svg", location: "France" },
+      { name: "Ahlam", img: "/ahlam.svg", location: "France" },
     ];
     const [currentIndex, setCurrentIndex] = useState(0);
   
