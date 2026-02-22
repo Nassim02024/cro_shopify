@@ -339,7 +339,7 @@ export default function HomePage() {
       <section className="w-full sm:w-[60%] justify-center items-center m-auto pt-30">
         <div className="max-w-5xl mx-auto text-start px-4">
           <p className="text-[#A0A0A0] text-[24px] md:text-[25px] leading-relaxed font-light ">
-            If you want to grow your Shopify store, unlock higher profits, and turn your e-commerce business into a predictable growth engine, get in touch with us today.
+            If you want to grow your Shopify store, unlock higher profits, and turn your e-commerce business into a predictable growth engine, get in touch with us today
           </p>
         </div>
       </section>
