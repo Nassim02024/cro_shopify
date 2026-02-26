@@ -8,9 +8,9 @@ import DownSection3 from '@/components/DownSection3';
 export default function HomePage() {
   const titleCardServireSection = [
     { title: "Growth & Scale", description: "Strategic scaling that grows market share while securing net profit margins", link: "/GrowthAndScale" },
-    { title: "High-Converting Shopify Design", description: "Engineering frictionless shopping experiences to maximize conversion rates and revenue.", link: "/HighConvertingShopifyDesign" },
+    { title: "CRO (Conversion Rate Optimization)", description: "Engineering frictionless shopping experiences to maximize conversion rates and revenue.", link: "/HighConvertingShopifyDesign" },
     { title: "Paid Ads Marketing", description: "Performance-driven ad management focusing on high LTV and optimized acquisition costs.", link: "/PaidAdsMarketing" },
-    { title: "Deep E-commerce Analysis", description: "Deep-dive auditing to eliminate financial leaks and unlock hidden profit potential", link: "/DeepE-commerceAnalysis" },
+    { title: "Get free audit", description: "Deep-dive auditing to eliminate financial leaks and unlock hidden profit potential", link: "/DeepE-commerceAnalysis" },
   ];
 
 
@@ -101,21 +101,25 @@ export default function HomePage() {
     <main className="mt-10 overflow-x-hidden h-fit overflow-y-hidden">
       <section className="m-auto mt-20 md:10 flex flex-col items-center text-center space-y-[12px] sm:space-y-3 px-[2%] sm:px-[10%]">
         <h1 className="text-[clamp(30px,5vw,39px)] leading-[1.2] sm:w-[70%] w-[100%]">
-          Scale your Shopify business to 2–4X profits in 90 days using our proven system
+          We help e-commerce business owners scale their profits to 2–4X in Just 60 days        
         </h1>
-    <div className="text-[clamp(16px,4vw,20px)] flex flex-wrap  items-center justify-center sm:w-[80%] w-[90%] mx-auto leading-relaxed">
-      <span>Our 3-step system Analyze, Optimize, and Scale  </span>
-      <span className="text-[#2F6F4E] mx-2">
-         We focus on analyzing financial data
+    <div className="text-[clamp(16px,4vw,18px)] flex flex-wrap  items-center justify-center sm:w-[80%] w-[90%] mx-auto leading-relaxed">
+      <span>We are a marketing agency specializing in D2C brands, where our philosophy is based on   </span>
+      <span className="text-[#2F6F4E] mx-2 font-medium">
+         analyzing financial data 
       </span>
-      <span>and integrating it with marketing decisions.</span>
+      <span>and linking it to </span>
+      <span className="text-[#2F6F4E] mx-2 font-medium">
+          marketing decisions
+      </span>
+      <span>to achieve optimal efficiency.</span>
     </div>
         <div className="flex flex-col justify-center items-center sm:space-x-3  flex-col-reverse md:relative md:flex-row w-full px-6">
           {/* <Link href="/" className=" w-[100%] sm:w-[222px] mt-4 sm:mt-8 px-7 py-[13px] text-base cursor-pointer bg-white rounded-full border border-gray-300">
             <p className=' '>Get Free Checklist</p>
           </Link> */}
           <Link href="https://calendly.com/aminemd/new-meeting" className="font-semibold w-[100%] sm:w-[222px] text-base mt-5 px-7 py-[13px] cursor-pointer bg-[#2F6F4E] rounded-full border border-gray-300 text-white">
-            <p className=''>Book a call</p>
+            <p className=''>Get free audit now</p>
           </Link>
         </div>
       </section>
@@ -131,7 +135,7 @@ export default function HomePage() {
       "/p1/Banner-main1.svg",
       "/p1/Banner-phone.svg",
       "/p2/Banner-main.svg",
-      "/p2/Banner-mobile.svg",
+      "/p2/mobile.svg",
       "/p3/Banner-main.svg",
       "/p4/Banner.svg",
       "/p4/mobile.svg",
@@ -140,7 +144,7 @@ export default function HomePage() {
       "/p1/Banner-main1.svg",
       "/p1/Banner-phone.svg",
       "/p2/Banner-main.svg",
-      "/p2/Banner-mobile.svg",
+      "/p2/mobile.svg",
       "/p3/Banner-main.svg",
       "/p4/Banner.svg",
       "/p4/mobile.svg",

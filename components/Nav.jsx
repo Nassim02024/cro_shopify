@@ -41,9 +41,9 @@ const Nav = () => {
   }, [isOpen]);
 
   const services = [
-    { name: "Deep E-commerce Analysis", href: "/DeepE-commerceAnalysis" },
+    { name: "Get free audit", href: "/DeepE-commerceAnalysis" },
     { name: "Paid Ads Marketing", href: "/PaidAdsMarketing" },
-    { name: "High-Converting Shopify Design", href: "/HighConvertingShopifyDesign" },
+    { name: "CRO (Conversion Rate Optimization)", href: "/HighConvertingShopifyDesign" },
     { name: "Growth & Scale", href: "/GrowthAndScale" },
   ];
 
@@ -63,10 +63,10 @@ const Nav = () => {
               src="/icon-vav.png" alt="menu" 
               onClick={() => setIsOpen(!isOpen)}
             />   
-            <p className='text-[#31F691] text-[25px] sm:text-[30px] itim-regular'>Flaylor</p>
+            <Link href="/" className='text-[#31F691] text-[25px] sm:text-[30px] itim-regular'>Flaylor</Link>
           </div>
           <Link className="sm:hidden bg-white text-black relative left-3.5 px-4 py-[2.5%] rounded-full text-base " href="https://calendly.com/aminemd/new-meeting">
-            Book a call
+            Get free audit now
           </Link>
         </div>
 
@@ -79,7 +79,7 @@ const Nav = () => {
                   <svg className="hidden sm:flex  w-4 h-4 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
                 </button>
                 {/* دروب داون الحاسوب - يخرج خارج الناف */}
-                <div className="absolute top-[50px] left-[-100px] opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0 transition-all duration-300 w-[320px] bg-white text-black rounded-2xl shadow-xl p-2 flex flex-col">
+                <div className="absolute top-[50px] left-[-100px] opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0 transition-all duration-300 w-[350px] bg-white text-black rounded-2xl shadow-xl p-2 flex flex-col">
                   {services.map((s) => (
                     <Link key={s.href} href={s.href} className={`px-4 py-3 rounded-xl hover:bg-gray-100 flex justify-between items-center ${pathname === s.href ? 'bg-gray-200' : ''}`}>
                       <span className="text-base font-semibold">{s.name}</span>
@@ -95,7 +95,7 @@ const Nav = () => {
         </div>
 
         <Link className="hidden sm:flex bg-white text-black relative left-3.5 px-6 py-2.5 rounded-full  hover:bg-[#e4e3e3] transition-all" href="https://calendly.com/aminemd/new-meeting">
-           Book a call
+           Get free audit now
         </Link>
       </div>
 
