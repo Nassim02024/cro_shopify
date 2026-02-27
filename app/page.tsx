@@ -118,7 +118,7 @@ export default function HomePage() {
           {/* <Link href="/" className=" w-[100%] sm:w-[222px] mt-4 sm:mt-8 px-7 py-[13px] text-base cursor-pointer bg-white rounded-full border border-gray-300">
             <p className=' '>Get Free Checklist</p>
           </Link> */}
-          <Link href="https://calendly.com/aminemd/new-meeting" className="font-semibold w-[100%] sm:w-[222px] text-base mt-5 px-7 py-[13px] cursor-pointer bg-[#2F6F4E] rounded-full border border-gray-300 text-white">
+          <Link target='_blank' href="https://forms.gle/62naDWvSKuMYFUKN6" className="font-semibold w-[100%] sm:w-[222px] text-base mt-5 px-7 py-[13px] cursor-pointer bg-[#2F6F4E] rounded-full border border-gray-300 text-white">
             <p className=''>Get free audit now</p>
           </Link>
         </div>

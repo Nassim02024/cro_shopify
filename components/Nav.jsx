@@ -65,7 +65,7 @@ const Nav = () => {
             />   
             <Link href="/" className='text-[#31F691] text-[25px] sm:text-[30px] itim-regular'>Flaylor</Link>
           </div>
-          <Link className="sm:hidden bg-white text-black relative left-3.5 px-4 py-[2.5%] rounded-full text-base " href="https://calendly.com/aminemd/new-meeting">
+          <Link target='_blank' className="sm:hidden bg-white text-black relative left-3.5 px-4 py-[2.5%] rounded-full text-base " href="https://forms.gle/62naDWvSKuMYFUKN6">
             Get free audit now
           </Link>
         </div>
@@ -94,7 +94,7 @@ const Nav = () => {
            </ul>
         </div>
 
-        <Link className="hidden sm:flex bg-white text-black relative left-3.5 px-6 py-2.5 rounded-full  hover:bg-[#e4e3e3] transition-all" href="https://calendly.com/aminemd/new-meeting">
+        <Link target='_blank' className="hidden sm:flex bg-white text-black relative left-3.5 px-6 py-2.5 rounded-full  hover:bg-[#e4e3e3] transition-all" href="https://forms.gle/62naDWvSKuMYFUKN6">
            Get free audit now
         </Link>
       </div>
