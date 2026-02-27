@@ -42,7 +42,7 @@ const DownSection = ({data = []}) => {
           ))}
         </div>
       </div>
-    <DownSection2 />
+    
     </div>
   )
 }

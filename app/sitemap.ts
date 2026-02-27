@@ -27,7 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       // خدمات تصميم شوبيفاي
-      url: `${baseUrl}/HighConvertingShopifyDesign`,
+      url: `${baseUrl}/CRO (Conversion Rate Optimization)`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.9,
@@ -41,7 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },    
     {
       // صفحة التحليل -   
-      url: `${baseUrl}/DeepE-commerceAnalysis`, 
+      url: `${baseUrl}/Get free audit`, 
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.9,

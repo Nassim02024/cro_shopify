@@ -28,7 +28,7 @@ const TermsOfService = () => {
                 <p>Our "Profit Engineering" is built on the data you provide:</p>
                 <ul className="list-disc pl-5 space-y-3">
                   <li><strong>Accuracy:</strong> You are responsible for the accuracy of all financial data (COGS, shipping costs, fixed expenses). FLAYLOR is not liable for profit miscalculations resulting from inaccurate data provided by the client.</li>
-                  <li><strong>Access:</strong> To deliver results, you agree to provide necessary access to your Shopify store, Ad accounts, and relevant financial tools.</li>
+                  <li><strong>Access:</strong> To deliver results, you agree to provide necessary access to , Ad accounts, and relevant financial tools.</li>
                 </ul>
               </div>
             </section>

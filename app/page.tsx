@@ -8,9 +8,9 @@ import DownSection3 from '@/components/DownSection3';
 export default function HomePage() {
   const titleCardServireSection = [
     { title: "Growth & Scale", description: "Strategic scaling that grows market share while securing net profit margins", link: "/GrowthAndScale" },
-    { title: "CRO (Conversion Rate Optimization)", description: "Engineering frictionless shopping experiences to maximize conversion rates and revenue.", link: "/HighConvertingShopifyDesign" },
+    { title: "CRO (Conversion Rate Optimization)", description: "Engineering frictionless shopping experiences to maximize conversion rates and revenue.", link: "/CROConversionRateOptimization" },
     { title: "Paid Ads Marketing", description: "Performance-driven ad management focusing on high LTV and optimized acquisition costs.", link: "/PaidAdsMarketing" },
-    { title: "Get free audit", description: "Deep-dive auditing to eliminate financial leaks and unlock hidden profit potential", link: "/DeepE-commerceAnalysis" },
+    { title: "Get free audit", description: "Deep-dive auditing to eliminate financial leaks and unlock hidden profit potential", link: "/GetFreeAudit" },
   ];
 
 
@@ -343,7 +343,7 @@ export default function HomePage() {
       <section className="w-full sm:w-[60%] justify-center items-center m-auto pt-30">
         <div className="max-w-5xl mx-auto text-start px-4">
           <p className="text-[#A0A0A0] text-[24px] md:text-[25px] leading-relaxed font-light ">
-            If you want to grow your Shopify store, unlock higher profits, and turn your e-commerce business into a predictable growth engine, get in touch with us today
+            If you want to grow , unlock higher profits, and turn your e-commerce business into a predictable growth engine, get in touch with us today
           </p>
         </div>
       </section>

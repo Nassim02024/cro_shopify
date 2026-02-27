@@ -75,7 +75,7 @@ return (
     <section className="w-full pt-20 sm:pt-40 sm:pb-20">
       <div className="max-w-5xl mx-auto text-start px-4   pl-6">
         <p className="text-[#A0A0A0] text-[clamp(20px,4vw,31px)] leading-relaxed font-light">
-          If you want to grow your Shopify store, unlock higher profits, and turn your e-commerce business into a predictable growth engine, get in touch with us today.
+          If you want to grow , unlock higher profits, and turn your e-commerce business into a predictable growth engine, get in touch with us today.
         </p>
       </div>
     </section>

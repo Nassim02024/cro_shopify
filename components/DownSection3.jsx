@@ -3,6 +3,7 @@
 import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import DownSection2 from "@/components/DownSection2"
 
 const DownSection3 = ()=> {
   
@@ -218,7 +219,10 @@ const DownSection3 = ()=> {
       
     </div>
   </div>
-</section> 
+  
+</section>  
+   <DownSection2 />
+
     </>
   ); 
 }

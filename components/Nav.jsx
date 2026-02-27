@@ -41,9 +41,9 @@ const Nav = () => {
   }, [isOpen]);
 
   const services = [
-    { name: "Get free audit", href: "/DeepE-commerceAnalysis" },
+    { name: "Get free audit", href: "/GetFreeAudit" },
     { name: "Paid Ads Marketing", href: "/PaidAdsMarketing" },
-    { name: "CRO (Conversion Rate Optimization)", href: "/HighConvertingShopifyDesign" },
+    { name: "CRO (Conversion Rate Optimization)", href: "/CROConversionRateOptimization" },
     { name: "Growth & Scale", href: "/GrowthAndScale" },
   ];
 

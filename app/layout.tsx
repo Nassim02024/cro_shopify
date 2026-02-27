@@ -31,7 +31,8 @@ export const metadata: Metadata = {
     "E-commerce Financial Analysis",
     "Scale Shopify Brand",
     "Shopify Ads Management",
-    "Data-driven Marketing Agency"
+    "Data-driven Marketing Agency",
+    "Get free audit"
   ],
 
   // إعدادات محركات البحث

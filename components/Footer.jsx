@@ -11,21 +11,21 @@ const Footer = () => {
     <Image width={30} height={30} className="z-40   " src="/inst.png" alt="" />
 </div> */}
 <Link href="https://www.linkedin.com/in/mohammedlamine" target='_blank' className="transition-transform hover:scale-105 cursor-pointer w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] relative rounded-[999px] shadow-[inset_1px_1px_4px_0px_rgba(255,255,255,0.60)] outline outline-zinc-400 inline-flex justify-center items-center ">
-    <Image width={30} height={30}  className="z-40   " src="/linkdin.png" alt="" />
+    <Image width={30} height={30}  className="z-40   " src="/linkdin.png" alt="linkdin" />
 </Link>
 <Link href="https://wa.me/213542029084" target='_blank' className="transition-transform hover:scale-105 cursor-pointer w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] relative rounded-[999px] shadow-[inset_1px_1px_4px_0px_rgba(255,255,255,0.60)] outline outline-zinc-400 inline-flex justify-center items-center ">
-    <Image width={30} height={30} className="z-40   " src="/whatsapp.png" alt="" />
+    <Image width={30} height={30} className="z-40   " src="/whatsapp.png" alt="whatsapp" />
 </Link>
- {/* <div className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] relative rounded-[999px] shadow-[inset_1px_1px_4px_0px_rgba(255,255,255,0.60)] outline outline-zinc-400 inline-flex justify-center items-center ">
-    <Image width={30} height={30} className="z-40   " src="/x.png" alt="" />
-</div>  */}
+<Link href="https://x.com/minou_patr" target='_blank' className="transition-transform hover:scale-105 cursor-pointer w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] relative rounded-[999px] shadow-[inset_1px_1px_4px_0px_rgba(255,255,255,0.60)] outline outline-zinc-400 inline-flex justify-center items-center ">
+    <Image width={30} height={30} className="z-40   " src="/x.png" alt="x" />
+</Link>  
 </div>
 <div className="flex flex-row gap-6 text-[#E6E3E3] text-[13px]">
   <Link href="/TermsOfService" >Terms of Service</Link>
   <Link href="/PrivacyPolicy" >Privacy Policy</Link>
 </div> 
 <div className=" text-[#E6E3E3] text-[13px]">
-  <p>© 2026 Pixelic, Inc. dba Relate.</p>
+  <p>All Rights Reserved © 2026 | Designed by [Flaylor] Team</p>
 </div>
 </div>
 </footer>

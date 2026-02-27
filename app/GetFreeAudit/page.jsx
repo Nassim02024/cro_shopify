@@ -19,28 +19,28 @@ const DeepEcommerceAnalysis = () => {
     {
       livle : "Level 1",
       headning : "Business & Operations",
-      text1 : "Governance of fixed costs and supply chain structuring to ensure infrastructure efficiency. We secure operational readiness for scaling without compromising cash flow",
+      text1 : " We audit your entire business model to ensure it's built for profit, not just volume.",
 
     },
     {
       livle : "Level 2",
       headning : "Unit Economics",
-      text1 : "Dissecting single-product profitability and balancing  against . We guarantee sustainable growth through precise contribution margin analysis",
+      text1 : "We analyze the real profit behind every single sale. By balancing your product costs against marketing spend",
       },
     {
       livle : "Level 3",
       headning : "Shopify Audit",
-      text1 : "Optimizing technical performance and basket engineering to increase . We focus on closing funnel leakages to maximize technical ",
+      text1 : " We optimize your entire Shopify ecosystem, from technical performance to user experience. ",
       },
     {
       livle : "Level 4",
       headning : "Paid Ads & Social Media Audit",
-      text1 : " Auditing ad spend efficiency and linking platform data to actual bank returns. We detect financial waste and redirect budgets toward the most profitable segments",
+      text1 : " We audit your ad spend to ensure every dollar is linked to actual bank returns, not just clicks.",
       },
     {
       livle : "Level 5",
       headning : "Brand Audi",
-      text1 : "Evaluating the brand as a financial asset that lowers acquisition costs and builds equity. We align pricing positioning with visual identity to drive higher retention",
+      text1 : "We evaluate your brand’s positioning and identity to ensure it stands out in a crowded market.",
       }
   ]
 
@@ -53,13 +53,14 @@ return (
             <div className='w-full mt-20'>
               {/* تعديل حجم العنوان الرئيسي */}
               <h1 className='text-[#757575] text-[clamp(32px,7vw,56px)] font-medium leading-tight'>
-                Deep E-commerce Analysis
+                Get free audit
               </h1>
             </div>
             <div className='space-y-6 text-[#1E1E1E] leading-relaxed max-w-3xl'>
           
-              <p className='text-[clamp(16px,3vw,16px)] '>
-                We offer you the "Deep Strategic Analysis"—a solution that provides the absolute certainty required to make your next big moves based on indisputable structural facts.
+              <p className='text-[clamp(16px,3vw,20px)] '>
+ 
+                 After this audit, you will gain a 360° financial & marketing overview, paired with a prioritized roadmap of high-impact actions for your business.
               </p>
             </div>
           </section>
@@ -70,7 +71,7 @@ return (
           </section>
 
   {livle.map((item, index) => (
-   <section key={index} className='flex flex-col text-[#1E1E1E]   mt-[100px]'>
+   <section key={index} className='flex flex-col text-[#1E1E1E]   mt-[100px] lg:px-[10%]'>
     <div className='flex flex-col gap-[30px]'>
     {/* ليفل وهيدينج */}
     <span className=''>
@@ -91,13 +92,34 @@ return (
     </div>
   </section>
 ))}
+
+
+<section className='flex flex-col space-y-[40px] mt-[150px]'>
+  <div>
+      <h2 className='text-[clamp(30px,5vw,48px)] font-medium text-[#757575] '>What You will Get</h2>
+  </div>
+  <div className='flex flex-col space-y-[50px]'>
+      <div className='space-y-[15px]'>
+        <p className='text-[clamp(26px,5vw,30px)]'>360° Financial & Marketing Audit</p>
+        <p className='text-[clamp(16px,4vw,18px)]  text-[#1E1E1E]'>Get full clarity on your true net margins, CAC, and LTV. We identify exactly where your profit is leaking and which channels are driving real ROI, not just vanity metrics.</p>
+      </div>
+      <div className='space-y-[15px]'>
+        <p className='text-[clamp(26px,5vw,30px)]'>Conversion-First Optimization (CRO) Plan</p>
+        <p className='text-[clamp(16px,4vw,18px)]  text-[#1E1E1E]'>A strategic breakdown of your store’s user experience. We pinpoint the friction points in your funnel and provide actionable fixes to turn more visitors into high-value customers.</p>
+      </div>
+      <div className='space-y-[15px]'>
+        <p className='text-[clamp(26px,5vw,30px)]'>Prioritized 90-Day Growth Roadmap</p>
+        <p className='text-[clamp(16px,4vw,18px)]  text-[#1E1E1E]'>No more guesswork. You’ll receive a step-by-step execution plan, ranking high-impact actions from most to least critical, so you know exactly what to fix first to scale profitably.</p>
+      </div>
+  </div>
+</section>
         </main>
       </div>
        <div>
-        <DownSection3 />
+          <DownSection data={cardDown} />
        </div>
       <div className='px-4 sm:px-0 mt-20'>
-        <DownSection data={cardDown} />
+       <DownSection3 />
       </div>
     </div>
   )
