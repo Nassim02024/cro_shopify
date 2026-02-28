@@ -8,11 +8,11 @@ import { title } from 'process';
 
 const DeepEcommerceAnalysis = () => {
     const cardDown = [
-    { title: "1. What differentiates FLAYLOR’s \"Deep Analysis\" from standard marketing reports?", description:"While most agencies focus on $ROAS$ and platform metrics, we dissect your business as a complete financial entity. We link operational efficiency and unit economics to marketing decisions, revealing the true profitability behind every spent dollar—beyond superficial platform data." },
-    { title: "2. Why does your methodology prioritize Operations and Unit Economics over Advertising?", description: "Scaling marketing for a product with thin margins or weak infrastructure is calculated capital depletion. We first ensure your business \"engine\" is structurally profitable and scaling-ready to guarantee that every sales increase translates into actual cash flow growth." },
-    { title: "3. How do the Shopify and Brand audits contribute to financial performance?", description: "We treat your store and brand as financial assets designed to lower $CAC$. By closing funnel leakages and enhancing brand equity, we drive higher conversion rates and $AOV$, reducing reliance on ad spend and increasing net profitability." },
-    { title: "4. Does the Deep Analysis require access to my sensitive business data?" , description: "Yes. To provide \"indisputable structural facts,\" we require access to operational, financial, and ad platform data. We adhere to the strictest governance and confidentiality standards; our goal is to build an honest \"financial mirror\" that helps you make critical decisions based on bank returns, not just dashboard metrics."},
-    { title: "5. What are the final deliverables after completing the 5 levels of analysis?" , description : "You will receive a comprehensive strategic report identifying your \"Negative Revenue Threshold\" and untapped growth opportunities. This report provides a definitive executive roadmap to align your future marketing budget with Net Profit ($EBITDA$) goals, ensuring safe and sustainable scaling."}
+    { title: "Is this audit just a quick look at my website?", description:"Not at all. It’s a 360° deep dive. We analyze your business across 5 distinct levels—from your business model and unit economics to paid ads and brand positioning—ensuring your store is built for profit, not just volume." },
+    { title: "What exactly do I get after the audit is finished?", description: "You’ll receive a prioritized 90-day growth roadmap. We rank every high-impact action from most to least critical, so you know exactly what to fix first to scale your business profitably." },
+    { title: "Does the audit cover the financial side of my store?", description: "Yes, that is our core focus. We analyze the Unit Economics to find the real profit behind every sale, balancing your product costs against marketing spend to identify exactly where your profit is leaking."},
+    { title: "How does the audit help me improve my Paid Ads?" , description: "We link every dollar spent on Meta or Google to actual bank returns, not just clicks. We help you move past vanity metrics to see which channels are driving a real Return on Investment (ROI)."},
+    { title: "When is the right time to request this free audit?" , description : "If you feel stuck, have high traffic but low conversions, or don't have full clarity on your net margins and CAC, this audit is for you. We provide the clarity you need to make data-driven marketing decisions."}
   ]
   
   const livle = [
@@ -29,8 +29,8 @@ const DeepEcommerceAnalysis = () => {
       },
     {
       livle : "Level 3",
-      headning : "Shopify Audit",
-      text1 : " We optimize your entire Shopify ecosystem, from technical performance to user experience. ",
+      headning : "Store Audit",
+      text1 : " We optimize your entire Store ecosystem, from technical performance to user experience. ",
       },
     {
       livle : "Level 4",

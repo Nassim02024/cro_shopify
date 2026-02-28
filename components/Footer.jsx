@@ -25,7 +25,7 @@ const Footer = () => {
   <Link href="/PrivacyPolicy" >Privacy Policy</Link>
 </div> 
 <div className=" text-[#E6E3E3] text-[13px]">
-  <p>All Rights Reserved © 2026 | Designed by [Flaylor] Team</p>
+  <p className="text-center text-[12px] sm:text-[13px] text-[#E6E3E3]">All Rights Reserved © 2026 </p>
 </div>
 </div>
 </footer>

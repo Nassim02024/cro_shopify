@@ -19,13 +19,12 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   // العنوان المثالي للسيو (Brand + Focus Keywords)
   title: {
-    default: "Flaylor | Shopify marketing agency specializing in D2C Brands",
+    default: "Flaylor | Marketing agency specializing in D2C Brands",
     template: "%s | Flaylor"
   },
   
   // الوصف الذي صغناه سابقاً بناءً على معلوماتك
-  description: "Scale your Shopify business to 2–4X profits in 90 days. We bridge the gap between financial data and marketing to ensure sustainable expansion.",
-  
+  description: "We help e-commerce business owners scale their profits to 2–4X in Just 60 days",
   keywords: [
     "Shopify Profit Optimization",
     "E-commerce Financial Analysis",
@@ -51,7 +50,7 @@ export const metadata: Metadata = {
     url: "flaylor-agency.online", 
     siteName: "Flaylor",
     title: "Flaylor | Bridge the Gap Between Finance & Marketing",
-    description: "Scale your Shopify business to 2–4X profits using our proven 3-step system: Analyze, Optimize, and Scale.",
+    description: "Scale your Store business to 2–4X profits using our proven 3-step system: Analyze, Optimize, and Scale.",
     images: [
       {
         url: "/favicon.svg", // يفضل تصميم صورة 1200x630 بكسل ووضعها في مجلد public

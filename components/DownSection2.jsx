@@ -3,12 +3,15 @@
 import Image from 'next/image'
 import { useState } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation';
 
 const DownSection2 = ()=> {
+  const path = usePathname();
+
   return(
    <div>
     {/* Suggestions Section */}
-      <div className="w-full flex flex-col items-center space-y-8 sm:space-y-[44px] mt-20 sm:mt-32">
+      <div className={path === '/' ? 'hidden' : 'w-full flex flex-col items-center space-y-8 sm:space-y-[44px] mt-20 sm:mt-32'}>
         {/* العنوان: جعلناه أصغر قليلاً في الموبايل */}
         <p className='text-xl sm:text-[clamp(23px,3vw,50px)] text-[#757575] font-light'>
           You may like it
