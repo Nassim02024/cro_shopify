@@ -9,21 +9,26 @@ return (
       <p className="text-[clamp(40px,8vw,61px)] text-[#969593] font-semibold leading-tight">About us</p>
       <div className="space-y-6 text-[#1E1E1E] leading-relaxed text-[clamp(16px,2.5vw,18px)]">
         <p className="">
-           At FLAYLOR, we serve as the strategic growth engine for <span className='text-[#2F6F4E] font-semibold'>Shopify D2C brands</span>  navigating the high-stakes "Growing Stage." We specialize in scaling brands that have moved past foundations and now require sophisticated, data-driven leadership to secure their market position.
-           
+           We are a marketing agency for D2C brands, where we bridge the gap between financial analytics and creative marketing. <br /> Our approach ensures that every advertising dollar is driven by profitability data, not just clicks, to achieve the highest possible efficiency for your bottom line
         </p>
-        <p className=" ">
-          While traditional agencies chase "reach" and vanity metrics, we focus exclusively on net profitability and cash flow efficiency. We bridge the critical gap between financial governance and marketing execution, ensuring your expansion is rooted in real-world numbers and sustainable asset growth.
-        </p>
+        
       </div>
     </section>
 
     {/* Our Philosophy Section */}
     <section className="mt-[100px] space-y-[80px]">
       <div className="space-y-[20px]">
+        <p className="text-[clamp(28px,5vw,39px)] text-[#969593] font-semibold">Our Story</p>
+        <p className="text-[clamp(16px,3vw,18px)] leading-relaxed text-[#1E1E1E]">
+Most E-commerce brands hit massive numbers but struggle to stay afloat. They ask "How much did we sell?" instead of "How much did we actually keep?"
+
+I founded FLAYLOR to bridge the gap between marketing and finance. We don’t just drive sales; we align every decision with your real net profit.
+        </p>
+      </div>
+      <div className="space-y-[20px]">
         <p className="text-[clamp(28px,5vw,39px)] text-[#969593] font-semibold">Our Philosophy</p>
-        <p className="text-[clamp(18px,3vw,21px)] leading-relaxed text-[#1E1E1E]">
-          We believe that any marketing decision made without rigorous financial analysis is an uncalculated risk. A successful business owner requires accurate, real-time, and actionable information to make informed strategic choices.
+        <p className="text-[clamp(16px,3vw,18px)] leading-relaxed text-[#1E1E1E]">
+        Marketing without financial data is just a gamble. We provide the real-time insights you need to grow your business with confidence, not guesswork.
         </p>
       </div>
 
@@ -37,25 +42,25 @@ return (
         {/* Financial Clarity */}
         <div className="space-y-3">
           <p className="text-[clamp(22px,4vw,31px)] font-semibold text-[#1E1E1E]">Financial Clarity</p>
-          <p className="text-[clamp(16px,2.5vw,20px)] text-gray-700 leading-relaxed">
+          {/* <p className="text-[clamp(16px,2.5vw,20px)] text-gray-700 leading-relaxed">
             A deep understanding of true profit margins and actual customer acquisition costs.
-          </p>
+          </p> */}
         </div>
 
         {/* Operational Efficiency */}
         <div className="space-y-3">
           <p className="text-[clamp(22px,4vw,31px)] font-semibold text-[#1E1E1E]">Operational Efficiency</p>
-          <p className="text-[clamp(16px,2.5vw,20px)] text-gray-700 leading-relaxed">
+          {/* <p className="text-[clamp(16px,2.5vw,20px)] text-gray-700 leading-relaxed">
             Eliminating financial waste in unprofitable channels and reallocating investments toward your "hero" products.
-          </p>
+          </p> */}
         </div>
 
         {/* Future Vision */}
         <div className="space-y-3">
           <p className="text-[clamp(22px,4vw,31px)] font-semibold text-[#1E1E1E]">Future Vision</p>
-          <p className="text-[clamp(16px,2.5vw,20px)] text-gray-700 leading-relaxed">
+          {/* <p className="text-[clamp(16px,2.5vw,20px)] text-gray-700 leading-relaxed">
             Preparing your business technically and financially for advanced milestones, including Exit Planning.
-          </p>
+          </p> */}
         </div>
       </div>
     </section>
