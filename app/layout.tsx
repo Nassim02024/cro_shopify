@@ -1,10 +1,9 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Itim, Abhaya_Libre, Poly } from "next/font/google";
 import Nav from "@/components/Nav"
 import Footer from "@/components/Footer"
-import Link from "next/link";
-
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,6 +12,25 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+// Optimized fonts using next/font
+const itim = Itim({
+  variable: "--font-itim",
+  weight: "400",
+  subsets: ["latin"],
+});
+
+const abhayaLibre = Abhaya_Libre({
+  variable: "--font-abhaya-libre",
+  weight: ["400", "500", "600", "700", "800"],
+  subsets: ["latin"],
+});
+
+const poly = Poly({
+  variable: "--font-poly",
+  weight: "400",
   subsets: ["latin"],
 });
 
@@ -75,6 +93,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'flaylor-agency.online',
   },
+  metadataBase: new URL('https://flaylor-agency.online'),
 };
 
 
@@ -129,25 +148,11 @@ export default function RootLayout({
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,200,0,0" /> */}
         <head>
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-          
-          {/* روابط الخطوط الخاصة بك */}
-          <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Itim&display=swap" rel="stylesheet" />
-
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />          
-          <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Itim&family=Poly:ital@0;1&display=swap" rel="stylesheet"></link>
-
-          {/* رابط الأيقونات الشامل - بدون تحديد أسماء معينة */}
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
           {/* رابط التحقق من ملكية الموقع في Google Search Console */}
           <meta name="google-site-verification" content="-vY6Rj44c5AWAKvRSN7Mt6-6akJ3qT44UWexCkS4Ld0" />
-          
         </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${itim.variable} ${abhayaLibre.variable} ${poly.variable} antialiased`}
       >
         <script
           type="application/ld+json"

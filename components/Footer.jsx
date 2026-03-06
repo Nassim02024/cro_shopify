@@ -10,15 +10,15 @@ const Footer = () => {
 {/* <div className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] relative rounded-[999px] shadow-[inset_1px_1px_4px_0px_rgba(255,255,255,0.60)] outline outline-zinc-400 inline-flex justify-center items-center ">
     <Image width={30} height={30} className="z-40   " src="/inst.png" alt="" />
 </div> */}
-<Link href="https://www.linkedin.com/in/mohammedlamine" target='_blank' className="transition-transform hover:scale-105 cursor-pointer w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] relative rounded-[999px] shadow-[inset_1px_1px_4px_0px_rgba(255,255,255,0.60)] outline outline-zinc-400 inline-flex justify-center items-center ">
-    <Image width={30} height={30}  className="z-40   " src="/linkdin.png" alt="linkdin" />
+<Link href="https://www.linkedin.com/in/mohammedlamine" target='_blank' rel="noopener noreferrer" className="transition-transform hover:scale-105 cursor-pointer w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] relative rounded-[999px] shadow-[inset_1px_1px_4px_0px_rgba(255,255,255,0.60)] outline outline-zinc-400 inline-flex justify-center items-center">
+    <Image width={30} height={30} className="z-40" src="/linkdin.png" alt="LinkedIn profile" loading="lazy" />
 </Link>
-<Link href="https://wa.me/213542029084" target='_blank' className="transition-transform hover:scale-105 cursor-pointer w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] relative rounded-[999px] shadow-[inset_1px_1px_4px_0px_rgba(255,255,255,0.60)] outline outline-zinc-400 inline-flex justify-center items-center ">
-    <Image width={30} height={30} className="z-40   " src="/whatsapp.png" alt="whatsapp" />
+<Link href="https://wa.me/213542029084" target='_blank' rel="noopener noreferrer" className="transition-transform hover:scale-105 cursor-pointer w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] relative rounded-[999px] shadow-[inset_1px_1px_4px_0px_rba(255,255,255,0.60)] outline outline-zinc-400 inline-flex justify-center items-center">
+    <Image width={30} height={30} className="z-40" src="/whatsapp.png" alt="WhatsApp chat" loading="lazy" />
 </Link>
-<Link href="https://x.com/minou_patr" target='_blank' className="transition-transform hover:scale-105 cursor-pointer w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] relative rounded-[999px] shadow-[inset_1px_1px_4px_0px_rgba(255,255,255,0.60)] outline outline-zinc-400 inline-flex justify-center items-center ">
-    <Image width={30} height={30} className="z-40   " src="/x.png" alt="x" />
-</Link>  
+<Link href="https://x.com/minou_patr" target='_blank' rel="noopener noreferrer" className="transition-transform hover:scale-105 cursor-pointer w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] relative rounded-[999px] shadow-[inset_1px_1px_4px_0px_rgba(255,255,255,0.60)] outline outline-zinc-400 inline-flex justify-center items-center">
+    <Image width={30} height={30} className="z-40" src="/x.png" alt="X profile" loading="lazy" />
+</Link>
 </div>
 <div className="flex flex-row gap-6 text-[#E6E3E3] text-[13px]">
   <Link href="/TermsOfService" >Terms of Service</Link>

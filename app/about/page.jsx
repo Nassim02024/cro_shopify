@@ -1,4 +1,4 @@
-import React from 'react'
+// Server Component - No client-side interactivity needed
 
 const About = () => {
 return (
@@ -20,7 +20,7 @@ return (
       <div className="space-y-[20px]">
         <p className="text-[clamp(28px,5vw,39px)] text-[#969593] font-semibold">Our Story</p>
         <p className="text-[clamp(16px,3vw,18px)] leading-relaxed text-[#1E1E1E]">
-Most E-commerce brands hit massive numbers but struggle to stay afloat. They ask "How much did we sell?" instead of "How much did we actually keep?"
+Most E-commerce brands hit massive numbers but struggle to stay afloat. They ask &ldquo;How much did we sell?&rdquo; instead of &ldquo;How much did we actually keep?&rdquo;
 
 I founded FLAYLOR to bridge the gap between marketing and finance. We don’t just drive sales; we align every decision with your real net profit.
         </p>
@@ -70,7 +70,7 @@ I founded FLAYLOR to bridge the gap between marketing and finance. We don’t ju
       <div className="h-64 sm:h-96 absolute left-0 top-[50%] transform translate-y-[-50%] w-full bg-emerald-400/10 rounded-full blur-[100px] -z-10"></div>
       <div className="space-y-8 max-w-4xl mx-auto">
         <p className="text-[clamp(16px,2.5vw,19px)] text-neutral-800 leading-relaxed">
-          We are committed to absolute transparency. Our role is to take off the "many hats" you wear daily, allowing you to focus on the creative leadership of your brand.
+          We are committed to absolute transparency. Our role is to take off the &ldquo;many hats&rdquo; you wear daily, allowing you to focus on the creative leadership of your brand.
         </p>
 
       </div>

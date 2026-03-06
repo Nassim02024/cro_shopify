@@ -124,13 +124,13 @@ export default function HomePage() {
         </div>
       </section>
 
-  {/* Slider Section */}
-  <section className="relative bg-[#F6F6F6] items-center justify-center m-auto  overflow-hidden mt-[35px] sm:mt-[77px]">
+  {/* Slider Section - Optimized */}
+  <section className="relative bg-[#F6F6F6] items-center justify-center m-auto overflow-hidden mt-[35px] sm:mt-[77px]">
   {/* Gradient Overlays */}
   <div className="absolute left-0 top-0 w-[15%] h-full bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
   <div className="absolute right-0 top-0 w-[15%] h-full bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
   
-  <div className="flex space-x-5  px-10 animate-horizontal overflow-hidden">
+  <div className="flex space-x-5 px-10 animate-horizontal overflow-hidden">
     {[
       "/p1/Banner-main1.svg",
       "/p1/Banner-phone.svg",
@@ -139,8 +139,7 @@ export default function HomePage() {
       "/p3/Banner-main.svg",
       "/p4/Banner.svg",
       "/p4/mobile.svg",
-
-    ].concat([      
+    ].concat([
       "/p1/Banner-main1.svg",
       "/p1/Banner-phone.svg",
       "/p2/Banner-main.svg",
@@ -149,17 +148,18 @@ export default function HomePage() {
       "/p4/Banner.svg",
       "/p4/mobile.svg",
     ]).map((imgSrc, index) => (
-      <div 
+      <div
         key={index}
-        className="shrink-0 p-2 sm:p-4 border-4 border-white border-solid  h-[273px] sm:h-[470px] rounded-[20px] sm:rounded-[30px]  overflow-hidden flex items-center justify-center"
+        className="shrink-0 p-2 sm:p-4 border-4 border-white border-solid h-[273px] sm:h-[470px] rounded-[20px] sm:rounded-[30px] overflow-hidden flex items-center justify-center"
       >
-        <Image 
-          width={324} 
-          height={470} 
-          src={imgSrc} 
-          alt={`Gallery Image ${index}`} 
-          className="w-full h-full object-cover overflow-hidden backdrop-blur-none" 
-          priority
+        <Image
+          width={324}
+          height={470}
+          src={imgSrc}
+          alt={`Gallery Image ${index}`}
+          className="w-full h-full object-cover overflow-hidden"
+          loading={index > 5 ? "lazy" : "eager"}
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
       </div>
     ))}
@@ -173,10 +173,13 @@ export default function HomePage() {
           
           {/* Card 1 */}
           <Link href="/Project/catre" className="group border border-[#a5a4a4] relative w-full h-[200px] p-2  sm:h-[331px] bg-gradient-to-b from-[#F6F6F6] to-[#DCDADA] rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 shadow-xl">
-            <Image 
-              className="w-full   relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2" 
-              width={300} height={300} alt="img" src="/p4/TempProject4.svg"
-            /> 
+            <Image
+              className="w-full relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
+              width={300} height={300} alt="Custom Landing Page Engineering preview"
+              src="/p4/TempProject4.svg"
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
             
             {/* نصوص الكارد */}
             <div className="absolute bottom-5 left-5   text-white w-[90%] text-start z-30">
@@ -192,9 +195,12 @@ export default function HomePage() {
 
           {/* Card 2 */}
           <Link href="/Project/three" className="group border border-[#a5a4a4] relative w-full h-[200px] p-2  sm:h-[331px] bg-gradient-to-b from-[#F6F6F6] to-[#DCDADA] rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 shadow-xl">
-            <Image 
-              className="w-full   relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2" 
-              width={300} height={300} alt="img" src="/p3/TempProject3.svg"
+            <Image
+              className="w-full relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
+              width={300} height={300} alt="Custom Skincare Landing Page preview"
+              src="/p3/TempProject3.svg"
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
             
             <div className="absolute bottom-5 left-5   text-white w-[90%] text-start z-30">
@@ -277,7 +283,7 @@ export default function HomePage() {
       
       <section className='flex flex-col justify-center text-center items-center mt-[100px] space-y-[12px] px-[10px]  md:px-[100px] lg:px-[250px]'>
        <p className='text-[clamp(31px,4vw,39px)] text-[#969593]'>About Us</p>
-       <p className='text-[clamp(16px,4vw,20px)]' >At FLAYLOR, we serve as the strategic growth engine for Shopify D2C brands navigating the high-stakes "Growing Stage."</p>
+       <p className='text-[clamp(16px,4vw,20px)]' >At FLAYLOR, we serve as the strategic growth engine for Shopify D2C brands navigating the high-stakes &ldquo;Growing Stage.&rdquo;</p>
        <Link href="/about" className="text-[#2F6F4E] cursor-pointer">Learn more</Link>
       </section>
       
