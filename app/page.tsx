@@ -4,8 +4,22 @@ import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import DownSection3 from '@/components/DownSection3';
+import ProjectModal from '@/components/ProjectModal';
 
 export default function HomePage() {
+  const [selectedProject, setSelectedProject] = useState<string | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleProjectClick = (projectSlug: string) => {
+    setSelectedProject(projectSlug);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedProject(null);
+  };
+
   const titleCardServireSection = [
     { title: "Growth & Scale", description: "Strategic scaling that grows market share while securing net profit margins", link: "/GrowthAndScale" },
     { title: "CRO (Conversion Rate Optimization)", description: "Engineering frictionless shopping experiences to maximize conversion rates and revenue.", link: "/CROConversionRateOptimization" },
@@ -49,50 +63,7 @@ export default function HomePage() {
     }
   };
 
-  // --- منطق السلايدر (بديل الـ Script) ---
-  const sliderRef = useRef<HTMLDivElement>(null)
   const clientSliderRef = useRef<HTMLDivElement>(null);
-  const [isDown, setIsDown] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
-
-  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
-    const slider = sliderRef.current;
-    if (!slider) return;
-    setIsDown(true);
-    setStartX(e.pageX - slider.offsetLeft);
-    setScrollLeft(slider.scrollLeft);
-  };
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const slider = sliderRef.current;
-    if (!slider) return;
-    const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 2;
-    slider.scrollLeft = scrollLeft - walk;
-  };
-
-  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
-    const slider = sliderRef.current;
-    if (!slider) return;
-    setIsDown(true);
-    setStartX(e.touches[0].pageX - slider.offsetLeft);
-    setScrollLeft(slider.scrollLeft);
-  };
-
-  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-    if (!isDown) return;
-    const slider = sliderRef.current;
-    if (!slider) return;
-    const x = e.touches[0].pageX - slider.offsetLeft;
-    const walk = (x - startX) * 2;
-    slider.scrollLeft = scrollLeft - walk;
-  };
-  const handleMouseLeaveOrUp = () => {
-    setIsDown(false);
-  };
 
 
 
@@ -132,33 +103,35 @@ export default function HomePage() {
   
   <div className="flex space-x-5 px-10 animate-horizontal overflow-hidden">
     {[
-      "/p1/Banner-main1.svg",
-      "/p1/Banner-phone.svg",
-      "/p2/Banner-main.svg",
-      "/p2/mobile.svg",
-      "/p3/Banner-main.svg",
-      "/p4/Banner.svg",
-      "/p4/mobile.svg",
+      "/iPhone 16 & 17 Pro - 4.svg",        
+      "/iPhone 16 & 17 Pro - 2.svg",      
+      "/iPhone 16 & 17 Pro - 1.svg",    
+      "/iPhone 16 & 17 Pro - 3.svg",
+      "/iPhone 16 & 17 Pro - 5.svg",
+      "/iPhone 16 & 17 Pro - 6.svg",
+      "/iPhone 16 & 17 Pro - 7.svg",
     ].concat([
-      "/p1/Banner-main1.svg",
-      "/p1/Banner-phone.svg",
-      "/p2/Banner-main.svg",
-      "/p2/mobile.svg",
-      "/p3/Banner-main.svg",
-      "/p4/Banner.svg",
-      "/p4/mobile.svg",
+      "/iPhone 16 & 17 Pro - 4.svg",       
+      "/iPhone 16 & 17 Pro - 2.svg",
+      "/iPhone 16 & 17 Pro - 1.svg",
+      "/iPhone 16 & 17 Pro - 3.svg",
+      "/iPhone 16 & 17 Pro - 5.svg",
+      "/iPhone 16 & 17 Pro - 6.svg",
+      "/iPhone 16 & 17 Pro - 7.svg",
     ]).map((imgSrc, index) => (
       <div
         key={index}
-        className="shrink-0 p-2 sm:p-4 border-4 border-white border-solid h-[273px] sm:h-[470px] rounded-[20px] sm:rounded-[30px] overflow-hidden flex items-center justify-center"
+        className="shrink-0 p-2 sm:p-4  h-[273px] sm:h-[470px] rounded-[20px] sm:rounded-[30px] overflow-hidden flex items-center justify-center"
       >
         <Image
           width={324}
           height={470}
           src={imgSrc}
           alt={`Gallery Image ${index}`}
-          className="w-full h-full object-cover overflow-hidden"
-          loading={index > 5 ? "lazy" : "eager"}
+          className="w-full h-full object-cover overflow-hidden shadow-lg rounded-[20px] "
+          loading="lazy"
+          placeholder="blur"
+          blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 324 470'%3E%3Crect width='324' height='470' fill='%23f3f4f6'/%3E%3C/svg%3E"
           sizes="(max-width: 768px) 100vw, 50vw"
         />
       </div>
@@ -169,53 +142,207 @@ export default function HomePage() {
       {/* Projects Section */}
       <section className="flex flex-col w-full m-auto justify-center items-center mt-[88px] space-y-11">
         <p className="text-[29px] sm:text-[39px] text-[#969593]">Discover our Projects</p>
-            <div className="flex flex-col w-full gap-5  sm:flex-row px-[10px]  md:px-[50px] ">
+            <div className="grid grid-cols-1 md:grid-cols-2   w-full gap-5  sm:flex-row px-[10px]  md:px-[50px] ">
           
-          {/* Card 1 */}
-          <Link href="/Project/catre" className="group border border-[#a5a4a4] relative w-full h-[200px] p-2  sm:h-[331px] bg-gradient-to-b from-[#F6F6F6] to-[#DCDADA] rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 shadow-xl">
+          {/* Card 1 - Custom Landing Page Engineering */}
+          <button onClick={() => handleProjectClick("catre")} className="group  relative w-full h-[200px]   sm:h-[331px]  rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 shadow-xl cursor-pointer">
             <Image
               className="w-full relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
               width={300} height={300} alt="Custom Landing Page Engineering preview"
-              src="/p4/TempProject4.svg"
+              src="/procover1.svg"
               loading="lazy"
+              priority={false}
+              placeholder="blur"
+              blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f3f4f6'/%3E%3C/svg%3E"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
             
             {/* نصوص الكارد */}
             <div className="absolute bottom-5 left-5   text-white w-[90%] text-start z-30">
           <p className="text-[clamp(16px,2vw,18px)]  leading-tight transition-transform duration-500 group-hover:-translate-y-2 ">
-            How Custom Landing Page Engineering...
+            Scaling ELLO Beyond $100K/Month...
           </p>
         </div>
-
-            {/* التراكبات (Overlays) */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-50 opacity-80 transition-opacity duration-500 z-20"></div>
             <div className="absolute inset-0 bg-white/5 opacity-0 opacity-100 transition-opacity duration-500 z-25"></div>
-          </Link>
+          </button>
 
-          {/* Card 2 */}
-          <Link href="/Project/three" className="group border border-[#a5a4a4] relative w-full h-[200px] p-2  sm:h-[331px] bg-gradient-to-b from-[#F6F6F6] to-[#DCDADA] rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 shadow-xl">
+          {/* Card 2 - Custom Skincare Landing Page */}
+          <button onClick={() => handleProjectClick("three")} className="group  relative w-full h-[200px]   sm:h-[331px]  rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 shadow-xl cursor-pointer">
             <Image
               className="w-full relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
               width={300} height={300} alt="Custom Skincare Landing Page preview"
-              src="/p3/TempProject3.svg"
+              src="/procover2.svg"
               loading="lazy"
+              placeholder="blur"
+              blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f3f4f6'/%3E%3C/svg%3E"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
             
             <div className="absolute bottom-5 left-5   text-white w-[90%] text-start z-30">
           <p className="text-[clamp(16px,2vw,18px)]  leading-tight transition-transform duration-500 group-hover:-translate-y-2 ">
-            Custom Skincare Landing Page Built ...
+            How We Delivered 4X Profit Growth ...
           </p>
         </div>
 
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-50 opacity-80 transition-opacity duration-500 z-20"></div>
             <div className="absolute inset-0 bg-white/5 opacity-0 opacity-100 transition-opacity duration-500 z-25"></div>
-          </Link>
+          </button>
+
+
+          {/* Card 3 - Custom Skincare Landing Page */}
+          <button onClick={() => handleProjectClick("two")} className="group  relative w-full h-[200px]   sm:h-[331px]  rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 shadow-xl cursor-pointer">
+            <Image
+              className="w-full relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
+              width={300} height={300} alt="Custom Skincare Landing Page preview"
+              src="/procover3.svg"
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f3f4f6'/%3E%3C/svg%3E"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+            
+            <div className="absolute bottom-5 left-5   text-white w-[90%] text-start z-30">
+          <p className="text-[clamp(16px,2vw,18px)]  leading-tight transition-transform duration-500 group-hover:-translate-y-2 ">
+            Bridging the Gap Between Design ...
+          </p>
+        </div>
+
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-50 opacity-80 transition-opacity duration-500 z-20"></div>
+            <div className="absolute inset-0 bg-white/5 opacity-0 opacity-100 transition-opacity duration-500 z-25"></div>
+          </button>
+
+
+          {/* Card 4 - Custom Skincare Landing Page */}
+          <button onClick={() => handleProjectClick("one")} className="group  relative w-full h-[200px]   sm:h-[331px]  rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 shadow-xl cursor-pointer">
+            <Image
+              className="w-full relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
+              width={300} height={300} alt="Custom Skincare Landing Page preview"
+              src="/procover4.svg"
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f3f4f6'/%3E%3C/svg%3E"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+            
+            <div className="absolute bottom-5 left-5   text-white w-[90%] text-start z-30">
+          <p className="text-[clamp(16px,2vw,18px)]  leading-tight transition-transform duration-500 group-hover:-translate-y-2 ">
+            ELITE: From Cash Flow Bleed to Financial...
+          </p>
+        </div>
+
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-50 opacity-80 transition-opacity duration-500 z-20"></div>
+            <div className="absolute inset-0 bg-white/5 opacity-0 opacity-100 transition-opacity duration-500 z-25"></div>
+          </button>
 
         </div>
-        <Link href="/Project" className="text-[#2F6F4E] cursor-pointer">See all</Link>
+        {/* <Link href="/Project" className="text-[#2F6F4E] cursor-pointer">See all</Link> */}
       </section>
+
+
+      {/* DAtA */}
+        <div className="grid text-center space-y-[75px] items-center justify-center m-auto mt-[150px] px-[10px]  md:px-[50px]">
+          <div>
+            <p className='text-[#969593] text-[clamp(31px,5vw,39px)]'>Our results speak for themselves.</p>
+          </div>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-[20px] gap-x-[10px] w-full max-w-6xl'>
+          <Image
+              className="w-full relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
+              width={300} height={300} alt="Data visualization chart"
+              src="/dataImg1.svg"
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f3f4f6'/%3E%3C/svg%3E"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          <Image
+              className="w-full relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
+              width={300} height={300} alt="Data visualization chart"
+              src="/dataImg2.svg"
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f3f4f6'/%3E%3C/svg%3E"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          <Image
+              className="w-full relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
+              width={300} height={300} alt="Data visualization chart"
+              src="/dataImg3.svg"
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f3f4f6'/%3E%3C/svg%3E"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          <Image
+              className="w-full relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
+              width={300} height={300} alt="Data visualization chart"
+              src="/dataImg4.svg"
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f3f4f6'/%3E%3C/svg%3E"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          <Image
+              className="w-full relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
+              width={300} height={300} alt="Data visualization chart"
+              src="/dataImg5.svg"
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f3f4f6'/%3E%3C/svg%3E"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          <Image
+              className="w-full relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
+              width={300} height={300} alt="Data visualization chart"
+              src="/dataImg6.svg"
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f3f4f6'/%3E%3C/svg%3E"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+            </div>
+        </div>
+
+      {/* scroll logo brand */}
+    <section className="relative overflow-hidden w-full mt-[120px] sm:mt-[170px]">
+  {/* Gradient Overlays - تم تعديل الألوان والارتفاع */}
+  {/* ملاحظة: استبدل 'bg-[#F5F5F5]' بلون خلفية موقعك الدقيق */}
+  <div className="absolute left-0 top-0 w-[5%] h-full rotate-180 bg-stone-50 blur-[30px] z-10 pointer-events-none"></div>
+  <div className="absolute right-0 top-0 w-[5%] h-full rotate-180 bg-stone-50 blur-[30px] z-10 pointer-events-none"></div>
+
+  <div className="space-y-[30px] text-center">
+    <div className='text-[#969593] text-[clamp(31px,5vw,39px)] px-4'>
+      Great results with great partners
+    </div>
+
+    {/* إزالة الارتفاع الكبير h-[273px] واستخدام h-auto أو ارتفاع أصغر */}
+    <div className="flex space-x-12 px-10 animate-horizontal items-center">
+      {[
+        "/logo-brand1.svg", "/logo-brand2.svg", "/logo-brand3.svg", 
+        "/logo-brand4.svg", "/logo-brand5.svg", "/logo-brand6.svg",
+      ].concat([
+        "/logo-brand1.svg", "/logo-brand2.svg", "/logo-brand3.svg", 
+        "/logo-brand4.svg", "/logo-brand5.svg", "/logo-brand6.svg",
+      ]).map((imgSrc, index) => (
+        <div
+          key={index}
+          className="shrink-0 flex items-center justify-center py-4" 
+        >
+          <Image
+            width={175}
+            height={55}
+            src={imgSrc}
+            alt={`Partner Logo ${index}`}
+            className="w-[140px] sm:w-[176px] h-auto grayscale opacity-70 hover:opacity-100 transition-opacity"
+            loading="lazy"
+            placeholder="blur"
+            blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 175 55'%3E%3Crect width='175' height='55' fill='%23f3f4f6'/%3E%3C/svg%3E"
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Services Section */}
       <section className="flex justify-center items-center mt-[100px] px-4">
@@ -256,31 +383,171 @@ export default function HomePage() {
   </div>
 </section>
 
-      <section className="flex flex-col justify-center items-center mt-[100px]">
-        <div className='flex flex-col text-center justify-center items-center text-[#969593] space-y-[12px] px-[10px]  md:px-[100px] lg:px-[200px] '>
-          <div>
-            <p className='text-[clamp(31px,5vw,39px)]' >What Makes Us Different</p>
-          </div>
-          <div className='text-base sm:text-[25px] ' >
-            <p>By leveraging our proven three-step model — Analyze, Optimize , and Scale</p>
-          </div>
+    
+
+      {/* What Makes Us Different */}
+
+      <section className="flex flex-col justify-center items-center mt-[100px] px-[10px] md:px-[50px] lg:px-[100px]">
+        <div className="text-center mb-12">
+          <h2 className="text-[clamp(31px,5vw,39px)] text-[#969593] mb-4">What Makes Us Different</h2>
+          
         </div>
-      <div className='flex flex-col text-[#1E1E1E] mt-[80px] sm:mt-[60px] space-y-[50px] sm:space-y-[70px] justify-center items-center text-center px-[20px] md:px-[100px] lg:px-[300px]'>
-        <div>
-            <p className='text-[31px] '>Analyze</p>
-            <p className='text-base sm:text-[18px] leading-relaxed'>We analyze your e-commerce business variables, from net margins to customer behavior, to pinpoint financial leaks and real growth opportunities.</p>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full max-w-6xl">
+          {/* Left Card - Features with Checkmarks */}
+          <div className="bg-white rounded-2xl shadow-lg p-8 bg-gradient-to-b from-neutral-100 to-zinc-300 rounded-[30px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.30)] shadow-[0px_4px_8px_3px_rgba(0,0,0,0.15)] outline outline-4 outline-offset-[-4px] outline-white overflow-hidden">
+            <h3 className="text-[25px]   text-center mb-6 ">Flaylor</h3>
+            <div className="space-y-[21px]">
+              <div className="flex items-center gap-2">
+                <div className="flex items-center justify-center w-6 h-6 rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)]">
+                  <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
+                    <path d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span className="text-gray-700">We focus on maximizing net profit after all expenses.</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="flex items-center justify-center w-6 h-6 rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)]">
+                  <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
+                    <path d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span className="text-gray-700">Based on rigorous financial analysis of every cent spent.</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="flex items-center justify-center w-6 h-6 rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)]">
+                  <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
+                    <path d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span className="text-gray-700">We link real-time financial data directly to marketing actions.</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="flex items-center justify-center w-6 h-6 rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)]">
+                  <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
+                    <path d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span className="text-gray-700">Scaling based on Unit Economics to ensure sustainable growth.</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="flex items-center justify-center w-6 h-6 rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)]">
+                  <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
+                    <path d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span className="text-gray-700">Marketing without financial data is seen as an uncalculated risk.</span>
+              </div>
+            </div>
           </div>
-          <div>
-            <p className='text-[31px] '>Optimize</p>
-            <p className='text-base sm:text-[18px]' >We optimize your entire business model and conversion rates to ensure every marketing dollar is converted into tangible cash returns.</p>
-          </div>
-          <div>
-            <p className='text-[31px]' >Scale</p>
-            <p className='text-base sm:text-[18px]' >We transform your business into a predictable growth system backed by financial rigor, building a commercial asset with high market value.</p>
+
+          {/* Right Card - Results/Stats */}
+          <div className="bg-white rounded-2xl shadow-lg p-8 bg-gradient-to-b from-neutral-100 to-zinc-300 rounded-[30px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.30)] shadow-[0px_4px_8px_3px_rgba(0,0,0,0.15)] outline outline-4 outline-offset-[-4px] outline-white overflow-hidden">
+            <h3 className="text-[25px]  text-center mb-6 ">Traditional Marketing Agencies</h3>
+            <div className="space-y-[30px]">
+              <div className="flex items-center gap-2">
+                <div className="flex items-center justify-center w-6 h-6 rounded-full border border-red-500/30 bg-red-50/10 shadow-[0_0_8px_rgba(239,68,68,0.4)]">
+                  <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
+                    <path d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </div>
+                <span className="text-gray-700">Focus on views, clicks, and total sales volume.</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="flex items-center justify-center w-6 h-6 rounded-full border border-red-500/30 bg-red-50/10 shadow-[0_0_8px_rgba(239,68,68,0.4)]">
+                  <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
+                    <path d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </div>
+                <span className="text-gray-700">Based on creative intuition or marketing "feel."</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="flex items-center justify-center w-6 h-6 rounded-full border border-red-500/30 bg-red-50/10 shadow-[0_0_8px_rgba(239,68,68,0.4)]">
+                  <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
+                    <path d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </div>
+                <span className="text-gray-700">Ad platform data is separated from financial reality.</span>
+              </div>
+              <div className="flex items-center gap-2">
+              <div className="flex items-center justify-center w-6 h-6 rounded-full border border-red-500/30 bg-red-50/10 shadow-[0_0_8px_rgba(239,68,68,0.4)]">
+                <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
+                  <path d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </div>
+                <span className="text-gray-700">Scaling by simply increasing budget to sell more.</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="flex items-center justify-center w-6 h-6 rounded-full border border-red-500/30 bg-red-50/10 shadow-[0_0_8px_rgba(239,68,68,0.4)]">
+                  <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
+                    <path d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </div>
+                <span className="text-gray-700">Marketing is treated as an "experiment" that might fail.</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
+
+      {/* testimonials */}
+      <section className=" relative flex flex-col justify-center items-center mt-[100px] px-[10px] md:px-[50px] lg:px-[100px]">
+        <div className="text-center ">
+          <h2 className="text-[clamp(31px,5vw,39px)] text-[#969593] mb-4">Testimonials</h2>
+          
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
+          {/* Testimonial Card 1 */}
+          <div className="bg-white rounded-2xl shadow-lg p-6 transition-transform duration-300 hover:shadow-xl border border-[#D9D9D9]">
+            <div className="flex  mb-4">
+              
+              <div>
+                <h3 className="font-semibold text-lg">Jennifer</h3>
+                <p className="text-gray-600 text-sm">E-commerce Store Owner</p>
+              </div>
+            </div>
+            <p className="text-gray-700 leading-relaxed">
+              "Before Flaylor, we were hitting record sales but barely seeing any profit. Amine and his team changed everything by linking our marketing directly to our financial data. In 60 days, we didn't just scale our revenue—we actually 3X’d our net profit. Finally, we’re building a real business, not just a mirage."
+            </p>
+          </div>
+
+          {/* Testimonial Card 2 */}
+          <div className="hidden  md:block  bg-white rounded-2xl shadow-lg p-6 transition-transform duration-300 hover:shadow-xl border border-[#D9D9D9]">
+            <div className="flex items-center mb-4">
+              
+              <div>
+                <h3 className="font-semibold text-lg">Ricardo</h3>
+                <p className="text-gray-600 text-sm">Marketing Manager at SOLON</p>
+              </div>
+            </div>
+            <p className="text-gray-700 leading-relaxed">
+               "Before Flaylor, we were hitting record sales but barely seeing any profit. Amine and his team changed everything by linking our marketing directly to our financial data. In 60 days, we didn't just scale our revenue—we actually 3X’d our net profit. Finally, we’re building a real business, not just a mirage."
+            </p>
+          </div>
+
+          {/* Testimonial Card 3 */}
+          <div className="hidden md:block bg-white rounded-2xl shadow-lg p-6  shadow-[0px_1px_3px_1px_rgba(0,0,0,0.15)] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.30)] border border-[#D9D9D9]  ">
+            <div className="flex  mb-4">
+              
+              <div>
+                <h3 className="font-semibold text-lg">Alex</h3>
+                <p className="text-gray-600 text-sm">Beauty Products CEO</p>
+              </div>
+            </div>
+            <p className="text-gray-700 leading-relaxed">
+              "Before Flaylor, we were hitting record sales but barely seeing any profit. Amine and his team changed everything by linking our marketing directly to our financial data. In 60 days, we didn't just scale our revenue—we actually 3X’d our net profit. Finally, we’re building a real business, not just a mirage."
+            </p>
+          </div>
+        </div>
+         <div className="w-[1440px] h-[20vh] sm:h-[40vh] absolute top-[270px] sm:top-[300px]  bg-gradient-to-r from-stone-50 to-stone-50 blur-[25px]" />
+
+        <Link href="/testimonials" className="absolute -bottom-10 sm:bottom-0 z-10 text-[#2F6F4E] cursor-pointer font-medium hover:text-[#24583e] transition-colors duration-300">
+          See all 
+        </Link>
+      </section>
       
+
       <section className='flex flex-col justify-center text-center items-center mt-[100px] space-y-[12px] px-[10px]  md:px-[100px] lg:px-[250px]'>
        <p className='text-[clamp(31px,4vw,39px)] text-[#969593]'>About Us</p>
        <p className='text-[clamp(16px,4vw,20px)]' >At FLAYLOR, we serve as the strategic growth engine for Shopify D2C brands navigating the high-stakes &ldquo;Growing Stage.&rdquo;</p>
@@ -288,6 +555,13 @@ export default function HomePage() {
       </section>
       
    <DownSection3 />
+
+   {/* Project Modal */}
+   <ProjectModal
+     isOpen={isModalOpen}
+     onClose={handleCloseModal}
+     projectSlug={selectedProject}
+   />
 
 
   

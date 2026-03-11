@@ -57,12 +57,15 @@ const Nav = () => {
       <div className="h-[60px]  bg-black text-white px-6 rounded-full flex flex-row justify-between items-center relative z-[110]">
         <div className="flex items-center justify-between w-full sm:w-auto h-full">
           <div className="flex items-center">
-            <Image 
-              width={30} height={30} 
-              className="icon-bar flex sm:hidden cursor-pointer mr-3" 
-              src="/icon-vav.png" alt="menu" 
+            <Image
+              width={30} height={30}
+              className="icon-bar flex sm:hidden cursor-pointer mr-3"
+              src="/icon-vav.png" alt="menu"
               onClick={() => setIsOpen(!isOpen)}
-            />   
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Crect width='30' height='30' fill='%23f3f4f6'/%3E%3C/svg%3E"
+            />
             <Link href="/" className='text-[#31F691] text-[25px] sm:text-[30px] itim-regular'>Flaylor</Link>
           </div>
           <Link  className="sm:hidden bg-white text-black relative left-3.5 px-4 py-[2.5%] rounded-full text-base " href="/contactUs">
@@ -83,12 +86,12 @@ const Nav = () => {
                   {services.map((s) => (
                     <Link key={s.href} href={s.href} className={`px-4 py-3 rounded-xl hover:bg-gray-100 flex justify-between items-center ${pathname === s.href ? 'bg-gray-200' : ''}`}>
                       <span className="text-base font-semibold">{s.name}</span>
-                      <Image width={16} height={16} src="/row-right.svg" alt="arrow" className="opacity-50 " />
+                      <Image width={16} height={16} src="/row-right.svg" alt="arrow" className="opacity-50 " loading="lazy" placeholder="blur" blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23f3f4f6'/%3E%3C/svg%3E" />
                     </Link>
                   ))}
                 </div>
              </li>
-             <li><Link href="/Project" className={`hover:text-[#31F691] ${pathname === '/Project' ? 'text-[#31F691]' : ''}`}>Projects</Link></li>
+             {/* <li><Link href="/Project" className={`hover:text-[#31F691] ${pathname === '/Project' ? 'text-[#31F691]' : ''}`}>Projects</Link></li> */}
              {/* <li><Link href="/blog" className={`hover:text-[#31F691] ${pathname === '/blog' ? 'text-[#31F691]' : ''}`}>Blog</Link></li> */}
              <li><Link href="/about" className={`hover:text-[#31F691] ${pathname === '/about' ? 'text-[#31F691]' : ''}`}>About Us</Link></li>
            </ul>
@@ -132,7 +135,7 @@ const Nav = () => {
                </div>
             </div>
           </li>
-          <Link  href="/Project" onClick={() => setIsOpen(false)} className={` ${pathname === '/Project' ? "text-[#31F691] " : '' }`}><li>Projects</li></Link>
+          {/* <Link  href="/Project" onClick={() => setIsOpen(false)} className={` ${pathname === '/Project' ? "text-[#31F691] " : '' }`}><li>Projects</li></Link> */}
           {/* <li><Link className='' href="/blog" onClick={() => setIsOpen(false)}>Blog</Link></li> */}
           <Link href="/about" onClick={() => setIsOpen(false)} className={`${pathname === '/about' ? "text-[#31F691] " : '' }`}><li>About Us </li></Link>
         </ul>

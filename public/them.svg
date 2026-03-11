@@ -1,16 +1,16 @@
 <svg width="176" height="56" viewBox="0 0 176 56" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <circle cx="28" cy="28" r="26.5" fill="white"/>
 <circle cx="28" cy="28" r="26.5" fill="url(#pattern0_1_331)"/>
-<circle cx="28" cy="28" r="26.5" stroke="white" stroke-width="3"/>
+<circle cx="28" cy="28" r="26.5" stroke="white" strokeLinecap="3"/>
 <circle cx="68" cy="28" r="26.5" fill="white"/>
 <circle cx="68" cy="28" r="26.5" fill="url(#pattern1_1_331)"/>
-<circle cx="68" cy="28" r="26.5" stroke="white" stroke-width="3"/>
+<circle cx="68" cy="28" r="26.5" stroke="white" strokeLinecap="3"/>
 <circle cx="108" cy="28" r="26.5" fill="white"/>
 <circle cx="108" cy="28" r="26.5" fill="url(#pattern2_1_331)"/>
-<circle cx="108" cy="28" r="26.5" stroke="white" stroke-width="3"/>
+<circle cx="108" cy="28" r="26.5" stroke="white" strokeLinecap="3"/>
 <circle cx="148" cy="28" r="26.5" fill="white"/>
 <circle cx="148" cy="28" r="26.5" fill="url(#pattern3_1_331)"/>
-<circle cx="148" cy="28" r="26.5" stroke="white" stroke-width="3"/>
+<circle cx="148" cy="28" r="26.5" stroke="white" strokeLinecap="3"/>
 <defs>
 <pattern id="pattern0_1_331" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image0_1_331" transform="scale(0.000976562)"/>

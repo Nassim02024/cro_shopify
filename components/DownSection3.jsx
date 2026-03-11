@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import DownSection2 from "@/components/DownSection2"
@@ -16,7 +16,7 @@ const DownSection3 = ()=> {
     const [currentIndex, setCurrentIndex] = useState(0);
   
     // 2. دالة لمراقبة السحب اليدوي (Manual Scroll) وتحديث الاسم
-    const handleScroll = () => {
+    const handleScroll = useCallback(() => {
       if (clientSliderRef.current) {
         const width = clientSliderRef.current.offsetWidth;
         const scrollLeft = clientSliderRef.current.scrollLeft;
@@ -25,10 +25,10 @@ const DownSection3 = ()=> {
           setCurrentIndex(index);
         }
       }
-    };
+    }, [currentIndex]);
   
     // 3. دالة للتحريك عبر الأسهم
-    const scroll = (direction) => {
+    const scroll = useCallback((direction) => {
       const slider = clientSliderRef.current;
       
       if (slider) {
@@ -39,52 +39,10 @@ const DownSection3 = ()=> {
           slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
         }
       }
-    };
+    }, []);
   
-    // --- منطق السلايدر (بديل الـ Script) ---
-    const sliderRef = useRef(null)
     const clientSliderRef = useRef(null);
-    const [isDown, setIsDown] = useState(false);
-    const [startX, setStartX] = useState(0);
-    const [scrollLeft, setScrollLeft] = useState(0);
   
-    const handleMouseDown = (e) => {
-      const slider = sliderRef.current;
-      if (!slider) return;
-      setIsDown(true);
-      setStartX(e.pageX - slider.offsetLeft);
-      setScrollLeft(slider.scrollLeft);
-    };
-  
-    const handleMouseMove = (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const slider = sliderRef.current;
-      if (!slider) return;
-      const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * 2;
-      slider.scrollLeft = scrollLeft - walk;
-    };
-  
-    const handleTouchStart = (e) => {
-      const slider = sliderRef.current;
-      if (!slider) return;
-      setIsDown(true);
-      setStartX(e.touches[0].pageX - slider.offsetLeft);
-      setScrollLeft(slider.scrollLeft);
-    };
-  
-    const handleTouchMove = (e) => {
-      if (!isDown) return;
-      const slider = sliderRef.current;
-      if (!slider) return;
-      const x = e.touches[0].pageX - slider.offsetLeft;
-      const walk = (x - startX) * 2;
-      slider.scrollLeft = scrollLeft - walk;
-    };
-    const handleMouseLeaveOrUp = () => {
-      setIsDown(false);
-    };
   
   
   // Add WhyChoosCardSection array to avoid ReferenceError
@@ -97,7 +55,7 @@ const DownSection3 = ()=> {
 
   return(
     <>
-   <section className="flex flex-col w-full m-auto justify-center mt-[104px] ">
+   {/* <section className="flex flex-col w-full m-auto justify-center mt-[104px] ">
       <p className="flex justify-center items-center text-center px-5 sm:px-[400px] text-[clamp(21px,5vw,25px)] mb-[24px] text-[#969593]">
         Our clients testimonials after working with us
       </p>
@@ -109,33 +67,47 @@ const DownSection3 = ()=> {
       >
         {clients.map((client, index) => (
           <div key={index} className="flex shrink-0 w-full flex-col items-center justify-center text-center space-y-3 snap-center">
-            <Image width={270} height={270} src={client.img} alt={client.name} />
+            <Image
+              width={270}
+              height={270}
+              src={client.img}
+              alt={client.name}
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 270 270'%3E%3Crect width='270' height='270' fill='%23f3f4f6'/%3E%3C/svg%3E"
+            />
           </div>
         ))}
       </div>
 
       <div className="flex justify-center text-center items-center sm:space-x-[20px] text-[39px]  mt-[24px]">
-        <Image 
+        <Image
           width={24} height={24}
-          src="/row-lef1t.svg" 
-          alt="left" 
+          src="/row-lef1t.svg"
+          alt="left"
           className="cursor-pointer active:scale-90 transition-transform"
           onClick={() => scroll('left')}
+          loading="lazy"
+          placeholder="blur"
+          blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' fill='%23f3f4f6'/%3E%3C/svg%3E"
         />
 
         <p className="text-[clamp(18px,5vw,20px)]  min-w-[250px]">
           <span className="text-[#2F6F4E] p-0 m-0">{clients[currentIndex].name}</span> from {clients[currentIndex].location}
         </p>
           
-        <Image 
+        <Image
           width={24} height={24}
-          src="/row-right.svg" 
-          alt="right" 
+          src="/row-right.svg"
+          alt="right"
           className="cursor-pointer active:scale-90 transition-transform"
           onClick={() => scroll('right')}
+          loading="lazy"
+          placeholder="blur"
+          blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' fill='%23f3f4f6'/%3E%3C/svg%3E"
         />
       </div>
-    </section>
+    </section> */}
 
         {/* How We Work */}
       <section className="flex flex-col w-full m-auto justify-center items-center mt-[88px] space-y-11">
