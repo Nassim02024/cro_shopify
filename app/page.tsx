@@ -548,7 +548,7 @@ export default function HomePage() {
             </p>
           </div>
         </div>
-         <div className="w-[1440px] h-[40vh] absolute -bottom-[60px] sm:top-[300px]  bg-gradient-to-r from-stone-50 to-stone-50 blur-[25px]" />
+         <div className="w-[1440px] h-[40vh] absolute -bottom-[100px] sm:top-[300px]  bg-gradient-to-r from-stone-50 to-stone-50 blur-[25px]" />
 
         <Link href="/testimonials" className="absolute -bottom-5 sm:bottom-0 z-10 text-[#2F6F4E] cursor-pointer font-medium hover:text-[#24583e] transition-colors duration-300">
           See all 
