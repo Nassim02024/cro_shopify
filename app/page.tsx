@@ -71,7 +71,7 @@ export default function HomePage() {
   return (
     <main className="mt-10 overflow-x-hidden h-fit overflow-y-hidden">
       <section className="m-auto mt-20 md:10 flex flex-col items-center text-center space-y-[20px] sm:space-y-[12px] sm:space-y-3 px-[2%] sm:px-[10%]">
-      <div className="text-[clamp(28px,4vw,49px)] font-medium flex flex-wrap  items-center justify-center w-[95%] sm:w-[90%]  mx-auto ">
+      <div className="text-[clamp(28px,4vw,49px)] leading-[1.2] font-medium flex flex-wrap  items-center justify-center w-[95%] sm:w-[90%]  mx-auto ">
       <span>We help</span>
       <span className="text-[#2F6F4E] mx-2 font-medium">
          DTC Brand
