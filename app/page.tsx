@@ -556,9 +556,9 @@ export default function HomePage() {
       </section>
       
 
-      <section className='flex flex-col justify-center text-center items-center mt-[100px] space-y-[12px] px-[10px]  md:px-[100px] lg:px-[250px]'>
-       <p className='text-[clamp(31px,4vw,39px)] text-[#969593]'>About Us</p>
-       <p className='text-[clamp(16px,4vw,20px)]' >We are a marketing agency for D2C brands, where we bridge the gap between financial analytics and creative marketing.</p>
+      <section className='flex flex-col justify-center text-center items-center mt-[100px] space-y-[12px] px-[10px]  md:px-[100px] lg:px-[250px] '>
+       <p className='text-[clamp(31px,4vw,39px)] text-[#969593] z-[200]'>About Us</p>
+       <p className='text-[clamp(16px,4vw,20px)] z-[200]' >We are a marketing agency for D2C brands, where we bridge the gap between financial analytics and creative marketing.</p>
        <Link href="/about" className="text-[#2F6F4E] cursor-pointer">Learn more</Link>
       </section>
       
