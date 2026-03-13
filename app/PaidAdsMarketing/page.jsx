@@ -107,7 +107,7 @@ const PaidAdsLanding = () => {
        <div>
         <DownSection data={cardDown} />
        </div>
-        <div className='px-4 sm:px-0'>
+        <div className=' sm:px-0'>
          <DownSection3 />
         </div>
       </div>

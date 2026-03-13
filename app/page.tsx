@@ -24,7 +24,7 @@ export default function HomePage() {
     { title: "Growth & Scale", description: "Strategic scaling that grows market share while securing net profit margins", link: "/GrowthAndScale" },
     { title: "CRO (Conversion Rate Optimization)", description: "Engineering frictionless shopping experiences to maximize conversion rates and revenue.", link: "/CROConversionRateOptimization" },
     { title: "Paid Ads Marketing", description: "Performance-driven ad management focusing on high LTV and optimized acquisition costs.", link: "/PaidAdsMarketing" },
-    { title: "Get a free scaling plan", description: "Deep-dive auditing to eliminate financial leaks and unlock hidden profit potential", link: "/GetFreeAudit" },
+    { title: "E-commerce audit", description: "Deep-dive auditing to eliminate financial leaks and unlock hidden profit potential", link: "/GetFreeAudit" },
   ];
 
 
@@ -90,7 +90,7 @@ export default function HomePage() {
           <Link  href="/contactUs" className="font-semibold w-[100%] sm:w-[222px] text-base mt-5 px-7 py-[13px] cursor-pointer rounded-full border border-gray-300 ">
             <p className=''>Get a free scaling plan </p>
           </Link>
-          <Link target='_blank' href="https://calendly.com/aminemd/new-meeting" className=" w-[100%] sm:w-[222px] mt-4 sm:mt-8 px-7 py-[13px] text-base cursor-pointer  bg-[#2F6F4E] rounded-full border text-white border-gray-300">
+          <Link target='_blank' href="https://calendly.com/aminemd/new-meeting" className=" w-[100%] sm:w-[222px] font-bold mt-4 sm:mt-8 px-7 py-[13px] text-base cursor-pointer  bg-[#2F6F4E] rounded-full border text-white border-gray-300">
             <p className=' '>Book a Call</p>
           </Link>
           
@@ -313,7 +313,7 @@ export default function HomePage() {
   <div className="absolute right-0 top-0 w-[5%] h-full rotate-180 bg-stone-50 blur-[30px] z-10 pointer-events-none"></div>
 
   <div className="space-y-[30px] text-center">
-    <div className='text-[#969593] text-[clamp(31px,5vw,39px)] px-4'>
+    <div className='text-[#969593] text-[clamp(28px,5vw,39px)] px-4'>
       Great results with great partners
     </div>
 
@@ -397,7 +397,7 @@ export default function HomePage() {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full max-w-6xl">
           {/* Left Card - Features with Checkmarks */}
-          <div className="bg-white rounded-2xl shadow-lg p-3 sm:p-8 bg-gradient-to-b from-neutral-100 to-zinc-300 rounded-[30px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.30)] shadow-[0px_4px_8px_3px_rgba(0,0,0,0.15)] outline outline-4 outline-offset-[-4px] outline-white overflow-hidden">
+          <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 bg-gradient-to-b from-neutral-100 to-zinc-300 rounded-[30px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.30)] shadow-[0px_4px_8px_3px_rgba(0,0,0,0.15)] outline outline-4 outline-offset-[-4px] outline-white overflow-hidden">
             <h3 className="text-[25px]   text-center mb-6 ">Flaylor</h3>
             <div className="space-y-[21px]">
               <div className="flex items-center gap-2">
@@ -444,7 +444,7 @@ export default function HomePage() {
           </div>
 
           {/* Right Card - Results/Stats */}
-          <div className="bg-white rounded-2xl shadow-lg p-3 sm:p-8 bg-gradient-to-b from-neutral-100 to-zinc-300 rounded-[30px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.30)] shadow-[0px_4px_8px_3px_rgba(0,0,0,0.15)] outline outline-4 outline-offset-[-4px] outline-white overflow-hidden">
+          <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 bg-gradient-to-b from-neutral-100 to-zinc-300 rounded-[30px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.30)] shadow-[0px_4px_8px_3px_rgba(0,0,0,0.15)] outline outline-4 outline-offset-[-4px] outline-white overflow-hidden">
             <h3 className="text-[25px]  text-center mb-6 ">Traditional Marketing Agencies</h3>
             <div className="space-y-[30px]">
               <div className="flex items-center gap-2">
@@ -549,9 +549,9 @@ export default function HomePage() {
             </p>
           </div>
         </div>
-         <div className="w-[1440px] h-[40vh] absolute -bottom-[200px] sm:top-[300px]  bg-gradient-to-r from-stone-50 to-stone-50 blur-[25px]" />
+         <div className="w-[1440px] h-[40vh] sm:h-[50vh] absolute -bottom-[200px] sm:top-[300px]  bg-gradient-to-r from-stone-50 to-stone-50 blur-[25px]" />
 
-        <Link href="/testimonials" className="absolute -bottom-5 sm:bottom-0 z-10 text-[#2F6F4E] cursor-pointer font-medium hover:text-[#24583e] transition-colors duration-300">
+        <Link href="/testimonials" className="absolute -bottom-5 sm:bottom-10 z-10 text-[#2F6F4E] cursor-pointer font-medium hover:text-[#24583e] transition-colors duration-300">
           See all 
         </Link>
       </section>

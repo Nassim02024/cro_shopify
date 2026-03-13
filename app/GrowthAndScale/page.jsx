@@ -41,7 +41,7 @@ const GrowthAndScale = () => {
         </section>
 
         {/* 2. Introduction to Pillars */}
-        <section className="pb-16 max-w-3xl mx-auto mt-[100px]">
+        <section className="pb-16 max-w-3xl mx-auto mt-[10px] sm:mt-[100px]">
   
         </section>
 
@@ -153,7 +153,7 @@ const GrowthAndScale = () => {
       <div>
         <DownSection data={cardDown} />
        </div>
-      <div className='px-4 sm:px-0'>
+      <div className=' sm:px-0'>
         <DownSection3 />
       </div>
     </div>  

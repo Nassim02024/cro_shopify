@@ -39,7 +39,7 @@ const DeepEcommerceAnalysis = () => {
       },
     {
       livle : "Level 5",
-      headning : "Brand Audi",
+      headning : "Brand Audit",
       text1 : "We evaluate your brand’s positioning and identity to ensure it stands out in a crowded market.",
       }
   ]
@@ -93,7 +93,7 @@ return (
 ))}
 
 
-<section className='flex flex-col space-y-[40px] mt-[150px]'>
+<section className='flex flex-col space-y-[40px] mt-[100px] sm:mt-[150px]'>
   <div>
       <h2 className='text-[clamp(30px,5vw,48px)] font-medium text-[#757575] '>What You will Get</h2>
   </div>
@@ -117,7 +117,7 @@ return (
        <div>
           <DownSection data={cardDown} />
        </div>
-      <div className='px-4 sm:px-0 mt-20'>
+      <div className=' sm:px-0 mt-20'>
        <DownSection3 />
       </div>
     </div>
