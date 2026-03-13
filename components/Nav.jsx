@@ -51,7 +51,7 @@ const Nav = () => {
 
   return (
     // أضفنا الـ ref هنا للتحكم
-    <nav ref={navRef} className="fixed top-2 left-1/2 -translate-x-1/2 w-[95%] sm:w-[90%] z-[100]   ">
+    <nav ref={navRef} className="fixed top-2 left-1/2 -translate-x-1/2 w-[95%] sm:w-[90%] z-[100]  z-[300] ">
       
       {/* الشريط الأساسي */}
       <div className="h-[60px]  bg-black text-white px-3 sm:px-6 rounded-full flex flex-row justify-between items-center relative z-[110]">
