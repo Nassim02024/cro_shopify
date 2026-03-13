@@ -54,7 +54,7 @@ const Nav = () => {
     <nav ref={navRef} className="fixed top-2 left-1/2 -translate-x-1/2 w-[95%] sm:w-[90%] z-[100]   ">
       
       {/* الشريط الأساسي */}
-      <div className="h-[60px]  bg-black text-white px-6 rounded-full flex flex-row justify-between items-center relative z-[110]">
+      <div className="h-[60px]  bg-black text-white px-3 sm:px-6 rounded-full flex flex-row justify-between items-center relative z-[110]">
         <div className="flex items-center justify-between w-full sm:w-auto h-full">
           <div className="flex items-center">
             <Image
@@ -68,8 +68,8 @@ const Nav = () => {
             />
             <Link href="/" className='text-[#31F691] text-[25px] sm:text-[30px] itim-regular'>Flaylor</Link>
           </div>
-          <Link  className="sm:hidden bg-white text-black relative left-3.5 px-4 py-[2.5%] rounded-full text-base " href="/contactUs">
-            Get a free scaling plan now
+          <Link  className="sm:hidden bg-white text-black relative left-1  px-2 sm:left-3.5  sm:px-4 py-[1.5%] sm:py-[2.5%]  rounded-full text-base " href="/contactUs">
+            Get a free scaling plan
           </Link>
         </div>
 
@@ -97,8 +97,8 @@ const Nav = () => {
            </ul>
         </div>
 
-        <Link  className="hidden sm:flex bg-white text-black relative left-3.5 px-6 py-2.5 rounded-full  hover:bg-[#e4e3e3] transition-all" href="/contactUs">
-           Get a free scaling plan now
+        <Link  className="hidden sm:flex bg-white text-black relative left-3.5 px-6 py-3.5 rounded-full  hover:bg-[#e4e3e3] transition-all" href="/contactUs">
+           Get a free scaling plan
         </Link>
       </div>
 

@@ -53,13 +53,12 @@ return (
             <div className='w-full mt-20'>
               {/* تعديل حجم العنوان الرئيسي */}
               <h1 className='text-[#757575] text-[clamp(32px,7vw,56px)] font-medium leading-tight'>
-                Get a free scaling plan
+                E-commerce audit
               </h1>
             </div>
             <div className='space-y-6 text-[#1E1E1E] leading-relaxed max-w-3xl'>
           
               <p className='text-[clamp(16px,3vw,20px)] '>
- 
                  After this audit, you will gain a 360° financial & marketing overview, paired with a prioritized roadmap of high-impact actions for your business.
               </p>
             </div>
