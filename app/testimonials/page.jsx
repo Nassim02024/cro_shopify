@@ -58,7 +58,7 @@ export  const testimonials = [
     },
     {
       id: 10,
-      name: "quote:",
+      name: "Thomas E:",
       position: "Founder of LuxDecor",    
       quote: "we had a beautiful website but it was not selling we were pouring thousands into ads and i thought the problem was our advertising method you rebuilt the entire customer journey based on our financial data the results were enough to change the course of our business as our conversion rate jumped by 50% in the first month and for the first time we know exactly how much net profit we make from every sale can you believe that hhhhh our store evolved from just a digital storefront into a high performance revenue engine thank you"
      },

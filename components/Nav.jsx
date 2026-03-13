@@ -41,7 +41,7 @@ const Nav = () => {
   }, [isOpen]);
 
   const services = [
-    { name: "Get a free scaling plan", href: "/GetFreeAudit" },
+    { name: "E-commerce audit", href: "/GetFreeAudit" },
     { name: "Paid Ads Marketing", href: "/PaidAdsMarketing" },
     { name: "CRO (Conversion Rate Optimization)", href: "/CROConversionRateOptimization" },
     { name: "Growth & Scale", href: "/GrowthAndScale" },
@@ -51,7 +51,7 @@ const Nav = () => {
 
   return (
     // أضفنا الـ ref هنا للتحكم
-    <nav ref={navRef} className="fixed top-2 left-1/2 -translate-x-1/2 w-[95%] sm:w-[90%] z-[100]   ">
+    <nav ref={navRef} className="fixed top-2 left-1/2 -translate-x-1/2 w-[100%] sm:w-[90%] z-[100]   ">
       
       {/* الشريط الأساسي */}
       <div className="h-[60px]  bg-black text-white px-3 sm:px-6 rounded-full flex flex-row justify-between items-center relative z-[110]">
@@ -68,7 +68,7 @@ const Nav = () => {
             />
             <Link href="/" className='text-[#31F691] text-[25px] sm:text-[30px] itim-regular'>Flaylor</Link>
           </div>
-          <Link  className="sm:hidden bg-white text-black relative left-1  px-2 sm:left-3.5  sm:px-4 py-[1.5%] sm:py-[2.5%]  rounded-full text-base " href="/contactUs">
+          <Link  className="sm:hidden bg-white text-black relative left-1  sm:left-3.5  px-2  py-[3.5%]  rounded-full text-base " href="/contactUs">
             Get a free scaling plan
           </Link>
         </div>

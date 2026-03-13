@@ -82,13 +82,13 @@ export default function HomePage() {
       </span>
       <span>to 2–4X in Just 90 days or less</span>
     </div>
-        <h1 className="text-[clamp(16px,5vw,23px)] font-normal text-[#1E1E1E] leading-[1.2] sm:w-[70%] w-[100%]">
-          We are a marketing agency for D2C brands, where we bridge the gap between financial analytics and creative marketing.
+        <h1 className="text-[clamp(16px,4vw,20px)] font-normal text-[#1E1E1E] leading-[1.2] sm:w-[70%] w-[100%]">
+          We are a D2C marketing agency specializing in driving growth through finance-backed marketing decisions.
         </h1>
   
         <div className="flex flex-col justify-center items-center sm:space-x-3  flex-col-reverse md:relative md:flex-row w-full px-6">
           <Link  href="/contactUs" className="font-semibold w-[100%] sm:w-[222px] text-base mt-5 px-7 py-[13px] cursor-pointer rounded-full border border-gray-300 ">
-            <p className=''>Get a free scaling plan now</p>
+            <p className=''>Get a free scaling plan </p>
           </Link>
           <Link target='_blank' href="https://calendly.com/aminemd/new-meeting" className=" w-[100%] sm:w-[222px] mt-4 sm:mt-8 px-7 py-[13px] text-base cursor-pointer  bg-[#2F6F4E] rounded-full border text-white border-gray-300">
             <p className=' '>Book a Call</p>
@@ -123,7 +123,7 @@ export default function HomePage() {
     ]).map((imgSrc, index) => (
       <div
         key={index}
-        className="shrink-0 p-2 sm:p-4  h-[273px] sm:h-[470px] rounded-[10px] sm:rounded-[20px] overflow-hidden flex items-center justify-center"
+        className="shrink-0 p-2 sm:p-4  h-[273px] sm:h-[470px] rounded-[5px] sm:rounded-[15px] overflow-hidden flex items-center justify-center"
       >
         <Image
           width={324}
@@ -401,40 +401,40 @@ export default function HomePage() {
             <h3 className="text-[25px]   text-center mb-6 ">Flaylor</h3>
             <div className="space-y-[21px]">
               <div className="flex items-center gap-2">
-                <div className="flex items-center justify-center w-6 h-6 rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)]">
-                  <svg className="w-6 h-6 p-[3px] text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
+                <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)]">
+                  <svg className="w-6 h-6  text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
                     <path d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
                 <span className="text-gray-700 text-[14px]">We focus on maximizing net profit after all expenses.</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="flex items-center justify-center w-6 h-6 p-[3px] rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)]">
-                  <svg className="w-6 h-6 p-[3px] text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
+                <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)]">
+                  <svg className="w-6 h-6  text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
                     <path d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
                 <span className="text-gray-700 text-[14px]">Based on rigorous financial analysis of every cent spent.</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="flex items-center justify-center w-6 h-6 p-[3px] rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)]">
-                  <svg className="w-6 h-6 p-[3px] text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
+                <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)]">
+                  <svg className="w-6 h-6  text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
                     <path d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
                 <span className="text-gray-700 text-[14px]">We link real-time financial data directly to marketing actions.</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="flex items-center justify-center w-6 h-6 p-[3px] rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)]">
-                  <svg className="w-6 h-6 p-[3px] text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
+                <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)]">
+                  <svg className="w-6 h-6  text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
                     <path d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
                 <span className="text-gray-700 text-[14px]">Scaling based on Unit Economics to ensure sustainable growth.</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="flex items-center justify-center w-6 h-6 p-[3px] rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)] ">
-                  <svg className="w-6 h-6 p-[3px] text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
+                <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)] ">
+                  <svg className="w-6 h-6   text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
                     <path d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
@@ -448,7 +448,7 @@ export default function HomePage() {
             <h3 className="text-[25px]  text-center mb-6 ">Traditional Marketing Agencies</h3>
             <div className="space-y-[30px]">
               <div className="flex items-center gap-2">
-                <div className="flex items-center justify-center w-6 h-6 p-[3px] rounded-full border border-red-500/30 bg-red-50/10 shadow-[0_0_8px_rgba(239,68,68,0.4)]">
+                <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-red-500/30 bg-red-50/10 shadow-[0_0_8px_rgba(239,68,68,0.4)]">
                   <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
                     <path d="M6 18L18 6M6 6l12 12" />
                   </svg>
@@ -456,7 +456,7 @@ export default function HomePage() {
                 <span className="text-gray-700 text-[14px]">Focus on views, clicks, and total sales volume.</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="flex items-center justify-center w-6 h-6 p-[3px] rounded-full border border-red-500/30 bg-red-50/10 shadow-[0_0_8px_rgba(239,68,68,0.4)]">
+                <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-red-500/30 bg-red-50/10 shadow-[0_0_8px_rgba(239,68,68,0.4)]">
                   <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
                     <path d="M6 18L18 6M6 6l12 12" />
                   </svg>
@@ -464,7 +464,7 @@ export default function HomePage() {
                 <span className="text-gray-700 text-[14px]">Based on creative intuition or marketing "feel."</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="flex items-center justify-center w-6 h-6 p-[3px] rounded-full border border-red-500/30 bg-red-50/10 shadow-[0_0_8px_rgba(239,68,68,0.4)]">
+                <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-red-500/30 bg-red-50/10 shadow-[0_0_8px_rgba(239,68,68,0.4)]">
                   <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
                     <path d="M6 18L18 6M6 6l12 12" />
                   </svg>
@@ -472,7 +472,7 @@ export default function HomePage() {
                 <span className="text-gray-700 text-[14px]">Ad platform data is separated from financial reality.</span>
               </div>
               <div className="flex items-center gap-2">
-              <div className="flex items-center justify-center w-6 h-6 p-[3px] rounded-full border border-red-500/30 bg-red-50/10 shadow-[0_0_8px_rgba(239,68,68,0.4)]">
+              <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-red-500/30 bg-red-50/10 shadow-[0_0_8px_rgba(239,68,68,0.4)]">
                 <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
                   <path d="M6 18L18 6M6 6l12 12" />
                 </svg>
@@ -480,11 +480,12 @@ export default function HomePage() {
                 <span className="text-gray-700 text-[14px]">Scaling by simply increasing budget to sell more.</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="flex items-center justify-center w-6 h-6 p-[3px] rounded-full border border-red-500/30 bg-red-50/10 shadow-[0_0_8px_rgba(239,68,68,0.4)]">
+                <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-red-500/30 bg-red-50/10 shadow-[0_0_8px_rgba(239,68,68,0.4)]">
                   <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
                     <path d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </div>
+                
                 <span className="text-gray-700 text-[14px]">Marketing is treated as an "experiment" that might fail.</span>
               </div>
             </div>
@@ -511,8 +512,8 @@ export default function HomePage() {
                 <p className="text-gray-600 text-sm">CEO of an Apparel Line</p>
               </div>
             </div>
-            <p className="text-gray-700 leading-relaxed">
-              It’s rare to find people in this industry who have the heart of a teacher Most agencies see you as a monthly retainer but with Flaylor I felt seen as a human being They helped us navigate a really tough recession by pivoting our strategy based on real time 
+            <p className="text-gray-700 leading-relaxed text-[15px] italic">
+             It’s rare to find people in this industry who have the heart of a teacher Most agencies see you as a monthly retainer but with Flaylor I felt seen as a human being They helped us navigate a really tough recession by pivoting our strategy based on real time financial data not just creative trends We doubled our net profit in 60 days because they taught us how to stop gambling and start calculating Their support was pivotal during our most challenging season and for that I am forever grateful
             </p>
           </div>
 
@@ -527,8 +528,8 @@ export default function HomePage() {
                 <p className="text-gray-600 text-sm">Founder of Skinkar</p>
               </div>
             </div>
-            <p className="text-gray-700 leading-relaxed">
-              Before meeting you and the Flaylor team I spent my nights staring at Shopify dashboards seeing huge revenue numbers but wondering why my bank account stayed empty it was exhausting other agencies just told me to spend more on ads 
+            <p className="text-gray-700 leading-relaxed text-[15px] italic">
+"Before meeting you and the Flaylor team I spent my nights staring at Shopify dashboards seeing huge revenue numbers but wondering why my bank account stayed empty it was exhausting other agencies just told me to spend more on ads but you did something different you sat down with me and looked at my actual margins you treated my business like it was your own family legacy today I don't just have a store I have a profitable business that allows me to actually spend time with my kids without checking my phone every five minutes"
             </p>
           </div>
 
@@ -543,8 +544,8 @@ export default function HomePage() {
                 <p className="text-gray-600 text-sm">E-commerce Director</p>
               </div>
             </div>
-            <p className="text-gray-700 leading-relaxed">
-              I was one of the biggest skeptics after being let down by marketing agencies before but with you guys you proved me wrong you aligned our Meta ads with our unit economics so perfectly that every dollar spent now has a clear purpose we 
+            <p className="text-gray-700 leading-relaxed text-[15px] italic">
+              "I was one of the biggest skeptics after being let down by marketing agencies before but with you guys you proved me wrong you aligned our Meta ads with our unit economics so perfectly that every dollar spent now has a clear purpose we stopped chasing vanity metrics and started chasing real net profit it is truly a relief I thank you for your credibility and I wish you success"
             </p>
           </div>
         </div>
