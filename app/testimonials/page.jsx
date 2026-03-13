@@ -1,44 +1,41 @@
 "use client";
 
 import React from 'react';
-
-
-export default function TestimonialsPage() {
-  const testimonials = [
+export  const testimonials = [
     {
       id: 1,
-      name: "Jennifer",
-      position: "E-commerce Store Owner",      
-      quote: "Before Flaylor, we were hitting record sales but barely seeing any profit. Amine and his team changed everything by linking our marketing directly to our financial data. In 60 days, we didn't just scale our revenue—we actually 3X'd our net profit. Finally, we're building a real business, not just a mirage."
+      name: "Sarah Jenkins",
+      position: "CEO of an Apparel Line",      
+      quote: "It’s rare to find people in this industry who have the heart of a teacher Most agencies see you as a monthly retainer but with Flaylor I felt seen as a human being They helped us navigate a really tough recession by pivoting our strategy based on real time financial data not just creative trends We doubled our net profit in 60 days because they taught us how to stop gambling and start calculating Their support was pivotal during our most challenging season and for that I am forever grateful"
     },
     {
       id: 2,
-      name: "Ricardo",
-      position: "Marketing Manager at SOLON",    
-      quote: "It’s rare to find people in this industry who have the heart of a teacher Most agencies see you as a monthly retainer but with Flaylor I felt seen as a human being They helped us navigate a really tough recession by pivoting our strategy based on real time financial data not just creative trends We doubled our net profit in 60 days because they taught us how to stop gambling and start calculating Their support was pivotal during our most challenging season and for that I am forever grateful",
+      name: "David R",
+      position: "Founder of Skinkar",    
+      quote: "Before meeting you and the Flaylor team I spent my nights staring at Shopify dashboards seeing huge revenue numbers but wondering why my bank account stayed empty it was exhausting other agencies just told me to spend more on ads but you did something different you sat down with me and looked at my actual margins you treated my business like it was your own family legacy today I don't just have a store I have a profitable business that allows me to actually spend time with my kids without checking my phone every five minutes",
     },
     {
       id: 3,
-      name: "Alex",
-      position: "Beauty Products CEO",      
-      quote: "I was one of the biggest skeptics after being let down by marketing agencies before but with you guys you proved me wrong you aligned our Meta ads with our unit economics so perfectly that every dollar spent now has a clear purpose we stopped chasing vanity metrics and started chasing real net profit it is truly a relief I thank you for your credibility and I wish you success,",
+      name: "Mark Thompson",
+      position: "E-commerce Director",      
+      quote: "I was one of the biggest skeptics after being let down by marketing agencies before but with you guys you proved me wrong you aligned our Meta ads with our unit economics so perfectly that every dollar spent now has a clear purpose we stopped chasing vanity metrics and started chasing real net profit it is truly a relief I thank you for your credibility and I wish you success",
     },
     {
       id: 4,
-      name: "Liam",
-      position: "Fashion Brand Founder",    
-      quote: " I thought our problem was just the ads but you showed us that the gap was in not linking our marketing to our financial data regarding the design it was amazing especially when you focused on the entire customer journey we did not expect to see a 150% improvement in conversion rates so quickly honestly working with you is the best investment we have made for our brand’s growth thank you",
+      name: "Amanda",
+      position: "CEO of Glow Essentials",    
+      quote: "I thought our problem was just the ads but you showed us that the gap was in not linking our marketing to our financial data regarding the design it was amazing especially when you focused on the entire customer journey we did not expect to see a 150% improvement in conversion rates so quickly honestly working with you is the best investment we have made for our brand’s growth thank you",
     },
     {
       id: 5,
-      name: "Nora",
-      position: "Home Goods Store Owner",      
-      quote: "we were hitting good sales but we did not know where the profits were going you helped us bridge the gap between marketing and finance and by improving the UI/UX and focusing on unit economics we achieved incredible results in just 60 days I will be honest with you guys you understand both the language of money and the language of design together and that is the secret of our success with them it is great working with you,",
+      name: "Mark",
+      position: "Entrepreneur",      
+      quote: "we were hitting good sales but we did not know where the profits were going you helped us bridge the gap between marketing and finance and by improving the UI/UX and focusing on unit economics we achieved incredible results in just 60 days I will be honest with you guys you understand both the language of money and the language of design together and that is the secret of our success with them it is great working with you",
     },
     {
       id: 6,
-      name: "Michael",
-      position: "Tech Accessories CEO",    
+      name: "Jennifer W",
+      position: "Marketing Director",    
       quote: "our biggest challenge was scaling because every time we increased our ad spend our profits would shrink despite achieving high sales you designed a strategy based on financial logic and thanks to this approach we quadrupled our sales in just 60 days while maintaining a healthy net profit I will say it honestly if it weren't for you we would still be struggling it is great to continue working with you",
     },
     {
@@ -78,6 +75,9 @@ export default function TestimonialsPage() {
       quote:"what i liked most about working with you was the clarity no complex jargon or empty promises you dove into our financial figures and designed high converting landing pages and explained how every marketing decision affects our bottom line we achieved 200% growth in record time because we finally started making decisions based on financial facts rather than guesswork"
     }
   ];
+
+export default function TestimonialsPage() {
+
 
   return (
     <main className="min-h-screen bg-gray-50">

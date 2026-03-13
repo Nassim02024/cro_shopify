@@ -41,7 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },    
     {
       // صفحة التحليل -   
-      url: `${baseUrl}/Get free audit`, 
+      url: `${baseUrl}/Get a free scaling plan`, 
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.9,

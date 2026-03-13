@@ -104,7 +104,7 @@ return (
       
       {/* عنوان الصفحة - متناسق مع الصفحات السابقة */}
       <h1 className="text-[clamp(32px,7vw,61px)] w-full text-[#757575] font-semibold leading-tight">
-        Get free audit now
+        Get a free scaling plan now
       </h1>
 
       <div className="w-full flex items-center justify-center">

@@ -41,7 +41,7 @@ const Nav = () => {
   }, [isOpen]);
 
   const services = [
-    { name: "Get free audit", href: "/GetFreeAudit" },
+    { name: "Get a free scaling plan", href: "/GetFreeAudit" },
     { name: "Paid Ads Marketing", href: "/PaidAdsMarketing" },
     { name: "CRO (Conversion Rate Optimization)", href: "/CROConversionRateOptimization" },
     { name: "Growth & Scale", href: "/GrowthAndScale" },
@@ -69,7 +69,7 @@ const Nav = () => {
             <Link href="/" className='text-[#31F691] text-[25px] sm:text-[30px] itim-regular'>Flaylor</Link>
           </div>
           <Link  className="sm:hidden bg-white text-black relative left-3.5 px-4 py-[2.5%] rounded-full text-base " href="/contactUs">
-            Get free audit now
+            Get a free scaling plan now
           </Link>
         </div>
 
@@ -92,13 +92,13 @@ const Nav = () => {
                 </div>
              </li>
              {/* <li><Link href="/Project" className={`hover:text-[#31F691] ${pathname === '/Project' ? 'text-[#31F691]' : ''}`}>Projects</Link></li> */}
-             {/* <li><Link href="/blog" className={`hover:text-[#31F691] ${pathname === '/blog' ? 'text-[#31F691]' : ''}`}>Blog</Link></li> */}
+             <li><Link href="/testimonials" className={`hover:text-[#31F691] ${pathname === '/testimonials' ? 'text-[#31F691]' : ''}`}>testimonials</Link></li>
              <li><Link href="/about" className={`hover:text-[#31F691] ${pathname === '/about' ? 'text-[#31F691]' : ''}`}>About Us</Link></li>
            </ul>
         </div>
 
         <Link  className="hidden sm:flex bg-white text-black relative left-3.5 px-6 py-2.5 rounded-full  hover:bg-[#e4e3e3] transition-all" href="/contactUs">
-           Get free audit now
+           Get a free scaling plan now
         </Link>
       </div>
 
@@ -136,7 +136,7 @@ const Nav = () => {
             </div>
           </li>
           {/* <Link  href="/Project" onClick={() => setIsOpen(false)} className={` ${pathname === '/Project' ? "text-[#31F691] " : '' }`}><li>Projects</li></Link> */}
-          {/* <li><Link className='' href="/blog" onClick={() => setIsOpen(false)}>Blog</Link></li> */}
+          <li><Link className='/testimonials' href="/testimonials" onClick={() => setIsOpen(false)}>testimonials</Link></li>
           <Link href="/about" onClick={() => setIsOpen(false)} className={`${pathname === '/about' ? "text-[#31F691] " : '' }`}><li>About Us </li></Link>
         </ul>
       </div>

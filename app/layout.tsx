@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     "Scale Shopify Brand",
     "Shopify Ads Management",
     "Data-driven Marketing Agency",
-    "Get free audit"
+    "Get a free scaling plan"
   ],
 
   // إعدادات محركات البحث
@@ -137,12 +137,14 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Google Material Icons - Using media query to defer loading */}
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-          media="print"
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        <link 
+          rel="stylesheet" 
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" 
         />
-        {/* رابط التحقق من ملكية الموقع في Google Search Console */}
+
         <meta name="google-site-verification" content="-vY6Rj44c5AWAKvRSN7Mt6-6akJ3qT44UWexCkS4Ld0" />
       </head>
       <body

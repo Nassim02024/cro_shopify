@@ -16,8 +16,8 @@ export default function ProjectModal({ isOpen, onClose, projectSlug }: ProjectMo
   if (!isOpen || !project) return null;
 
   return (
-    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm ">
-      <div className="relative  w-full max-w-[95%] max-h-[95vh] overflow-y-auto bg-white rounded-2xl shadow-xl">
+    <div className="fixed inset-0 z-[200] flex items-center justify-center  bg-black/60 backdrop-blur-sm ">
+      <div className="relative  w-full max-w-[100%] max-h-[100vh] overflow-y-auto bg-white rounded-2xl shadow-xl">
         {/* Close Button */}
         <div className="fixed top-5 right-[5%] z-50 flex justify-end p-4 pointer-events-none">
       <button
@@ -40,7 +40,7 @@ export default function ProjectModal({ isOpen, onClose, projectSlug }: ProjectMo
               className="object-cover "
               sizes="(max-width: 768px) 100vw, 80vw"
             />
-            <h1 className="absolute z-[1000] bottom-2 left-10 w-xl text-2xl sm:text-3xl  text-[#F3F3F3] mb-4">
+            <h1 className="absolute z-[1000] bottom-1 sm:bottom-2 w-[95%] left-5 sm:left-10 sm:w-xl text-2xl sm:text-3xl  text-[#F3F3F3] mb-4">
               {project.title}
             </h1>
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>

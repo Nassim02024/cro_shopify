@@ -24,7 +24,7 @@ export default function HomePage() {
     { title: "Growth & Scale", description: "Strategic scaling that grows market share while securing net profit margins", link: "/GrowthAndScale" },
     { title: "CRO (Conversion Rate Optimization)", description: "Engineering frictionless shopping experiences to maximize conversion rates and revenue.", link: "/CROConversionRateOptimization" },
     { title: "Paid Ads Marketing", description: "Performance-driven ad management focusing on high LTV and optimized acquisition costs.", link: "/PaidAdsMarketing" },
-    { title: "Get free audit", description: "Deep-dive auditing to eliminate financial leaks and unlock hidden profit potential", link: "/GetFreeAudit" },
+    { title: "Get a free scaling plan", description: "Deep-dive auditing to eliminate financial leaks and unlock hidden profit potential", link: "/GetFreeAudit" },
   ];
 
 
@@ -70,28 +70,30 @@ export default function HomePage() {
 
   return (
     <main className="mt-10 overflow-x-hidden h-fit overflow-y-hidden">
-      <section className="m-auto mt-20 md:10 flex flex-col items-center text-center space-y-[12px] sm:space-y-3 px-[2%] sm:px-[10%]">
-        <h1 className="text-[clamp(30px,5vw,39px)] leading-[1.2] sm:w-[70%] w-[100%]">
-          We help e-commerce business owners scale their profits to 2–4X in Just 60 days        
-        </h1>
-    <div className="text-[clamp(16px,4vw,18px)] flex flex-wrap  items-center justify-center sm:w-[80%] w-[90%] mx-auto leading-relaxed">
-      <span>We are a marketing agency specializing in D2C brands, where our philosophy is based on   </span>
+      <section className="m-auto mt-20 md:10 flex flex-col items-center text-center space-y-[20px] sm:space-y-[12px] sm:space-y-3 px-[2%] sm:px-[10%]">
+      <div className="text-[clamp(28px,4vw,49px)] font-medium flex flex-wrap  items-center justify-center w-[95%] sm:w-[90%]  mx-auto leading-relaxed">
+      <span>We help</span>
       <span className="text-[#2F6F4E] mx-2 font-medium">
-         analyzing financial data 
+         DTC Brand
       </span>
-      <span>and linking it to </span>
+      <span>owners scale their </span>
       <span className="text-[#2F6F4E] mx-2 font-medium">
-          marketing decisions
+        profits
       </span>
-      <span>to achieve optimal efficiency.</span>
+      <span>to 2–4X in Just 90 days or less</span>
     </div>
+        <h1 className="text-[clamp(18px,5vw,25px)] font-normal text-[#1E1E1E] leading-[1.2] sm:w-[70%] w-[100%]">
+          We are a marketing agency for D2C brands, where we bridge the gap between financial analytics and creative marketing.
+        </h1>
+  
         <div className="flex flex-col justify-center items-center sm:space-x-3  flex-col-reverse md:relative md:flex-row w-full px-6">
-          {/* <Link href="/" className=" w-[100%] sm:w-[222px] mt-4 sm:mt-8 px-7 py-[13px] text-base cursor-pointer bg-white rounded-full border border-gray-300">
-            <p className=' '>Get Free Checklist</p>
-          </Link> */}
-          <Link  href="/contactUs" className="font-semibold w-[100%] sm:w-[222px] text-base mt-5 px-7 py-[13px] cursor-pointer bg-[#2F6F4E] rounded-full border border-gray-300 text-white">
-            <p className=''>Get free audit now</p>
+          <Link  href="/contactUs" className="font-semibold w-[100%] sm:w-[222px] text-base mt-5 px-7 py-[13px] cursor-pointer rounded-full border border-gray-300 ">
+            <p className=''>Get a free scaling plan now</p>
           </Link>
+          <Link href="/" className=" w-[100%] sm:w-[222px] mt-4 sm:mt-8 px-7 py-[13px] text-base cursor-pointer  bg-[#2F6F4E] rounded-full border text-white border-gray-300">
+            <p className=' '>Book a Call</p>
+          </Link>
+          
         </div>
       </section>
 
@@ -400,7 +402,7 @@ export default function HomePage() {
             <div className="space-y-[21px]">
               <div className="flex items-center gap-2">
                 <div className="flex items-center justify-center w-6 h-6 rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)]">
-                  <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
+                  <svg className="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
                     <path d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
@@ -408,7 +410,7 @@ export default function HomePage() {
               </div>
               <div className="flex items-center gap-2">
                 <div className="flex items-center justify-center w-6 h-6 rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)]">
-                  <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
+                  <svg className="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
                     <path d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
@@ -416,7 +418,7 @@ export default function HomePage() {
               </div>
               <div className="flex items-center gap-2">
                 <div className="flex items-center justify-center w-6 h-6 rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)]">
-                  <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
+                  <svg className="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
                     <path d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
@@ -424,15 +426,15 @@ export default function HomePage() {
               </div>
               <div className="flex items-center gap-2">
                 <div className="flex items-center justify-center w-6 h-6 rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)]">
-                  <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
+                  <svg className="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
                     <path d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
                 <span className="text-gray-700">Scaling based on Unit Economics to ensure sustainable growth.</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="flex items-center justify-center w-6 h-6 rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)]">
-                  <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
+                <div className="flex items-center justify-center w-6 h-6 rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)] ">
+                  <svg className="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
                     <path d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
@@ -442,7 +444,7 @@ export default function HomePage() {
           </div>
 
           {/* Right Card - Results/Stats */}
-          <div className="bg-white rounded-2xl shadow-lg p-8 bg-gradient-to-b from-neutral-100 to-zinc-300 rounded-[30px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.30)] shadow-[0px_4px_8px_3px_rgba(0,0,0,0.15)] outline outline-4 outline-offset-[-4px] outline-white overflow-hidden">
+          <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 bg-gradient-to-b from-neutral-100 to-zinc-300 rounded-[30px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.30)] shadow-[0px_4px_8px_3px_rgba(0,0,0,0.15)] outline outline-4 outline-offset-[-4px] outline-white overflow-hidden">
             <h3 className="text-[25px]  text-center mb-6 ">Traditional Marketing Agencies</h3>
             <div className="space-y-[30px]">
               <div className="flex items-center gap-2">
@@ -497,52 +499,58 @@ export default function HomePage() {
           
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
-          {/* Testimonial Card 1 */}
-          <div className="bg-white rounded-2xl shadow-lg p-6 transition-transform duration-300 hover:shadow-xl border border-[#D9D9D9]">
-            <div className="flex  mb-4">
+        <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
+            {/* Testimonial Card 1 */}
+            <div 
+              className="break-inside-avoid bg-white rounded-2xl shadow-md p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col"
+            >            
+            <div className="flex mb-4">
               
               <div>
-                <h3 className="font-semibold text-lg">Jennifer</h3>
-                <p className="text-gray-600 text-sm">E-commerce Store Owner</p>
+                <h3 className="font-semibold text-lg">Sarah Jenkins</h3>
+                <p className="text-gray-600 text-sm">CEO of an Apparel Line</p>
               </div>
             </div>
             <p className="text-gray-700 leading-relaxed">
-              "Before Flaylor, we were hitting record sales but barely seeing any profit. Amine and his team changed everything by linking our marketing directly to our financial data. In 60 days, we didn't just scale our revenue—we actually 3X’d our net profit. Finally, we’re building a real business, not just a mirage."
+It’s rare to find people in this industry who have the heart of a teacher Most agencies see you as a monthly retainer but with Flaylor I felt seen as a human being They helped us navigate a really tough recession by pivoting our strategy based on real time 
             </p>
           </div>
 
           {/* Testimonial Card 2 */}
-          <div className="hidden  md:block  bg-white rounded-2xl shadow-lg p-6 transition-transform duration-300 hover:shadow-xl border border-[#D9D9D9]">
+           <div 
+              className="hidden dm:flex break-inside-avoid bg-white rounded-2xl shadow-md p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col"
+            >
             <div className="flex items-center mb-4">
               
               <div>
-                <h3 className="font-semibold text-lg">Ricardo</h3>
-                <p className="text-gray-600 text-sm">Marketing Manager at SOLON</p>
+                <h3 className="font-semibold text-lg">David R</h3>
+                <p className="text-gray-600 text-sm">Founder of Skinkar</p>
               </div>
             </div>
             <p className="text-gray-700 leading-relaxed">
-               "Before Flaylor, we were hitting record sales but barely seeing any profit. Amine and his team changed everything by linking our marketing directly to our financial data. In 60 days, we didn't just scale our revenue—we actually 3X’d our net profit. Finally, we’re building a real business, not just a mirage."
+            Before meeting you and the Flaylor team I spent my nights staring at Shopify dashboards seeing huge revenue numbers but wondering why my bank account stayed empty it was exhausting other agencies just told me to spend more on ads 
             </p>
           </div>
 
           {/* Testimonial Card 3 */}
-          <div className="hidden md:block bg-white rounded-2xl shadow-lg p-6  shadow-[0px_1px_3px_1px_rgba(0,0,0,0.15)] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.30)] border border-[#D9D9D9]  ">
+            <div 
+              className="hidden dm:flex  break-inside-avoid bg-white rounded-2xl shadow-md p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col"
+            >
             <div className="flex  mb-4">
               
               <div>
-                <h3 className="font-semibold text-lg">Alex</h3>
-                <p className="text-gray-600 text-sm">Beauty Products CEO</p>
+                <h3 className="font-semibold text-lg">Mark Thompson</h3>
+                <p className="text-gray-600 text-sm">E-commerce Director</p>
               </div>
             </div>
             <p className="text-gray-700 leading-relaxed">
-              "Before Flaylor, we were hitting record sales but barely seeing any profit. Amine and his team changed everything by linking our marketing directly to our financial data. In 60 days, we didn't just scale our revenue—we actually 3X’d our net profit. Finally, we’re building a real business, not just a mirage."
+              I was one of the biggest skeptics after being let down by marketing agencies before but with you guys you proved me wrong you aligned our Meta ads with our unit economics so perfectly that every dollar spent now has a clear purpose we 
             </p>
           </div>
         </div>
          <div className="w-[1440px] h-[20vh] sm:h-[40vh] absolute top-[270px] sm:top-[300px]  bg-gradient-to-r from-stone-50 to-stone-50 blur-[25px]" />
 
-        <Link href="/testimonials" className="absolute -bottom-10 sm:bottom-0 z-10 text-[#2F6F4E] cursor-pointer font-medium hover:text-[#24583e] transition-colors duration-300">
+        <Link href="/testimonials" className="absolute -bottom-5 sm:bottom-0 z-10 text-[#2F6F4E] cursor-pointer font-medium hover:text-[#24583e] transition-colors duration-300">
           See all 
         </Link>
       </section>
@@ -550,7 +558,7 @@ export default function HomePage() {
 
       <section className='flex flex-col justify-center text-center items-center mt-[100px] space-y-[12px] px-[10px]  md:px-[100px] lg:px-[250px]'>
        <p className='text-[clamp(31px,4vw,39px)] text-[#969593]'>About Us</p>
-       <p className='text-[clamp(16px,4vw,20px)]' >At FLAYLOR, we serve as the strategic growth engine for Shopify D2C brands navigating the high-stakes &ldquo;Growing Stage.&rdquo;</p>
+       <p className='text-[clamp(16px,4vw,20px)]' >While traditional agencies prioritize "reach," we focus on profitability. We specialize in supporting Shopify brands that have transitioned past the foundational phase and are now navigating the complexities of the Growing Stage</p>
        <Link href="/about" className="text-[#2F6F4E] cursor-pointer">Learn more</Link>
       </section>
       

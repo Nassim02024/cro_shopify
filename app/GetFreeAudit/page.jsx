@@ -53,7 +53,7 @@ return (
             <div className='w-full mt-20'>
               {/* تعديل حجم العنوان الرئيسي */}
               <h1 className='text-[#757575] text-[clamp(32px,7vw,56px)] font-medium leading-tight'>
-                Get free audit
+                Get a free scaling plan
               </h1>
             </div>
             <div className='space-y-6 text-[#1E1E1E] leading-relaxed max-w-3xl'>
