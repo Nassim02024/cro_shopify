@@ -68,7 +68,7 @@ const Nav = () => {
             />
             <Link href="/" className='text-[#31F691] text-[25px] sm:text-[30px] itim-regular'>Flaylor</Link>
           </div>
-          <Link  className="sm:hidden bg-white text-black relative left-1  sm:left-3.5  px-2  py-[3.5%]  rounded-full text-base " href="/contactUs">
+          <Link  className="sm:hidden bg-white text-black relative left-1  sm:left-3.5  px-4  py-[2%]  rounded-full text-base " href="/contactUs">
             Contact Us
           </Link>
         </div>
