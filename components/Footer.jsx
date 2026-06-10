@@ -14,11 +14,14 @@ const Footer = () => {
     <Image width={30} height={30} className="z-40" src="/linkdin.png" alt="LinkedIn profile" loading="lazy" placeholder="blur" blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Crect width='30' height='30' fill='%23f3f4f6'/%3E%3C/svg%3E" />
 </Link>
 <Link href="https://wa.me/213542029084" target='_blank' rel="noopener noreferrer" className="transition-transform hover:scale-105 cursor-pointer w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] relative rounded-[999px] shadow-[inset_1px_1px_4px_0px_rba(255,255,255,0.60)] outline outline-zinc-400 inline-flex justify-center items-center">
-    <Image width={30} height={30} className="z-40" src="/whatsapp.png" alt="WhatsApp chat" loading="lazy" placeholder="blur" blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Crect width='30' height='30' fill='%23f3f4f6'/%3E%3C/svg%3E" />
-</Link>
+<Image src="/whatsapp.png" width={30} height={30} alt="whatsapp" /></Link>
 <Link href="https://x.com/minou_patr" target='_blank' rel="noopener noreferrer" className="transition-transform hover:scale-105 cursor-pointer w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] relative rounded-[999px] shadow-[inset_1px_1px_4px_0px_rgba(255,255,255,0.60)] outline outline-zinc-400 inline-flex justify-center items-center">
-    <Image width={30} height={30} className="z-40" src="/x.png" alt="X profile" loading="lazy" placeholder="blur" blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Crect width='30' height='30' fill='%23f3f4f6'/%3E%3C/svg%3E" />
-</Link>
+<Image 
+  src="/x.png" 
+  width={30} 
+  height={30} 
+  alt="x" 
+/></Link>
 </div>
 <div className="flex flex-row gap-6 text-[#E6E3E3] text-[13px]">
   <Link href="/TermsOfService" >Terms of Service</Link>

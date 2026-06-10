@@ -70,27 +70,24 @@ export default function HomePage() {
 
   return (
     <main className="mt-10 overflow-x-hidden h-fit overflow-y-hidden">
-      <section className="m-auto mt-20 md:10 flex flex-col items-center text-center space-y-[20px] sm:space-y-[12px] sm:space-y-3 px-[2%] sm:px-[10%]">
-      <div className="text-[clamp(28px,4vw,49px)] leading-[1.2] font-medium flex flex-wrap  items-center justify-center w-[95%] sm:w-[90%]  mx-auto ">
-      <span>We help</span>
-      <span className="text-[#2F6F4E] mx-2 font-medium">
-         DTC Brand
-      </span>
-      <span>owners scale their </span>
-      <span className="text-[#2F6F4E] mx-2 font-medium">
+      <section className="m-auto mt-20 md:10 flex flex-col items-center text-center space-y-[20px] sm:space-y-[12px] sm:space-y-3 px-[2%] sm:px-[15%]">
+      <div className="text-[clamp(28px,4vw,49px)] leading-[1.2] font-medium flex flex-wrap  items-center justify-center w-[95%]   mx-auto ">
+      <span>We help
+           E-commerce Brand
+      
+    owners scale their
         profits
-      </span>
-      <span>to 2–4X in Just 90 days or less</span>
+    to 2–4X in Just 90 days or less</span>
     </div>
-        <h1 className="text-[clamp(16px,4vw,20px)] font-normal text-[#1E1E1E] leading-[1.2] sm:w-[70%] w-[100%]">
-          We are a D2C marketing agency specializing in driving growth through finance-backed marketing decisions.
+        <h1 className="text-[clamp(16px,4vw,20px)] font-normal text-[#1E1E1E] leading-[1.2] w-[100%] sm:w-[70%] ">
+          We are a E-commerce marketing agency specializing in driving growth through finance-backed marketing decisions.
         </h1>
   
         <div className="flex flex-col justify-center items-center sm:space-x-3  flex-col-reverse md:relative md:flex-row w-full px-6">
           <Link  href="/contactUs" className="font-semibold w-[100%] sm:w-[222px] text-base mt-5 px-7 py-[13px] cursor-pointer rounded-full border border-gray-300 ">
             <p className=''>Get a free scaling plan </p>
           </Link>
-          <Link target='_blank' href="https://calendly.com/aminemd/new-meeting" className=" w-[100%] sm:w-[222px] font-bold mt-4 sm:mt-8 px-7 py-[13px] text-base cursor-pointer  bg-[#2F6F4E] rounded-full border text-white border-gray-300">
+          <Link target='_blank' href="https://calendly.com/aminemd/new-meeting" className=" w-[100%] sm:w-[222px] font-bold mt-4 sm:mt-6 px-7 py-[13px] text-base cursor-pointer  bg-[#2F6F4E] rounded-full border text-white border-gray-300">
             <p className=' '>Book a Call</p>
           </Link>
           
@@ -161,7 +158,7 @@ export default function HomePage() {
             
             {/* نصوص الكارد */}
             <div className="absolute bottom-5 left-5   text-white w-[90%] text-start z-30">
-          <p className="text-[clamp(16px,2vw,18px)]  leading-tight transition-transform duration-500 group-hover:-translate-y-2 ">
+          <p className="text-[clamp(16px,2vw,18px)] font-bold leading-tight transition-transform duration-500 group-hover:-translate-y-2 ">
             Scaling ELLO Beyond $100K/Month...
           </p>
         </div>
@@ -182,7 +179,7 @@ export default function HomePage() {
             />
             
             <div className="absolute bottom-5 left-5   text-white w-[90%] text-start z-30">
-          <p className="text-[clamp(16px,2vw,18px)]  leading-tight transition-transform duration-500 group-hover:-translate-y-2 ">
+          <p className="text-[clamp(16px,2vw,18px)] font-bold leading-tight transition-transform duration-500 group-hover:-translate-y-2 ">
             How We Delivered 4X Profit Growth ...
           </p>
         </div>
@@ -205,7 +202,7 @@ export default function HomePage() {
             />
             
             <div className="absolute bottom-5 left-5   text-white w-[90%] text-start z-30">
-          <p className="text-[clamp(16px,2vw,18px)]  leading-tight transition-transform duration-500 group-hover:-translate-y-2 ">
+          <p className="text-[clamp(16px,2vw,18px)] font-bold leading-tight transition-transform duration-500 group-hover:-translate-y-2 ">
             Bridging the Gap Between Design ...
           </p>
         </div>
@@ -228,7 +225,7 @@ export default function HomePage() {
             />
             
             <div className="absolute bottom-5 left-5   text-white w-[90%] text-start z-30">
-          <p className="text-[clamp(16px,2vw,18px)]  leading-tight transition-transform duration-500 group-hover:-translate-y-2 ">
+          <p className="text-[clamp(16px,2vw,18px)] font-bold leading-tight transition-transform duration-500 group-hover:-translate-y-2 ">
             ELITE: From Cash Flow Bleed to Financial...
           </p>
         </div>
@@ -529,7 +526,7 @@ export default function HomePage() {
               </div>
             </div>
             <p className="text-gray-700 leading-relaxed text-[15px] italic">
-"Before meeting you and the Flaylor team I spent my nights staring at Shopify dashboards seeing huge revenue numbers but wondering why my bank account stayed empty it was exhausting other agencies just told me to spend more on ads but you did something different you sat down with me and looked at my actual margins you treated my business like it was your own family legacy today I don't just have a store I have a profitable business that allows me to actually spend time with my kids without checking my phone every five minutes"
+              "Before meeting you and the Flaylor team I spent my nights staring at Shopify dashboards seeing huge revenue numbers but wondering why my bank account stayed empty it was exhausting other agencies just told me to spend more on ads but you did something different you sat down with me and looked at my actual margins you treated my business like it was your own family legacy today I don't just have a store I have a profitable business that allows me to actually spend time with my kids without checking my phone every five minutes"
             </p>
           </div>
 
@@ -549,17 +546,17 @@ export default function HomePage() {
             </p>
           </div>
         </div>
-         <div className="w-[1440px] h-[40vh] sm:h-[50vh] absolute -bottom-[200px] sm:top-[300px]  bg-gradient-to-r from-stone-50 to-stone-50 blur-[25px]" />
+         <div className="w-[1440px] h-[40vh] sm:h-[60vh] absolute -bottom-[200px] sm:top-[300px]  bg-gradient-to-r from-stone-50 to-stone-50 blur-[25px]" />
 
-        <Link href="/testimonials" className="absolute -bottom-5 sm:bottom-10 z-10 text-[#2F6F4E] cursor-pointer font-medium hover:text-[#24583e] transition-colors duration-300">
+        <Link href="/testimonials" className="absolute -bottom-5 sm:bottom-30 z-10 text-[#2F6F4E] cursor-pointer font-medium hover:text-[#24583e] transition-colors duration-300">
           See all 
         </Link>
       </section>
       
 
-      <section className='flex flex-col justify-center text-center items-center mt-[100px] space-y-[12px] px-[10px]  md:px-[100px] lg:px-[250px] '>
+      <section className='flex flex-col justify-center text-center items-center mt-[100px] sm:mt-[0px] space-y-[12px] px-[10px]  md:px-[100px] lg:px-[250px] '>
        <p className='text-[clamp(31px,4vw,39px)] text-[#969593] z-[200]'>About Us</p>
-       <p className='text-[clamp(16px,4vw,20px)] z-[200]' >We are a marketing agency for D2C brands, where we bridge the gap between financial analytics and creative marketing.</p>
+       <p className='text-[clamp(16px,4vw,20px)] z-[200]' >            We are an e-commerce growth agency that scales brands by bridging the gap between deep financial analytics and high-performance, conversion-driven marketing.</p>
        <Link href="/about" className="text-[#2F6F4E] cursor-pointer">Learn more</Link>
       </section>
       

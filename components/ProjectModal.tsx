@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { getProjectBySlug } from '@/app/data';
 
@@ -13,11 +14,31 @@ interface ProjectModalProps {
 export default function ProjectModal({ isOpen, onClose, projectSlug }: ProjectModalProps) {
   const project = getProjectBySlug(projectSlug);
 
-  if (!isOpen || !project) return null;
-
   return (
-    <div className="fixed inset-0 z-[400] flex items-center justify-center  bg-black/60 backdrop-blur-sm ">
-      <div className="relative  w-full max-w-[100%] max-h-[100vh] overflow-y-auto bg-white rounded-2xl shadow-xl">
+    <AnimatePresence >
+      {isOpen && project && (
+        <motion.div
+          className="fixed inset-0 z-[400] flex items-center justify-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <motion.div
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            onClick={onClose}
+          />
+          <motion.div
+            className="overflow-y-auto no-scrollbar relative w-full max-w-[100%] max-h-[100vh] overflow-y-auto bg-white rounded-2xl shadow-xl z-10"
+            initial={{ y: 80, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 80, opacity: 0 }}
+            transition={{ type: 'spring', stiffness: 260, damping: 30, duration: 0.4 }}
+          >
         {/* Close Button */}
         <div className="fixed top-5 right-[5%] z-50 flex justify-end p-4 pointer-events-none">
       <button
@@ -32,7 +53,7 @@ export default function ProjectModal({ isOpen, onClose, projectSlug }: ProjectMo
 
         {/* Project Banner */}
         {project.Banner_main && (
-          <div className="relative h-64 sm:h-130 w-full bg-gray-100 rounded-t-2xl overflow-hidden">
+          <div className="relative h-64 sm:h-130 w-full bg-gray-100 rounded-t-2xl overflow-hidden scroll-m-0 ">
             <Image
               src={project.Banner_main}
               alt={project.title}
@@ -48,9 +69,8 @@ export default function ProjectModal({ isOpen, onClose, projectSlug }: ProjectMo
         )}
 
         {/* Project Content */}
-  <div className="p-6 sm:px-25">
+  <div className="p-6 sm:px-52 ">
           
-
   <div className="flex flex-col gap-[70px]"> {/* فجوة كبيرة بين الأقسام الرئيسية */}
     
     {/* Section 1: The Challenge */}
@@ -138,7 +158,9 @@ export default function ProjectModal({ isOpen, onClose, projectSlug }: ProjectMo
     )}
   </div>
 </div>
-      </div>
-    </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }

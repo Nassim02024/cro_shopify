@@ -18,6 +18,7 @@
     100% { transform: translateX(-50%); }
   }
 
+  
   .spinner {
     border: 3px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
@@ -51,11 +52,40 @@
   font-style: normal;
   }
 
+  .poller-one-regular {
+  font-family: "Poller One"  ;
+  font-weight: 400;
+  font-style: normal;
+  
+}
+/* تأثير الانتشار من المنتصف */
+.bg-expand {
+  clip-path: circle(0% at 50% 50%);
+  transition: clip-path 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bg-expand-active {
+  clip-path: circle(150% at 50% 50%);
+}
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
+  }
+  .hide-dmsan {
+    font-family: 'DM Sans', sans-serif;
   }
 }
 
 body {
   background-color: #F8F8F8;
+}
+
+@layer utilities {
+  /* إخفاء السكرول بار للمتصفحات المختلفة */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
 }

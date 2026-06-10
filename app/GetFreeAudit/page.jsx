@@ -12,7 +12,7 @@ const DeepEcommerceAnalysis = () => {
     { title: "What exactly do I get after the audit is finished?", description: "You’ll receive a prioritized 90-day growth roadmap. We rank every high-impact action from most to least critical, so you know exactly what to fix first to scale your business profitably." },
     { title: "Does the audit cover the financial side of my store?", description: "Yes, that is our core focus. We analyze the Unit Economics to find the real profit behind every sale, balancing your product costs against marketing spend to identify exactly where your profit is leaking."},
     { title: "How does the audit help me improve my Paid Ads?" , description: "We link every dollar spent on Meta or Google to actual bank returns, not just clicks. We help you move past vanity metrics to see which channels are driving a real Return on Investment (ROI)."},
-    { title: "When is the right time to request this free audit?" , description : "If you feel stuck, have high traffic but low conversions, or don't have full clarity on your net margins and CAC, this audit is for you. We provide the clarity you need to make data-driven marketing decisions."}
+    { title: "When is the right time to request this audit?" , description : "If you feel stuck, have high traffic but low conversions, or don't have full clarity on your net margins and CAC, this audit is for you. We provide the clarity you need to make data-driven marketing decisions."}
   ]
   
   const livle = [

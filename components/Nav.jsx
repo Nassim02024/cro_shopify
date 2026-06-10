@@ -51,7 +51,7 @@ const Nav = () => {
 
   return (
     // أضفنا الـ ref هنا للتحكم
-    <nav ref={navRef} className="fixed top-2 left-1/2 -translate-x-1/2 w-[95%] sm:w-[90%] z-[100]  z-[300] ">
+    <nav ref={navRef} className="fixed top-2 left-1/2 -translate-x-1/2 w-[95%] sm:w-[80%] z-[100]  z-[300] ">
       
       {/* الشريط الأساسي */}
       <div className="h-[60px]  bg-black text-white px-3 sm:px-6 rounded-full flex flex-row justify-between items-center relative z-[110]">
@@ -69,12 +69,12 @@ const Nav = () => {
             <Link href="/" className='text-[#31F691] text-[25px] sm:text-[30px] itim-regular'>Flaylor</Link>
           </div>
           <Link  className="sm:hidden bg-white text-black relative left-1  sm:left-3.5  px-2  py-[3.5%]  rounded-full text-base " href="/contactUs">
-            Get a free scaling plan
+            Get free scaling plan
           </Link>
         </div>
 
         <div className="hidden sm:flex">
-           <ul className="flex flex-row items-center gap-8  text-[#F3F3F3]">
+           <ul className="flex flex-row items-center gap-6  text-[#F3F3F3]">
              <li><Link href="/" className={`hover:text-[#31F691] transition-colors  ${pathname === '/' ? 'text-[#31F691]' : ''}`}>Home</Link></li>
              <li className="relative group">
                 <button className={`flex items-center gap-1 hover:text-[#31F691]  ${isServiceActive ? 'text-[#31F691]' : '' } ${pathname === '/services' ? 'text-[#31F691]' : ''}`}>
@@ -98,7 +98,7 @@ const Nav = () => {
         </div>
 
         <Link  className="hidden sm:flex bg-white text-black relative left-3.5 px-6 py-3.5 rounded-full  hover:bg-[#e4e3e3] transition-all" href="/contactUs">
-           Get a free scaling plan
+           Get free scaling plan
         </Link>
       </div>
 
