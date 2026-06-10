@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   },
   
   // الوصف الذي صغناه سابقاً بناءً على معلوماتك
-  description: "We help e-commerce business owners scale their profits to 2–4X in Just 60 days",
+  description: "We help e-commerce business owners scale their profits to 2–4X in Just 90 days",
   keywords: [
     "Shopify Profit Optimization",
     "E-commerce Financial Analysis",

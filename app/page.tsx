@@ -87,8 +87,8 @@ export default function HomePage() {
           <Link  href="/contactUs" className="font-semibold w-[100%] sm:w-[222px] text-base mt-5 px-7 py-[13px] cursor-pointer rounded-full border border-gray-300 ">
             <p className=''>Get a free scaling plan </p>
           </Link>
-          <Link target='_blank' href="https://calendly.com/aminemd/new-meeting" className=" w-[100%] sm:w-[222px] font-bold mt-4 sm:mt-6 px-7 py-[13px] text-base cursor-pointer  bg-[#2F6F4E] rounded-full border text-white border-gray-300">
-            <p className=' '>Book a Call</p>
+          <Link target='_blank' href="/contactUs" className=" w-[100%] sm:w-[222px] font-bold mt-4 sm:mt-6 px-7 py-[13px] text-base cursor-pointer  bg-[#2F6F4E] rounded-full border text-white border-gray-300">
+            <p className=' '>Contact Us</p>
           </Link>
           
         </div>

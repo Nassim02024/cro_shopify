@@ -104,7 +104,7 @@ return (
       
       {/* عنوان الصفحة - متناسق مع الصفحات السابقة */}
       <h1 className="text-[clamp(32px,7vw,61px)] w-full text-[#757575] font-semibold leading-tight">
-        Get a free scaling plan 
+        Contact us
       </h1>
 
       <div className="w-full flex items-center justify-center">
@@ -141,14 +141,15 @@ return (
                       required 
                     />
                     
+                    <textarea name="Message" className="px-5 pt-3 rounded-xl border border-stone-300 bg-white outline-none text-stone-700 placeholder:text-stone-400 text-base focus:border-green-700 focus:ring-1 focus:ring-green-700 transition-all" name="textarea"  placeholder="Your message" id="" cols="30" rows="10"></textarea>
                     {/* Store Link Input */}
-                    <input 
+                    {/* <input 
                       type="url" 
                       name="StoreLink"
                       placeholder="Store link" 
                       className="w-full h-14 px-5 rounded-xl border border-stone-300 bg-white outline-none text-stone-700 placeholder:text-stone-400 text-base focus:border-green-700 focus:ring-1 focus:ring-green-700 transition-all" 
                       required 
-                    />
+                    /> */}
 
                     {/* Select Services المطور */}
                     {/* <div className="relative w-full">
@@ -219,7 +220,7 @@ return (
                   <button 
                     type="submit" 
                     disabled={loading} 
-                    className={`relative flex items-center justify-center gap-3 cursor-pointer w-full h-14 bg-green-700 text-white font-semibold rounded-xl text-lg transition-all ${loading ? 'opacity-70 cursor-not-allowed' : 'hover:bg-green-800'}`}
+                    className={`relative flex items-center justify-center gap-3 cursor-pointer w-full h-14 bg-[#2F6F4E] text-white font-semibold rounded-xl text-lg transition-all ${loading ? 'opacity-70 cursor-not-allowed' : 'hover:bg-green-800'}`}
                   >
                     {loading ? (
                       <>
@@ -227,7 +228,7 @@ return (
                         <span>Sending...</span>
                       </>
                     ) : (
-                      "Submit"
+                      "Send"
                     )}
                   </button>
                 </form>
