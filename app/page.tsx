@@ -32,13 +32,14 @@ export default function HomePage() {
    const [loading, setLoading] = useState(false);
    const [isPopupOpen, setIsPopupOpen] = useState(false); // تأكد من وجود الـ state الخاصة بالـ popup
    
-   async function handleSubmit(e, excelDownloadUrl = null) {
+   // إذا كنت تستخدم React عادي مع TypeScript، نحدد نوع الحدث ونوع الرابط
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>, excelDownloadUrl: string | null = null) {
   e.preventDefault();
   setLoading(true);
 
   const scriptURL = "https://script.google.com/macros/s/AKfycbz3KeU_5zWDyJePGxoj6KXQ_5s3boZF0P-DYITeflxA52ikpQDQoXEe3r7EpiW__OvNOg/exec";
   const form = e.target;
-  const formData = new FormData(form);
+  const formData = new FormData(form as HTMLFormElement);
 
   try {
   await fetch(scriptURL, { 
@@ -62,8 +63,9 @@ export default function HomePage() {
     setIsPopupOpen(false); // إغلاق النافذة المنبثقة
   }
 
-} catch (error) {
-    console.error("Error!", error.message);
+} catch (error: unknown) {
+    const message = error instanceof Error ? error.message : String(error);
+    console.error("Error!", message);
     alert("Error! Please try again later.");
   } finally {
     setLoading(false);
