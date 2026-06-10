@@ -69,7 +69,7 @@ const Nav = () => {
             <Link href="/" className='text-[#31F691] text-[25px] sm:text-[30px] itim-regular'>Flaylor</Link>
           </div>
           <Link  className="sm:hidden bg-white text-black relative left-1  sm:left-3.5  px-2  py-[3.5%]  rounded-full text-base " href="/contactUs">
-            Get free scaling plan
+            Contact Us
           </Link>
         </div>
 
@@ -97,8 +97,8 @@ const Nav = () => {
            </ul>
         </div>
 
-        <Link  className="hidden sm:flex bg-white text-black relative left-3.5 px-6 py-3.5 rounded-full  hover:bg-[#e4e3e3] transition-all" href="/contactUs">
-           Get free scaling plan
+        <Link  className="hidden sm:flex bg-white text-black relative left-3.5 px-6 py-2.5 rounded-full  hover:bg-[#e4e3e3] transition-all" href="/contactUs">
+           Contact Us
         </Link>
       </div>
 

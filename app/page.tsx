@@ -28,7 +28,47 @@ export default function HomePage() {
   ];
 
 
+  // Downlad Exel File
+   const [loading, setLoading] = useState(false);
+   const [isPopupOpen, setIsPopupOpen] = useState(false); // تأكد من وجود الـ state الخاصة بالـ popup
+   
+   async function handleSubmit(e, excelDownloadUrl = null) {
+  e.preventDefault();
+  setLoading(true);
 
+  const scriptURL = "https://script.google.com/macros/s/AKfycbz3KeU_5zWDyJePGxoj6KXQ_5s3boZF0P-DYITeflxA52ikpQDQoXEe3r7EpiW__OvNOg/exec";
+  const form = e.target;
+  const formData = new FormData(form);
+
+  try {
+  await fetch(scriptURL, { 
+    method: "POST", 
+    body: formData, 
+    mode: "no-cors" 
+  });
+
+  alert("Done! Your request has been sent successfully.");
+  form.reset(); 
+
+  // الكود الجديد البديل لتحميل الملف بشكل آمن وتلقائي:
+  if (excelDownloadUrl) {
+    const link = document.createElement('a');
+    link.href = excelDownloadUrl;
+    link.setAttribute('download', 'scaling-plan.xlsx'); // إجبار المتصفح على التحميل
+    document.body.appendChild(link);
+    link.click(); // محاكاة ضغطة المستخدم
+    document.body.removeChild(link); // حذف الرابط بعد التحميل
+    
+    setIsPopupOpen(false); // إغلاق النافذة المنبثقة
+  }
+
+} catch (error) {
+    console.error("Error!", error.message);
+    alert("Error! Please try again later.");
+  } finally {
+    setLoading(false);
+  }
+}
 
   const clients = [
     { name: "Ricardo", img: "/phone.png", location: "Georgia" },
@@ -84,9 +124,81 @@ export default function HomePage() {
         </h1>
   
         <div className="flex flex-col justify-center items-center sm:space-x-3  flex-col-reverse md:relative md:flex-row w-full px-6">
-          <Link  href="/contactUs" className="font-semibold w-[100%] sm:w-[222px] text-base mt-5 px-7 py-[13px] cursor-pointer rounded-full border border-gray-300 ">
-            <p className=''>Get a free scaling plan </p>
-          </Link>
+          {/* زر فتح النافذة المنبثقة */}
+<button 
+  onClick={() => setIsPopupOpen(true)} 
+  className="font-semibold w-[100%] sm:w-[222px] text-base mt-5 px-7 py-[13px] cursor-pointer rounded-full border border-gray-300 text-center hover:bg-stone-50 transition-colors"
+>
+  Get a free scaling plan
+</button>
+
+{/* النافذة المنبثقة (Modal) */}
+{isPopupOpen && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm animate-in fade-in duration-200">
+    
+    {/* صندوق المحتوى */}
+    <div className="bg-white rounded-[24px] p-6 sm:p-8 w-full max-w-md mx-4 shadow-2xl border border-stone-100 relative animate-in zoom-in-95 duration-200">
+      
+      {/* زر الإغلاق (X) */}
+      <button 
+        onClick={() => setIsPopupOpen(false)}
+        className="absolute top-4 right-4 text-stone-400 hover:text-stone-600 text-2xl font-bold transition-colors cursor-pointer"
+      >
+        &times;
+      </button>
+
+      {/* عنوان النافذة */}
+      <h3 className="text-xl font-semibold text-stone-800 mb-2 text-center">
+        Download Your Scaling Plan
+      </h3>
+      <p className="text-sm text-stone-500 mb-6 text-center">
+        Please fill in your details to download the Excel file.
+      </p>
+
+      {/* النموذج (Form) المرتبط بقوقل شيت والتحميل */}
+      <form 
+      onSubmit={(e) => handleSubmit(e, "/scaling-plan.xlsx")} 
+       className="flex flex-col gap-4">
+        
+        <input type="hidden" name="targetSheet" value="Download" /> 
+
+        <input 
+          type="text" 
+          name="Name"
+          placeholder="Your Name" 
+          required
+          className="w-full h-12 px-4 rounded-xl border border-stone-300 bg-white outline-none text-stone-700 text-base focus:border-green-700 focus:ring-1 focus:ring-green-700 transition-all"
+        />
+
+        {/* حقل الإدخال الثاني: البريد الإلكتروني (يجب أن يطابق عمود Email في الشيت) */}
+        <input 
+          type="email" 
+          name="Email"
+          placeholder="Your Email" 
+          required
+          className="w-full h-12 px-4 rounded-xl border border-stone-300 bg-white outline-none text-stone-700 text-base focus:border-green-700 focus:ring-1 focus:ring-green-700 transition-all"
+        />
+
+        {/* زر الإرسال وتنزيل الملف وحالته أثناء التحميل */}
+        <button 
+          type="submit" 
+          disabled={loading}
+          className={`relative flex items-center justify-center gap-3 w-full h-12 bg-[#2F6F4E] text-white font-semibold rounded-xl text-base shadow-md transition-all cursor-pointer mt-2 ${loading ? 'opacity-70 cursor-not-allowed' : 'hover:bg-green-800 active:scale-[0.98]'}`}
+        >
+          {loading ? (
+            <>
+              <div className="spinner"></div> {/* تأكد من وجود كود كلاس الـ spinner في ملف الـ CSS لديك */}
+              <span>Sending & Downloading...</span>
+            </>
+          ) : (
+            "Submit & Download Excel"
+          )}
+        </button>
+      </form>
+
+    </div>
+  </div>
+)}
           <Link target='_blank' href="/contactUs" className=" w-[100%] sm:w-[222px] font-bold mt-4 sm:mt-6 px-7 py-[13px] text-base cursor-pointer  bg-[#2F6F4E] rounded-full border text-white border-gray-300">
             <p className=' '>Contact Us</p>
           </Link>

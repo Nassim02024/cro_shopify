@@ -76,7 +76,7 @@ const ContactUs = () => {
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true); // تشغيل التحميل فور الضغط
-    const scriptURL = "https://script.google.com/macros/s/AKfycbyHm_alTOvS48a0mBN0dhY6byabGsXJOJl9BWtRgy3GPiWk6t36wqD2ZBhmCDN80ffPvw/exec";
+    const scriptURL = "https://script.google.com/macros/s/AKfycbz3KeU_5zWDyJePGxoj6KXQ_5s3boZF0P-DYITeflxA52ikpQDQoXEe3r7EpiW__OvNOg/exec";
     const form = e.target;
     const formData = new FormData(form);
 
@@ -120,7 +120,7 @@ return (
               <div className="w-full max-w-md flex flex-col gap-6">
                 <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                   <div className="flex flex-col gap-4">
-                    
+                    <input type="hidden" name="targetSheet" value="ContactUs" /> 
                     {/* Name Input */}
                     <input 
                       type="text"
