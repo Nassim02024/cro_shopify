@@ -64,11 +64,10 @@ async function handleSubmit(e: React.FormEvent<HTMLFormElement>, excelDownloadUr
   }
 
 } catch (error) {
-    console.error("Error!", error.message);
+    const errorMessage = error instanceof Error ? error.message : "Unknown error";
+    console.error("Error!", errorMessage);
     alert("Error! Please try again later.");
-  } finally {
-    setLoading(false);
-  }
+} finally {
 }
 
   const clients = [
