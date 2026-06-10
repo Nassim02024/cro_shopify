@@ -76,8 +76,7 @@ const ContactUs = () => {
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true); // تشغيل التحميل فور الضغط
-
-    const scriptURL = "https://script.google.com/macros/s/AKfycbzoQF1myI5h0-wurzVy7vxTlcz63EP6cKQQ_1LpVzn8DvMEGLMDGuYuSQzWmuJKYM9LmQ/exec";
+    const scriptURL = "https://script.google.com/macros/s/AKfycbyHm_alTOvS48a0mBN0dhY6byabGsXJOJl9BWtRgy3GPiWk6t36wqD2ZBhmCDN80ffPvw/exec";
     const form = e.target;
     const formData = new FormData(form);
 
@@ -141,8 +140,13 @@ return (
                       required 
                     />
                     
-                    <textarea name="Message" className="px-5 pt-3 rounded-xl border border-stone-300 bg-white outline-none text-stone-700 placeholder:text-stone-400 text-base focus:border-green-700 focus:ring-1 focus:ring-green-700 transition-all" name="textarea"  placeholder="Your message" id="" cols="30" rows="10"></textarea>
-                    {/* Store Link Input */}
+                    <textarea 
+                      name="Message"  // الحرف الأول M كبير ليطابق الشيت تماماً
+                      placeholder="Your message" 
+                      className="px-5 pt-3 rounded-xl border border-stone-300 bg-white outline-none text-stone-700 placeholder:text-stone-400 text-base focus:border-green-700 focus:ring-1 focus:ring-green-700 transition-all"
+                      rows="10"
+                      required
+                    />                    {/* Store Link Input */}
                     {/* <input 
                       type="url" 
                       name="StoreLink"
