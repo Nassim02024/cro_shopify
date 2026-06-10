@@ -68,6 +68,8 @@ async function handleSubmit(e: React.FormEvent<HTMLFormElement>, excelDownloadUr
     console.error("Error!", errorMessage);
     alert("Error! Please try again later.");
 } finally {
+    setLoading(false);
+  }
 }
 
   const clients = [
