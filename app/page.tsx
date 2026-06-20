@@ -129,9 +129,9 @@ async function handleSubmit(e: React.FormEvent<HTMLFormElement>, excelDownloadUr
           {/* زر فتح النافذة المنبثقة */}
 <button 
   onClick={() => setIsPopupOpen(true)} 
-  className="font-semibold w-[100%] sm:w-[222px] text-base mt-5 px-7 py-[13px] cursor-pointer rounded-full border border-gray-300 text-center hover:bg-stone-50 transition-colors"
+  className="font-semibold w-[100%] sm:w-[222px] text-base mt-5 px-2 py-[13px] cursor-pointer rounded-full border border-gray-300 text-center hover:bg-stone-50 transition-colors"
 >
-  Get a free scaling plan
+  360° E-commerce Audit
 </button>
 
 {/* النافذة المنبثقة (Modal) */}
@@ -193,7 +193,7 @@ async function handleSubmit(e: React.FormEvent<HTMLFormElement>, excelDownloadUr
               <span>Sending & Downloading...</span>
             </>
           ) : (
-            "Submit & Download Excel"
+            "Download Excel"
           )}
         </button>
       </form>
