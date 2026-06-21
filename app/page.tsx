@@ -151,11 +151,11 @@ async function handleSubmit(e: React.FormEvent<HTMLFormElement>, excelDownloadUr
 
       {/* عنوان النافذة */}
       <h3 className="text-xl font-semibold text-stone-800 mb-2 text-center">
-        Download Your Scaling Plan
+        Download 360° E-commerce Audit
       </h3>
-      <p className="text-sm text-stone-500 mb-6 text-center">
+      {/* <p className="text-sm text-stone-500 mb-6 text-center">
         Please fill in your details to download the Excel file.
-      </p>
+      </p> */}
 
       {/* النموذج (Form) المرتبط بقوقل شيت والتحميل */}
       <form 
@@ -193,7 +193,7 @@ async function handleSubmit(e: React.FormEvent<HTMLFormElement>, excelDownloadUr
               <span>Sending & Downloading...</span>
             </>
           ) : (
-            "Download Excel"
+            "Download" 
           )}
         </button>
       </form>
