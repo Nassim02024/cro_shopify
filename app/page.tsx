@@ -1,5 +1,6 @@
 "use client";
 
+declare global { interface Window { dataLayer: any[]; } }
 import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -34,6 +35,17 @@ export default function HomePage() {
    
    // إذا كنت تستخدم React عادي مع TypeScript، نحدد نوع الحدث ونوع الرابط
 async function handleSubmit(e: React.FormEvent<HTMLFormElement>, excelDownloadUrl: string | null = null) {
+
+  // Data layer
+  window.dataLayer = window.dataLayer || [];
+
+        window.dataLayer.push({
+          event: 'form_submitted',       
+          form_name: 'Audit Download',    
+          lead_type: 'E-commerce Audit'   
+        });
+  // ! Data layer
+
   e.preventDefault();
   setLoading(true);
 
@@ -163,6 +175,8 @@ async function handleSubmit(e: React.FormEvent<HTMLFormElement>, excelDownloadUr
        className="flex flex-col gap-4"
        id="audit_form"
        >
+
+        
        
         <input type="hidden" name="targetSheet" value="Download" /> 
 
