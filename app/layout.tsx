@@ -138,13 +138,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Google Tag Manager */}
-        <Script id="gtm-script" strategy="afterInteractive">
-          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-          'https://ss.flaylor-agency.online/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','GTM-T8TZRVFG');`}
+        {/* Google Tag Manager - Stape Custom Loader for Next.js */}
+        <Script id="gtm-custom-loader" strategy="afterInteractive">
+          {`(function(w,d,s,l,i){
+            w[l]=w[l]||[];
+            w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+            var f=d.getElementsByTagName(s)[0],j=d.createElement(s);
+            j.async=true;
+            j.src="https://flaylor-agency.online/metrics/widjtpdms.js?"+i;
+            f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','41lcm=GglZNyAnST1LOT4iIiwjTwVQVl5FTAAHTgsIEQ0GCxteDAMVGgkdRxwDCBkaD0IaHB1ZXxkPEBsaDhc%3D');`}
         </Script>
         {/* End Google Tag Manager */}
 
@@ -167,13 +170,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <Nav />
-        {/* Google Tag Manager (noscript) */}
-          <noscript>
-          <iframe src="https://ss.flaylor-agency.online/ns.html?id=GTM-T8TZRVFG"
-          height="0" width="0" style={{ display: 'none', visibility: 'hidden' }}></iframe>
-          </noscript>
-        {/* End Google Tag Manager (noscript) */}
-
+        
         
         {children}
         <Footer />
