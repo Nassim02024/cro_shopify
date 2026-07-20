@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import DownSection3 from '@/components/DownSection3';
 import ProjectModal from '@/components/ProjectModal';
-
+import Nav from '@/components/Nav';
 export default function HomePage() {
   const [isFinalSuccessOpen, setIsFinalSuccessOpen] = useState(false);
   const [auditData, setAuditData] = useState({
@@ -203,9 +203,9 @@ const handleAuditSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
           {/* زر فتح النافذة المنبثقة */}
 <button 
   onClick={() => setIsPopupOpen(true)} 
-  className="font-semibold w-[100%] sm:w-[222px] text-base mt-5 px-2 py-[13px] cursor-pointer rounded-full border border-gray-300 text-center hover:bg-stone-50 transition-colors"
+  className="font-semibold w-[100%] sm:w-[40%] text-base mt-5 px-2 py-[13px] cursor-pointer rounded-full border border-gray-300 text-center text-white  bg-[#2F6F4E] hover:bg-[#3b614e] transition-colors "
 >
-  360° E-commerce Audit
+  Download 360° E-commerce Audit
 </button>
 
 {/* النافذة المنبثقة (Modal) */}
@@ -281,7 +281,6 @@ const handleAuditSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   </div>
 )}
 
-
 {/* main popup */}
 {isSuccessPopupOpen && (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm animate-in fade-in duration-200">
@@ -330,49 +329,40 @@ const handleAuditSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
           {/* المجموعة الأولى من الكروت (5 كروت) */}
           <div className="flex gap-4 shrink-0">
             <div className="w-[280px] sm:w-[340px] bg-white p-5 rounded-[16px] border border-stone-200 shadow-sm text-left flex flex-col justify-between">
-              <p className="text-stone-700 text-sm leading-relaxed">"Thanks to Flaylor I went from high Shopify revenue with an empty bank account to a profitable business that lets me enjoy time with my kids stress free."</p>
-              <span className="text-xs font-semibold text-stone-400 mt-3 block">— Ricardo, Georgia</span>
+              <p className="text-stone-700 text-sm leading-relaxed">Flaylor proved me wrong they aligned our Meta ads with our unit economics shifting us from vanity metrics to real net profit</p>
             </div>
             <div className="w-[280px] sm:w-[340px] bg-white p-5 rounded-[16px] border border-stone-200 shadow-sm text-left flex flex-col justify-between">
-              <p className="text-stone-700 text-sm leading-relaxed">"I loved Flaylor’s clarity. They analyzed our financials to design high converting landing pages, driving 200% growth based on facts not guesswork."</p>
-              <span className="text-xs font-semibold text-stone-400 mt-3 block">— Nassim, Algeria</span>
+              <p className="text-stone-700 text-sm leading-relaxed">Thanks to Flaylor I went from high Shopify revenue with an empty bank account to a profitable business that lets me enjoy time with my kids stress free</p>
             </div>
             <div className="w-[280px] sm:w-[340px] bg-white p-5 rounded-[16px] border border-stone-200 shadow-sm text-left flex flex-col justify-between">
-              <p className="text-stone-700 text-sm leading-relaxed">"Their CRO audit completely transformed our checkout process. We saw a 35% reduction in abandoned carts in the very first month."</p>
-              <span className="text-xs font-semibold text-stone-400 mt-3 block">— Amine, France</span>
+              <p className="text-stone-700 text-sm leading-relaxed">I loved Flaylor’s clarity they analyzed our financials to design high converting landing pages, driving 200% growth based on facts not guesswork</p>
             </div>
             <div className="w-[280px] sm:w-[340px] bg-white p-5 rounded-[16px] border border-stone-200 shadow-sm text-left flex flex-col justify-between">
-              <p className="text-stone-700 text-sm leading-relaxed">"Working with them scaled our paid ads efficiency beyond belief. Our acquisition costs dropped while net profit hit record highs."</p>
-              <span className="text-xs font-semibold text-stone-400 mt-3 block">— Sarah, USA</span>
+              <p className="text-stone-700 text-sm leading-relaxed">Most agencies see you as a monthly retainer but Flaylor saved us during the recession and doubled our net profit in 60 days</p>
             </div>
-            <div className="w-[280px] sm:w-[340px] bg-white p-5 rounded-[16px] border border-stone-200 shadow-sm text-left flex flex-col justify-between">
+            {/* <div className="w-[280px] sm:w-[340px] bg-white p-5 rounded-[16px] border border-stone-200 shadow-sm text-left flex flex-col justify-between">
               <p className="text-stone-700 text-sm leading-relaxed">"True experts in E-commerce scaling. They don't just give suggestions, they build clear, data-driven mathematical models for your growth."</p>
-              <span className="text-xs font-semibold text-stone-400 mt-3 block">— David, UK</span>
-            </div>
+            </div> */}
           </div>
 
           {/* النسخة التوأم المكررة لضمان الدوران السلس بدون قفزات */}
           <div className="flex gap-4 shrink-0" aria-hidden="true">
             <div className="w-[280px] sm:w-[340px] bg-white p-5 rounded-[16px] border border-stone-200 shadow-sm text-left flex flex-col justify-between">
-              <p className="text-stone-700 text-sm leading-relaxed">"Thanks to Flaylor I went from high Shopify revenue with an empty bank account to a profitable business that lets me enjoy time with my kids stress free."</p>
-              <span className="text-xs font-semibold text-stone-400 mt-3 block">— Ricardo, Georgia</span>
+              <p className="text-stone-700 text-sm leading-relaxed">Flaylor proved me wrong they aligned our Meta ads with our unit economics shifting us from vanity metrics to real net profit</p>
             </div>
             <div className="w-[280px] sm:w-[340px] bg-white p-5 rounded-[16px] border border-stone-200 shadow-sm text-left flex flex-col justify-between">
-              <p className="text-stone-700 text-sm leading-relaxed">"I loved Flaylor’s clarity. They analyzed our financials to design high converting landing pages, driving 200% growth based on facts not guesswork."</p>
-              <span className="text-xs font-semibold text-stone-400 mt-3 block">— Nassim, Algeria</span>
+              <p className="text-stone-700 text-sm leading-relaxed">Thanks to Flaylor I went from high Shopify revenue with an empty bank account to a profitable business that lets me enjoy time with my kids stress free</p>
             </div>
             <div className="w-[280px] sm:w-[340px] bg-white p-5 rounded-[16px] border border-stone-200 shadow-sm text-left flex flex-col justify-between">
-              <p className="text-stone-700 text-sm leading-relaxed">"Their CRO audit completely transformed our checkout process. We saw a 35% reduction in abandoned carts in the very first month."</p>
-              <span className="text-xs font-semibold text-stone-400 mt-3 block">— Amine, France</span>
+              <p className="text-stone-700 text-sm leading-relaxed">I loved Flaylor’s clarity they analyzed our financials to design high converting landing pages, driving 200% growth based on facts not guesswork</p>
             </div>
             <div className="w-[280px] sm:w-[340px] bg-white p-5 rounded-[16px] border border-stone-200 shadow-sm text-left flex flex-col justify-between">
-              <p className="text-stone-700 text-sm leading-relaxed">"Working with them scaled our paid ads efficiency beyond belief. Our acquisition costs dropped while net profit hit record highs."</p>
-              <span className="text-xs font-semibold text-stone-400 mt-3 block">— Sarah, USA</span>
+              <p className="text-stone-700 text-sm leading-relaxed">Most agencies see you as a monthly retainer but Flaylor saved us during the recession and doubled our net profit in 60 days</p>
             </div>
-            <div className="w-[280px] sm:w-[340px] bg-white p-5 rounded-[16px] border border-stone-200 shadow-sm text-left flex flex-col justify-between">
+            {/* <div className="w-[280px] sm:w-[340px] bg-white p-5 rounded-[16px] border border-stone-200 shadow-sm text-left flex flex-col justify-between">
               <p className="text-stone-700 text-sm leading-relaxed">"True experts in E-commerce scaling. They don't just give suggestions, they build clear, data-driven mathematical models for your growth."</p>
               <span className="text-xs font-semibold text-stone-400 mt-3 block">— David, UK</span>
-            </div>
+            </div> */}
           </div>
 
         </div>
@@ -629,9 +619,9 @@ const handleAuditSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     </div>
   </div>
 )}
-          <Link target='_blank' href="/contactUs" className=" w-[100%] sm:w-[222px] font-bold mt-4 sm:mt-6 px-7 py-[13px] text-base cursor-pointer  bg-[#2F6F4E] rounded-full border text-white border-gray-300">
+          {/* <Link target='_blank' href="/contactUs" className=" w-[100%] sm:w-[222px] font-bold mt-4 sm:mt-6 px-7 py-[13px] text-base cursor-pointer  bg-[#2F6F4E] rounded-full border text-white border-gray-300">
             <p className=' '>Contact Us</p>
-          </Link>
+          </Link> */}
           
         </div>
       </section>
