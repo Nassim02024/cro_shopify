@@ -8,6 +8,23 @@ import DownSection3 from '@/components/DownSection3';
 import ProjectModal from '@/components/ProjectModal';
 
 export default function HomePage() {
+  const [isFinalSuccessOpen, setIsFinalSuccessOpen] = useState(false);
+  const [auditData, setAuditData] = useState({
+  targetSheet: 'AuditForm',
+  Name: '', // تم تعديله ليطابق الشيت والسكريبت
+  Email: '', // تم تعديله ليطابق الشيت والسكريبت
+  WhatsApp: '',
+  StoreLink: '',
+  MonthlySales: '',
+  AdsSpending: '',
+  BusinessChallenge: '',
+  SuitDay: '',
+  SuitTime: '',
+  Region: ''
+});
+
+
+
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -34,53 +51,49 @@ export default function HomePage() {
    const [isPopupOpen, setIsPopupOpen] = useState(false); // تأكد من وجود الـ state الخاصة بالـ popup
    
    // إذا كنت تستخدم React عادي مع TypeScript، نحدد نوع الحدث ونوع الرابط
-async function handleSubmit(e: React.FormEvent<HTMLFormElement>, excelDownloadUrl: string | null = null) {
-
-  // Data layer
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>, excelDownloadUrl: string | null = null) {
+  // كود الـ Data layer الخاص بك
   window.dataLayer = window.dataLayer || [];
-
-        window.dataLayer.push({
-          event: 'form_submitted',       
-          form_name: 'Audit Download',    
-          lead_type: 'E-commerce Audit'   
-        });
-  // ! Data layer
+  window.dataLayer.push({
+    event: 'form_submitted',       
+    form_name: 'Audit Download',    
+    lead_type: 'E-commerce Audit'   
+  });
 
   e.preventDefault();
   setLoading(true);
 
-  const scriptURL = "https://script.google.com/macros/s/AKfycbz3KeU_5zWDyJePGxoj6KXQ_5s3boZF0P-DYITeflxA52ikpQDQoXEe3r7EpiW__OvNOg/exec";
   const form = e.currentTarget;
   const formData = new FormData(form);
 
   try {
-  await fetch(scriptURL, { 
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxN9PcrUUpwCWFwifX1qgHvwRAFqOJ2Q5eaKIwO2Ihuho77BmNCejbKj9i5aQ3SZduGow/exec";
+
+  await fetch(SCRIPT_URL, { 
     method: "POST", 
-    body: formData, 
-    mode: "no-cors" 
+    mode: "no-cors",
+    body: formData // يستخدم formData الخاصة بالتنزيل السريع
   });
 
-  alert("Done! Your request has been sent successfully.");
   form.reset(); 
 
-  // الكود الجديد البديل لتحميل الملف بشكل آمن وتلقائي:
   if (excelDownloadUrl) {
     const link = document.createElement('a');
     link.href = excelDownloadUrl;
-    link.setAttribute('download', 'scaling-plan.xlsx'); // إجبار المتصفح على التحميل
+    link.setAttribute('download', 'scaling-plan.xlsx'); 
     document.body.appendChild(link);
-    link.click(); // محاكاة ضغطة المستخدم
-    document.body.removeChild(link); // حذف الرابط بعد التحميل
-    
-    setIsPopupOpen(false); // إغلاق النافذة المنبثقة
+    link.click(); 
+    document.body.removeChild(link); 
   }
 
+  setIsPopupOpen(false);         
+  setIsSuccessPopupOpen(true); // فتح بوب اب المراجعات والعملاء ليعرض لهم زر "Get a free audit now"
 } catch (error) {
-    const errorMessage = error instanceof Error ? error.message : "Unknown error";
-    console.error("Error!", errorMessage);
-    alert("Error! Please try again later.");
-} finally {
-    setLoading(false);
+      const errorMessage = error instanceof Error ? error.message : "Unknown error";
+      console.error("Error!", errorMessage);
+      alert("Error! Please try again later.");
+  } finally {
+      setLoading(false);
   }
 }
 
@@ -120,6 +133,55 @@ async function handleSubmit(e: React.FormEvent<HTMLFormElement>, excelDownloadUr
   const clientSliderRef = useRef<HTMLDivElement>(null);
 
 
+  // new popape
+  const [isSuccessPopupOpen, setIsSuccessPopupOpen] = useState(false); 
+  const [isAuditFormOpen, setIsAuditFormOpen] = useState(false);
+  const [currentStep, setCurrentStep] = useState(1); 
+
+  // send data to google sheet for multi-step form
+  const [isFormSubmitting, setIsFormSubmitting] = useState(false);
+
+  const handleAuditChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  setAuditData({ ...auditData, [e.target.name]: e.target.value });
+};
+
+const handleAuditSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  setIsFormSubmitting(true);
+
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxwWvobw_AnPHKsJO8YD1bjJb4SoOBG23wY8ISSOQHe-X6LV5rhDQcgNzy0l8ekckCZYg/exec"; 
+
+  const submissionData = new FormData();
+  Object.entries(auditData).forEach(([key, value]) => {
+    submissionData.append(key, value);
+  });
+
+  try {
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxN9PcrUUpwCWFwifX1qgHvwRAFqOJ2Q5eaKIwO2Ihuho77BmNCejbKj9i5aQ3SZduGow/exec";
+
+  await fetch(SCRIPT_URL, {
+    method: "POST",
+    mode: "no-cors",
+    body: submissionData // إرسال بيانات الاستبيان بالكامل
+  });
+
+  // 🌟 السطرين الأهم لكي تظهر البوب اب التي وضعتها خارج الفورم 🌟
+  setIsAuditFormOpen(false);      // إغلاق الاستبيان
+  setIsFinalSuccessOpen(true);    // فتح بوب اب الشكر والنجاح النهائي
+
+  setCurrentStep(1); 
+  setAuditData({
+    targetSheet: 'AuditForm', Name: '', Email: '', WhatsApp: '', StoreLink: '',
+    MonthlySales: '', AdsSpending: '', BusinessChallenge: '', SuitDay: '', SuitTime: '', Region: ''
+  });
+}catch (error) {
+    console.error(error);
+  } finally {
+    setIsFormSubmitting(false);
+  }
+};
+
+
 
 
   return (
@@ -148,6 +210,7 @@ async function handleSubmit(e: React.FormEvent<HTMLFormElement>, excelDownloadUr
 
 {/* النافذة المنبثقة (Modal) */}
 {isPopupOpen && (
+  
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm animate-in fade-in duration-200">
     
     {/* صندوق المحتوى */}
@@ -213,6 +276,355 @@ async function handleSubmit(e: React.FormEvent<HTMLFormElement>, excelDownloadUr
           )}
         </button>
       </form>
+
+    </div>
+  </div>
+)}
+
+
+{/* main popup */}
+{isSuccessPopupOpen && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm animate-in fade-in duration-200">
+    <div className="bg-[#F6F6F6] rounded-[24px] py-8 px-4 sm:px-10 w-full max-w-3xl mx-4 shadow-2xl border border-stone-200 relative animate-in zoom-in-95 duration-200 text-center max-h-[90vh] overflow-y-auto">
+      
+      {/* حقن الفريمات (Keyframes) برمجياً لضمان الدوران الفوري */}
+      <style>{`
+        @keyframes popupMarquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(calc(-50% - 8px)); }
+        }
+        .animate-popup-marquee {
+          animation: popupMarquee 25s linear infinite;
+        }
+      `}</style>
+
+      {/* زر الإغلاق X */}
+      <button 
+        onClick={() => setIsSuccessPopupOpen(false)}
+        className="absolute top-5 right-5 text-stone-500 hover:text-stone-800 text-2xl font-semibold transition-colors cursor-pointer z-10"
+      >
+        &times;
+      </button>
+
+      {/* العنوان والنصوص العلوية */}
+      <h2 className="text-[clamp(20px,4vw,32px)] font-medium text-stone-800 leading-tight mb-3 px-4">
+        Get a comprehensive audit <br /> worth <span className="text-[#A62626] font-semibold">$1,800</span> for <span className="text-[#2F6F4E] font-semibold">free</span>.
+      </h2>
+
+      {/* العبارة الترويجية */}
+      <div className="flex items-center justify-center gap-2 mb-6">
+        <p className="text-xs sm:text-sm text-stone-600 font-normal">
+          All our clients are happy with our services—join them.
+        </p>
+      </div>
+
+      {/* منطقة حركة الكروت الدائرية اللانهائية */}
+      <div className="w-full relative mb-8 overflow-hidden">
+        {/* تدرج ظلي خفيف على الأطراف لجمالية الحركة */}
+        <div className="absolute left-0 top-0 w-8 h-full bg-gradient-to-r from-[#F6F6F6] to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute right-0 top-0 w-8 h-full bg-gradient-to-l from-[#F6F6F6] to-transparent z-10 pointer-events-none"></div>
+
+        {/* حاوية الحركة التي تستدعي الـ Class الجديد وتتوقف عند تمرير الماوس */}
+        <div className="flex gap-4 w-max animate-popup-marquee hover:[animation-play-state:paused] cursor-pointer">
+          
+          {/* المجموعة الأولى من الكروت (5 كروت) */}
+          <div className="flex gap-4 shrink-0">
+            <div className="w-[280px] sm:w-[340px] bg-white p-5 rounded-[16px] border border-stone-200 shadow-sm text-left flex flex-col justify-between">
+              <p className="text-stone-700 text-sm leading-relaxed">"Thanks to Flaylor I went from high Shopify revenue with an empty bank account to a profitable business that lets me enjoy time with my kids stress free."</p>
+              <span className="text-xs font-semibold text-stone-400 mt-3 block">— Ricardo, Georgia</span>
+            </div>
+            <div className="w-[280px] sm:w-[340px] bg-white p-5 rounded-[16px] border border-stone-200 shadow-sm text-left flex flex-col justify-between">
+              <p className="text-stone-700 text-sm leading-relaxed">"I loved Flaylor’s clarity. They analyzed our financials to design high converting landing pages, driving 200% growth based on facts not guesswork."</p>
+              <span className="text-xs font-semibold text-stone-400 mt-3 block">— Nassim, Algeria</span>
+            </div>
+            <div className="w-[280px] sm:w-[340px] bg-white p-5 rounded-[16px] border border-stone-200 shadow-sm text-left flex flex-col justify-between">
+              <p className="text-stone-700 text-sm leading-relaxed">"Their CRO audit completely transformed our checkout process. We saw a 35% reduction in abandoned carts in the very first month."</p>
+              <span className="text-xs font-semibold text-stone-400 mt-3 block">— Amine, France</span>
+            </div>
+            <div className="w-[280px] sm:w-[340px] bg-white p-5 rounded-[16px] border border-stone-200 shadow-sm text-left flex flex-col justify-between">
+              <p className="text-stone-700 text-sm leading-relaxed">"Working with them scaled our paid ads efficiency beyond belief. Our acquisition costs dropped while net profit hit record highs."</p>
+              <span className="text-xs font-semibold text-stone-400 mt-3 block">— Sarah, USA</span>
+            </div>
+            <div className="w-[280px] sm:w-[340px] bg-white p-5 rounded-[16px] border border-stone-200 shadow-sm text-left flex flex-col justify-between">
+              <p className="text-stone-700 text-sm leading-relaxed">"True experts in E-commerce scaling. They don't just give suggestions, they build clear, data-driven mathematical models for your growth."</p>
+              <span className="text-xs font-semibold text-stone-400 mt-3 block">— David, UK</span>
+            </div>
+          </div>
+
+          {/* النسخة التوأم المكررة لضمان الدوران السلس بدون قفزات */}
+          <div className="flex gap-4 shrink-0" aria-hidden="true">
+            <div className="w-[280px] sm:w-[340px] bg-white p-5 rounded-[16px] border border-stone-200 shadow-sm text-left flex flex-col justify-between">
+              <p className="text-stone-700 text-sm leading-relaxed">"Thanks to Flaylor I went from high Shopify revenue with an empty bank account to a profitable business that lets me enjoy time with my kids stress free."</p>
+              <span className="text-xs font-semibold text-stone-400 mt-3 block">— Ricardo, Georgia</span>
+            </div>
+            <div className="w-[280px] sm:w-[340px] bg-white p-5 rounded-[16px] border border-stone-200 shadow-sm text-left flex flex-col justify-between">
+              <p className="text-stone-700 text-sm leading-relaxed">"I loved Flaylor’s clarity. They analyzed our financials to design high converting landing pages, driving 200% growth based on facts not guesswork."</p>
+              <span className="text-xs font-semibold text-stone-400 mt-3 block">— Nassim, Algeria</span>
+            </div>
+            <div className="w-[280px] sm:w-[340px] bg-white p-5 rounded-[16px] border border-stone-200 shadow-sm text-left flex flex-col justify-between">
+              <p className="text-stone-700 text-sm leading-relaxed">"Their CRO audit completely transformed our checkout process. We saw a 35% reduction in abandoned carts in the very first month."</p>
+              <span className="text-xs font-semibold text-stone-400 mt-3 block">— Amine, France</span>
+            </div>
+            <div className="w-[280px] sm:w-[340px] bg-white p-5 rounded-[16px] border border-stone-200 shadow-sm text-left flex flex-col justify-between">
+              <p className="text-stone-700 text-sm leading-relaxed">"Working with them scaled our paid ads efficiency beyond belief. Our acquisition costs dropped while net profit hit record highs."</p>
+              <span className="text-xs font-semibold text-stone-400 mt-3 block">— Sarah, USA</span>
+            </div>
+            <div className="w-[280px] sm:w-[340px] bg-white p-5 rounded-[16px] border border-stone-200 shadow-sm text-left flex flex-col justify-between">
+              <p className="text-stone-700 text-sm leading-relaxed">"True experts in E-commerce scaling. They don't just give suggestions, they build clear, data-driven mathematical models for your growth."</p>
+              <span className="text-xs font-semibold text-stone-400 mt-3 block">— David, UK</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    
+      <button 
+        onClick={() => {
+          setIsSuccessPopupOpen(false); 
+          setIsAuditFormOpen(true);    
+          setCurrentStep(1);           
+        }}
+        className="inline-flex items-center justify-center w-full sm:w-auto px-12 h-12 bg-[#2F6F4E] hover:bg-green-800 text-white font-semibold rounded-xl text-base shadow-md transition-all active:scale-[0.98] cursor-pointer"
+      >
+        Get a free audit now
+      </button>
+
+    </div>
+  </div>
+)}
+
+
+{/* popup (Multi-step Form: 1 of 3, 2 of 3, 3 of 3) */}
+{isAuditFormOpen && (
+  <div className="fixed inset-0 z-[500] flex items-center justify-center bg-black/50 backdrop-blur-sm animate-in fade-in duration-200 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+    <div className="bg-[#F8F8F8] rounded-[24px] py-8 px-6 sm:px-12 w-full max-w-2xl mx-4 shadow-2xl relative animate-in zoom-in-95 duration-200 max-h-[90vh] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+      
+      {/* زر الإغلاق العلوي X */}
+      <button 
+        onClick={() => setIsAuditFormOpen(false)}
+        className="absolute top-5 right-5 text-stone-400 hover:text-stone-600 text-2xl font-bold transition-colors cursor-pointer"
+      >
+        &times;
+      </button>
+
+      {/* الجزء العلوي: يظهر فقط في الخطوة الأولى ويختفي في الباقي لمنح مساحة مريحة لأسئلتك */}
+      {currentStep === 1 && (
+        <div className="text-center mb-6 animate-in fade-in duration-200">
+          <h2 className="text-[clamp(22px,4vw,32px)] font-normal text-stone-800 leading-snug">
+            Welcome to your first step <br /> in FLAYLOR
+          </h2>
+          
+          <div className="mt-4 bg-blue-50/10 px-4 py-3 rounded-lg max-w-md mx-auto">
+            <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
+              Please fill out the form below to help us understand your business and ensure the accuracy of the information.
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* عدّاد الخطوات الديناميكي بالمركز */}
+      <div className="text-center mb-6">
+        <p className="text-sm text-stone-400 font-medium">
+          {currentStep} of 3
+        </p>
+      </div>
+
+      {/* نموذج التقديم */}
+      <form onSubmit={handleAuditSubmit} className="max-w-md mx-auto flex flex-col gap-4">
+        
+        {/* ==================== الخطوة الأولى (1 of 3) ==================== */}
+        {currentStep === 1 && (
+          <div className="flex flex-col gap-4 animate-in fade-in duration-300">
+            <input 
+              type="text" 
+              name="Name" 
+              placeholder="Name" 
+              required 
+              value={auditData.Name}
+              onChange={handleAuditChange}
+              className="w-full h-12 px-4 rounded-xl border border-stone-200 bg-white outline-none text-stone-700 text-base focus:border-green-700 focus:ring-1 focus:ring-green-700 transition-all shadow-sm"
+            />
+            <input 
+              type="email" 
+              name="Email" 
+              placeholder="Email" 
+              required 
+              value={auditData.Email}
+              onChange={handleAuditChange}
+              className="w-full h-12 px-4 rounded-xl border border-stone-200 bg-white outline-none text-stone-700 text-base focus:border-green-700 focus:ring-1 focus:ring-green-700 transition-all shadow-sm"
+            />
+            <input 
+              type="tel" 
+              name="WhatsApp" 
+              placeholder="WhatsApp number" 
+              required 
+              value={auditData.WhatsApp}
+              onChange={handleAuditChange}
+              className="w-full h-12 px-4 rounded-xl border border-stone-200 bg-white outline-none text-stone-700 text-base focus:border-green-700 focus:ring-1 focus:ring-green-700 transition-all shadow-sm"
+            />
+            <input 
+              type="url" 
+              name="StoreLink" 
+              placeholder="Store link" 
+              required 
+              value={auditData.StoreLink}
+              onChange={handleAuditChange}
+              className="w-full h-12 px-4 rounded-xl border border-stone-200 bg-white outline-none text-stone-700 text-base focus:border-green-700 focus:ring-1 focus:ring-green-700 transition-all shadow-sm"
+            />
+          </div>
+        )}
+
+        {/* ==================== الخطوة الثانية (2 of 3) ==================== */}
+        {currentStep === 2 && (
+          <div className="flex flex-col gap-5 animate-in fade-in duration-300 text-left">
+            {/* السؤال الأول */}
+            <div className="flex flex-col gap-2">
+              <label className="text-stone-700 text-sm font-normal">
+                What is your current average monthly sales volume ?
+              </label>
+              <input 
+                type="text" 
+                name="MonthlySales"
+                required
+                value={auditData.MonthlySales}
+                onChange={handleAuditChange}
+                className="w-full h-12 px-4 rounded-xl border border-stone-200 bg-white outline-none text-stone-700 text-base focus:border-green-700 focus:ring-1 focus:ring-green-700 transition-all shadow-sm" 
+              />
+            </div>
+
+            {/* السؤال الثاني - تم إضافة type="text" المفقود هنا لتثبيت الـ State */}
+            <div className="flex flex-col gap-2">
+              <label className="text-stone-700 text-sm font-normal">
+                What is your average spending on advertising ?
+              </label>
+              <input 
+                type="text" 
+                name="AdsSpending"
+                required
+                value={auditData.AdsSpending}
+                onChange={handleAuditChange}
+                className="w-full h-12 px-4 rounded-xl border border-stone-200 bg-white outline-none text-stone-700 text-base focus:border-green-700 focus:ring-1 focus:ring-green-700 transition-all shadow-sm" 
+              />
+            </div>
+
+            {/* السؤال الثالث */}
+            <div className="flex flex-col gap-2">
+              <label className="text-stone-700 text-sm font-normal">
+                What is the biggest challenge in business ?
+              </label>
+              <input 
+                type="text" 
+                name="BusinessChallenge"
+                required
+                value={auditData.BusinessChallenge}
+                onChange={handleAuditChange}
+                className="w-full h-12 px-4 rounded-xl border border-stone-200 bg-white outline-none text-stone-700 text-base focus:border-green-700 focus:ring-1 focus:ring-green-700 transition-all shadow-sm" 
+              />
+            </div>
+          </div>
+        )}
+
+        {/* ==================== الخطوة الثالثة (3 of 3) ==================== */}
+        {currentStep === 3 && (
+          <div className="flex flex-col gap-5 animate-in fade-in duration-300 text-left">
+            <div className="flex flex-col gap-2">
+              <label className="text-stone-700 text-sm font-normal">
+                Choose the day and Time that suit you.
+              </label>
+              <div className="grid grid-cols-2 gap-4">
+                <input 
+                  type="date" 
+                  name="SuitDay"
+                  required
+                  value={auditData.SuitDay}
+                  onChange={handleAuditChange}
+                  className="w-full h-12 px-4 rounded-xl border border-stone-200 bg-white outline-none text-stone-700 text-base focus:border-green-700 focus:ring-1 focus:ring-green-700 transition-all shadow-sm cursor-pointer" 
+                />
+                <input 
+                  type="time" 
+                  name="SuitTime"
+                  required
+                  value={auditData.SuitTime}
+                  onChange={handleAuditChange}
+                  className="w-full h-12 px-4 rounded-xl border border-stone-200 bg-white outline-none text-stone-700 text-base focus:border-green-700 focus:ring-1 focus:ring-green-700 transition-all shadow-sm cursor-pointer" 
+                />
+              </div>
+            </div>
+
+            {/* حقل الدولة/المنطقة */}
+            <div className="flex flex-col gap-2">
+              <label className="text-stone-700 text-sm font-normal">
+                Region
+              </label>
+              <input 
+                type="text" 
+                name="Region"
+                placeholder="example : Canada"
+                required
+                value={auditData.Region}
+                onChange={handleAuditChange}
+                className="w-full h-12 px-4 rounded-xl border border-stone-200 bg-white outline-none text-stone-700 text-base focus:border-green-700 focus:ring-1 focus:ring-green-700 transition-all shadow-sm" 
+              />
+            </div>
+          </div>
+        )}
+
+
+        {/* أزرار التحكم السفلية */}
+        <div className="flex items-center justify-between gap-6 mt-6">
+          <button
+            type="button"
+            disabled={currentStep === 1}
+            onClick={() => setCurrentStep((prev) => prev - 1)}
+            className={`w-1/2 h-12 border border-black text-black font-normal rounded-xl text-base transition-all ${currentStep === 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-stone-50 active:scale-[0.98] cursor-pointer'}`}
+          >
+            Back
+          </button>
+
+          <button
+            type={currentStep === 3 ? "submit" : "button"}
+            disabled={isFormSubmitting}
+            onClick={() => {
+              if (currentStep < 3) {
+                setCurrentStep((prev) => prev + 1);
+              }
+            }}
+            className={`w-1/2 h-12 bg-[#2F6F4E] hover:bg-green-800 text-white font-normal rounded-xl text-base shadow-sm transition-all active:scale-[0.98] cursor-pointer flex items-center justify-center ${isFormSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+          >
+            {isFormSubmitting ? (
+              <span>Sending...</span>
+            ) : (
+              currentStep === 3 ? "Send" : "Next"
+            )}
+          </button>
+        </div>
+
+      </form>
+    
+    </div>
+  </div>
+)}
+  {/* بوب اب النجاح والشكر النهائي بعد إرسال الاستبيان */}
+{isFinalSuccessOpen && (
+  <div className="fixed inset-0 z-[600] flex items-center justify-center bg-black/40 backdrop-blur-sm animate-in fade-in duration-200">
+    <div className="bg-white rounded-[24px] p-8 sm:p-12 w-full max-w-xl mx-4 shadow-2xl relative animate-in zoom-in-95 duration-200 text-center flex flex-col justify-center items-center min-h-[300px]">
+      
+      {/* زر الإغلاق العلوي X */}
+      <button 
+        onClick={() => setIsFinalSuccessOpen(false)}
+        className="absolute top-6 right-6 text-stone-400 hover:text-stone-600 text-2xl font-normal transition-colors cursor-pointer"
+      >
+        &times;
+      </button>
+
+      {/* محتوى الشكر والرسالة الموجهة للمستخدم */}
+      <h3 className="text-xl sm:text-2xl font-medium text-stone-800 mb-3">
+        Thank you!
+      </h3>
+      <p className="text-base sm:text-lg text-stone-600 font-normal max-w-sm leading-relaxed">
+        Your information has been successfully received. We will contact you via email within the next 24 hours.
+      </p>
 
     </div>
   </div>
