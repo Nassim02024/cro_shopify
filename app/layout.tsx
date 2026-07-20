@@ -138,17 +138,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Google Tag Manager - Stape Custom Loader for Next.js */}
-        <Script id="gtm-custom-loader" strategy="afterInteractive">
-          {`(function(w,d,s,l,i){
-            w[l]=w[l]||[];
-            w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
-            var f=d.getElementsByTagName(s)[0],j=d.createElement(s);
-            j.async=true;
-            j.src="https://flaylor-agency.online/metrics/widjtpdms.js?"+i;
-            f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','41lcm=GglZNyAnST1LOT4iIiwjTwVQVl5FTAAHTgsIEQ0GCxteDAMVGgkdRxwDCBkaD0IaHB1ZXxkPEBsaDhc%3D');`}
+        {/* Google Tag Manager Direct Script */}
+        <Script id="gtm-base" strategy="beforeInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-T8TZRVFG');`}
         </Script>
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {/* End Google Tag Manager */}
 
         {/* Google Material Icons - Using media query to defer loading */}
