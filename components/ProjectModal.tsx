@@ -69,7 +69,7 @@ export default function ProjectModal({ isOpen, onClose, projectSlug }: ProjectMo
         )}
 
         {/* Project Content */}
-  <div className="p-6 sm:px-52 ">
+  <div className="cardproject p-6 sm:px-52 ">
           
   <div className="flex flex-col gap-[70px]"> {/* فجوة كبيرة بين الأقسام الرئيسية */}
     

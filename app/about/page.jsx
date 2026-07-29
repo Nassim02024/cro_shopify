@@ -132,7 +132,7 @@ const About = () => {
       `}</style>
 
       {/* المحتوى العلوي - About & Stats */}
-      <section className="flex flex-col items-center text-center m-auto w-[80%] sm:w-[70%] lg:w-[80%]">
+      <section className="cardabout flex flex-col items-center text-center m-auto w-[80%] sm:w-[70%] lg:w-[80%]">
         <section className="mt-[100px] flex flex-col gap-[44px]">
           <p className="text-[clamp(40px,8vw,61px)] text-[#969593] font-semibold">About us</p>
           <p className="text-[#1E1E1E] text-[clamp(18px,2.5vw,25px)] max-w-3xl">
@@ -152,7 +152,7 @@ const About = () => {
 
       {/* our philosophy */}
       <section>
-        <div className="m-auto w-[92%] sm:w-[60%] py-32">
+        <div className="Philosophy m-auto w-[92%] sm:w-[60%] py-32">
           <h2 className="text-center text-[#969593] mb-[44px] text-[clamp(20px,8vw,39px)] hide-dmsan">
             Our Philosophy
           </h2>
@@ -278,7 +278,7 @@ const About = () => {
   </div>
 </section>
 
-  <section className="mt-[130px] space-y-[90px] flex flex-col items-center px-6 md:px-[10%]  lg:px-[20%] ">
+  <section className="story mt-[130px] space-y-[90px] flex flex-col items-center px-6 md:px-[10%]  lg:px-[20%] ">
     <p className="text-[39px] text-[#969593]">Our Story</p>
     <div className="space-y-[90px] sm:space-y-[130px] ">
     <div className="flex flex-col sm:flex-row items-center space-x-[60px] space-y-[60px]">
