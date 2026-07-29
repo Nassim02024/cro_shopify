@@ -110,7 +110,7 @@ const DownSection3 = ()=> {
     </section> */}
 
         {/* How We Work */}
-      <section className="flex flex-col w-full m-auto justify-center items-center mt-[88px] space-y-11">
+      <section className="howwork flex flex-col w-full m-auto justify-center items-center mt-[88px] space-y-11">
   <p className="text-[clamp(31px,5vw,39px)] text-[#969593]">How we work</p>
   <div className="items-stretch flex flex-col w-[90%]  relative space-y-[34px]">
    <div className="flex flex-col justify-center text-center items-centerw-[100%] sm:w-[510px] sm:h-96 relative bg-linear-to-b from-neutral-100 to-zinc-300 rounded-[30px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.30)] outline-4 -outline-offset-4 outline-white overflow-hidden">
@@ -173,7 +173,7 @@ const DownSection3 = ()=> {
         Why Choose Flaylor?
       </h2>
 
-      <div className="w-full flex flex-col md:flex-row justify-center items-center gap-6 md:gap-5">
+      <div className="whychoose w-full flex flex-col md:flex-row justify-center items-center gap-6 md:gap-5">
         {WhyChoosCardSection.map((card, index) => (
           <div 
             key={index} 

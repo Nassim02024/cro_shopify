@@ -186,7 +186,7 @@ const handleAuditSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
   return (
     <main className="mt-10 overflow-x-hidden h-fit overflow-y-hidden">
-      <section className="m-auto mt-20 md:10 flex flex-col items-center text-center space-y-[20px] sm:space-y-[12px] sm:space-y-3 px-[2%] sm:px-[15%]">
+      <section className="sectionTop m-auto mt-20 md:10 flex flex-col items-center text-center space-y-[20px] sm:space-y-[12px] sm:space-y-3 px-[2%] sm:px-[15%]">
       <div className="text-[clamp(28px,4vw,49px)] leading-[1.2] font-medium flex flex-wrap  items-center justify-center w-[95%]   mx-auto ">
       <span>We help
            E-commerce Brand
@@ -203,7 +203,7 @@ const handleAuditSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
           {/* زر فتح النافذة المنبثقة */}
 <button 
   onClick={() => setIsPopupOpen(true)} 
-  className="font-semibold w-[100%] sm:w-[40%] text-base mt-5 px-2 py-[13px] cursor-pointer rounded-full border border-gray-300 text-center text-white  bg-[#2F6F4E] hover:bg-[#3b614e] transition-colors "
+  className="buttonDownload font-semibold w-[100%] sm:w-[40%] text-base mt-5 px-2 py-[13px] cursor-pointer rounded-full border border-gray-300 text-center text-white  bg-[#2F6F4E] hover:bg-[#3b614e] transition-colors "
 >
   Download 360° E-commerce Audit
 </button>
@@ -772,7 +772,7 @@ const handleAuditSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
 
       {/* DAtA */}
-        <div className="grid text-center space-y-[75px] items-center justify-center m-auto mt-[150px] px-[10px]  md:px-[50px]">
+        <div className="ruselt grid text-center space-y-[75px] items-center justify-center m-auto mt-[150px] px-[10px]  md:px-[50px]">
           <div>
             <p className='text-[#969593] text-[clamp(31px,5vw,39px)]'>Our results speak for themselves.</p>
           </div>
@@ -887,7 +887,7 @@ const handleAuditSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         Services
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[20px] px-[20px] sm:px-[100px] w-full items-stretch">
+      <div className="services grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[20px] px-[20px] sm:px-[100px] w-full items-stretch">
      {titleCardServireSection.map((card, index) => (
     <div
       key={index}
@@ -918,7 +918,7 @@ const handleAuditSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
       {/* What Makes Us Different */}
 
-      <section className="flex flex-col justify-center items-center mt-[100px] px-[10px] md:px-[50px] lg:px-[100px]">
+      <section className="Different flex flex-col justify-center items-center mt-[100px] px-[10px] md:px-[50px] lg:px-[100px]">
         <div className="text-center mb-12">
           <h2 className="text-[clamp(31px,5vw,39px)] text-[#969593] mb-4">What Makes Us Different</h2>
           
@@ -1023,13 +1023,13 @@ const handleAuditSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       </section>
 
       {/* testimonials */}
-      <section className=" relative flex flex-col justify-center items-center mt-[100px] px-[10px] md:px-[50px] lg:px-[100px]">
+      <section className="Testimonials relative flex flex-col justify-center items-center mt-[100px] px-[10px] md:px-[50px] lg:px-[100px]">
         <div className="text-center ">
           <h2 className="text-[clamp(31px,5vw,39px)] text-[#969593] mb-4">Testimonials</h2>
           
         </div>
         
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
+        <div className="Testimonialscard columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
             {/* Testimonial Card 1 */}
             <div 
               className="break-inside-avoid bg-white rounded-2xl shadow-md p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col"
@@ -1078,7 +1078,7 @@ const handleAuditSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             </p>
           </div>
         </div>
-         <div className="w-[1440px] h-[40vh] sm:h-[60vh] absolute -bottom-[200px] sm:top-[300px]  bg-gradient-to-r from-stone-50 to-stone-50 blur-[25px]" />
+         <div className="testshadoow w-[1440px] h-[40vh] sm:h-[60vh] absolute -bottom-[200px] sm:top-[300px]  bg-gradient-to-r from-stone-50 to-stone-50 blur-[25px]" />
 
         <Link href="/testimonials" className="absolute -bottom-5 sm:bottom-30 z-10 text-[#2F6F4E] cursor-pointer font-medium hover:text-[#24583e] transition-colors duration-300">
           See all 
@@ -1086,7 +1086,7 @@ const handleAuditSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       </section>
       
 
-      <section className='flex flex-col justify-center text-center items-center mt-[100px] sm:mt-[0px] space-y-[12px] px-[10px]  md:px-[100px] lg:px-[250px] '>
+      <section className='about flex flex-col justify-center text-center items-center mt-[100px] sm:mt-[0px] space-y-[12px] px-[10px]  md:px-[100px] lg:px-[250px] '>
        <p className='text-[clamp(31px,4vw,39px)] text-[#969593] z-[200]'>About Us</p>
        <p className='text-[clamp(16px,4vw,20px)] z-[200]' >            We are an e-commerce growth agency that scales brands by bridging the gap between deep financial analytics and high-performance, conversion-driven marketing.</p>
        <Link href="/about" className="text-[#2F6F4E] cursor-pointer">Learn more</Link>

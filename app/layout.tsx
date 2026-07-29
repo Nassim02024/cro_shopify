@@ -163,6 +163,8 @@ export default function RootLayout({
         />
 
         <meta name="google-site-verification" content="-vY6Rj44c5AWAKvRSN7Mt6-6akJ3qT44UWexCkS4Ld0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${itim.variable} ${abhayaLibre.variable} ${poly.variable} antialiased`}
