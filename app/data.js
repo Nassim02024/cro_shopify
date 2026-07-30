@@ -1,7 +1,7 @@
 export const projects = [ 
 {id: "1" , slug: "one" , 
   titletemp: "Building a High-End Women's Fashion ..."  ,
-  Banner_main : "/procover4.svg" , title: "ELITE: From Cash Flow Bleed to Financial Discipline and Operational Growth" ,
+  Banner_main : "/procover4.jpg" , title: "ELITE: From Cash Flow Bleed to Financial Discipline and Operational Growth" ,
   // Section 1: The Diagnosis
   section1_title: "The Diagnosis (The Audit)",
   section1_line1: "Before launching any marketing campaigns, we conducted a comprehensive audit of ELITE (a women’s apparel and accessories brand). We discovered that the problem wasn’t 'traffic'—it was the business structure itself:",
@@ -28,7 +28,7 @@ export const projects = [
 
 {id: "2" , slug: "two" ,
   titletemp: "Reaching $200K Milestone...",
-  Banner_main: "/procover3.svg",
+  Banner_main: "/procover3.jpg",
   title: "Bridging the Gap Between Design Psychology and Financial Rigor",
   // Section 1: The Diagnosis
   section1_title: "The Diagnosis: The Gap Between 'The Click' and 'The Purchase'",
@@ -67,7 +67,7 @@ export const projects = [
   id: "3",
   slug: "three",
   titletemp: "Scaling ZOWI COMP Sleepwear...",
-  Banner_main: "/procover2.svg",
+  Banner_main: "/procover2.jpg",
   title: "How We Delivered 4X Profit Growth for ZOWI COMP via the 'Net Growth' Strategy",
 
   // Section 1: Overview
@@ -107,7 +107,7 @@ export const projects = [
   slug: "catre",
   titletemp: "Scaling ELLO Beyond $100K/Month...",
   title: "Scaling ELLO Beyond $100K/Month with a Single-SKU Strategy",
-  Banner_main: "/procover1.svg",
+  Banner_main: "/procover1.jpg",
   
   // Section 1: The Challenge
   section1_title: "The Challenge",

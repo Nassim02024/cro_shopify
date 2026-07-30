@@ -634,21 +634,21 @@ const handleAuditSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   
   <div className="flex space-x-5 px-10 animate-horizontal overflow-hidden">
   {[
-    "/iPhone 16 & 17 Pro - 4.svg",        
-    "/iPhone 16 & 17 Pro - 2.svg",      
-    "/iPhone 16 & 17 Pro - 1.svg",    
-    "/iPhone 16 & 17 Pro - 3.svg",
-    "/iPhone 16 & 17 Pro - 5.svg",
-    "/iPhone 16 & 17 Pro - 6.svg",
-    "/iPhone 16 & 17 Pro - 7.svg",
+    "/iPhone 16 & 17 Pro - 4.jpg",        
+    "/iPhone 16 & 17 Pro - 2.jpg",      
+    "/iPhone 16 & 17 Pro - 1.jpg",    
+    "/iPhone 16 & 17 Pro - 3.jpg",
+    "/iPhone 16 & 17 Pro - 5.jpg",
+    "/iPhone 16 & 17 Pro - 6.jpg",
+    "/iPhone 16 & 17 Pro - 7.jpg",
   ].concat([
-    "/iPhone 16 & 17 Pro - 4.svg",      
-    "/iPhone 16 & 17 Pro - 2.svg",
-    "/iPhone 16 & 17 Pro - 1.svg",
-    "/iPhone 16 & 17 Pro - 3.svg",
-    "/iPhone 16 & 17 Pro - 5.svg",
-    "/iPhone 16 & 17 Pro - 6.svg",
-    "/iPhone 16 & 17 Pro - 7.svg",
+    "/iPhone 16 & 17 Pro - 4.jpg",      
+    "/iPhone 16 & 17 Pro - 2.jpg",
+    "/iPhone 16 & 17 Pro - 1.jpg",
+    "/iPhone 16 & 17 Pro - 3.jpg",
+    "/iPhone 16 & 17 Pro - 5.jpg",
+    "/iPhone 16 & 17 Pro - 6.jpg",
+    "/iPhone 16 & 17 Pro - 7.jpg",
   ]).map((imgSrc, index) => (
     /* تم إضافة w-[220px] sm:w-[324px] لتحديد عرض الحاوية بدقة ومنع التداخل */
     <div 
@@ -680,7 +680,7 @@ const handleAuditSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             <Image
               className="w-full relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
               width={300} height={300} alt="Custom Landing Page Engineering preview"
-              src="/procover1.svg"
+              src="/procover1.jpg"
               loading="lazy"
               priority={false}
               placeholder="blur"
@@ -703,7 +703,7 @@ const handleAuditSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             <Image
               className="w-full relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
               width={300} height={300} alt="Custom Skincare Landing Page preview"
-              src="/procover2.svg"
+              src="/procover2.jpg"
               loading="lazy"
               placeholder="blur"
               blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f3f4f6'/%3E%3C/svg%3E"
@@ -726,7 +726,7 @@ const handleAuditSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             <Image
               className="w-full relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
               width={300} height={300} alt="Custom Skincare Landing Page preview"
-              src="/procover3.svg"
+              src="/procover3.jpg"
               loading="lazy"
               placeholder="blur"
               blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f3f4f6'/%3E%3C/svg%3E"
@@ -749,7 +749,7 @@ const handleAuditSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             <Image
               className="w-full relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
               width={300} height={300} alt="Custom Skincare Landing Page preview"
-              src="/procover4.svg"
+              src="/procover4.jpg"
               loading="lazy"
               placeholder="blur"
               blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f3f4f6'/%3E%3C/svg%3E"

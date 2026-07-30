@@ -2,12 +2,13 @@
   "name": "cro-shopify",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
-  },
+    "scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start",
+  "lint": "next lint",
+  "analyze": "cross-env ANALYZE=true next build"
+},
   "dependencies": {
     "@tailwindcss/postcss": "^4.2.1",
     "critters": "^0.0.23",
@@ -26,8 +27,5 @@
     "eslint-config-next": "16.1.6",
     "tailwindcss": "^4",
     "typescript": "^5"
-  },
-    "scripts": {
-    "analyze": "ANALYZE=true next build"
   }
 }
