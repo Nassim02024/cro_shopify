@@ -203,9 +203,9 @@ const handleAuditSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
           {/* زر فتح النافذة المنبثقة */}
 <button 
   onClick={() => setIsPopupOpen(true)} 
-  className="buttonDownload font-semibold w-[100%] sm:w-[40%] text-base mt-5 px-2 py-[13px] cursor-pointer rounded-full border border-gray-300 text-center text-white  bg-[#2F6F4E] hover:bg-[#3b614e] transition-colors "
+  className="buttonDownload font-bold w-full sm:w-auto min-w-[240px] text-lg sm:text-base mt-5 px-6 py-4 cursor-pointer rounded-full shadow-lg text-center text-white bg-[#1E5631] hover:bg-[#143D21] active:scale-95 transition-all duration-200 ease-in-out border-2 border-[#2E8B57]"
 >
-  Download 360° E-commerce Audit
+  Download Free Audit Now
 </button>
 
 {/* النافذة المنبثقة (Modal) */}
@@ -633,41 +633,41 @@ const handleAuditSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   <div className="absolute right-0 top-0 w-[15%] h-full bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
   
   <div className="flex space-x-5 px-10 animate-horizontal overflow-hidden">
-    {[
-      "/iPhone 16 & 17 Pro - 4.svg",        
-      "/iPhone 16 & 17 Pro - 2.svg",      
-      "/iPhone 16 & 17 Pro - 1.svg",    
-      "/iPhone 16 & 17 Pro - 3.svg",
-      "/iPhone 16 & 17 Pro - 5.svg",
-      "/iPhone 16 & 17 Pro - 6.svg",
-      "/iPhone 16 & 17 Pro - 7.svg",
-    ].concat([
-      "/iPhone 16 & 17 Pro - 4.svg",       
-      "/iPhone 16 & 17 Pro - 2.svg",
-      "/iPhone 16 & 17 Pro - 1.svg",
-      "/iPhone 16 & 17 Pro - 3.svg",
-      "/iPhone 16 & 17 Pro - 5.svg",
-      "/iPhone 16 & 17 Pro - 6.svg",
-      "/iPhone 16 & 17 Pro - 7.svg",
-    ]).map((imgSrc, index) => (
-      <div
-        key={index}
-        className="shrink-0 p-2 sm:p-4  h-[273px] sm:h-[470px] rounded-[5px] sm:rounded-[15px] overflow-hidden flex items-center justify-center"
-      >
-        <Image
-          width={324}
-          height={470}
-          src={imgSrc}
-          alt={`Gallery Image ${index}`}
-          className="w-full h-full object-cover overflow-hidden shadow-lg rounded-[20px] "
-          loading="lazy"
-          placeholder="blur"
-          blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 324 470'%3E%3Crect width='324' height='470' fill='%23f3f4f6'/%3E%3C/svg%3E"
-          sizes="(max-width: 768px) 100vw, 50vw"
-        />
-      </div>
-    ))}
-  </div>
+  {[
+    "/iPhone 16 & 17 Pro - 4.svg",        
+    "/iPhone 16 & 17 Pro - 2.svg",      
+    "/iPhone 16 & 17 Pro - 1.svg",    
+    "/iPhone 16 & 17 Pro - 3.svg",
+    "/iPhone 16 & 17 Pro - 5.svg",
+    "/iPhone 16 & 17 Pro - 6.svg",
+    "/iPhone 16 & 17 Pro - 7.svg",
+  ].concat([
+    "/iPhone 16 & 17 Pro - 4.svg",      
+    "/iPhone 16 & 17 Pro - 2.svg",
+    "/iPhone 16 & 17 Pro - 1.svg",
+    "/iPhone 16 & 17 Pro - 3.svg",
+    "/iPhone 16 & 17 Pro - 5.svg",
+    "/iPhone 16 & 17 Pro - 6.svg",
+    "/iPhone 16 & 17 Pro - 7.svg",
+  ]).map((imgSrc, index) => (
+    /* تم إضافة w-[220px] sm:w-[324px] لتحديد عرض الحاوية بدقة ومنع التداخل */
+    <div 
+      key={index} 
+      className="relative shrink-0 w-[150px] sm:w-[250px] h-[273px] sm:h-[470px] p-2 sm:p-4 rounded-[5px] sm:rounded-[15px] overflow-hidden flex items-center justify-center"
+    >
+      <Image
+        src={imgSrc}
+        alt={`Gallery Image ${index}`}
+        fill
+        className="object-cover shadow-lg rounded-[20px]"
+        loading="lazy"
+        placeholder="blur"
+        blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 324 470'%3E%3Crect width='324' height='470' fill='%23f3f4f6'/%3E%3C/svg%3E"
+        sizes="(max-width: 768px) 100vw, 50vw"
+      />
+    </div>
+  ))}
+</div>
 </section>
 
       {/* Projects Section */}

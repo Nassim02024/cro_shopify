@@ -2,11 +2,9 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Itim, Abhaya_Libre, Poly } from "next/font/google";
-import Nav from "@/components/Nav"
-import Footer from "@/components/Footer"
-import Link from "next/link";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
 import Script from 'next/script';
-
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,7 +16,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// Optimized fonts using next/font
 const itim = Itim({
   variable: "--font-itim",
   weight: "400",
@@ -38,13 +35,10 @@ const poly = Poly({
 });
 
 export const metadata: Metadata = {
-  // العنوان المثالي للسيو (Brand + Focus Keywords)
   title: {
     default: "Flaylor | Marketing agency specializing in D2C Brands",
     template: "%s | Flaylor"
   },
-  
-  // الوصف الذي صغناه سابقاً بناءً على معلوماتك
   description: "We help e-commerce business owners scale their profits to 2–4X in Just 90 days",
   keywords: [
     "Shopify Profit Optimization",
@@ -54,8 +48,6 @@ export const metadata: Metadata = {
     "Data-driven Marketing Agency",
     "Get a free scaling plan"
   ],
-
-  // إعدادات محركات البحث
   robots: {
     index: true,
     follow: true,
@@ -64,41 +56,36 @@ export const metadata: Metadata = {
       follow: true,
     },
   },
-
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "flaylor-agency.online", 
+    url: "https://flaylor-agency.online", 
     siteName: "Flaylor",
     title: "Flaylor | Bridge the Gap Between Finance & Marketing",
     description: "Scale your Store business to 2–4X profits using our proven 3-step system: Analyze, Optimize, and Scale.",
     images: [
       {
-        url: "/favicon.svg", // يفضل تصميم صورة 1200x630 بكسل ووضعها في مجلد public
+        url: "/favicon.svg",
         width: 1200,
         height: 630,
         alt: "Flaylor Strategic Growth",
       },
     ],
   },
-
-  // مظهر الموقع على منصة X (Twitter سابقاً)
   twitter: {
     card: "summary_large_image",
     title: "Flaylor | Scale Your Shopify Profits",
     description: "Our 3-step system integrates financial analysis with marketing decisions for sustainable growth.",
     images: ["/favicon.svg"],
   },
-
   icons: {
     icon: '/favicon.svg', 
   },
   alternates: {
-    canonical: 'flaylor-agency.online',
+    canonical: 'https://flaylor-agency.online',
   },
   metadataBase: new URL('https://flaylor-agency.online'),
 };
-
 
 export default function RootLayout({
   children,
@@ -107,17 +94,17 @@ export default function RootLayout({
 }>) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService", // تحديد نوع النشاط كخدمة مهنية
+    "@type": "ProfessionalService",
     "name": "Flaylor",
-    "image": "flaylor-agency.online/favicon.svg", // رابط صورة الشعار أو صورة OG
-    "@id": "flaylor-agency.online",
-    "url": "flaylor-agency.online",
-    "telephone": "+123456789", // ضع رقم هاتف الوكالة هنا
+    "image": "https://flaylor-agency.online/favicon.svg",
+    "@id": "https://flaylor-agency.online",
+    "url": "https://flaylor-agency.online",
+    "telephone": "+123456789",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Touggourt, Algeria", // العنوان الكامل
-      "addressLocality": "Touggourt", // المدينة
-      "addressCountry": "DZ" // رمز الدولة (مثلاً AE الجزائر)
+      "streetAddress": "Touggourt, Algeria",
+      "addressLocality": "Touggourt",
+      "addressCountry": "DZ"
     },
     "description": "Strategic Financial Growth for Shopify Brands. We bridge the gap between financial data and marketing decisions.",
     "brand": {
@@ -129,12 +116,12 @@ export default function RootLayout({
       "description": "Scale your Shopify business to 2–4X profits in 90 days."
     },
     "sameAs": [
-       // روابط السوشيال ميديا الخاصة بك
-      "https://www.linkedin.com/in/nassim-ben-1261772b9/", // رابط لينكدإن </NASSIM>
-      "https://www.linkedin.com/in/mohammedlamine", // رابط لينكدإن </MOHAMMEDLAMINE>
-      "https://x.com/minou_patrick", // رابط منصة X (تويتر سابقاً) </MINOU_PATRICK>
+      "https://www.linkedin.com/in/nassim-ben-1261772b9/",
+      "https://www.linkedin.com/in/mohammedlamine",
+      "https://x.com/minou_patrick"
     ]
   };
+
   return (
     <html lang="en">
       <head>
@@ -153,7 +140,6 @@ export default function RootLayout({
         />
         {/* End Google Tag Manager */}
 
-        {/* Google Material Icons - Using media query to defer loading */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Poller+One" />
@@ -164,22 +150,14 @@ export default function RootLayout({
 
         <meta name="google-site-verification" content="-vY6Rj44c5AWAKvRSN7Mt6-6akJ3qT44UWexCkS4Ld0" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${itim.variable} ${abhayaLibre.variable} ${poly.variable} antialiased`}
       >
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
         <Nav />
-        
-        
         {children}
         <Footer />
       </body>
-
     </html>
   );
 }
