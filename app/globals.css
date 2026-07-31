@@ -106,11 +106,11 @@ body {
     padding-right: 50px;
     
   }
-  .Testimonials {
+  /* .Testimonials {
     padding-left: 50px;
     padding-right: 50px;
     
-  }
+  } */
   .about {
     padding-left: 50px;
     padding-right: 50px;
@@ -137,6 +137,13 @@ body {
 
 
 }
+
+@media screen and (min-width: 770px) and (max-width: 1024px) {
+.testshadoow{
+
+}
+}
+
 
 @media screen and (min-width: 640px) and (max-width: 1024px) {
 

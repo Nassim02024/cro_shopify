@@ -1023,67 +1023,63 @@ const handleAuditSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       </section>
 
       {/* testimonials */}
-      <section className="Testimonials relative flex flex-col justify-center items-center mt-[100px] px-[10px] md:px-[50px] lg:px-[100px]">
-        <div className="text-center ">
-          <h2 className="text-[clamp(31px,5vw,39px)] text-[#969593] mb-4">Testimonials</h2>
-          
+      {/* testimonials */}
+<section className="Testimonials relative flex flex-col justify-center items-center mt-[100px] mb-[120px] px-4 md:px-8 lg:px-16 w-full max-w-7xl mx-auto">
+  <div className="text-center mb-10">
+    <h2 className="text-[clamp(31px,5vw,39px)] text-[#969593] font-bold">Testimonials</h2>
+  </div>
+  
+  {/* استخدام Grid بدلاً من columns لتجنب مشاكل التابلت */}
+  <div className="Testimonialscard grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 w-full">
+      {/* Testimonial Card 1 */}
+      <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col justify-between">            
+        <div>
+          <div className="mb-4">
+            <h3 className="font-semibold text-lg text-gray-900">Sarah Jenkins</h3>
+            <p className="text-gray-600 text-sm">CEO of an Apparel Line</p>
+          </div>
+          <p className="text-gray-700 leading-relaxed text-[15px] italic">
+           "It’s rare to find people in this industry who have the heart of a teacher Most agencies see you as a monthly retainer but with Flaylor I felt seen as a human being They helped us navigate a really tough recession by pivoting our strategy based on real time financial data not just creative trends We doubled our net profit in 60 days because they taught us how to stop gambling and start calculating Their support was pivotal during our most challenging season and for that I am forever grateful"
+          </p>
         </div>
-        
-        <div className="Testimonialscard columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
-            {/* Testimonial Card 1 */}
-            <div 
-              className="break-inside-avoid bg-white rounded-2xl shadow-md p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col"
-            >            
-            <div className="flex mb-4">
-              
-              <div>
-                <h3 className="font-semibold text-lg">Sarah Jenkins</h3>
-                <p className="text-gray-600 text-sm">CEO of an Apparel Line</p>
-              </div>
-            </div>
-            <p className="text-gray-700 leading-relaxed text-[15px] italic">
-             "It’s rare to find people in this industry who have the heart of a teacher Most agencies see you as a monthly retainer but with Flaylor I felt seen as a human being They helped us navigate a really tough recession by pivoting our strategy based on real time financial data not just creative trends We doubled our net profit in 60 days because they taught us how to stop gambling and start calculating Their support was pivotal during our most challenging season and for that I am forever grateful"
-            </p>
-          </div>
+      </div>
 
-          {/* Testimonial Card 2 */}
-           <div 
-              className=" dm:flex break-inside-avoid bg-white rounded-2xl shadow-md p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col"
-            >
-            <div className="flex items-center mb-4">
-              
-              <div>
-                <h3 className="font-semibold text-lg">David R</h3>
-                <p className="text-gray-600 text-sm">Founder of Skinkar</p>
-              </div>
-            </div>
-            <p className="text-gray-700 leading-relaxed text-[15px] italic">
-              "Before meeting you and the Flaylor team I spent my nights staring at Shopify dashboards seeing huge revenue numbers but wondering why my bank account stayed empty it was exhausting other agencies just told me to spend more on ads but you did something different you sat down with me and looked at my actual margins you treated my business like it was your own family legacy today I don't just have a store I have a profitable business that allows me to actually spend time with my kids without checking my phone every five minutes"
-            </p>
+      {/* Testimonial Card 2 */}
+       <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col justify-between">
+        <div>
+          <div className="mb-4">
+            <h3 className="font-semibold text-lg text-gray-900">David R</h3>
+            <p className="text-gray-600 text-sm">Founder of Skinkar</p>
           </div>
-
-          {/* Testimonial Card 3 */}
-            <div 
-              className=" dm:flex  break-inside-avoid bg-white rounded-2xl shadow-md p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col"
-            >
-            <div className="flex  mb-4">
-              
-              <div>
-                <h3 className="font-semibold text-lg">Mark Thompson</h3>
-                <p className="text-gray-600 text-sm">E-commerce Director</p>
-              </div>
-            </div>
-            <p className="text-gray-700 leading-relaxed text-[15px] italic">
-              "I was one of the biggest skeptics after being let down by marketing agencies before but with you guys you proved me wrong you aligned our Meta ads with our unit economics so perfectly that every dollar spent now has a clear purpose we stopped chasing vanity metrics and started chasing real net profit it is truly a relief I thank you for your credibility and I wish you success"
-            </p>
-          </div>
+          <p className="text-gray-700 leading-relaxed text-[15px] italic">
+            "Before meeting you and the Flaylor team I spent my nights staring at Shopify dashboards seeing huge revenue numbers but wondering why my bank account stayed empty it was exhausting other agencies just told me to spend more on ads but you did something different you sat down with me and looked at my actual margins you treated my business like it was your own family legacy today I don't just have a store I have a profitable business that allows me to actually spend time with my kids without checking my phone every five minutes"
+          </p>
         </div>
-         <div className="testshadoow w-[1440px] h-[40vh] sm:h-[60vh] absolute -bottom-[200px] sm:top-[300px]  bg-gradient-to-r from-stone-50 to-stone-50 blur-[25px]" />
+      </div>
 
-        <Link href="/testimonials" className="absolute -bottom-5 sm:bottom-30 z-10 text-[#2F6F4E] cursor-pointer font-medium hover:text-[#24583e] transition-colors duration-300">
-          See all 
-        </Link>
-      </section>
+      {/* Testimonial Card 3 */}
+      <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col justify-between md:col-span-2 lg:col-span-1">
+        <div>
+          <div className="mb-4">
+            <h3 className="font-semibold text-lg text-gray-900">Mark Thompson</h3>
+            <p className="text-gray-600 text-sm">E-commerce Director</p>
+          </div>
+          <p className="text-gray-700 leading-relaxed text-[15px] italic">
+            "I was one of the biggest skeptics after being let down by marketing agencies before but with you guys you proved me wrong you aligned our Meta ads with our unit economics so perfectly that every dollar spent now has a clear purpose we stopped chasing vanity metrics and started chasing real net profit it is truly a relief I thank you for your credibility and I wish you success"
+          </p>
+        </div>
+      </div>
+  </div>
+
+   {/* تحسين مواقع العناصر المطلقة لتفادي التداخل في الشاشات المختلفة */}
+   <div className="testshadoow w-full max-w-[1440px] h-[30vh] absolute -bottom-[100px] bg-gradient-to-r from-stone-50 to-stone-50 blur-[25px] pointer-events-none" />
+
+   <div className="mt-12 z-10">
+     <Link href="/testimonials" className="text-[#2F6F4E] cursor-pointer font-medium hover:text-[#24583e] transition-colors duration-300 underline underline-offset-4">
+       See all 
+     </Link>
+   </div>
+</section>
       
 
       <section className='about flex flex-col justify-center text-center items-center mt-[100px] sm:mt-[0px] space-y-[12px] px-[10px]  md:px-[100px] lg:px-[250px] '>
