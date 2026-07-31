@@ -671,104 +671,109 @@ const handleAuditSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 </section>
 
       {/* Projects Section */}
-      <section className="flex flex-col w-full m-auto justify-center items-center mt-[88px] space-y-11">
-        <p className="text-[29px] sm:text-[39px] text-[#969593]">Discover our Projects</p>
-            <div className="grid grid-cols-1 md:grid-cols-2   w-full gap-5  sm:flex-row px-[10px]  md:px-[50px] ">
-          
-          {/* Card 1 - Custom Landing Page Engineering */}
-          <button onClick={() => handleProjectClick("catre")} className="group  relative w-full h-[200px]   sm:h-[331px]  rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 shadow-xl cursor-pointer">
-            <Image
-              className="w-full relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
-              width={300} height={300} alt="Custom Landing Page Engineering preview"
-              src="/procover1.jpg"
-              loading="lazy"
-              priority={false}
-              placeholder="blur"
-              blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f3f4f6'/%3E%3C/svg%3E"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-            
-            {/* نصوص الكارد */}
-            <div className="absolute bottom-5 left-5   text-white w-[90%] text-start z-30">
-          <p className="text-[clamp(16px,2vw,18px)] font-bold leading-tight transition-transform duration-500 group-hover:-translate-y-2 ">
+      <section className="flex flex-col w-full m-auto justify-center items-center mt-[88px] space-y-11 max-w-7xl px-4 md:px-8">
+  <p className="text-[29px] sm:text-[39px] text-[#969593] font-normal text-center">Discover our Projects</p>
+  
+  <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-6">
+      
+      {/* Card 1 */}
+      <button onClick={() => handleProjectClick("catre")} className="group relative w-full h-[220px] sm:h-[331px] rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 shadow-xl cursor-pointer">
+        <Image
+          className="w-full h-full object-cover relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
+          width={600} 
+          height={400} 
+          alt="Custom Landing Page Engineering preview"
+          src="/procover1.jpg"
+          loading="lazy"
+          placeholder="blur"
+          blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23f3f4f6'/%3E%3C/svg%3E"
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+        
+        <div className="absolute bottom-5 left-5 text-white w-[90%] text-start z-30">
+          <p className="text-[clamp(16px,2vw,18px)] font-bold leading-tight transition-transform duration-500 group-hover:-translate-y-2">
             Scaling ELLO Beyond $100K/Month...
           </p>
         </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-50 opacity-80 transition-opacity duration-500 z-20"></div>
-            <div className="absolute inset-0 bg-white/5 opacity-0 opacity-100 transition-opacity duration-500 z-25"></div>
-          </button>
 
-          {/* Card 2 - Custom Skincare Landing Page */}
-          <button onClick={() => handleProjectClick("three")} className="group  relative w-full h-[200px]   sm:h-[331px]  rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 shadow-xl cursor-pointer">
-            <Image
-              className="w-full relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
-              width={300} height={300} alt="Custom Skincare Landing Page preview"
-              src="/procover2.jpg"
-              loading="lazy"
-              placeholder="blur"
-              blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f3f4f6'/%3E%3C/svg%3E"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-            
-            <div className="absolute bottom-5 left-5   text-white w-[90%] text-start z-30">
-          <p className="text-[clamp(16px,2vw,18px)] font-bold leading-tight transition-transform duration-500 group-hover:-translate-y-2 ">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 transition-opacity duration-500 z-20"></div>
+        <div className="absolute inset-0 bg-white/5 opacity-100 transition-opacity duration-500 z-25"></div>
+      </button>
+
+      {/* Card 2 */}
+      <button onClick={() => handleProjectClick("three")} className="group relative w-full h-[220px] sm:h-[331px] rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 shadow-xl cursor-pointer">
+        <Image
+          className="w-full h-full object-cover relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
+          width={600} 
+          height={400} 
+          alt="Custom Skincare Landing Page preview"
+          src="/procover2.jpg"
+          loading="lazy"
+          placeholder="blur"
+          blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23f3f4f6'/%3E%3C/svg%3E"
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+        
+        <div className="absolute bottom-5 left-5 text-white w-[90%] text-start z-30">
+          <p className="text-[clamp(16px,2vw,18px)] font-bold leading-tight transition-transform duration-500 group-hover:-translate-y-2">
             How We Delivered 4X Profit Growth ...
           </p>
         </div>
 
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-50 opacity-80 transition-opacity duration-500 z-20"></div>
-            <div className="absolute inset-0 bg-white/5 opacity-0 opacity-100 transition-opacity duration-500 z-25"></div>
-          </button>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 transition-opacity duration-500 z-20"></div>
+        <div className="absolute inset-0 bg-white/5 opacity-100 transition-opacity duration-500 z-25"></div>
+      </button>
 
-
-          {/* Card 3 - Custom Skincare Landing Page */}
-          <button onClick={() => handleProjectClick("two")} className="group  relative w-full h-[200px]   sm:h-[331px]  rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 shadow-xl cursor-pointer">
-            <Image
-              className="w-full relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
-              width={300} height={300} alt="Custom Skincare Landing Page preview"
-              src="/procover3.jpg"
-              loading="lazy"
-              placeholder="blur"
-              blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f3f4f6'/%3E%3C/svg%3E"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-            
-            <div className="absolute bottom-5 left-5   text-white w-[90%] text-start z-30">
-          <p className="text-[clamp(16px,2vw,18px)] font-bold leading-tight transition-transform duration-500 group-hover:-translate-y-2 ">
+      {/* Card 3 */}
+      <button onClick={() => handleProjectClick("two")} className="group relative w-full h-[220px] sm:h-[331px] rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 shadow-xl cursor-pointer">
+        <Image
+          className="w-full h-full object-cover relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
+          width={600} 
+          height={400} 
+          alt="Custom Skincare Landing Page preview"
+          src="/procover3.jpg"
+          loading="lazy"
+          placeholder="blur"
+          blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23f3f4f6'/%3E%3C/svg%3E"
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+        
+        <div className="absolute bottom-5 left-5 text-white w-[90%] text-start z-30">
+          <p className="text-[clamp(16px,2vw,18px)] font-bold leading-tight transition-transform duration-500 group-hover:-translate-y-2">
             Bridging the Gap Between Design ...
           </p>
         </div>
 
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-50 opacity-80 transition-opacity duration-500 z-20"></div>
-            <div className="absolute inset-0 bg-white/5 opacity-0 opacity-100 transition-opacity duration-500 z-25"></div>
-          </button>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 transition-opacity duration-500 z-20"></div>
+        <div className="absolute inset-0 bg-white/5 opacity-100 transition-opacity duration-500 z-25"></div>
+      </button>
 
-
-          {/* Card 4 - Custom Skincare Landing Page */}
-          <button onClick={() => handleProjectClick("one")} className="group  relative w-full h-[200px]   sm:h-[331px]  rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 shadow-xl cursor-pointer">
-            <Image
-              className="w-full relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
-              width={300} height={300} alt="Custom Skincare Landing Page preview"
-              src="/procover4.jpg"
-              loading="lazy"
-              placeholder="blur"
-              blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f3f4f6'/%3E%3C/svg%3E"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-            
-            <div className="absolute bottom-5 left-5   text-white w-[90%] text-start z-30">
-          <p className="text-[clamp(16px,2vw,18px)] font-bold leading-tight transition-transform duration-500 group-hover:-translate-y-2 ">
+      {/* Card 4 */}
+      <button onClick={() => handleProjectClick("one")} className="group relative w-full h-[220px] sm:h-[331px] rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 shadow-xl cursor-pointer">
+        <Image
+          className="w-full h-full object-cover relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
+          width={600} 
+          height={400} 
+          alt="Custom Skincare Landing Page preview"
+          src="/procover4.jpg"
+          loading="lazy"
+          placeholder="blur"
+          blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23f3f4f6'/%3E%3C/svg%3E"
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+        
+        <div className="absolute bottom-5 left-5 text-white w-[90%] text-start z-30">
+          <p className="text-[clamp(16px,2vw,18px)] font-bold leading-tight transition-transform duration-500 group-hover:-translate-y-2">
             ELITE: From Cash Flow Bleed to Financial...
           </p>
         </div>
 
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-50 opacity-80 transition-opacity duration-500 z-20"></div>
-            <div className="absolute inset-0 bg-white/5 opacity-0 opacity-100 transition-opacity duration-500 z-25"></div>
-          </button>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 transition-opacity duration-500 z-20"></div>
+        <div className="absolute inset-0 bg-white/5 opacity-100 transition-opacity duration-500 z-25"></div>
+      </button>
 
-        </div>
-        {/* <Link href="/Project" className="text-[#2F6F4E] cursor-pointer">See all</Link> */}
-      </section>
+  </div>
+</section>
 
 
       {/* DAtA */}
@@ -881,36 +886,39 @@ const handleAuditSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     
     <div className="w-full h-full absolute left-0 top-0 bg-green-300/10 rounded-full blur-[187.60px] z-10 pointer-events-none"></div>
 
-    <div className="relative z-50 flex flex-col items-center gap-12 max-w-7xl mx-auto">
+    <div className="relative z-50 flex flex-col items-center gap-12 max-w-7xl mx-auto w-full px-4 sm:px-6">
       
-      <h2 className="text-stone-400 text-3xl sm:text-5xl font-normal leading-tight">
+      <h2 className="text-stone-400 text-3xl sm:text-5xl font-normal leading-tight text-center">
         Services
       </h2>
 
-      <div className="services grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[20px] px-[20px] sm:px-[100px] w-full items-stretch">
-     {titleCardServireSection.map((card, index) => (
-    <div
-      key={index}
-      className="relative flex w-full max-w-[295px] mx-auto min-h-[280px] sm:min-h-[199px] h-full p-7 bg-white/10 rounded-[10px] outline outline-1 outline-green-300 backdrop-blur-2xl flex-col "
-    >
-      <div className="flex-grow flex flex-col items-center text-center space-y-4">
-        <div className="text-white text-xl font-semibold leading-tight">
-          {card.title}
-        </div>
-        <div className="text-stone-300 text-base font-normal leading-relaxed">
-          {card.description}
-        </div>
-      </div>
+      <div className="services grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full items-stretch">
+        {titleCardServireSection.map((card, index) => (
+          <div
+            key={index}
+            className="relative flex w-full h-full min-h-[280px] sm:min-h-[220px] p-6 sm:p-7 bg-white/10 rounded-[10px] outline outline-1 outline-green-300 backdrop-blur-2xl flex-col justify-between"
+          >
+            <div className="flex flex-col items-center text-center space-y-4">
+              <div className="text-white text-xl font-semibold leading-tight">
+                {card.title}
+              </div>
+              <div className="text-stone-300 text-base font-normal leading-relaxed">
+                {card.description}
+              </div>
+            </div>
 
-      <div className="mt-auto pt-8 w-full transition-transform hover:scale-105">
-        <Link href={card.link} className="w-full flex justify-center items-center bg-white text-neutral-800 h-[44px] rounded-[24px] font-medium transition-colors hover:bg-gray-100 cursor-pointer">
-          Learn more
-        </Link>
+            <div className="mt-8 w-full transition-transform hover:scale-105">
+              <Link 
+                href={card.link} 
+                className="w-full flex justify-center items-center bg-white text-neutral-800 h-[44px] rounded-[24px] font-medium transition-colors hover:bg-gray-100 cursor-pointer"
+              >
+                Learn more
+              </Link>
+            </div>
+          </div>
+        ))}
       </div>
-    </div>
-  ))}
 </div>
-    </div>
   </div>
 </section>
 
@@ -918,112 +926,121 @@ const handleAuditSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
       {/* What Makes Us Different */}
 
-      <section className="Different flex flex-col justify-center items-center mt-[100px] px-[10px] md:px-[50px] lg:px-[100px]">
-        <div className="text-center mb-12">
-          <h2 className="text-[clamp(31px,5vw,39px)] text-[#969593] mb-4">What Makes Us Different</h2>
-          
-        </div>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full max-w-6xl">
-          {/* Left Card - Features with Checkmarks */}
-          <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 bg-gradient-to-b from-neutral-100 to-zinc-300 rounded-[30px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.30)] shadow-[0px_4px_8px_3px_rgba(0,0,0,0.15)] outline outline-4 outline-offset-[-4px] outline-white overflow-hidden">
-            <h3 className="text-[25px]   text-center mb-6 ">Flaylor</h3>
-            <div className="space-y-[21px]">
-              <div className="flex items-center gap-2">
-                <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)]">
-                  <svg className="w-6 h-6  text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
-                    <path d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <span className="text-gray-700 text-[14px]">We focus on maximizing net profit after all expenses.</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)]">
-                  <svg className="w-6 h-6  text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
-                    <path d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <span className="text-gray-700 text-[14px]">Based on rigorous financial analysis of every cent spent.</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)]">
-                  <svg className="w-6 h-6  text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
-                    <path d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <span className="text-gray-700 text-[14px]">We link real-time financial data directly to marketing actions.</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)]">
-                  <svg className="w-6 h-6  text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
-                    <path d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <span className="text-gray-700 text-[14px]">Scaling based on Unit Economics to ensure sustainable growth.</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)] ">
-                  <svg className="w-6 h-6   text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
-                    <path d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <span className="text-gray-700 text-[14px]">Marketing without financial data is seen as an uncalculated risk.</span>
-              </div>
-            </div>
+      <section className="Different flex flex-col justify-center items-center mt-[100px] px-[10px] md:px-[50px] lg:px-[100px] w-full max-w-7xl mx-auto">
+  <div className="text-center mb-12">
+    <h2 className="text-[clamp(31px,5vw,39px)] text-[#969593] font-normal mb-4">What Makes Us Different</h2>
+  </div>
+  
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
+    
+    {/* Left Card - Flaylor */}
+    <div className="bg-gradient-to-b from-neutral-100 to-zinc-300 rounded-[30px] p-6 sm:p-8 shadow-[0px_1px_3px_0px_rgba(0,0,0,0.30),0px_4px_8px_3px_rgba(0,0,0,0.15)] outline outline-4 outline-offset-[-4px] outline-white overflow-hidden flex flex-col justify-between">
+      <h3 className="text-[25px] font-semibold text-center mb-8 text-neutral-800">Flaylor</h3>
+      
+      <div className="space-y-6 flex-grow flex flex-col justify-around">
+        <div className="flex items-center gap-3">
+          <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)]">
+            <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round" strokeWidth="2.5">
+              <path d="M5 13l4 4L19 7" />
+            </svg>
           </div>
-
-          {/* Right Card - Results/Stats */}
-          <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 bg-gradient-to-b from-neutral-100 to-zinc-300 rounded-[30px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.30)] shadow-[0px_4px_8px_3px_rgba(0,0,0,0.15)] outline outline-4 outline-offset-[-4px] outline-white overflow-hidden">
-            <h3 className="text-[25px]  text-center mb-6 ">Traditional Marketing Agencies</h3>
-            <div className="space-y-[30px]">
-              <div className="flex items-center gap-2">
-                <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-red-500/30 bg-red-50/10 shadow-[0_0_8px_rgba(239,68,68,0.4)]">
-                  <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
-                    <path d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </div>
-                <span className="text-gray-700 text-[14px]">Focus on views, clicks, and total sales volume.</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-red-500/30 bg-red-50/10 shadow-[0_0_8px_rgba(239,68,68,0.4)]">
-                  <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
-                    <path d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </div>
-                <span className="text-gray-700 text-[14px]">Based on creative intuition or marketing "feel."</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-red-500/30 bg-red-50/10 shadow-[0_0_8px_rgba(239,68,68,0.4)]">
-                  <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
-                    <path d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </div>
-                <span className="text-gray-700 text-[14px]">Ad platform data is separated from financial reality.</span>
-              </div>
-              <div className="flex items-center gap-2">
-              <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-red-500/30 bg-red-50/10 shadow-[0_0_8px_rgba(239,68,68,0.4)]">
-                <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
-                  <path d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </div>
-                <span className="text-gray-700 text-[14px]">Scaling by simply increasing budget to sell more.</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-red-500/30 bg-red-50/10 shadow-[0_0_8px_rgba(239,68,68,0.4)]">
-                  <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round">
-                    <path d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </div>
-                
-                <span className="text-gray-700 text-[14px]">Marketing is treated as an "experiment" that might fail.</span>
-              </div>
-            </div>
-          </div>
+          <span className="text-gray-700 text-[14px] font-medium">We focus on maximizing net profit after all expenses.</span>
         </div>
-      </section>
 
-      {/* testimonials */}
-      {/* testimonials */}
+        <div className="flex items-center gap-3">
+          <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)]">
+            <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round" strokeWidth="2.5">
+              <path d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <span className="text-gray-700 text-[14px] font-medium">Based on rigorous financial analysis of every cent spent.</span>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)]">
+            <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round" strokeWidth="2.5">
+              <path d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <span className="text-gray-700 text-[14px] font-medium">We link real-time financial data directly to marketing actions.</span>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)]">
+            <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round" strokeWidth="2.5">
+              <path d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <span className="text-gray-700 text-[14px] font-medium">Scaling based on Unit Economics to ensure sustainable growth.</span>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)]">
+            <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round" strokeWidth="2.5">
+              <path d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <span className="text-gray-700 text-[14px] font-medium">Marketing without financial data is seen as an uncalculated risk.</span>
+        </div>
+      </div>
+    </div>
+
+    {/* Right Card - Traditional Marketing Agencies */}
+    <div className="bg-gradient-to-b from-neutral-100 to-zinc-300 rounded-[30px] p-6 sm:p-8 shadow-[0px_1px_3px_0px_rgba(0,0,0,0.30),0px_4px_8px_3px_rgba(0,0,0,0.15)] outline outline-4 outline-offset-[-4px] outline-white overflow-hidden flex flex-col justify-between">
+      <h3 className="text-[25px] font-semibold text-center mb-8 text-neutral-800">Traditional Marketing Agencies</h3>
+      
+      <div className="space-y-6 flex-grow flex flex-col justify-around">
+        <div className="flex items-center gap-3">
+          <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-red-500/30 bg-red-50/10 shadow-[0_0_8px_rgba(239,68,68,0.4)]">
+            <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round" strokeWidth="2.5">
+              <path d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </div>
+          <span className="text-gray-700 text-[14px] font-medium">Focus on views, clicks, and total sales volume.</span>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-red-500/30 bg-red-50/10 shadow-[0_0_8px_rgba(239,68,68,0.4)]">
+            <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round" strokeWidth="2.5">
+              <path d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </div>
+          <span className="text-gray-700 text-[14px] font-medium">Based on creative intuition or marketing "feel."</span>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-red-500/30 bg-red-50/10 shadow-[0_0_8px_rgba(239,68,68,0.4)]">
+            <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round" strokeWidth="2.5">
+              <path d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </div>
+          <span className="text-gray-700 text-[14px] font-medium">Ad platform data is separated from financial reality.</span>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-red-500/30 bg-red-50/10 shadow-[0_0_8px_rgba(239,68,68,0.4)]">
+            <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round" strokeWidth="2.5">
+              <path d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </div>
+          <span className="text-gray-700 text-[14px] font-medium">Scaling by simply increasing budget to sell more.</span>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-red-500/30 bg-red-50/10 shadow-[0_0_8px_rgba(239,68,68,0.4)]">
+            <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round" strokeWidth="2.5">
+              <path d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </div>
+          <span className="text-gray-700 text-[14px] font-medium">Marketing is treated as an "experiment" that might fail.</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  {/* testimonials */}
 <section className="Testimonials relative flex flex-col justify-center items-center mt-[100px] mb-[120px] px-4 md:px-8 lg:px-16 w-full max-w-7xl mx-auto">
   <div className="text-center mb-10">
     <h2 className="text-[clamp(31px,5vw,39px)] text-[#969593] font-bold">Testimonials</h2>

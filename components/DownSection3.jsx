@@ -162,9 +162,10 @@ const DownSection3 = ()=> {
 </section>
 
 
-<section className="flex justify-center items-center mt-[100px] px-4">
+<section className="flex justify-center items-center mt-[100px] px-4 w-full">
   <div className="w-full min-h-[524px] sm:min-h-[724px] relative bg-neutral-800 overflow-hidden rounded-2xl py-16 flex items-center">
     
+    {/* تأثير الإضاءة الخلفية */}
     <div className="w-full h-full left-0 top-0 absolute bg-green-300/10 rounded-full blur-[187.60px] z-10 pointer-events-none"></div>
 
     <div className="w-full max-w-7xl mx-auto flex flex-col justify-center items-center relative z-50 gap-11 px-5 md:px-[30px]">
@@ -173,17 +174,17 @@ const DownSection3 = ()=> {
         Why Choose Flaylor?
       </h2>
 
-      <div className="whychoose w-full flex flex-col md:flex-row justify-center items-center gap-6 md:gap-5">
+      {/* تحويل القسم إلى Grid متجاوب ليعمل بشكل مثالي على التابلت والموبايل والكمبيوتر */}
+      <div className="whychoose w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-6 justify-items-center items-stretch">
         {WhyChoosCardSection.map((card, index) => (
           <div 
             key={index} 
-            className="flex w-full max-w-[295px] h-[262px] rounded-[30px] justify-center px-7 py-1.5 bg-white/10 outline outline-1 outline-green-300 backdrop-blur-2xl flex-col gap-2.5 "
+            className="flex w-full max-w-[295px] h-[262px] rounded-[30px] justify-center px-7 py-4 bg-white/10 outline outline-1 outline-green-300 backdrop-blur-2xl flex-col gap-2.5"
           >
             <div className="flex flex-col space-y-4">
-              <div className="flex flex-col justify-center text-white text-[23px] text-center font-medium">
+              <div className="flex flex-col justify-center text-white text-[23px] text-center font-medium leading-snug">
                 {card.title}
               </div>
-        
             </div>
           </div>
         ))}
@@ -191,8 +192,7 @@ const DownSection3 = ()=> {
       
     </div>
   </div>
-  
-</section>  
+</section> 
    <DownSection2 />
 
     </>

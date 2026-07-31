@@ -121,11 +121,11 @@ body {
     padding-right: 30px;
     
   }
-  .whychoose {
+  /* .whychoose {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     
-  }
+  } */
   .cardproject {
     padding: 50px;
     
