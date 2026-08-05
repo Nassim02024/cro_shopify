@@ -46,7 +46,12 @@ export const metadata: Metadata = {
     "Scale Shopify Brand",
     "Shopify Ads Management",
     "Data-driven Marketing Agency",
-    "Get a free scaling plan"
+    "Get a free scaling plan",
+    "DTC Brand Growth Agency",
+    "E-commerce Profit Optimization",
+    "Scale Direct-to-Consumer Brands",
+    "E-commerce Financial Analysis",
+    "Data-Driven E-commerce Marketing"
   ],
   robots: {
     index: true,
@@ -74,7 +79,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Flaylor | Scale Your Shopify Profits",
+    title: "Flaylor | We scale E-commerce profits 2–4X in 90 days or less",
     description: "Our 3-step system integrates financial analysis with marketing decisions for sustainable growth.",
     images: ["/favicon.svg"],
   },
@@ -106,14 +111,14 @@ export default function RootLayout({
       "addressLocality": "Touggourt",
       "addressCountry": "DZ"
     },
-    "description": "Strategic Financial Growth for Shopify Brands. We bridge the gap between financial data and marketing decisions.",
+    "description": "Strategic Financial Growth for E-commerce Brands. We bridge the gap between financial data and marketing decisions.",
     "brand": {
       "@type": "Brand",
       "name": "Flaylor"
     },
     "offers": {
       "@type": "Offer",
-      "description": "Scale your Shopify business to 2–4X profits in 90 days."
+      "description": "scale E-commerce profits 2–4X in 90 days or less"
     },
     "sameAs": [
       "https://www.linkedin.com/in/nassim-ben-1261772b9/",
