@@ -1,1176 +1,1076 @@
 "use client";
 
-declare global { interface Window { dataLayer: any[]; } }
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState , useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import DownSection3 from '@/components/DownSection3';
-import ProjectModal from '@/components/ProjectModal';
-import Nav from '@/components/Nav';
+// import InfiniteColumns from "@/components/InfiniteColumns";
+import { X, CheckCircle, ShieldCheck, Target, Sparkles, Layers, ArrowRight } from 'lucide-react';
+import { 
+  PackageX, 
+  LayoutGrid, 
+  TrendingDown, 
+  Smartphone, 
+  Gauge, 
+  FileText,
+  ChevronLeft, 
+  ChevronRight, 
+  ChevronDown, 
+  CheckCircle2
+} from "lucide-react";
+import { p } from 'framer-motion/client';
+
 export default function HomePage() {
-  const [isFinalSuccessOpen, setIsFinalSuccessOpen] = useState(false);
-  const [auditData, setAuditData] = useState({
-  targetSheet: 'AuditForm',
-  Name: '', // تم تعديله ليطابق الشيت والسكريبت
-  Email: '', // تم تعديله ليطابق الشيت والسكريبت
-  WhatsApp: '',
-  StoreLink: '',
-  MonthlySales: '',
-  AdsSpending: '',
-  BusinessChallenge: '',
-  SuitDay: '',
-  SuitTime: '',
-  Region: ''
-});
-
-
-
-  const [selectedProject, setSelectedProject] = useState<string | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleProjectClick = (projectSlug: string) => {
-    setSelectedProject(projectSlug);
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-    setSelectedProject(null);
-  };
-
-  const titleCardServireSection = [
-    { title: "Growth & Scale", description: "Strategic scaling that grows market share while securing net profit margins", link: "/GrowthAndScale" },
-    { title: "CRO (Conversion Rate Optimization)", description: "Engineering frictionless shopping experiences to maximize conversion rates and revenue.", link: "/CROConversionRateOptimization" },
-    { title: "Paid Ads Marketing", description: "Performance-driven ad management focusing on high LTV and optimized acquisition costs.", link: "/PaidAdsMarketing" },
-    { title: "E-commerce audit", description: "Deep-dive auditing to eliminate financial leaks and unlock hidden profit potential", link: "/GetFreeAudit" },
+  const BRANDS = [
+    { id: 1, name: "LITE", image: "/card1.jpg" },
+    { id: 2, name: "Happy cats", image: "/card2.jpg" },
+    { id: 3, name: "ZŪRA", image: "/card3.jpg" },
+    { id: 4, name: "ELLO", image: "/card4.jpg" },
+    { id: 5, name: "zowie", image: "/card5.jpg" },
+    { id: 6, name: "happy cat", image: "/card6.jpg" }
   ];
 
 
-  // Downlad Exel File
-   const [loading, setLoading] = useState(false);
-   const [isPopupOpen, setIsPopupOpen] = useState(false); // تأكد من وجود الـ state الخاصة بالـ popup
-   
-   // إذا كنت تستخدم React عادي مع TypeScript، نحدد نوع الحدث ونوع الرابط
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>, excelDownloadUrl: string | null = null) {
-  // كود الـ Data layer الخاص بك
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    event: 'form_submitted',       
-    form_name: 'Audit Download',    
-    lead_type: 'E-commerce Audit'   
-  });
+  // Project
+  const [selectedProject, setSelectedProject] = useState(null);
+  const PROJECTS = [
+    { 
+      id: 1, 
+       image: "/p1f.jpg", 
+       title: " Hand Grip Strengthener — From Product to Premium Experience",
+       description : "Designed a high-impact e-commerce landing page that showcases the product, highlights its key benefits, and guides visitors toward purchase through a clear, conversion-focused layout.",
+       feedback: "Really happy with how the page turned out The design is clean and everything feels right",
+       price :"$850",
+       Duration :"13 Hours",
+       
+       description1 :[ 
+        {line1 : "The goal was to create a dedicated landing page for a hand grip strengthener, presenting the product in a more compelling way while making its benefits, features, and purchase journey easy to understand."},
+       
+        {scops : [
+          {id : "1" , scopitem : "Art Direction"},
+          {id : "2" , scopitem : "UI/UX Design"},
+          {id : "3" , scopitem : "Landing Page Design"},
+          {id : "4" , scopitem : "Shopify Development"},
+          {id : "5" , scopitem : "Responsive Design"}
+        ]},
+        
+        
+        {line3 : "Presenting a simple fitness accessory in a way that captures attention, communicates its practical value, and gives shoppers enough clarity to make a confident purchase decision."},
+       ],
+       description2 : [ 
+        {line1 : "The goal was to create a dedicated landing page for a hand grip strengthener, presenting the product in a more compelling way while making its benefits, features, and purchase journey easy to understand."},
+       
+        {line2 : "Art Direction UI/UX Design Landing Page Design Shopify Development Responsive Design"},
+       
+        {line3 : "Presenting a simple fitness accessory in a way that captures attention, communicates its practical value, and gives shoppers enough clarity to make a confident purchase decision."},
+       ],
+       
+       Final : "Showcase the finished landing page through large, high-quality screenshots. Include the hero section, product benefits, feature breakdown, product details, and final purchase section.",
+       img : [
+        
+        { id: 'p15', src: "/p15.png" },
+        { id: 'p16', src: "/p16.png" },
+        { id: 'p17', src: "/p17.png" },
+        { id: 'p18', src: "/p18.png" },
+        { id: 'p11', src: "/p11.png" },
+        { id: 'p12', src: "/p12.png" },
+        { id: 'p13', src: "/p13.png" },
+        { id: 'p14', src: "/p14.png" },
+      ]
+      },
+    { 
+      id: 2, 
+       image: "/p2f.jpg",
+       title: "Crafting a Luxury E-Commerce Experience Through Strategic UX and Visual Storytelling",
+       description: "Discover how we combined strategic UX, persuasive copywriting, and refined visual storytelling to showcase a luxury sauna and create a seamless, conversion-focused experience.",
+       feedback: "“The design captures the essence of our product beautifully Every detail feels intentional premium and true to our vision.”",
+       price :"$3,000",
+       Duration :"35 Hours",
+       
+       description1 :[ 
+        {line1 : "A luxury e-commerce landing page designed to transform an outdoor sauna into a premium lifestyle experience, combining refined visuals with persuasive storytelling."},
+       
+        {scops : [
+          {id : "1" , scopitem : "E-commerce Landing Page Design"},
+          {id : "2" , scopitem : "UI/UX Design"},
+          {id : "3" , scopitem : "Conversion-Focused Copywriting"},
+          {id : "4" , scopitem : "Visual Storytelling"},
+         ]},
+       
+        {line3 : " The challenge was to communicate the sauna’s true value through compelling copy and high-quality visuals, without compromising the clean, luxurious aesthetic."},
+      
+        {line4 : " The challenge was to communicate the sauna’s true value through compelling copy and high-quality visuals, without compromising the clean, luxurious aesthetic."},
+       ],
+       description2 : [ 
+        {line1 : "The goal was to create a dedicated landing page for a hand grip strengthener, presenting the product in a more compelling way while making its benefits, features, and purchase journey easy to understand."},
+       
+         ],
+       
+       Final : "Showcase the finished landing page through large, high-quality screenshots. Include the hero section, product benefits, feature breakdown, product details, and final purchase section.",
+       img : [
+        
+        { id: 'p21', src: "/p21.png" },
+        { id: 'p22', src: "/p22.png" },
+        { id: 'p23', src: "/p23.png" },
 
-  e.preventDefault();
-  setLoading(true);
+      ]
 
-  const form = e.currentTarget;
-  const formData = new FormData(form);
+    },
+    { 
+      id: 3, 
+       image: "/p3f.jpg",
+       title: "Building a Distinctive Coffee Brand Experience",
+       description: "A coffee e-commerce website that brings brand identity and shopping together through thoughtful UI/UX design, creating an immersive brand experience and a seamless journey from product discovery to purchase.",
+       feedback: "The website turned out exactly how we envisioned it It captures our brand perfectly while making shopping feel effortless.",
+       price :"$20,000",
+       Duration :"450 Hours",
+       
+       description1 :[ 
+        {line1 : "An e-commerce website designed for a coffee brand, bringing together brand identity and online shopping in one cohesive digital experience. The goal was to create a website that communicates the brand's personality while providing customers with a simple and engaging way to explore and purchase products."},
+       
+        {scops : [
+          {id : "1" , scopitem : "E-Commerce Website Design"},
+          {id : "2" , scopitem : "UI/UX Design"},
+          {id : "3" , scopitem : "Brand Experience"},
+          {id : "4" , scopitem : "Shopify Design"},
+          {id : "5" , scopitem : "Responsive Design"}
+        ]},
+        
+        
+        {line3 : "The main challenge was balancing brand storytelling with shopping functionality. The website needed to express the brand's identity through its visual design without compromising navigation, product discovery, or the overall purchasing experience."},
+      
+        {line4 : " We developed a brand-led design approach using a consistent visual language, thoughtful layouts, and lifestyle imagery to communicate the coffee experience. At the same time, we structured the website around intuitive navigation and clear product presentation, allowing visitors to move naturally from discovering the brand to exploring and purchasing its products."},
+       ],
 
-  try {
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxN9PcrUUpwCWFwifX1qgHvwRAFqOJ2Q5eaKIwO2Ihuho77BmNCejbKj9i5aQ3SZduGow/exec";
+       img : [
+        
+        { id: 'p31', src: "/p31.jpg" },
+        { id: 'p32', src: "/p32.jpg" },
+        { id: 'p33', src: "/p33.jpg" },
+        { id: 'p34', src: "/p34.jpg" },
 
-  await fetch(SCRIPT_URL, { 
-    method: "POST", 
-    mode: "no-cors",
-    body: formData // يستخدم formData الخاصة بالتنزيل السريع
-  });
+      ]
 
-  form.reset(); 
+    },
+    { 
+      id: 4, 
+       image: "/p4f.jpg",
+      //  title: "Capturing brand identity through thoughtful design details and interactive components.",
+      //  description: "",
+      //  feedback: "Really happy with how the page turned out The design is clean and everything feels right",
+      //  price :"",
+      //  Duration :"",
+       
+      //  description1 :[ 
+      //   {line1 : "An e-commerce website designed for a coffee brand, bringing together brand identity and online shopping in one cohesive digital experience. The goal was to create a website that communicates the brand's personality while providing customers with a simple and engaging way to explore and purchase products."},
+       
+      //   {scops : [
+      //     {id : "1" , scopitem : "Art Direction"},
+      //     {id : "2" , scopitem : "UI/UX Design"},
+      //     {id : "3" , scopitem : "Landing Page Design"},
+      //     {id : "4" , scopitem : "Shopify Development"},
+      //     {id : "5" , scopitem : "Responsive Design"}
+      //   ]},
+        
+        
+      //   {line3 : "The main challenge was balancing brand storytelling with shopping functionality. The website needed to express the brand's identity through its visual design without compromising navigation, product discovery, or the overall purchasing experience."},
+      
+      //   {line4 : " We developed a brand-led design approach using a consistent visual language, thoughtful layouts, and lifestyle imagery to communicate the coffee experience. At the same time, we structured the website around intuitive navigation and clear product presentation, allowing visitors to move naturally from discovering the brand to exploring and purchasing its products."},
+      //  ],
 
-  if (excelDownloadUrl) {
-    const link = document.createElement('a');
-    link.href = excelDownloadUrl;
-    link.setAttribute('download', 'scaling-plan.xlsx'); 
-    document.body.appendChild(link);
-    link.click(); 
-    document.body.removeChild(link); 
-  }
+      //  img : [
+        
+      //   { id: 'p15', src: "/p15.png" },
+      //   { id: 'p16', src: "/p16.png" },
+      //   { id: 'p17', src: "/p17.png" },
+      //   { id: 'p18', src: "/p18.png" },
+      //   { id: 'p11', src: "/p11.png" },
+      //   { id: 'p12', src: "/p12.png" },
+      //   { id: 'p13', src: "/p13.png" },
+      //   { id: 'p14', src: "/p14.png" },
+      // ]
 
-  setIsPopupOpen(false);         
-  setIsSuccessPopupOpen(true); // فتح بوب اب المراجعات والعملاء ليعرض لهم زر "Get a free audit now"
-} catch (error) {
-      const errorMessage = error instanceof Error ? error.message : "Unknown error";
-      console.error("Error!", errorMessage);
-      alert("Error! Please try again later.");
-  } finally {
-      setLoading(false);
-  }
-}
-
-  const clients = [
-    { name: "Ricardo", img: "/phone.png", location: "Georgia" },
-    { name: "Nassim", img: "/phone.png", location: "Algeria" },
-    { name: "Amine", img: "/phone.png", location: "France" },
+    }
   ];
+
+  useEffect(() => {
+    if (selectedProject) {
+       document.body.style.overflow = 'hidden';
+    } else {
+       document.body.style.overflow = 'auto';
+    }
+  
+     return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [selectedProject]);
+
+  
+
+
+  const PROBLEMS = [
+    { id: 1, title: "Poor product presentation", icon: PackageX },
+    { id: 2, title: "Confusing layout", icon: LayoutGrid },
+    { id: 3, title: "Low conversion rates", icon: TrendingDown },
+    { id: 4, title: "Bad mobile experience", icon: Smartphone },
+    { id: 5, title: "Slow loading speed", icon: Gauge },
+    { id: 6, title: "Weak copywriting", icon: FileText },
+  ];
+
+  // const SERVICES = [
+  //   {
+  //     id: 1,
+  //     title: "Website & Landing Page Audit",
+  //     badge: "Get it for free",
+  //     description: "Discover what's holding your website back.",
+  //     whatWeDo: [
+  //       "Review your website or landing page.",
+  //       "Identify issues affecting customer experience and sales.",
+  //       "Find opportunities for improvement."
+  //     ],
+  //     whatYouGet: [
+  //       "A clear website performance assessment.",
+  //       "Actionable recommendations.",
+  //       "A prioritized improvement plan."
+  //     ]
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Website & Landing Page Design",
+  //     badge: null,
+  //     description: "Turn your brand into a premium digital experience.",
+  //     whatWeDo: [
+  //       "Design high-converting layouts.",
+  //       "Ensure a seamless mobile experience.",
+  //       "Craft compelling visual elements."
+  //     ],
+  //     whatYouGet: [
+  //       "A modern, stunning UI/UX design.",
+  //       "Optimized assets for your store.",
+  //       "Ready-to-code design files."
+  //     ]
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "Website & Landing Page Development",
+  //     badge: null,
+  //     description: "Turn your brand into a premium digital experience.",
+  //     whatWeDo: [
+  //       "Design high-converting layouts.",
+  //       "Ensure a seamless mobile experience.",
+  //       "Craft compelling visual elements."
+  //     ],
+  //     whatYouGet: [
+  //       "A modern, stunning UI/UX design.",
+  //       "Optimized assets for your store.",
+  //       "Ready-to-code design files."
+  //     ]
+  //   }
+  // ];
+
+
+ 
+
+  const Skils = [
+    {
+      id: 1,
+      icon: <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-pen-tool"><path d="m18 13-.654-4.736a4 4 0 00-2.756-3.266l-9.163-2.9a2 2 0 00-2.017.493l-.82.819a2 2 0 00-.492 2.017l2.9 9.163a4 4 0 003.266 2.756L13 18"/><path d="M18.648 12.352a1.205 1.205 0 011.704 0l1.296 1.296a1.205 1.205 0 010 1.704l-6.296 6.296a1.205 1.205 0 01-1.704 0l-1.296-1.296a1.205 1.205 0 010-1.704z"/><path d="m3 3 6.586 6.586"/><circle cx="11" cy="11" r="2"/></svg>,
+      title: "Dessing",
+      description: "Crafting stunning Figma layouts that hook your store visitors.",
+    },
+    {
+      id: 2,
+      icon: <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-code-xml"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>,
+      title: "Development",
+      description: "Building fast, high-performance pages using Shopify and Replo.",
+    },
+    {
+      id: 3,
+      icon: <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-file-text"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>,
+      title: "Copywriting",
+      description: "Writing persuasive copy that turns readers into loyal, paying customers.",
+    },
+    {
+      id: 4,
+      icon: <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chart-line"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m19 9-5 5-4-4-3 3"/></svg>,
+      title: "Analysis",
+      description: "Tracking page performance and optimizing for maximum ROI.",
+    },
+  ];
+
+  const testimonials = [
+    {
+      id: 1,
+      quote: "It was a pleasure working with you I'm grateful to you and your team",
+      name: "William",
+      role: "Founder of SOLVE",
+      image: "/william.svg",  
+      bgImage: "/p21.png" 
+    },
+    {
+      id: 2,
+      quote: "Great work You and your team are truly doing an excellent job I hope we get the chance to work together again",
+      name: "Oliver Smith",
+      role: "Online seller",
+      image: "/oliver.svg",
+      bgImage: "/oliverba.jpg"
+    },
+    {
+      id: 3,
+      quote: "The design is excellent it honestly exceeded our expectations I never imagined the final result would turn out this well",
+      name: "sophia",
+      role: "Online seller",
+      image: "/sophia.svg",
+      bgImage: "/sophiaba.jpg"
+    
+    },
+    {
+      id: 3,
+      quote: "The design is excellent it honestly exceeded our expectations I never imagined the final result would turn out this well",
+      name: "sophia",
+      role: "Online seller",
+      image: "/sophia.svg",
+      bgImage: "/sophiaba.jpg"
+    
+    },
+    {
+      id: 4,
+      quote: "One of the things I appreciated most was your attention to detail Thank you all",
+      name: "James",
+      role: "Online seller",
+      image: "/james.jpg",
+      bgImage: "/p17.png"
+    },
+    {
+      id: 5,
+      quote: "I honestly didn't expect the result to turn out this well I'm really happy with how it turned out",
+      name: "Ethan",
+      role: "Founder of Ember & Mist",
+      image: "/ethan.jpg",
+      bgImage: "/p31.jpg"
+    },
+    {
+      id: 6,
+      quote: "Our team and I have truly enjoyed working with you We wish you all the best and continued success",
+      name: "Emily",
+      role: "Online seller",
+      image: "/emily.jpg",
+      bgImage: "/emilyba.png"
+    }
+  ];
+
+  
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // 2. دالة لمراقبة السحب اليدوي (Manual Scroll) وتحديث الاسم
-  const handleScroll = () => {
-    if (clientSliderRef.current) {
-      const width = clientSliderRef.current.offsetWidth;
-      const scrollLeft = clientSliderRef.current.scrollLeft;
-      const index = Math.round(scrollLeft / width);
-      if (index !== currentIndex) {
-        setCurrentIndex(index);
-      }
-    }
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
   };
 
-  // 3. دالة للتحريك عبر الأسهم
-  const scroll = (direction: 'left' | 'right') => {
-    const slider = clientSliderRef.current;
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length);
+  };
+
+  const currentItem = testimonials[currentIndex];
+
+  const faqData = [
+    {
+      id: 1,
+      question: "How do you determine the cost of a project?",
+      answer: "Every project is unique, so our pricing depends on its scope, complexity, and specific requirements. We consider factors such as the number of pages, design complexity, custom functionality, and project timeline to provide a tailored quote that reflects the quality and value of our work. Once we understand your vision and goals, we'll provide a clear proposal with no hidden fees.",
+    },
+    {
+      id: 2,
+      question: "Do you offer website redesign services?",
+      answer: "Yes, we specialize in complete store and website redesigns to improve conversion rates, visual identity, and user experience.",
+    },
+    {
+      id: 3,
+      question: "What types of businesses do you work with?",
+      answer: "We primarily work with high-growth e-commerce brands, DTC Shopify stores, and businesses seeking custom, high-converting digital solutions.",
+    },
+  ];
+
+  const [openId, setOpenId] = useState<number | null>(1);
+  const toggleFAQ = (id: number) => {
+    setOpenId(openId === id ? null : id);
+  };
+
+  const [loading, setLoading] = useState(false);
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  
+  const [formData, setFormData] = useState({
+    Name: '',
+    Email: '',
+    Store: '',
+    Whatsapp: '',
+    Project: ''
+  });
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+  const isValidUrl = (url: string) => {
+    try {
+      return Boolean(new URL(url.includes('://') ? url : `https://${url}`));
+    } catch (e) {
+      return false;
+    }
+  };
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setIsSubmitted(true);
+
     
-    if (slider) {
-      const scrollAmount = slider.offsetWidth;
-      if (direction === 'left') {
-        slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-      } else {
-        slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-      }
+
+    if (!formData.Name || !formData.Email || !formData.Store || !isValidUrl(formData.Store) || !formData.Whatsapp  || !formData.Project) {
+      return; 
+    }
+
+    setLoading(true);
+    
+    const scriptURL = "https://script.google.com/macros/s/AKfycbydoyghRvYC0RWxq0unud1ib44KeF0KVhMOFKc-KzFT0I2JP-1E2VdL1uqzyCJaV77Y-Q/exec";
+    const form = e.currentTarget;
+    const dataToSend = new FormData(form);
+
+    try {
+      await fetch(scriptURL, { 
+        method: "POST", 
+        body: dataToSend, 
+        mode: "no-cors" 
+      });
+
+      setLoading(false);
+      setShowSuccessPopup(true);
+      setIsSubmitted(false);
+      setFormData({ Name: '', Email: '' , Store: '', Whatsapp: '', Project: '' }); // تصفير الحقول
+      form.reset(); 
+    } catch (error: any) {
+      console.error("Error!", error.message);
+      setLoading(false);
+      alert("Error! Please try again later.");
+    }
+  }
+
+  const transformto = [
+    { id: 'contact', label: 'contact' },
+  ];
+
+   const scrollToContact = () => {
+    const element = document.getElementById("contact");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
-  const clientSliderRef = useRef<HTMLDivElement>(null);
 
-
-  // new popape
-  const [isSuccessPopupOpen, setIsSuccessPopupOpen] = useState(false); 
-  const [isAuditFormOpen, setIsAuditFormOpen] = useState(false);
-  const [currentStep, setCurrentStep] = useState(1); 
-
-  // send data to google sheet for multi-step form
-  const [isFormSubmitting, setIsFormSubmitting] = useState(false);
-
-  const handleAuditChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-  setAuditData({ ...auditData, [e.target.name]: e.target.value });
-};
-
-const handleAuditSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-  setIsFormSubmitting(true);
-
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxwWvobw_AnPHKsJO8YD1bjJb4SoOBG23wY8ISSOQHe-X6LV5rhDQcgNzy0l8ekckCZYg/exec"; 
-
-  const submissionData = new FormData();
-  Object.entries(auditData).forEach(([key, value]) => {
-    submissionData.append(key, value);
-  });
-
-  try {
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxN9PcrUUpwCWFwifX1qgHvwRAFqOJ2Q5eaKIwO2Ihuho77BmNCejbKj9i5aQ3SZduGow/exec";
-
-  await fetch(SCRIPT_URL, {
-    method: "POST",
-    mode: "no-cors",
-    body: submissionData // إرسال بيانات الاستبيان بالكامل
-  });
-
-  // 🌟 السطرين الأهم لكي تظهر البوب اب التي وضعتها خارج الفورم 🌟
-  setIsAuditFormOpen(false);      // إغلاق الاستبيان
-  setIsFinalSuccessOpen(true);    // فتح بوب اب الشكر والنجاح النهائي
-
-  setCurrentStep(1); 
-  setAuditData({
-    targetSheet: 'AuditForm', Name: '', Email: '', WhatsApp: '', StoreLink: '',
-    MonthlySales: '', AdsSpending: '', BusinessChallenge: '', SuitDay: '', SuitTime: '', Region: ''
-  });
-}catch (error) {
-    console.error(error);
-  } finally {
-    setIsFormSubmitting(false);
-  }
-};
 
 
 
 
   return (
-    <main className="mt-10 overflow-x-hidden h-fit overflow-y-hidden">
-      <section className="sectionTop m-auto mt-20 md:10 flex flex-col items-center text-center space-y-[20px] sm:space-y-[12px] sm:space-y-3 px-[2%] sm:px-[15%]">
-      <div className="text-[clamp(28px,4vw,49px)] leading-[1.2] font-medium flex flex-wrap  items-center justify-center w-[95%]   mx-auto ">
-      <span>We help
-           E-commerce Brand
-      
-    owners scale their
-        profits
-    to 2–4X in Just 90 days or less</span>
-    </div>
-        <h1 className="text-[clamp(16px,4vw,20px)] font-normal text-[#1E1E1E] leading-[1.2] w-[100%] sm:w-[70%] ">
-          We are a E-commerce marketing agency specializing in driving growth through finance-backed marketing decisions.
-        </h1>
-  
-        <div className="flex flex-col justify-center items-center sm:space-x-3  flex-col-reverse md:relative md:flex-row w-full px-6">
-          {/* زر فتح النافذة المنبثقة */}
-<button 
-  onClick={() => setIsPopupOpen(true)} 
-  className="buttonDownload font-bold w-full sm:w-auto min-w-[240px] text-lg sm:text-base mt-5 px-6 py-4 cursor-pointer rounded-full shadow-lg text-center text-white bg-[#1E5631] hover:bg-[#143D21] active:scale-95 transition-all duration-200 ease-in-out border-2 border-[#2E8B57]"
->
-  Download Free Audit Now
-</button>
+    <section   className="relative overflow-x-hidden">
+      <div className='space-y-0'>
 
-{/* النافذة المنبثقة (Modal) */}
-{isPopupOpen && (
-  
-  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm animate-in fade-in duration-200">
-    
-    {/* صندوق المحتوى */}
-    <div className="bg-white rounded-[24px] p-6 sm:p-8 w-full max-w-md mx-4 shadow-2xl border border-stone-100 relative animate-in zoom-in-95 duration-200">
-      
-      {/* زر الإغلاق (X) */}
-      <button 
-        onClick={() => setIsPopupOpen(false)}
-        className="absolute top-4 right-4 text-stone-400 hover:text-stone-600 text-2xl font-bold transition-colors cursor-pointer"
-      >
-        &times;
-      </button>
+      {/* Hero Section */}
+      <section className="min-h-[40vh] sm:min-h-[55vh] w-full flex items-center justify-center px-4 sm:px-8 md:px-12 py-8  ">
+        <div className="max-w-6xl w-full">
+          <h1 className="text-[38px] xs:text-[44px] sm:text-6xl md:text-8xl lg:text-[110px] font-sans uppercase leading-[1.05] sm:leading-[0.95] tracking-tight">
+            
+       <span className="block">
+        <span className="text-[#71717A] mr-[0.18em]">WE</span>
+        <span className="text-[#3F3F3F] mr-[0.18em]">BUILD</span>
+        <span className="PREMIUM text-[#71717A]">PREMIUM</span>
+      </span>
 
-      {/* عنوان النافذة */}
-      <h3 className="text-xl font-semibold text-stone-800 mb-2 text-center">
-        Download 360° E-commerce Audit
-      </h3>
-      {/* <p className="text-sm text-stone-500 mb-6 text-center">
-        Please fill in your details to download the Excel file.
-      </p> */}
+       <span className="block mt-[0.05em] font-normal text-[#71717A]">
+        DIGITAL EXPERIENCES
+      </span>
 
-      {/* النموذج (Form) المرتبط بقوقل شيت والتحميل */}
-      <form 
-      onSubmit={(e) => handleSubmit(e, "/scaling-plan.xlsx")} 
-       className="flex flex-col gap-4"
-       id="audit_form"
-       >
+       <span className="block mt-[0.05em]">
+        <span className="text-[#71717A] mr-[0.18em]">FOR</span>
+        <span className="relative inline-block text-[#3F3F3F]">
+          ECOMMERCE
+        </span>
+      </span>
 
-        
-       
-        <input type="hidden" name="targetSheet" value="Download" /> 
-
-        <input 
-          type="text" 
-          name="Name"
-          placeholder="Your Name" 
-          required
-          className="w-full h-12 px-4 rounded-xl border border-stone-300 bg-white outline-none text-stone-700 text-base focus:border-green-700 focus:ring-1 focus:ring-green-700 transition-all"
-        />
-
-        {/* حقل الإدخال الثاني: البريد الإلكتروني (يجب أن يطابق عمود Email في الشيت) */}
-        <input 
-          type="email" 
-          name="Email"
-          placeholder="Your Email" 
-          required
-          className="w-full h-12 px-4 rounded-xl border border-stone-300 bg-white outline-none text-stone-700 text-base focus:border-green-700 focus:ring-1 focus:ring-green-700 transition-all"
-        />
-
-        {/* زر الإرسال وتنزيل الملف وحالته أثناء التحميل */}
+       <span className="relative mt-1 sm:mt-[0.08em] flex items-center flex-wrap gap-4">
+        <span className="font-normal text-[#3F3F3F]">BRANDS</span>
+          
         <button 
-          type="submit" 
-          disabled={loading}
-          className={`relative flex items-center justify-center gap-3 w-full h-12 bg-[#2F6F4E] text-white font-semibold rounded-xl text-base shadow-md transition-all cursor-pointer mt-2 ${loading ? 'opacity-70 cursor-not-allowed' : 'hover:bg-green-800 active:scale-[0.98]'}`}
+          onClick={scrollToContact}
+          className="w-full sm:w-[400px] inline-flex items-center justify-center text-lg sm:text-[28px] px-6 sm:px-16 h-14 sm:h-[80px] hover:bg-[#18181b] bg-black rounded-[12px] shadow-md transition-all duration-300 hover:scale-[1.02] active:scale-95 text-white cursor-pointer tracking-normal lowercase"
         >
-          {loading ? (
-            <>
-              <div className="spinner"></div> {/* تأكد من وجود كود كلاس الـ spinner في ملف الـ CSS لديك */}
-              <span>Sending & Downloading...</span>
-            </>
-          ) : (
-            "Download" 
-          )}
+          Work with us
         </button>
-      </form>
+      </span>
 
-    </div>
+    </h1>
   </div>
-)}
+</section>
 
-{/* main popup */}
-{isSuccessPopupOpen && (
-  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm animate-in fade-in duration-200">
-    <div className="bg-[#F6F6F6] rounded-[24px] py-8 px-4 sm:px-10 w-full max-w-3xl mx-4 shadow-2xl border border-stone-200 relative animate-in zoom-in-95 duration-200 text-center max-h-[90vh] overflow-y-auto">
-      
-      {/* حقن الفريمات (Keyframes) برمجياً لضمان الدوران الفوري */}
-      <style>{`
-        @keyframes popupMarquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(calc(-50% - 8px)); }
-        }
-        .animate-popup-marquee {
-          animation: popupMarquee 25s linear infinite;
-        }
-      `}</style>
-
-      {/* زر الإغلاق X */}
-      <button 
-        onClick={() => setIsSuccessPopupOpen(false)}
-        className="absolute top-5 right-5 text-stone-500 hover:text-stone-800 text-2xl font-semibold transition-colors cursor-pointer z-10"
-      >
-        &times;
-      </button>
-
-      {/* العنوان والنصوص العلوية */}
-      <h2 className="text-[clamp(20px,4vw,32px)] font-medium text-stone-800 leading-tight mb-3 px-4">
-        Get a comprehensive audit <br /> worth <span className="text-[#A62626] font-semibold">$1,800</span> for <span className="text-[#2F6F4E] font-semibold">free</span>.
-      </h2>
-
-      {/* العبارة الترويجية */}
-      <div className="flex items-center justify-center gap-2 mb-6">
-        <p className="text-xs sm:text-sm text-stone-600 font-normal">
-          All our clients are happy with our services—join them.
-        </p>
-      </div>
-
-      {/* منطقة حركة الكروت الدائرية اللانهائية */}
-      <div className="w-full relative mb-8 overflow-hidden">
-        {/* تدرج ظلي خفيف على الأطراف لجمالية الحركة */}
-        <div className="absolute left-0 top-0 w-8 h-full bg-gradient-to-r from-[#F6F6F6] to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute right-0 top-0 w-8 h-full bg-gradient-to-l from-[#F6F6F6] to-transparent z-10 pointer-events-none"></div>
-
-        {/* حاوية الحركة التي تستدعي الـ Class الجديد وتتوقف عند تمرير الماوس */}
-        <div className="flex gap-4 w-max animate-popup-marquee hover:[animation-play-state:paused] cursor-pointer">
-          
-          {/* المجموعة الأولى من الكروت (5 كروت) */}
-          <div className="flex gap-4 shrink-0">
-            <div className="w-[280px] sm:w-[340px] bg-white p-5 rounded-[16px] border border-stone-200 shadow-sm text-left flex flex-col justify-between">
-              <p className="text-stone-700 text-sm leading-relaxed">Flaylor proved me wrong they aligned our Meta ads with our unit economics shifting us from vanity metrics to real net profit</p>
+        {/* Marquee Brands */}
+        <section>
+          <div className="w-full   overflow-hidden relative">
+            <style jsx>{`
+              @keyframes marquee {
+                0% { transform: translateX(0%); }
+                100% { transform: translateX(-50%); }
+              }
+              .animate-marquee {
+                display: flex;
+                width: max-content;
+                animation: marquee 25s linear infinite;
+              }
+            `}</style>
+            <div className="animate-marquee flex gap-4 sm:gap-6">
+              {[...BRANDS, ...BRANDS].map((brand, index) => (
+                <div
+                  key={`${brand.id}-${index}`}
+                  className="w-[300px] sm:w-80 md:w-96  h-[300px] sm:h-56 md:h-[400px] rounded-3xl flex-shrink-0 relative overflow-hidden bg-white shadow-sm"
+                >
+                  <Image
+                    width={300}
+                    height={300}
+                    src={brand.image}
+                    alt={brand.name}
+                    className="w-full h-full object-cover select-none pointer-events-none"
+                  />
+                </div>
+              ))}
             </div>
-            <div className="w-[280px] sm:w-[340px] bg-white p-5 rounded-[16px] border border-stone-200 shadow-sm text-left flex flex-col justify-between">
-              <p className="text-stone-700 text-sm leading-relaxed">Thanks to Flaylor I went from high Shopify revenue with an empty bank account to a profitable business that lets me enjoy time with my kids stress free</p>
-            </div>
-            <div className="w-[280px] sm:w-[340px] bg-white p-5 rounded-[16px] border border-stone-200 shadow-sm text-left flex flex-col justify-between">
-              <p className="text-stone-700 text-sm leading-relaxed">I loved Flaylor’s clarity they analyzed our financials to design high converting landing pages, driving 200% growth based on facts not guesswork</p>
-            </div>
-            <div className="w-[280px] sm:w-[340px] bg-white p-5 rounded-[16px] border border-stone-200 shadow-sm text-left flex flex-col justify-between">
-              <p className="text-stone-700 text-sm leading-relaxed">Most agencies see you as a monthly retainer but Flaylor saved us during the recession and doubled our net profit in 60 days</p>
-            </div>
-            {/* <div className="w-[280px] sm:w-[340px] bg-white p-5 rounded-[16px] border border-stone-200 shadow-sm text-left flex flex-col justify-between">
-              <p className="text-stone-700 text-sm leading-relaxed">"True experts in E-commerce scaling. They don't just give suggestions, they build clear, data-driven mathematical models for your growth."</p>
-            </div> */}
           </div>
-
-          {/* النسخة التوأم المكررة لضمان الدوران السلس بدون قفزات */}
-          <div className="flex gap-4 shrink-0" aria-hidden="true">
-            <div className="w-[280px] sm:w-[340px] bg-white p-5 rounded-[16px] border border-stone-200 shadow-sm text-left flex flex-col justify-between">
-              <p className="text-stone-700 text-sm leading-relaxed">Flaylor proved me wrong they aligned our Meta ads with our unit economics shifting us from vanity metrics to real net profit</p>
-            </div>
-            <div className="w-[280px] sm:w-[340px] bg-white p-5 rounded-[16px] border border-stone-200 shadow-sm text-left flex flex-col justify-between">
-              <p className="text-stone-700 text-sm leading-relaxed">Thanks to Flaylor I went from high Shopify revenue with an empty bank account to a profitable business that lets me enjoy time with my kids stress free</p>
-            </div>
-            <div className="w-[280px] sm:w-[340px] bg-white p-5 rounded-[16px] border border-stone-200 shadow-sm text-left flex flex-col justify-between">
-              <p className="text-stone-700 text-sm leading-relaxed">I loved Flaylor’s clarity they analyzed our financials to design high converting landing pages, driving 200% growth based on facts not guesswork</p>
-            </div>
-            <div className="w-[280px] sm:w-[340px] bg-white p-5 rounded-[16px] border border-stone-200 shadow-sm text-left flex flex-col justify-between">
-              <p className="text-stone-700 text-sm leading-relaxed">Most agencies see you as a monthly retainer but Flaylor saved us during the recession and doubled our net profit in 60 days</p>
-            </div>
-            {/* <div className="w-[280px] sm:w-[340px] bg-white p-5 rounded-[16px] border border-stone-200 shadow-sm text-left flex flex-col justify-between">
-              <p className="text-stone-700 text-sm leading-relaxed">"True experts in E-commerce scaling. They don't just give suggestions, they build clear, data-driven mathematical models for your growth."</p>
-              <span className="text-xs font-semibold text-stone-400 mt-3 block">— David, UK</span>
-            </div> */}
+        </section>
+        
+        {/* Intro Text */}
+        <section className='mx-auto text-[24px] sm:text-[28px]  text-start sm:text-left p-[20px]  sm:p-6  sm:w-[70%] my-[70px] sm:my-[100px]  '>
+          <div>
+            <span className="text-[#71717A] mr-2">We design and develop</span>
+            <span className="font-normal text-[#3F3F3F]">high-converting e-commerce landing pages</span>
+            <span className="text-[#71717A] mx-2">and</span>
+            <span className="font-normal text-[#3F3F3F]">premium websites using</span> 
           </div>
+          <span className="flex flex-wrap justify-start sm:justify-start items-center font-normal text-[#71717A] gap-[16px] sm:gap-4  ">
+            <div className='flex items-center '><span>Figma</span><Image src="/figma-icon.png" alt="figma" width={40} height={40} className="w-[35px] h-[35px] sm:w-[40px]   sm:h-[40px]" /></div>
+            <div className='flex items-center '><span>Shopify</span><Image src="/shopify-icon.png" alt="shopify" width={40} height={40} className="w-[35px] h-[35px] sm:w-[40px]  sm:h-[40px]" /></div>
+            <div className='flex items-center '><span>Replo</span><Image src="/replo-icon.png" alt="replo" width={40} height={40} className="w-[35px] h-[35px] sm:w-[40px]  sm:h-[40px]" /></div>
+          </span>
+        </section>
 
+       
+      {/* Projects Section */}
+     <section id="work" className='py-[30px] sm:py-[80px]'>
+        <div className='flex justify-center text-xl sm:text-[24px] mb-6'>
+          <p>Explore our work</p>
         </div>
-      </div>
+        <div className="Explore w-full bg-[#f8f9fa] py-8 sm:py-12 px-4 sm:px-4 md:px-[20px] lg:px-[60px]">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-[20px]">
+              {PROJECTS.map((project) => (
+                <div 
+                  key={project.id  } 
+                  onClick={ () => 
+                  {if (project.id === 4) return;
+                    setSelectedProject(project)}}  
+                  className="group relative w-full h-[330px] sm:h-[400px] md:h-[390px] sm:rounded-[20px] rounded-3xl overflow-hidden bg-gradient-to-b from-gray-300 to-gray-500 cursor-pointer shadow-sm"
+                >
+                  <Image 
+                    width={600} 
+                    height={600} 
+                    src={project.image} 
+                    alt="project"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                  />
+                  
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end py-4 px-3 sm:p-6">
+                   
+                  
+                  {project.id === 4 && (
+                    <div  className='absolute font-light top-[29px] right-[22px] bg-[#181818] py-2 px-3 rounded-[999px] text-[#FAFAFA] text-[18px] '>
+                  <p className=''>Coming Soon</p>
+                    </div>
+                  )}
+                  
+                  <p className="text-white text-base sm:text-[18px] max-w-lg">{project.title}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
-    
-      <button 
-        onClick={() => {
-          setIsSuccessPopupOpen(false); 
-          setIsAuditFormOpen(true);    
-          setCurrentStep(1);           
-        }}
-        className="inline-flex items-center justify-center w-full sm:w-auto px-12 h-12 bg-[#2F6F4E] hover:bg-green-800 text-white font-semibold rounded-xl text-base shadow-md transition-all active:scale-[0.98] cursor-pointer"
-      >
-        Get a free audit now
-      </button>
+      {/* Popup / Modal Component */}
+      {selectedProject && (
+        <div   className=" fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-md px-4 overflow-y-auto py-10    scrollbar-hidden"  >
+          <div className="bg-[#FAFAFA] text-[#858585] rounded-3xl   w-full  shadow-2xl border border-gray-800 relative animate-in fade-in zoom-in duration-300 max-h-[95vh] overflow-y-auto  scrollbar-hidden">
+            
+            {/* زر الإغلاق (X) */}
+            <button 
+              onClick={() => setSelectedProject(null)}
+              className="fixed top-[50px] right-[40px] sm:right-[80px]  z-20  w-10 h-10 rounded-full  transition-all duration-300 hover:scale-[1.02] active:scale-95 bg-[#181818] flex items-center justify-center  text-white transition-colors cursor-pointer"
+            >
+              <X size={20} />
+            </button>
 
-    </div>
-  </div>
+             <div className="space-y-6 ">
+             
+               <div className="w-full h-[50vh] sm:h-[70vh] rounded-2xl overflow-hidden relative    ">
+                <Image 
+                  src={selectedProject.image} 
+                  alt={selectedProject.title} 
+                  fill 
+                  className="object-cover "
+                />
+              </div>
+
+
+            <div className='mt-[28px]  px-4 sm:p-6 sm:px-50'>
+
+              <p className="text-[#3F3F3F] text-[24px]  sm:text-[32px] text-start leading-relaxed">
+                {selectedProject.title}
+              </p>
+              <p className="text-[#858585] mt-[8px] text-[18px] text-start leading-relaxed">
+                {selectedProject.description}
+              </p>
+
+              <div className="border-t border-[#C5C5C5] mt-[24px]">
+                <div className='flex flex-col space-y-[16px] sm:flex-row justify-between text-start mt-[20px] '>
+                  <div className='space-y-[4px] w-full  sm:w-2/3'>
+                    <p className='text-[14px]'>Client Feedback</p>
+                    <p className='text-[#3F3F3F] text-[16px] '>{selectedProject.feedback}</p>
+                  </div>
+                  <div className='space-y-[4px]'>
+                    <p>Project Price</p>
+                    <p className='text-[#3F3F3F] text-[16px] '>{selectedProject.price}</p>
+                  </div>
+                  <div className='space-y-[4px]'>
+                    <p className='text-[14px]'>Duration</p>
+                    <p className='text-[#3F3F3F] text-[16px] '>{selectedProject.Duration}</p>
+                  </div>
+                </div>
+              </div>
+               
+              <div className="border-t border-[#C5C5C5] mt-[24px]">
+                 <div className='mt-[60px] space-y-[32px]'>
+                  <div className='space-y-[8px]'>
+                    <p className='text-[#3F3F3F]'>Project Overview</p>
+                    <p>{selectedProject?.description1?.[0]?.line1}</p>
+                  </div>
+                  {selectedProject?.description1?.[1]?.scops && (
+                    <div className='space-y-3   '>
+                      <p className='text-[#3F3F3F]  '>Project Scope</p>
+                      <div className='flex flex-wrap gap-2'>
+                        {selectedProject.description1[1].scops.map((scop) => (
+                          <span 
+                            key={scop.id} 
+                            className='bg-gray-100 text-gray-800 text-xs sm:text-sm px-3.5 py-1.5 rounded-full font-medium border border-gray-200'
+                          >
+                            {scop.scopitem}
+                          </span>
+                        ))}
+                        </div>
+                      </div>
+                  )}  
+                  <div className='space-y-[8px]'>
+                    <p className='text-[#3F3F3F]'>The Challenge</p>
+                    <p>{selectedProject?.description1?.[2]?.line3}</p>
+                  </div>
+                 </div>
+              </div>
+
+
+              {(selectedProject?.description2?.[0]?.line1 || selectedProject?.description2?.[1]?.line2 || selectedProject?.description2?.[2]?.line3) && (
+              <div className=" mt-[24px]">
+                 <div className='mt-[60px] space-y-[20px]'>
+                  <p className='text-[#3F3F3F]'>Design Strategy</p>
+                  {selectedProject?.description2?.[0]?.line1 && (
+                    <div className='space-y-[8px]'>
+                      {selectedProject?.description2?.[1]?.line2 && (<p className='text-[#3F3F3F]'>Visual Direction</p>)}
+                    <p>{selectedProject?.description2?.[0]?.line1}</p>
+                  </div>)}
+                  {selectedProject?.description2?.[1]?.line2 && (
+                    <div className='space-y-[8px]'>
+                    <p className='text-[#3F3F3F]'>Content Hierarchy</p>
+                    <p>{selectedProject?.description2?.[1]?.line2}</p>
+                  </div>)}
+                  {selectedProject?.description2?.[2]?.line3 && (
+                    <div className='space-y-[8px]'>
+                    <p className='text-[#3F3F3F]'>User Experience</p>
+                    <p>{selectedProject?.description2?.[2]?.line3}</p>
+                  </div>)}
+                 </div>
+              </div>
 )}
 
+              <div className="border-t border-[#C5C5C5] mt-[60px]">
+                <div className='flex flex-row justify-between text-start mt-[20px] '>
+                  <div className='space-y-[4px]    '>
+                    <p className='text-[#3F3F3F]'>The Final Design</p>
+                    <p className='text-[#858585] text-[16px] '>{selectedProject.Final}</p>
+                  </div>
+                </div>
+              </div>
 
-{/* popup (Multi-step Form: 1 of 3, 2 of 3, 3 of 3) */}
-{isAuditFormOpen && (
-  <div className="fixed inset-0 z-[500] flex items-center justify-center bg-black/50 backdrop-blur-sm animate-in fade-in duration-200 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-    <div className="bg-[#F8F8F8] rounded-[24px] py-8 px-6 sm:px-12 w-full max-w-2xl mx-4 shadow-2xl relative animate-in zoom-in-95 duration-200 max-h-[90vh] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-      
-      {/* زر الإغلاق العلوي X */}
-      <button 
-        onClick={() => setIsAuditFormOpen(false)}
-        className="absolute top-5 right-5 text-stone-400 hover:text-stone-600 text-2xl font-bold transition-colors cursor-pointer"
-      >
-        &times;
-      </button>
 
-      {/* الجزء العلوي: يظهر فقط في الخطوة الأولى ويختفي في الباقي لمنح مساحة مريحة لأسئلتك */}
-      {currentStep === 1 && (
-        <div className="text-center mb-6 animate-in fade-in duration-200">
-          <h2 className="text-[clamp(22px,4vw,32px)] font-normal text-stone-800 leading-snug">
-            Welcome to your first step <br /> in FLAYLOR
-          </h2>
-          
-          <div className="mt-4 bg-blue-50/10 px-4 py-3 rounded-lg max-w-md mx-auto">
-            <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
-              Please fill out the form below to help us understand your business and ensure the accuracy of the information.
-            </p>
+                <div className="w-full flex flex-col items-center gap-6 my-8">
+                  {selectedProject.img.map((imgs) => (
+                    <div 
+                      key={imgs.id} 
+                      className="w-full max-w-5xl h-[250px] sm:h-[500px] md:h-[600px] relative rounded-[12px] sm:rounded-3xl overflow-hidden   border border-gray-100 bg-gray-100"
+                    >
+                      <Image 
+                        src={imgs.src} 
+                        alt={imgs.id} 
+                        fill 
+                        className="sm:object-cover"
+                      />
+                    </div>
+                  ))}
+              </div>
+
+
+
+
+
+            </div>
+            </div>
           </div>
         </div>
       )}
 
-      {/* عدّاد الخطوات الديناميكي بالمركز */}
-      <div className="text-center mb-6">
-        <p className="text-sm text-stone-400 font-medium">
-          {currentStep} of 3
-        </p>
-      </div>
-
-      {/* نموذج التقديم */}
-      <form onSubmit={handleAuditSubmit} className="max-w-md mx-auto flex flex-col gap-4">
-        
-        {/* ==================== الخطوة الأولى (1 of 3) ==================== */}
-        {currentStep === 1 && (
-          <div className="flex flex-col gap-4 animate-in fade-in duration-300">
-            <input 
-              type="text" 
-              name="Name" 
-              placeholder="Name" 
-              required 
-              value={auditData.Name}
-              onChange={handleAuditChange}
-              className="w-full h-12 px-4 rounded-xl border border-stone-200 bg-white outline-none text-stone-700 text-base focus:border-green-700 focus:ring-1 focus:ring-green-700 transition-all shadow-sm"
-            />
-            <input 
-              type="email" 
-              name="Email" 
-              placeholder="Email" 
-              required 
-              value={auditData.Email}
-              onChange={handleAuditChange}
-              className="w-full h-12 px-4 rounded-xl border border-stone-200 bg-white outline-none text-stone-700 text-base focus:border-green-700 focus:ring-1 focus:ring-green-700 transition-all shadow-sm"
-            />
-            <input 
-              type="tel" 
-              name="WhatsApp" 
-              placeholder="WhatsApp number" 
-              required 
-              value={auditData.WhatsApp}
-              onChange={handleAuditChange}
-              className="w-full h-12 px-4 rounded-xl border border-stone-200 bg-white outline-none text-stone-700 text-base focus:border-green-700 focus:ring-1 focus:ring-green-700 transition-all shadow-sm"
-            />
-            <input 
-              type="url" 
-              name="StoreLink" 
-              placeholder="Store link" 
-              required 
-              value={auditData.StoreLink}
-              onChange={handleAuditChange}
-              className="w-full h-12 px-4 rounded-xl border border-stone-200 bg-white outline-none text-stone-700 text-base focus:border-green-700 focus:ring-1 focus:ring-green-700 transition-all shadow-sm"
-            />
+        {/* Problems */}
+        <section className='mt-10 sm:mt-[50px] px-[45px] sm:px-4'>
+          <div className='flex flex-col justify-center text-center mx-auto w-full sm:w-[60%] space-y-3 mb-8'>
+            <p className='text-lg sm:text-[22px] text-[#3F3F3F]'>Your products are great, but your website and landing pages aren't converting</p>
+            <p className='text-[#858585] text-base sm:text-[18px]'>You may be suffering from</p>
           </div>
-        )}
-
-        {/* ==================== الخطوة الثانية (2 of 3) ==================== */}
-        {currentStep === 2 && (
-          <div className="flex flex-col gap-5 animate-in fade-in duration-300 text-left">
-            {/* السؤال الأول */}
-            <div className="flex flex-col gap-2">
-              <label className="text-stone-700 text-sm font-normal">
-                What is your current average monthly sales volume ?
-              </label>
-              <input 
-                type="text" 
-                name="MonthlySales"
-                required
-                value={auditData.MonthlySales}
-                onChange={handleAuditChange}
-                className="w-full h-12 px-4 rounded-xl border border-stone-200 bg-white outline-none text-stone-700 text-base focus:border-green-700 focus:ring-1 focus:ring-green-700 transition-all shadow-sm" 
-              />
-            </div>
-
-            {/* السؤال الثاني - تم إضافة type="text" المفقود هنا لتثبيت الـ State */}
-            <div className="flex flex-col gap-2">
-              <label className="text-stone-700 text-sm font-normal">
-                What is your average spending on advertising ?
-              </label>
-              <input 
-                type="text" 
-                name="AdsSpending"
-                required
-                value={auditData.AdsSpending}
-                onChange={handleAuditChange}
-                className="w-full h-12 px-4 rounded-xl border border-stone-200 bg-white outline-none text-stone-700 text-base focus:border-green-700 focus:ring-1 focus:ring-green-700 transition-all shadow-sm" 
-              />
-            </div>
-
-            {/* السؤال الثالث */}
-            <div className="flex flex-col gap-2">
-              <label className="text-stone-700 text-sm font-normal">
-                What is the biggest challenge in business ?
-              </label>
-              <input 
-                type="text" 
-                name="BusinessChallenge"
-                required
-                value={auditData.BusinessChallenge}
-                onChange={handleAuditChange}
-                className="w-full h-12 px-4 rounded-xl border border-stone-200 bg-white outline-none text-stone-700 text-base focus:border-green-700 focus:ring-1 focus:ring-green-700 transition-all shadow-sm" 
-              />
-            </div>
-          </div>
-        )}
-
-        {/* ==================== الخطوة الثالثة (3 of 3) ==================== */}
-        {currentStep === 3 && (
-          <div className="flex flex-col gap-5 animate-in fade-in duration-300 text-left">
-            <div className="flex flex-col gap-2">
-              <label className="text-stone-700 text-sm font-normal">
-                Choose the day and Time that suit you.
-              </label>
-              <div className="grid grid-cols-2 gap-4">
-                <input 
-                  type="date" 
-                  name="SuitDay"
-                  required
-                  value={auditData.SuitDay}
-                  onChange={handleAuditChange}
-                  className="w-full h-12 px-4 rounded-xl border border-stone-200 bg-white outline-none text-stone-700 text-base focus:border-green-700 focus:ring-1 focus:ring-green-700 transition-all shadow-sm cursor-pointer" 
-                />
-                <input 
-                  type="time" 
-                  name="SuitTime"
-                  required
-                  value={auditData.SuitTime}
-                  onChange={handleAuditChange}
-                  className="w-full h-12 px-4 rounded-xl border border-stone-200 bg-white outline-none text-stone-700 text-base focus:border-green-700 focus:ring-1 focus:ring-green-700 transition-all shadow-sm cursor-pointer" 
-                />
+          <div className="w-full bg-[#f8f9fa]   rounded-3xl">
+            <div className="max-w-5xl mx-auto px-4 sm:px-12">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[8px]">
+                {PROBLEMS.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <div key={item.id} className="bg-white border border-gray-100 rounded-xl text-[#646464] p-3 flex items-center gap-3 shadow-sm">
+                      <Icon className="w-7 h-7 flex-shrink-0" strokeWidth={1.5} />
+                      <span className="text-sm font-normal tracking-tight">{item.title}</span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
+          </div>
+        </section>
 
-            {/* حقل الدولة/المنطقة */}
-            <div className="flex flex-col gap-2">
-              <label className="text-stone-700 text-sm font-normal">
-                Region
-              </label>
-              <input 
-                type="text" 
-                name="Region"
-                placeholder="example : Canada"
-                required
-                value={auditData.Region}
-                onChange={handleAuditChange}
-                className="w-full h-12 px-4 rounded-xl border border-stone-200 bg-white outline-none text-stone-700 text-base focus:border-green-700 focus:ring-1 focus:ring-green-700 transition-all shadow-sm" 
-              />
+        {/* Services */}
+        {/* <section id="services" className="w-full bg-[#1e2b21] py-16 sm:py-[120px] px-4 sm:px-8 md:px-16 text-gray-200 mt-12 sm:mt-[80px]">
+          <div className='text-[#F3F3F3] text-lg sm:text-[24px] text-center mb-8'>
+            <p>Explore our services and discover the right solution for your brand</p>
+          </div>
+          <div className="flex flex-col max-w-4xl mx-auto space-y-6 sm:space-y-[28px] items-center ">
+            {SERVICES.map((service) => (
+              <div key={service.id} className="border border-[#B3B3B3] font-light rounded-[20px]  p-3 sm:p-6 bg-white/10 shadow-lg backdrop-blur-[30px] w-full max-w-[786px]">
+                <div className="flex flex-wrap items-center gap-3 mb-3">
+                  <h2 className="text-xl sm:text-2xl font-light text-white">{service.title}</h2>
+                  {service.badge && (<span className="bg-[#1b3a26] text-[#4ade80] border border-[#22c55e]/30 text-xs px-3 py-1 rounded-full">{service.badge}</span>)}
+                </div>
+                <p className="text-gray-400 text-sm mb-4">{service.description}</p>
+                <hr className="border-[#B3B3B3] mb-4 "  />
+                <div className="mb-4">
+                  <p className="text-white text-base mb-2">What we do</p>
+                  <ul className="space-y-1 text-gray-400 text-sm sm:text-base">
+                    {service.whatWeDo.map((item, idx) => (<li key={idx} className="flex items-start"><span className="text-gray-500 mr-2">•</span><span>{item}</span></li>))}
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-white text-base mb-2">What you get</h3>
+                  <ul className="space-y-1 text-gray-400 text-sm sm:text-base">
+                    {service.whatYouGet.map((item, idx) => (<li key={idx} className="flex items-start"><span className="text-gray-500 mr-2">•</span><span>{item}</span></li>))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section> */}
+
+        <section className="w-full bg-[#f8f9fa] flex justify-center items-center mt-[200px] pb-[130px]">
+          <div className="max-w-5xl w-full flex  sm:text-center  justify-center items-center px-[20px]">
+            <p className="text-[24px] sm:text-[32px] leading-[1.2] tracking-tight">
+              <span className="text-[#18181b]">Tired of losing sales?</span>
+              <span className="font-normal text-[#8e8e93] sm:mx-2 text-start justify-start items-start">It's time to turn your vision</span>
+              <span className="inline ml-1 flex-col sm:flex items-start text-start justify-start gap-4 mt-2">
+                <span className="font-normal text-[#8e8e93]">into reality</span>
+                {transformto.map((item) => {
+          return (
+            <button 
+              key={item.id}
+              onClick={scrollToContact}
+              className="w-[50%] sm:w-[240px] inline-flex items-center justify-center  px-8 sm:px-16 h-[42px] mt-[16px] sm:h-[40px] hover:bg-[#18181b] bg-black text-base rounded-[8px] shadow-md transition-all duration-300 hover:scale-[1.02] active:scale-95 text-white cursor-pointer lowercase"
+            >
+              Work with us
+            </button>
+          );
+        })}
+              </span>
+            </p>
+          </div>
+        </section>
+
+
+
+        {/* Testimonials */}
+        <section id="testimonials" className="py-16 sm:py-28 px-4 flex flex-col items-center justify-center">
+          <h2 className="text-[20px] px-2 sm:text-2xl text-gray-800 mb-8 text-center">See what our customers say about us</h2>
+          <div className=" w-full max-w-4xl bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden flex flex-col-reverse sm:flex-col md:flex-row sm:h-[398px]">
+            <div className="relative w-full md:w-1/2 h-[320px] sm:h-[398px] py-[33px] px-[20px]  flex flex-col justify-between ">
+              <div className=" h-[58px]   flex flex-col ">
+                <div className='flex flex-row items-center gap-3 w-64 mb-[16px]'>
+                <Image src={currentItem.image} width={50} height={50} alt={currentItem.name} className="w-[50px] h-[50px] rounded-full object-cover border" />
+                <div className="text-left flex flex-col ">
+                  <h4 className="text-[14px]   text-gray-900">{currentItem.name}</h4>
+                  <p className="text-[12px] text-gray-500">{currentItem.role}</p>
+                </div>
+                </div>
+                <div>
+                <p className="text-gray-600 text-[18px] leading-relaxed mb-6">&ldquo;{currentItem.quote}&rdquo;</p>
+                </div>
+
+              </div>
+              <div className="flex items-center gap-3 ">
+                <button onClick={handlePrev} className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 hover:bg-gray-100 cursor-pointer" aria-label="Previous"><ChevronLeft size={20} /></button>
+                <button onClick={handleNext} className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 hover:bg-gray-100 cursor-pointer" aria-label="Next"><ChevronRight size={20} /></button>
+              </div>
+            </div>
+            <div className="w-full md:w-1/[2.5] relative h-[333px] sm:h-64 md:h-auto overflow-hidden bg-gray-100">
+              <Image src={currentItem.bgImage} fill alt="Background" className="w-full h-full object-cover" />
+              
             </div>
           </div>
-        )}
+        </section>
 
+        {/* Skills */}
+        <section className='flex flex-col justify-center m-auto items-center   mt-[120px] sm:mt-[80px] pb-12  w-[90%]'>
+          <div className='text-[#3F3F3F] text-lg sm:text-[24px] text-center mb-8'><p>Building and optimizing every angle</p></div>
+          <div className='flex justify-center items-center    max-w-7xl mx-auto'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2   lg:grid-cols-4 gap-6'>
+              {Skils.map((item) => (
+                <div key={item.id} className='flex flex-col justify-center   px-6 h-[280px] sm:h-[283px] sm:px-8 items-start w-[300px] sm:w-full rounded-2xl bg-white shadow-md'>
+                  <div className='w-10 h-10 mb-[20px]  '>{item.icon}</div>
+                  <div className='text-[#3F3F3F] text-lg font-medium'><p>{item.title}</p></div>
+                  <div className='text-[#858585] text-sm mt-[8px]'><p>{item.description}</p></div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
-        {/* أزرار التحكم السفلية */}
-        <div className="flex items-center justify-between gap-6 mt-6">
-          <button
-            type="button"
-            disabled={currentStep === 1}
-            onClick={() => setCurrentStep((prev) => prev - 1)}
-            className={`w-1/2 h-12 border border-black text-black font-normal rounded-xl text-base transition-all ${currentStep === 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-stone-50 active:scale-[0.98] cursor-pointer'}`}
-          >
-            Back
-          </button>
+        
 
-          <button
-            type={currentStep === 3 ? "submit" : "button"}
-            disabled={isFormSubmitting}
-            onClick={() => {
-              if (currentStep < 3) {
-                setCurrentStep((prev) => prev + 1);
-              }
-            }}
-            className={`w-1/2 h-12 bg-[#2F6F4E] hover:bg-green-800 text-white font-normal rounded-xl text-base shadow-sm transition-all active:scale-[0.98] cursor-pointer flex items-center justify-center ${isFormSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
-          >
-            {isFormSubmitting ? (
-              <span>Sending...</span>
-            ) : (
-              currentStep === 3 ? "Send" : "Next"
-            )}
-          </button>
-        </div>
+         <section>
+         {/* <InfiniteColumns /> */}
+         </section>
 
-      </form>
-    
-    </div>
-  </div>
-)}
-  {/* بوب اب النجاح والشكر النهائي بعد إرسال الاستبيان */}
-{isFinalSuccessOpen && (
-  <div className="fixed inset-0 z-[600] flex items-center justify-center bg-black/40 backdrop-blur-sm animate-in fade-in duration-200">
-    <div className="bg-white rounded-[24px] p-8 sm:p-12 w-full max-w-xl mx-4 shadow-2xl relative animate-in zoom-in-95 duration-200 text-center flex flex-col justify-center items-center min-h-[300px]">
-      
-      {/* زر الإغلاق العلوي X */}
-      <button 
-        onClick={() => setIsFinalSuccessOpen(false)}
-        className="absolute top-6 right-6 text-stone-400 hover:text-stone-600 text-2xl font-normal transition-colors cursor-pointer"
-      >
-        &times;
-      </button>
+        {/* About */}
+        <section id='about' className="w-full bg-[#f8f9fa] flex flex-col justify-center items-center py-16 px-4 mt-16">
+          <p className='text-[#3F3F3F] text-xl sm:text-[24px] mb-6'>About</p>
+          <div className="w-full sm:w-[75%]  text-start text-base sm:text-[18px]">
+            <div>
+              <span className="text-[#8e8e93]">We’re a team of creative minds specializing in</span>
+              <span className="text-[#18181b] mx-1">premium Shopify websites</span>
+              <span className="text-[#8e8e93] mx-1">and</span>
+              <span className="text-[#18181b] mx-1">landing pages</span>
+              <span className="text-[#8e8e93] mx-1">that bring your brand vision to life and turn visitors into customers</span>
+              <div className='mt-[12]'>
+                <span className="flex flex-col  items-start gap-4">
+                  <p className="leading-relaxed font-light  text-start">
+                    <span className="text-[#8e8e93]">We combine thoughtful design,</span>
+                    <span className="text-[#18181b] mx-1">seamless user experiences,</span>
+                    <span className="text-[#8e8e93] mx-1">and</span>
+                    <span className="text-[#18181b] mx-1">high-performance development</span>
+                    <span className="text-[#8e8e93] mx-1">to create</span>
+                    <span className="text-[#18181b] mx-1">digital experiences</span>
+                    <span className="text-[#8e8e93] mx-1">that make your</span>
+                    <span className="text-[#18181b] mx-1">brand stand out.</span>
+                  </p>
+                
+                    <button 
+                    
+                    onClick={scrollToContact}
+                      className="w-[50%] sm:w-[240px] inline-flex items-center justify-center px-7 py-3 hover:bg-[#18181b] bg-black text-white text-base rounded-xl shadow-md cursor-pointer lowercase transition-all duration-300 hover:scale-[1.02] active:scale-95">
+                    Work with us
+                  </button>
+              
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
 
-      {/* محتوى الشكر والرسالة الموجهة للمستخدم */}
-      <h3 className="text-xl sm:text-2xl font-medium text-stone-800 mb-3">
-        Thank you!
-      </h3>
-      <p className="text-base sm:text-lg text-stone-600 font-normal max-w-sm leading-relaxed">
-        Your information has been successfully received. We will contact you via email within the next 24 hours.
-      </p>
+        {/* FAQs */}
+        <section className="py-16 bg-gray-50/50 flex flex-col items-center justify-center px-4">
+          <h2 className="text-[24px] sm:text-2xl text-gray-800 mb-8">FAQs</h2>
+          <div className="w-full max-w-4xl flex flex-col gap-4">
+            {faqData.map((item) => {
+              const isOpen = openId === item.id;
+              return (
+                <div key={item.id} className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden  ">
+                  <button onClick={() => toggleFAQ(item.id)} className="w-full p-[12px] sm:p-6 text-left flex items-center justify-between gap-4 cursor-pointer">
+                    <span className="text-[16px] sm:text-[18px] text-[#3F3F3F]">{item.question}</span>
+                    <span className={`text-gray-500 shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180" : "rotate-0"}`}><ChevronDown size={22} /></span>
+                  </button>
+                  <div className={`grid transition-all duration-500 ease-in-out overflow-hidden ${isOpen ? "grid-rows-[1fr] opacity-100 pb-6 px-3" : "grid-rows-[0fr] opacity-0 px-6 pb-0"}`}>
+                    <div className="overflow-hidden">
+                      <p className="text-gray-600 text-[14px] sm:text-base leading-relaxed">{item.answer}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
 
-    </div>
-  </div>
-)}
-          {/* <Link target='_blank' href="/contactUs" className=" w-[100%] sm:w-[222px] font-bold mt-4 sm:mt-6 px-7 py-[13px] text-base cursor-pointer  bg-[#2F6F4E] rounded-full border text-white border-gray-300">
-            <p className=' '>Contact Us</p>
-          </Link> */}
-          
-        </div>
-      </section>
+        <section className="w-full bg-[#f8f9fa] flex justify-center items-center mt-[64px] sm:mt-[130px] pb-[130px] ">
+          <div className="max-w-4xl px-5 w-full flex text-start justify-center items-center">
+            <p className="text-[24px] sm:text-[28px] leading-[1.2] tracking-tight">
+              <span className="text-[#8e8e93]">
+                Ready to look like a brand generating
+              </span>
+              <span className="text-[#18181b] mx-2">
+                $1M
+              </span>
+              <span className="text-[#8e8e93]">
+              in revenue? Let’s make it happen
+              </span>
+              <span className="text-[#18181b]">
+              . Get in touch with us.
+              </span>
+            </p>
+          </div>
+        </section>
 
-  {/* Slider Section - Optimized */}
-  <section className="relative bg-[#F6F6F6] items-center justify-center m-auto overflow-hidden mt-[35px] sm:mt-[77px]">
-  {/* Gradient Overlays */}
-  <div className="absolute left-0 top-0 w-[15%] h-full bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-  <div className="absolute right-0 top-0 w-[15%] h-full bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+        {/* Contact Form Section */}
+        <section  id="contact" className="  sm:py-20 flex flex-col items-center justify-center px-4 pb-7 relative">
+          <div className="text-center max-w-2xl mb-10">
+            <h2 className="text-2xl sm:text-[24px] text-[#222222] mb-3  font-lightracking-tight">
+              Work with us
+            </h2>
+            <p className="text-gray-500 text-xs sm:text-base leading-relaxed">
+              If you want to work with us and double your sales, simply fill out
+              <br className="hidden sm:inline" /> the form and we will contact you in less than 24 hours.
+            </p>
+          </div>
+
+          <form noValidate onSubmit={handleSubmit} className="w-full max-w-xl flex flex-col gap-4">
+            <input type="hidden" name="targetSheet" value="ContactUs" /> 
+            <input
+              type="text"
+              name="Name"
+              placeholder="Name"
+              required
+              value={formData.Name}
+              onChange={handleChange}
+              className={`  w-full px-5 py-3.5  bg-white rounded-[12px] border shadow-sm text-gray-800 placeholder-gray-400  text-sm sm:text-base transition-colors ${
+                isSubmitted && !formData.Name 
+                  ? 'border-[#EF4444]' 
+                  : 'border-gray-100 hover:border-[#C5C5C5] focus:border-gray-400'  
+              }`}           
+               />
+              <input
+              type="email"
+              name="Email"
+              placeholder="Email"
+              required
+              value={formData.Email}
+              onChange={handleChange}
+              className={`  w-full px-5 py-3.5  bg-white rounded-[12px] border shadow-sm text-gray-800 placeholder-gray-400  text-sm sm:text-base transition-colors ${
+                isSubmitted && !formData.Email 
+                  ? 'border-[#EF4444]' 
+                  : 'border-gray-100 hover:border-[#C5C5C5] focus:border-gray-400' // شكل طبيعي
+              }`}  
+            />
+              <input
+              type="url"
+              name="Store"
+              placeholder="Store Linke"
+              required
+              value={formData.Store}
+              onChange={handleChange}
+              className={`  w-full px-5 py-3.5  bg-white rounded-[12px] border shadow-sm text-gray-800 placeholder-gray-400  text-sm sm:text-base transition-colors ${
+                isSubmitted && (!formData.Store || !isValidUrl(formData.Store))
+                  ? 'border-[#EF4444]' 
+                  : 'border-gray-100 hover:border-[#C5C5C5] focus:border-gray-400' // شكل طبيعي
+              }`}  
+            />
+            <input
+              type="text"
+              name="Whatsapp"
+              placeholder="WhatsApp"
+              value={formData.Whatsapp}
+              onChange={handleChange}
+              className={`w-full px-5 py-3.5  bg-white rounded-[12px] border shadow-sm text-gray-800 placeholder-gray-400   text-sm sm:text-base transition-colors ${
+                isSubmitted && !formData.Whatsapp 
+                  ? 'border-[#EF4444]' 
+                  : 'border-gray-100 hover:border-[#C5C5C5] focus:border-gray-400' // شكل طبيعي
+              }`}  
+            
+                />
+            <div className={`relative  bg-white rounded-[12px] shadow-sm p-5 flex flex-col min-h-[220px] justify-between border transition-colors ${
+  isSubmitted && !formData.Project 
+    ? 'border-[#EF4444]'
+    : 'border-gray-100  focus-within:border-[#646464] focus-within:border-2'
+}`}>
+  <textarea
+    name="Project"
+    placeholder="Tell us about your project"
+    rows={5}
+    value={formData.Project}
+    onChange={handleChange}
+    className="w-full bg-transparent text-gray-800 placeholder-gray-400 focus:outline-none resize-none text-sm sm:text-base" 
+  />
   
-  <div className="flex space-x-5 px-10 animate-horizontal overflow-hidden">
-  {[
-    "/iPhone 16 & 17 Pro - 4.jpg",        
-    "/iPhone 16 & 17 Pro - 2.jpg",      
-    "/iPhone 16 & 17 Pro - 1.jpg",    
-    "/iPhone 16 & 17 Pro - 3.jpg",
-    "/iPhone 16 & 17 Pro - 5.jpg",
-    "/iPhone 16 & 17 Pro - 6.jpg",
-    "/iPhone 16 & 17 Pro - 7.jpg",
-  ].concat([
-    "/iPhone 16 & 17 Pro - 4.jpg",      
-    "/iPhone 16 & 17 Pro - 2.jpg",
-    "/iPhone 16 & 17 Pro - 1.jpg",
-    "/iPhone 16 & 17 Pro - 3.jpg",
-    "/iPhone 16 & 17 Pro - 5.jpg",
-    "/iPhone 16 & 17 Pro - 6.jpg",
-    "/iPhone 16 & 17 Pro - 7.jpg",
-  ]).map((imgSrc, index) => (
-    /* تم إضافة w-[220px] sm:w-[324px] لتحديد عرض الحاوية بدقة ومنع التداخل */
-    <div 
-      key={index} 
-      className="relative shrink-0 w-[150px] sm:w-[250px] h-[273px] sm:h-[470px] p-2 sm:p-4 rounded-[5px] sm:rounded-[15px] overflow-hidden flex items-center justify-center"
+  <div className="flex justify-end pt-3">
+    <button
+      type="submit"
+      disabled={loading}
+      className="w-[40%] sm:w-auto bg-[#181818] hover:bg-black text-white px-24 py-3 rounded-xl font-light text-sm transition-all shadow-md cursor-pointer disabled:opacity-70 flex items-center justify-center min-w-[120px]"
     >
-      <Image
-        src={imgSrc}
-        alt={`Gallery Image ${index}`}
-        fill
-        className="object-cover shadow-lg rounded-[20px]"
-        loading="lazy"
-        placeholder="blur"
-        blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 324 470'%3E%3Crect width='324' height='470' fill='%23f3f4f6'/%3E%3C/svg%3E"
-        sizes="(max-width: 768px) 100vw, 50vw"
-      />
-    </div>
-  ))}
+      {loading ? (
+        <div className="flex items-center gap-2">
+          <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+          <span>Sending...</span>
+        </div>
+      ) : (
+        "Send"
+      )}
+    </button>
+  </div>
 </div>
-</section>
+          </form>
 
-      {/* Projects Section */}
-      <section className="flex flex-col w-full m-auto justify-center items-center mt-[88px] space-y-11 max-w-7xl px-4 md:px-8">
-  <p className="text-[29px] sm:text-[39px] text-[#969593] font-normal text-center">Discover our Projects</p>
-  
-  <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-6">
-      
-      {/* Card 1 */}
-      <button onClick={() => handleProjectClick("catre")} className="group relative w-full h-[220px] sm:h-[331px] rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 shadow-xl cursor-pointer">
-        <Image
-          className="w-full h-full object-cover relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
-          width={600} 
-          height={400} 
-          alt="Custom Landing Page Engineering preview"
-          src="/procover1.jpg"
-          loading="lazy"
-          placeholder="blur"
-          blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23f3f4f6'/%3E%3C/svg%3E"
-          sizes="(max-width: 768px) 100vw, 50vw"
-        />
-        
-        <div className="absolute bottom-5 left-5 text-white w-[90%] text-start z-30">
-          <p className="text-[clamp(16px,2vw,18px)] font-bold leading-tight transition-transform duration-500 group-hover:-translate-y-2">
-            Scaling ELLO Beyond $100K/Month...
-          </p>
-        </div>
-
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 transition-opacity duration-500 z-20"></div>
-        <div className="absolute inset-0 bg-white/5 opacity-100 transition-opacity duration-500 z-25"></div>
-      </button>
-
-      {/* Card 2 */}
-      <button onClick={() => handleProjectClick("three")} className="group relative w-full h-[220px] sm:h-[331px] rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 shadow-xl cursor-pointer">
-        <Image
-          className="w-full h-full object-cover relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
-          width={600} 
-          height={400} 
-          alt="Custom Skincare Landing Page preview"
-          src="/procover2.jpg"
-          loading="lazy"
-          placeholder="blur"
-          blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23f3f4f6'/%3E%3C/svg%3E"
-          sizes="(max-width: 768px) 100vw, 50vw"
-        />
-        
-        <div className="absolute bottom-5 left-5 text-white w-[90%] text-start z-30">
-          <p className="text-[clamp(16px,2vw,18px)] font-bold leading-tight transition-transform duration-500 group-hover:-translate-y-2">
-            How We Delivered 4X Profit Growth ...
-          </p>
-        </div>
-
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 transition-opacity duration-500 z-20"></div>
-        <div className="absolute inset-0 bg-white/5 opacity-100 transition-opacity duration-500 z-25"></div>
-      </button>
-
-      {/* Card 3 */}
-      <button onClick={() => handleProjectClick("two")} className="group relative w-full h-[220px] sm:h-[331px] rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 shadow-xl cursor-pointer">
-        <Image
-          className="w-full h-full object-cover relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
-          width={600} 
-          height={400} 
-          alt="Custom Skincare Landing Page preview"
-          src="/procover3.jpg"
-          loading="lazy"
-          placeholder="blur"
-          blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23f3f4f6'/%3E%3C/svg%3E"
-          sizes="(max-width: 768px) 100vw, 50vw"
-        />
-        
-        <div className="absolute bottom-5 left-5 text-white w-[90%] text-start z-30">
-          <p className="text-[clamp(16px,2vw,18px)] font-bold leading-tight transition-transform duration-500 group-hover:-translate-y-2">
-            Bridging the Gap Between Design ...
-          </p>
-        </div>
-
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 transition-opacity duration-500 z-20"></div>
-        <div className="absolute inset-0 bg-white/5 opacity-100 transition-opacity duration-500 z-25"></div>
-      </button>
-
-      {/* Card 4 */}
-      <button onClick={() => handleProjectClick("one")} className="group relative w-full h-[220px] sm:h-[331px] rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 shadow-xl cursor-pointer">
-        <Image
-          className="w-full h-full object-cover relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
-          width={600} 
-          height={400} 
-          alt="Custom Skincare Landing Page preview"
-          src="/procover4.jpg"
-          loading="lazy"
-          placeholder="blur"
-          blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23f3f4f6'/%3E%3C/svg%3E"
-          sizes="(max-width: 768px) 100vw, 50vw"
-        />
-        
-        <div className="absolute bottom-5 left-5 text-white w-[90%] text-start z-30">
-          <p className="text-[clamp(16px,2vw,18px)] font-bold leading-tight transition-transform duration-500 group-hover:-translate-y-2">
-            ELITE: From Cash Flow Bleed to Financial...
-          </p>
-        </div>
-
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 transition-opacity duration-500 z-20"></div>
-        <div className="absolute inset-0 bg-white/5 opacity-100 transition-opacity duration-500 z-25"></div>
-      </button>
-
-  </div>
-</section>
-
-
-      {/* DAtA */}
-        <div className="ruselt grid text-center space-y-[75px] items-center justify-center m-auto mt-[150px] px-[10px]  md:px-[50px]">
-          <div>
-            <p className='text-[#969593] text-[clamp(31px,5vw,39px)]'>Our results speak for themselves.</p>
-          </div>
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-[20px] gap-x-[10px] w-full max-w-6xl'>
-          <Image
-              className="w-full relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
-              width={300} height={300} alt="Data visualization chart"
-              src="/dataImg1.svg"
-              loading="lazy"
-              placeholder="blur"
-              blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f3f4f6'/%3E%3C/svg%3E"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-          <Image
-              className="w-full relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
-              width={300} height={300} alt="Data visualization chart"
-              src="/dataImg2.svg"
-              loading="lazy"
-              placeholder="blur"
-              blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f3f4f6'/%3E%3C/svg%3E"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-          <Image
-              className="w-full relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
-              width={300} height={300} alt="Data visualization chart"
-              src="/dataImg3.svg"
-              loading="lazy"
-              placeholder="blur"
-              blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f3f4f6'/%3E%3C/svg%3E"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-          <Image
-              className="w-full relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
-              width={300} height={300} alt="Data visualization chart"
-              src="/dataImg4.svg"
-              loading="lazy"
-              placeholder="blur"
-              blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f3f4f6'/%3E%3C/svg%3E"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-          <Image
-              className="w-full relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
-              width={300} height={300} alt="Data visualization chart"
-              src="/dataImg5.svg"
-              loading="lazy"
-              placeholder="blur"
-              blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f3f4f6'/%3E%3C/svg%3E"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-          <Image
-              className="w-full relative z-10 transition-all duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
-              width={300} height={300} alt="Data visualization chart"
-              src="/dataImg6.svg"
-              loading="lazy"
-              placeholder="blur"
-              blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f3f4f6'/%3E%3C/svg%3E"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-            </div>
-        </div>
-
-      {/* scroll logo brand */}
-    <section className="relative overflow-hidden w-full mt-[120px] sm:mt-[170px]">
-  {/* Gradient Overlays - تم تعديل الألوان والارتفاع */}
-  {/* ملاحظة: استبدل 'bg-[#F5F5F5]' بلون خلفية موقعك الدقيق */}
-  <div className="absolute left-0 top-0 w-[5%] h-full rotate-180 bg-stone-50 blur-[30px] z-10 pointer-events-none"></div>
-  <div className="absolute right-0 top-0 w-[5%] h-full rotate-180 bg-stone-50 blur-[30px] z-10 pointer-events-none"></div>
-
-  <div className="space-y-[30px] text-center">
-    <div className='text-[#969593] text-[clamp(28px,5vw,39px)] px-4'>
-      Great results with great partners
-    </div>
-
-    {/* إزالة الارتفاع الكبير h-[273px] واستخدام h-auto أو ارتفاع أصغر */}
-    <div className="flex space-x-12 px-10 animate-horizontal items-center">
-      {[
-        "/logo-brand1.svg", "/logo-brand2.svg", "/logo-brand3.svg", 
-        "/logo-brand4.svg", "/logo-brand5.svg", "/logo-brand6.svg",
-      ].concat([
-        "/logo-brand1.svg", "/logo-brand2.svg", "/logo-brand3.svg", 
-        "/logo-brand4.svg", "/logo-brand5.svg", "/logo-brand6.svg",
-      ]).map((imgSrc, index) => (
-        <div
-          key={index}
-          className="shrink-0 flex items-center justify-center py-4" 
-        >
-          <Image
-            width={175}
-            height={55}
-            src={imgSrc}
-            alt={`Partner Logo ${index}`}
-            className="w-[140px] sm:w-[176px] h-auto grayscale opacity-70 hover:opacity-100 transition-opacity"
-            loading="lazy"
-            placeholder="blur"
-            blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 175 55'%3E%3Crect width='175' height='55' fill='%23f3f4f6'/%3E%3C/svg%3E"
-          />
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
-
-      {/* Services Section */}
-      <section className="flex justify-center items-center mt-[100px] px-4">
-  <div className="w-full min-h-[72vh] relative bg-neutral-800 rounded-xl overflow-hidden py-10 sm:py-20">
-    
-    <div className="w-full h-full absolute left-0 top-0 bg-green-300/10 rounded-full blur-[187.60px] z-10 pointer-events-none"></div>
-
-    <div className="relative z-50 flex flex-col items-center gap-12 max-w-7xl mx-auto w-full px-4 sm:px-6">
-      
-      <h2 className="text-stone-400 text-3xl sm:text-5xl font-normal leading-tight text-center">
-        Services
-      </h2>
-
-      <div className="services grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full items-stretch">
-        {titleCardServireSection.map((card, index) => (
-          <div
-            key={index}
-            className="relative flex w-full h-full min-h-[280px] sm:min-h-[220px] p-6 sm:p-7 bg-white/10 rounded-[10px] outline outline-1 outline-green-300 backdrop-blur-2xl flex-col justify-between"
-          >
-            <div className="flex flex-col items-center text-center space-y-4">
-              <div className="text-white text-xl font-semibold leading-tight">
-                {card.title}
-              </div>
-              <div className="text-stone-300 text-base font-normal leading-relaxed">
-                {card.description}
+          {/* Success Popup */}
+          {showSuccessPopup && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm px-4">
+              <div className="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl flex flex-col items-center text-center border border-gray-100">
+                <div className="w-14 h-14 bg-green-50 text-green-500 rounded-full flex items-center justify-center mb-4">
+                  <CheckCircle2 size={36} strokeWidth={2} />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
+                  Message Sent Successfully!
+                </h3>
+                <p className="text-gray-500 text-xs sm:text-sm mb-6 leading-relaxed">
+                  Thank you for reaching out. We have received your message and will contact you in less than 24 hours.
+                </p>
+                <button
+                  onClick={() => setShowSuccessPopup(false)}
+                  className="w-full bg-[#181818] hover:bg-black text-white py-3 rounded-xl font-medium text-sm cursor-pointer shadow-md"
+                >
+                  Got it, Thanks!
+                </button>
               </div>
             </div>
+          )}
 
-            <div className="mt-8 w-full transition-transform hover:scale-105">
-              <Link 
-                href={card.link} 
-                className="w-full flex justify-center items-center bg-white text-neutral-800 h-[44px] rounded-[24px] font-medium transition-colors hover:bg-gray-100 cursor-pointer"
-              >
-                Learn more
-              </Link>
-            </div>
-          </div>
-        ))}
+        </section>
+
       </div>
-</div>
-  </div>
-</section>
-
-    
-
-      {/* What Makes Us Different */}
-
-      <section className="Different flex flex-col justify-center items-center mt-[100px] px-[10px] md:px-[50px] lg:px-[100px] w-full max-w-7xl mx-auto">
-  <div className="text-center mb-12">
-    <h2 className="text-[clamp(31px,5vw,39px)] text-[#969593] font-normal mb-4">What Makes Us Different</h2>
-  </div>
-  
-  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
-    
-    {/* Left Card - Flaylor */}
-    <div className="bg-gradient-to-b from-neutral-100 to-zinc-300 rounded-[30px] p-6 sm:p-8 shadow-[0px_1px_3px_0px_rgba(0,0,0,0.30),0px_4px_8px_3px_rgba(0,0,0,0.15)] outline outline-4 outline-offset-[-4px] outline-white overflow-hidden flex flex-col justify-between">
-      <h3 className="text-[25px] font-semibold text-center mb-8 text-neutral-800">Flaylor</h3>
-      
-      <div className="space-y-6 flex-grow flex flex-col justify-around">
-        <div className="flex items-center gap-3">
-          <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)]">
-            <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round" strokeWidth="2.5">
-              <path d="M5 13l4 4L19 7" />
-            </svg>
-          </div>
-          <span className="text-gray-700 text-[14px] font-medium">We focus on maximizing net profit after all expenses.</span>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)]">
-            <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round" strokeWidth="2.5">
-              <path d="M5 13l4 4L19 7" />
-            </svg>
-          </div>
-          <span className="text-gray-700 text-[14px] font-medium">Based on rigorous financial analysis of every cent spent.</span>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)]">
-            <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round" strokeWidth="2.5">
-              <path d="M5 13l4 4L19 7" />
-            </svg>
-          </div>
-          <span className="text-gray-700 text-[14px] font-medium">We link real-time financial data directly to marketing actions.</span>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)]">
-            <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round" strokeWidth="2.5">
-              <path d="M5 13l4 4L19 7" />
-            </svg>
-          </div>
-          <span className="text-gray-700 text-[14px] font-medium">Scaling based on Unit Economics to ensure sustainable growth.</span>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-green-500/30 bg-green-50/10 shadow-[0_0_8px_rgba(34,197,94,0.4)]">
-            <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round" strokeWidth="2.5">
-              <path d="M5 13l4 4L19 7" />
-            </svg>
-          </div>
-          <span className="text-gray-700 text-[14px] font-medium">Marketing without financial data is seen as an uncalculated risk.</span>
-        </div>
-      </div>
-    </div>
-
-    {/* Right Card - Traditional Marketing Agencies */}
-    <div className="bg-gradient-to-b from-neutral-100 to-zinc-300 rounded-[30px] p-6 sm:p-8 shadow-[0px_1px_3px_0px_rgba(0,0,0,0.30),0px_4px_8px_3px_rgba(0,0,0,0.15)] outline outline-4 outline-offset-[-4px] outline-white overflow-hidden flex flex-col justify-between">
-      <h3 className="text-[25px] font-semibold text-center mb-8 text-neutral-800">Traditional Marketing Agencies</h3>
-      
-      <div className="space-y-6 flex-grow flex flex-col justify-around">
-        <div className="flex items-center gap-3">
-          <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-red-500/30 bg-red-50/10 shadow-[0_0_8px_rgba(239,68,68,0.4)]">
-            <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round" strokeWidth="2.5">
-              <path d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </div>
-          <span className="text-gray-700 text-[14px] font-medium">Focus on views, clicks, and total sales volume.</span>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-red-500/30 bg-red-50/10 shadow-[0_0_8px_rgba(239,68,68,0.4)]">
-            <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round" strokeWidth="2.5">
-              <path d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </div>
-          <span className="text-gray-700 text-[14px] font-medium">Based on creative intuition or marketing "feel."</span>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-red-500/30 bg-red-50/10 shadow-[0_0_8px_rgba(239,68,68,0.4)]">
-            <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round" strokeWidth="2.5">
-              <path d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </div>
-          <span className="text-gray-700 text-[14px] font-medium">Ad platform data is separated from financial reality.</span>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-red-500/30 bg-red-50/10 shadow-[0_0_8px_rgba(239,68,68,0.4)]">
-            <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round" strokeWidth="2.5">
-              <path d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </div>
-          <span className="text-gray-700 text-[14px] font-medium">Scaling by simply increasing budget to sell more.</span>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <div className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full border border-red-500/30 bg-red-50/10 shadow-[0_0_8px_rgba(239,68,68,0.4)]">
-            <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round" strokeWidth="2.5">
-              <path d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </div>
-          <span className="text-gray-700 text-[14px] font-medium">Marketing is treated as an "experiment" that might fail.</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-  {/* testimonials */}
-<section className="Testimonials relative flex flex-col justify-center items-center mt-[100px] mb-[120px] px-4 md:px-8 lg:px-16 w-full max-w-7xl mx-auto">
-  <div className="text-center mb-10">
-    <h2 className="text-[clamp(31px,5vw,39px)] text-[#969593] font-bold">Testimonials</h2>
-  </div>
-  
-  {/* استخدام Grid بدلاً من columns لتجنب مشاكل التابلت */}
-  <div className="Testimonialscard grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 w-full">
-      {/* Testimonial Card 1 */}
-      <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col justify-between">            
-        <div>
-          <div className="mb-4">
-            <h3 className="font-semibold text-lg text-gray-900">Sarah Jenkins</h3>
-            <p className="text-gray-600 text-sm">CEO of an Apparel Line</p>
-          </div>
-          <p className="text-gray-700 leading-relaxed text-[15px] italic">
-           "It’s rare to find people in this industry who have the heart of a teacher Most agencies see you as a monthly retainer but with Flaylor I felt seen as a human being They helped us navigate a really tough recession by pivoting our strategy based on real time financial data not just creative trends We doubled our net profit in 60 days because they taught us how to stop gambling and start calculating Their support was pivotal during our most challenging season and for that I am forever grateful"
-          </p>
-        </div>
-      </div>
-
-      {/* Testimonial Card 2 */}
-       <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col justify-between">
-        <div>
-          <div className="mb-4">
-            <h3 className="font-semibold text-lg text-gray-900">David R</h3>
-            <p className="text-gray-600 text-sm">Founder of Skinkar</p>
-          </div>
-          <p className="text-gray-700 leading-relaxed text-[15px] italic">
-            "Before meeting you and the Flaylor team I spent my nights staring at Shopify dashboards seeing huge revenue numbers but wondering why my bank account stayed empty it was exhausting other agencies just told me to spend more on ads but you did something different you sat down with me and looked at my actual margins you treated my business like it was your own family legacy today I don't just have a store I have a profitable business that allows me to actually spend time with my kids without checking my phone every five minutes"
-          </p>
-        </div>
-      </div>
-
-      {/* Testimonial Card 3 */}
-      <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col justify-between md:col-span-2 lg:col-span-1">
-        <div>
-          <div className="mb-4">
-            <h3 className="font-semibold text-lg text-gray-900">Mark Thompson</h3>
-            <p className="text-gray-600 text-sm">E-commerce Director</p>
-          </div>
-          <p className="text-gray-700 leading-relaxed text-[15px] italic">
-            "I was one of the biggest skeptics after being let down by marketing agencies before but with you guys you proved me wrong you aligned our Meta ads with our unit economics so perfectly that every dollar spent now has a clear purpose we stopped chasing vanity metrics and started chasing real net profit it is truly a relief I thank you for your credibility and I wish you success"
-          </p>
-        </div>
-      </div>
-  </div>
-
-   {/* تحسين مواقع العناصر المطلقة لتفادي التداخل في الشاشات المختلفة */}
-   <div className="testshadoow w-full max-w-[1440px] h-[30vh] absolute -bottom-[100px] bg-gradient-to-r from-stone-50 to-stone-50 blur-[25px] pointer-events-none" />
-
-   <div className="mt-12 z-10">
-     <Link href="/testimonials" className="text-[#2F6F4E] cursor-pointer font-medium hover:text-[#24583e] transition-colors duration-300 underline underline-offset-4">
-       See all 
-     </Link>
-   </div>
-</section>
-      
-
-      <section className='about flex flex-col justify-center text-center items-center mt-[100px] sm:mt-[0px] space-y-[12px] px-[10px]  md:px-[100px] lg:px-[250px] '>
-       <p className='text-[clamp(31px,4vw,39px)] text-[#969593] z-[200]'>About Us</p>
-       <p className='text-[clamp(16px,4vw,20px)] z-[200]' >            We are an e-commerce growth agency that scales brands by bridging the gap between deep financial analytics and high-performance, conversion-driven marketing.</p>
-       <Link href="/about" className="text-[#2F6F4E] cursor-pointer">Learn more</Link>
-      </section>
-      
-   <DownSection3 />
-
-   {/* Project Modal */}
-   <ProjectModal
-     isOpen={isModalOpen}
-     onClose={handleCloseModal}
-     projectSlug={selectedProject}
-   />
-
-
-  
-
-  {/* <section className="flex flex-col w-full m-auto justify-center items-center px-[3%] mt-[88px] space-y-11">
-        <p className="text-[29px] sm:text-[39px] text-[#969593]">Blog</p>
-        <div className="flex flex-col w-full px-5 sm:flex-row space-y-5 sm:space-x-5 md:px-[30px] sm:px-[100px] sm:w-full">
-          <Link href="/projects/some-id" className="w-full h-[420px] sm:h-[471px] md:h-[371px] bg-linear-to-b from-[#F6F6F6] to-[#DCDADA] rounded-[30px] relative"><div className="someproject absolute bottom-[20px] left-[20px] sm:bottom-[48px] sm:left-[48px] text-base text-white w-[90%] sm:w-[45%]">How to boost your store is sales with one decision</div></Link>
-          <Link href="/projects/some-id" className="w-full h-[420px] sm:h-[471px] md:h-[371px] bg-linear-to-b from-[#F6F6F6] to-[#DCDADA] rounded-[30px] relative"><div className="someproject absolute bottom-[20px] left-[20px] sm:bottom-[48px] sm:left-[48px] text-base text-white w-[90%] sm:w-[45%]">How to boost your store is sales with one decision</div></Link>
-        </div>
-        <p className="text-[#2F6F4E] cursor-pointer">Learn more</p>
-  </section> */}
-
-
-{/* <section className="mt-[100px] sm:mt-[220px]">
-  <div className="flex flex-col  justify-center items-center gap-11">
-  <div className="flex text-center items-center justify-center text-stone-400 text-[30px] px-12 sm:px-0 sm:text-4xl font-normal  ">Take a look at our core team</div>
-  <div className="grid grid-cols-2 px-[20px] gap-[15px] sm:gap-[20px] sm:p-[100px]">
-  
-    <div className="relative">
-      <Image width={300} height={300} className="relative" src="/person2.png" alt="Nassim Ben" />
-      <p className="absolute bottom-1 left-[7px] flex flex-col ">
-        <span className="text-[18px] sm:text-base text-[#E6E3E3]">Nassim Ben</span>
-        <span className="text-[15px] sm:text-base text-[#E6E3E3] text-nowrap">Devloper</span>
-      </p>
-    </div>
-    <div className="relative">
-      <Image width={300} height={300} className="relative" src="/person3.png" alt="Alex" />
-      <p className="absolute bottom-1 left-[7px] flex flex-col ">
-        <span className="text-[18px] sm:text-base text-[#E6E3E3]">Alex</span>
-        <span className="text-[15px] sm:text-base text-[#E6E3E3] text-nowrap">CRO Specialist</span>
-      </p>
-    </div>
-    <div className="relative">
-      <Image width={300} height={300} className="relative" src="/person4.png" alt="Leo" />
-      <p className="absolute bottom-1 left-[7px] flex flex-col ">
-        <span className="text-[18px] sm:text-base text-[#E6E3E3]">Leo</span>
-        <span className="text-[15px] sm:text-base text-[#E6E3E3] text-nowrap">Account Manager</span>
-      </p>
-    </div>
-
-  
-    <div className="relative">
-      <Image width={300} height={300} className="relative" src="/person7.png" alt="Liam" />
-      <p className="absolute bottom-1 left-[7px] flex flex-col ">
-        <span className="text-[18px] sm:text-base text-[#E6E3E3]">Liam</span>
-        <span className="text-[15px] sm:text-base text-[#E6E3E3] text-nowrap">Ads Manager</span>
-      </p>
-    </div>
-    </div>
-
-    
-  </div>
-</section> */}
-
-
-
-
-  </main>
+    </section>
   );
 }

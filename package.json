@@ -2,17 +2,18 @@
   "name": "cro-shopify",
   "version": "0.1.0",
   "private": true,
-    "scripts": {
-  "dev": "next dev",
-  "build": "next build",
-  "start": "next start",
-  "lint": "next lint",
-  "analyze": "cross-env ANALYZE=true next build"
-},
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "analyze": "cross-env ANALYZE=true next build"
+  },
   "dependencies": {
     "@tailwindcss/postcss": "^4.2.1",
     "critters": "^0.0.23",
     "framer-motion": "^12.38.0",
+    "lucide-react": "^1.62.0",
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3",

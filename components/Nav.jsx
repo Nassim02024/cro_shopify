@@ -1,146 +1,135 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-
 
 const Nav = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const pathname = usePathname();
-  
-  // مرجع لتحديد مكان الناف بار
-  const navRef = useRef(null);
+  const [opne, isopne] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
-  // 1. ميزة الإغلاق عند الضغط في الخارج
+  const handlenav = () => {
+    isopne(!opne);
+  };
+
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (navRef.current && !navRef.current.contains(event.target)) {
-        setIsOpen(false);
-        setIsServicesOpen(false);
+    if (opne) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [opne]);
+
+  const navItems = [
+    { id: 'work', label: 'work' },
+    { id: 'testimonials', label: 'Testimonials' },
+    { id: 'about', label: 'About' },
+    { id: 'instagram', label: 'Instagram' },
+    { id: 'whatsapp', label: 'WhatsApp' },
+  ];
+
+  const scrollToSection = (id) => {
+    isopne(false);
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
+      let foundActive = false;
+
+      navItems.forEach((item) => {
+        const section = document.getElementById(item.id);
+        if (section) {
+          const top = section.offsetTop;
+          const height = section.offsetHeight;
+          const bottom = top + height;
+
+          if (scrollPosition >= top && scrollPosition < bottom) {
+            setActiveSection(item.id);
+            foundActive = true;
+          }
+        }
+      });
+
+      if (!foundActive) {
+        setActiveSection(''); 
       }
     };
 
-    if (isOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isOpen]);
-
-  // 2. منع سكرول الصفحة عند فتح المنيو في الموبايل
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-  }, [isOpen]);
-
-  const services = [
-    { name: "E-commerce audit", href: "/GetFreeAudit" },
-    { name: "Paid Ads Marketing", href: "/PaidAdsMarketing" },
-    { name: "CRO (Conversion Rate Optimization)", href: "/CROConversionRateOptimization" },
-    { name: "Growth & Scale", href: "/GrowthAndScale" },
-  ];
-
-  const isServiceActive = services.some(s => s.href === pathname);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    // أضفنا الـ ref هنا للتحكم
-    <nav ref={navRef} className="fixed top-2 left-1/2 -translate-x-1/2 w-[95%] sm:w-[80%] z-[100]  z-[300] ">
-      
-      {/* الشريط الأساسي */}
-      <div className="h-[60px]  bg-black text-white px-3 sm:px-6 rounded-full flex flex-row justify-between items-center relative z-[110]">
-        <div className="flex items-center justify-between w-full sm:w-auto h-full">
-          <div className="flex items-center">
-            <Image
-              width={30} height={30}
-              className="icon-bar flex sm:hidden cursor-pointer mr-3"
-              src="/icon-vav.png" alt="menu"
-              onClick={() => setIsOpen(!isOpen)}
-              loading="lazy"
-              placeholder="blur"
-              blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Crect width='30' height='30' fill='%23f3f4f6'/%3E%3C/svg%3E"
+    <section className='relative h-[70px] bg-[#f8f9fa] w-full sticky top-0 z-50 flex items-center shadow-sm'>
+       <div className='w-full flex flex-row justify-between items-center px-4 sm:px-14'>
+        <Image width={80} height={20} src="/icon.svg" alt="logo" priority />
+        
+        <div className='cursor-pointer z-30 p-2' onClick={handlenav} aria-label="Toggle Menu">
+          {opne ? (
+            <div className="w-[35px] h-[35px] flex items-center justify-center transition-all duration-300 transform hover:scale-105">
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="35" 
+                height="35" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="#000000" 
+                strokeWidth="1.5" 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                className="lucide lucide-x"
+              >
+                <path d="M18 6 6 18"/>
+                <path d="m6 6 12 12"/>
+              </svg>
+            </div>
+          ) : (
+            <Image 
+              className='transition-all duration-300' 
+              width={35} 
+              height={35} 
+              src="/menu-icons.svg" 
+              alt="menu" 
             />
-            <Link href="/" className='text-[#31F691] text-[25px] sm:text-[30px] itim-regular'>Flaylor</Link>
-          </div>
-          <Link  className="sm:hidden bg-white text-black relative left-1  sm:left-3.5  px-4  py-[2%]  rounded-full text-base " href="/contactUs">
-            Contact Us
-          </Link>
+          )}
         </div>
-
-        <div className="hidden sm:flex">
-           <ul className="flex flex-row items-center gap-6  text-[#F3F3F3]">
-             <li><Link href="/" className={`hover:text-[#31F691] transition-colors  ${pathname === '/' ? 'text-[#31F691]' : ''}`}>Home</Link></li>
-             <li className="relative group">
-                <button className={`flex items-center gap-1 hover:text-[#31F691]  ${isServiceActive ? 'text-[#31F691]' : '' } ${pathname === '/services' ? 'text-[#31F691]' : ''}`}>
-                  Services
-                  <svg className="hidden sm:flex  w-4 h-4 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
-                </button>
-                {/* دروب داون الحاسوب - يخرج خارج الناف */}
-                <div className="absolute top-[50px] left-[-100px] opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0 transition-all duration-300 w-[350px] bg-white text-black rounded-2xl shadow-xl p-2 flex flex-col">
-                  {services.map((s) => (
-                    <Link key={s.href} href={s.href} className={`px-4 py-3 rounded-xl hover:bg-gray-100 flex justify-between items-center ${pathname === s.href ? 'bg-gray-200' : ''}`}>
-                      <span className="text-base font-semibold">{s.name}</span>
-                      <Image width={16} height={16} src="/row-right.svg" alt="arrow" className="opacity-50 " loading="lazy" placeholder="blur" blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23f3f4f6'/%3E%3C/svg%3E" />
-                    </Link>
-                  ))}
-                </div>
-             </li>
-             {/* <li><Link href="/Project" className={`hover:text-[#31F691] ${pathname === '/Project' ? 'text-[#31F691]' : ''}`}>Projects</Link></li> */}
-             <li><Link href="/testimonials" className={`hover:text-[#31F691] ${pathname === '/testimonials' ? 'text-[#31F691]' : ''}`}>testimonials</Link></li>
-             <li><Link href="/about" className={`hover:text-[#31F691] ${pathname === '/about' ? 'text-[#31F691]' : ''}`}>About Us</Link></li>
-           </ul>
-        </div>
-
-        <Link  className="hidden sm:flex bg-white text-black relative left-3.5 px-6 py-2.5 rounded-full  hover:bg-[#e4e3e3] transition-all" href="/contactUs">
-           Contact Us
-        </Link>
       </div>
 
-      {/* قائمة الموبايل (سيكشن منفصل) */}
-      <div className={`
-        absolute top-[80px] left-0 w-full bg-black rounded-[20px] sm:rounded-[30px] p-3 sm:p-6  text-[#F3F3F3]
-        transition-all duration-300 ease-in-out sm:hidden
-        ${isOpen ? 'opacity-100 translate-y-0 visible shadow-2xl' : 'opacity-0 -translate-y-5 invisible'}
-        max-h-[80vh] overflow-y-auto
-      `}>
-        <ul className="flex flex-col px-[10px] gap-4 sm:gap-6 ">
-          <Link href="/" onClick={() => setIsOpen(false)} className={`${pathname === '/' ? "text-[#31F691] " : '' }`}><li> Home </li></Link>
-          <li className="w-full">
-            <button onClick={() => setIsServicesOpen(!isServicesOpen)} className=" flex items-center justify-between w-full">
-              Services
-              <svg 
-                className={`hidden sm:block w-4 h-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
+       <div 
+        className={`absolute z-10 bg-[#FAFAFA] shadow-[0px_10px_25px_rgba(197,197,197,0.4)] w-full top-0 left-0 flex flex-col justify-center items-center transition-all duration-500 ease-in-out overflow-hidden px-6 ${
+          opne 
+            ? 'h-[80vh] sm:h-[70vh] opacity-100 visible pt-20 pb-12' 
+            : 'h-0 opacity-0 invisible pt-0 pb-0'
+        }`}
+      >
+        <ul className='text-[34px] sm:text-[44px] md:text-[50px] flex flex-col sm:flex-row flex-wrap justify-center items-center gap-x-10 gap-y-4 sm:gap-y-6 cursor-pointer text-center max-w-4xl mx-auto'>
+          {navItems.map((item) => {
+            const isActive = activeSection === item.id;
+            return (
+              <li
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className={`transition-colors duration-200 font-normal leading-tight ${
+                  isActive 
+                    ? 'text-[#3F3F3F]' 
+                    : 'text-[#8E8E8E] hover:text-[#5f5f5f]'
+                }`}
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-              </svg>            
-              </button>
-            <div className={`overflow-hidden  transition-all duration-300 px-2 ${isServicesOpen ? 'max-h-[400px] mt-4 opacity-100' : 'sm:max-h-0 sm:opacity-0'}`}>
-               <div className="sm:bg-[#F3F3F3] rounded-2xl sm:p-2 flex flex-col sm:text-black">
-                  {services.map((s) => (
-                    <Link key={s.href} href={s.href} onClick={() => {setIsOpen(false); setIsServicesOpen(false);}} className={`sm:px-4 px-2 py-2 hover:bg-gray-100 rounded-xl flex justify-between ${pathname === s.href ? "text-[#31F691] " : '' }`}>
-                      <span className="text-[16px] sm:text[16px]  ">{s.name}</span>
-                      {/* <Image width={14} height={14} src="/row-right.svg" alt="arrow" /> */}
-                      <span className="material-symbols-outlined text-[13px] sm:text-xs"> arrow_forward_ios </span>
-                    </Link>
-                  ))}
-               </div>
-            </div>
-          </li>
-          {/* <Link  href="/Project" onClick={() => setIsOpen(false)} className={` ${pathname === '/Project' ? "text-[#31F691] " : '' }`}><li>Projects</li></Link> */}
-          <li><Link className='/testimonials' href="/testimonials" onClick={() => setIsOpen(false)}>testimonials</Link></li>
-          <Link href="/about" onClick={() => setIsOpen(false)} className={`${pathname === '/about' ? "text-[#31F691] " : '' }`}><li>About Us </li></Link>
+                {item.label}
+              </li>
+            );
+          })}
         </ul>
       </div>
-    </nav>
+    </section>
   );
 };
 

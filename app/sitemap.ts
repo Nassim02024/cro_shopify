@@ -11,42 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'always',
       priority: 1,
     },
-    {
-      // صفحة من نحن - تتغير نادراً
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      // خدمات الإعلانات الممولة - تتغير باستمرار
-      url: `${baseUrl}/PaidAdsMarketing`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      // خدمات تصميم شوبيفاي
-      url: `${baseUrl}/CRO (Conversion Rate Optimization)`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      // خدمات التوسع والنمو
-      url: `${baseUrl}/GrowthAndScale`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },    
-    {
-      // صفحة التحليل -   
-      url: `${baseUrl}/Get a free scaling plan`, 
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-
+    
 
   ]
 }
