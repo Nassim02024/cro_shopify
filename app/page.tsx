@@ -20,7 +20,7 @@ import {
 import { p } from 'framer-motion/client';
 
 export default function HomePage() {
-  const BRANDS = [
+  const BRANDS =  [
     { id: 1, name: "LITE", image: "/card1.jpg" },
     { id: 2, name: "Happy cats", image: "/card2.jpg" },
     { id: 3, name: "ZŪRA", image: "/card3.jpg" },
