@@ -26,7 +26,7 @@ export default function HomePage() {
     { id: 3, name: "ZŪRA", image: "/card3.jpg" },
     { id: 4, name: "ELLO", image: "/card4.jpg" },
     { id: 5, name: "zowie", image: "/card5.jpg" },
-    { id: 6, name: "happy cat", image: "/card6.jpg" }
+    { id: 6, name: "happy cat", image: "/Card6.jpg" }
   ];
 
 
