@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 import { p } from 'framer-motion/client';
 
-export default function HomePage() {
+export default function HomePage() { 
   const BRANDS =  [
     { id: 1, name: "LITE", image: "/card1.jpg" },
     { id: 2, name: "Happy cats", image: "/card2.jpg" },
