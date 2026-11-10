@@ -31,7 +31,7 @@ export default function HomePage() {
 
 
   // Project
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState<any>(null);
   const PROJECTS = [
     { 
       id: 1, 
@@ -405,7 +405,7 @@ export default function HomePage() {
     Whatsapp: '',
     Project: ''
   });
-  const handleChange = (e) => {
+  const handleChange = (e:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   const isValidUrl = (url: string) => {
@@ -659,7 +659,7 @@ export default function HomePage() {
                     <div className='space-y-3   '>
                       <p className='text-[#3F3F3F]  '>Project Scope</p>
                       <div className='flex flex-wrap gap-2'>
-                        {selectedProject.description1[1].scops.map((scop) => (
+                        {selectedProject.description1[1].scops.map((scop: any) => (
                           <span 
                             key={scop.id} 
                             className='bg-gray-100 text-gray-800 text-xs sm:text-sm px-3.5 py-1.5 rounded-full font-medium border border-gray-200'
@@ -712,7 +712,7 @@ export default function HomePage() {
 
 
                 <div className="w-full flex flex-col items-center gap-6 my-8">
-                  {selectedProject.img.map((imgs) => (
+                  {selectedProject.img.map((imgs:any) => (
                     <div 
                       key={imgs.id} 
                       className="w-full max-w-5xl h-[250px] sm:h-[500px] md:h-[600px] relative rounded-[12px] sm:rounded-3xl overflow-hidden   border border-gray-100 bg-gray-100"
