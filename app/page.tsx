@@ -144,7 +144,7 @@ export default function HomePage() {
        img : [
         
         { id: 'p31', src: "/p31.jpg" },
-        { id: 'p32', src: "/p32.jpg" },
+        { id: 'p32', src: "/p32e.jpg" },
         { id: 'p33', src: "/p33.jpg" },
         { id: 'p34', src: "/p34.jpg" },
 
@@ -274,7 +274,7 @@ export default function HomePage() {
     {
       id: 1,
       icon: <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-pen-tool"><path d="m18 13-.654-4.736a4 4 0 00-2.756-3.266l-9.163-2.9a2 2 0 00-2.017.493l-.82.819a2 2 0 00-.492 2.017l2.9 9.163a4 4 0 003.266 2.756L13 18"/><path d="M18.648 12.352a1.205 1.205 0 011.704 0l1.296 1.296a1.205 1.205 0 010 1.704l-6.296 6.296a1.205 1.205 0 01-1.704 0l-1.296-1.296a1.205 1.205 0 010-1.704z"/><path d="m3 3 6.586 6.586"/><circle cx="11" cy="11" r="2"/></svg>,
-      title: "Dessing",
+      title: "Design",
       description: "Crafting stunning Figma layouts that hook your store visitors.",
     },
     {
@@ -473,14 +473,14 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="min-h-[40vh] sm:min-h-[55vh] w-full flex items-center justify-center px-4 sm:px-8 md:px-12 py-8  ">
         <div className="max-w-6xl w-full">
-          <h1 className="text-[38px] xs:text-[44px] sm:text-6xl md:text-8xl lg:text-[110px] font-sans uppercase leading-[1.05] sm:leading-[0.95] tracking-tight">
-            
+          <h1 className="text-[46px] sm:text-6xl md:text-8xl lg:text-[110px] font-sans uppercase leading-[1.05] sm:leading-[0.95] tracking-tight">
+        <span className='sm:flex'>   
        <span className="block">
         <span className="text-[#71717A] mr-[0.18em]">WE</span>
         <span className="text-[#3F3F3F] mr-[0.18em]">BUILD</span>
-        <span className="PREMIUM text-[#71717A]">PREMIUM</span>
       </span>
-
+      <span className="PREMIUM text-[#71717A]">PREMIUM</span>
+      </span> 
        <span className="block mt-[0.05em] font-normal text-[#71717A]">
         DIGITAL EXPERIENCES
       </span>
@@ -546,18 +546,19 @@ export default function HomePage() {
             <span className="text-[#71717A] mr-2">We design and develop</span>
             <span className="font-normal text-[#3F3F3F]">high-converting e-commerce landing pages</span>
             <span className="text-[#71717A] mx-2">and</span>
-            <span className="font-normal text-[#3F3F3F]">premium websites using</span> 
+            <span className="font-normal text-[#3F3F3F]">premium websites </span> 
           </div>
-          <span className="flex flex-wrap justify-start sm:justify-start items-center font-normal text-[#71717A] gap-[16px] sm:gap-4  ">
+          {/* <span className="flex flex-wrap justify-start sm:justify-start items-center font-normal text-[#71717A] gap-[16px] sm:gap-4  ">
             <div className='flex items-center '><span>Figma</span><Image src="/figma-icon.png" alt="figma" width={40} height={40} className="w-[35px] h-[35px] sm:w-[40px]   sm:h-[40px]" /></div>
             <div className='flex items-center '><span>Shopify</span><Image src="/shopify-icon.png" alt="shopify" width={40} height={40} className="w-[35px] h-[35px] sm:w-[40px]  sm:h-[40px]" /></div>
             <div className='flex items-center '><span>Replo</span><Image src="/replo-icon.png" alt="replo" width={40} height={40} className="w-[35px] h-[35px] sm:w-[40px]  sm:h-[40px]" /></div>
-          </span>
+          </span> */}
         </section>
 
        
       {/* Projects Section */}
-     <section id="work" className='py-[30px] sm:py-[80px]'>
+      <section id="work">
+       <div  className='py-[30px] sm:py-[80px]'>
         <div className='flex justify-center text-xl sm:text-[24px] mb-6'>
           <p>Explore our work</p>
         </div>
@@ -596,29 +597,32 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+        </div>
       </section>
 
       {/* Popup / Modal Component */}
       {selectedProject && (
-        <div   className=" fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-md px-4 overflow-y-auto py-10    scrollbar-hidden"  >
-          <div className="bg-[#FAFAFA] text-[#858585] rounded-3xl   w-full  shadow-2xl border border-gray-800 relative animate-in fade-in zoom-in duration-300 max-h-[95vh] overflow-y-auto  scrollbar-hidden">
-            
-            {/* زر الإغلاق (X) */}
-            <button 
-              onClick={() => setSelectedProject(null)}
-              className="fixed top-[50px] right-[40px] sm:right-[80px]  z-20  w-10 h-10 rounded-full  transition-all duration-300 hover:scale-[1.02] active:scale-95 bg-[#181818] flex items-center justify-center  text-white transition-colors cursor-pointer"
-            >
-              <X size={20} />
-            </button>
+  <div className="fixed inset-0 z-50 flex items-start justify-end bg-black/60 backdrop-blur-md overflow-y-auto py-5 sm:py-10 scrollbar-hidden">
+    
+     <div className="relative bg-[#FAFAFA] text-[#858585] rounded-3xl w-full shadow-2xl border border-gray-850 max-h-[97vh] flex flex-col animate-slide-up duration-500 overflow-hidden">
+      
+       <div className="sticky top-0 z-30 flex items-center justify-end p-5  bg-[#FAFAFA]/80 backdrop-blur-md">
+        <button 
+          onClick={() => setSelectedProject(null)}
+          className="w-10 h-10 rounded-full transition-all duration-300 hover:scale-105 active:scale-95 bg-[#181818] flex items-center justify-center text-white cursor-pointer shadow-md"
+        >
+          <X size={20} />
+        </button>
+      </div>
 
-             <div className="space-y-6 ">
+             <div className="px-3  overflow-y-auto scrollbar-hidden">
              
-               <div className="w-full h-[50vh] sm:h-[70vh] rounded-2xl overflow-hidden relative    ">
+               <div className="w-full h-[50vh] sm:h-[90vh] rounded-2xl overflow-hidden relative    ">
                 <Image 
                   src={selectedProject.image} 
                   alt={selectedProject.title} 
                   fill 
-                  className="object-cover "
+                  className="object-cover sm:object-fill "
                 />
               </div>
 
@@ -738,7 +742,7 @@ export default function HomePage() {
       )}
 
         {/* Problems */}
-        <section className='mt-10 sm:mt-[50px] px-[45px] sm:px-4'>
+        <section className='mt-10 sm:mt-[50px] px-[10px] sm:px-4'>
           <div className='flex flex-col justify-center text-center mx-auto w-full sm:w-[60%] space-y-3 mb-8'>
             <p className='text-lg sm:text-[22px] text-[#3F3F3F]'>Your products are great, but your website and landing pages aren't converting</p>
             <p className='text-[#858585] text-base sm:text-[18px]'>You may be suffering from</p>
@@ -791,19 +795,19 @@ export default function HomePage() {
           </div>
         </section> */}
 
-        <section className="w-full bg-[#f8f9fa] flex justify-center items-center mt-[200px] pb-[130px]">
+        <section className="w-full bg-[#f8f9fa] flex justify-center items-center mt-[120px] pb-[50px]  sm:mt-[200px] sm:pb-[130px]">
           <div className="max-w-5xl w-full flex  sm:text-center  justify-center items-center px-[20px]">
             <p className="text-[24px] sm:text-[32px] leading-[1.2] tracking-tight">
               <span className="text-[#18181b]">Tired of losing sales?</span>
-              <span className="font-normal text-[#8e8e93] sm:mx-2 text-start justify-start items-start">It's time to turn your vision</span>
-              <span className="inline ml-1 flex-col sm:flex items-start text-start justify-start gap-4 mt-2">
-                <span className="font-normal text-[#8e8e93]">into reality</span>
+              <span className="font-normal text-[#8e8e93] sm:mx-2 text-start justify-start items-start px-1">It's time to turn your vision</span>
+              <span className="inline ml-1 flex-col sm:flex items-start text-start justify-start gap-4 ">
+                <span className="font-normal text-[#8e8e93] pr-2">into reality</span>
                 {transformto.map((item) => {
           return (
             <button 
               key={item.id}
               onClick={scrollToContact}
-              className="w-[50%] sm:w-[240px] inline-flex items-center justify-center  px-8 sm:px-16 h-[42px] mt-[16px] sm:h-[40px] hover:bg-[#18181b] bg-black text-base rounded-[8px] shadow-md transition-all duration-300 hover:scale-[1.02] active:scale-95 text-white cursor-pointer lowercase"
+              className="w-[50%] sm:w-[240px] inline-flex items-center justify-center  px-4 sm:px-16 h-[42px] mt-[10px] sm:h-[35px] hover:bg-[#18181b] bg-black text-base rounded-[8px] shadow-md transition-all duration-300 hover:scale-[1.02] active:scale-95 text-white cursor-pointer lowercase"
             >
               Work with us
             </button>
@@ -820,7 +824,7 @@ export default function HomePage() {
         <section id="testimonials" className="py-16 sm:py-28 px-4 flex flex-col items-center justify-center">
           <h2 className="text-[20px] px-2 sm:text-2xl text-gray-800 mb-8 text-center">See what our customers say about us</h2>
           <div className=" w-full max-w-4xl bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden flex flex-col-reverse sm:flex-col md:flex-row sm:h-[398px]">
-            <div className="relative w-full md:w-1/2 h-[320px] sm:h-[398px] py-[33px] px-[20px]  flex flex-col justify-between ">
+            <div className="relative w-full md:w-1/2 h-[350px] sm:h-[398px] py-[33px] px-[20px]  flex flex-col justify-between ">
               <div className=" h-[58px]   flex flex-col ">
                 <div className='flex flex-row items-center gap-3 w-64 mb-[16px]'>
                 <Image src={currentItem.image} width={50} height={50} alt={currentItem.name} className="w-[50px] h-[50px] rounded-full object-cover border" />
@@ -916,7 +920,7 @@ export default function HomePage() {
                     <span className="text-[16px] sm:text-[18px] text-[#3F3F3F]">{item.question}</span>
                     <span className={`text-gray-500 shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180" : "rotate-0"}`}><ChevronDown size={22} /></span>
                   </button>
-                  <div className={`grid transition-all duration-500 ease-in-out overflow-hidden ${isOpen ? "grid-rows-[1fr] opacity-100 pb-6 px-3" : "grid-rows-[0fr] opacity-0 px-6 pb-0"}`}>
+                  <div className={`grid transition-all duration-500 ease-in-out overflow-hidden ${isOpen ? "grid-rows-[1fr] opacity-100 pb-6 px-3 sm:px-6" : "grid-rows-[0fr] opacity-0 px-6 pb-0"}`}>
                     <div className="overflow-hidden">
                       <p className="text-gray-600 text-[14px] sm:text-base leading-relaxed">{item.answer}</p>
                     </div>

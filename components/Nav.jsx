@@ -24,18 +24,42 @@ const Nav = () => {
   }, [opne]);
 
   const navItems = [
-    { id: 'work', label: 'work' },
-    { id: 'testimonials', label: 'Testimonials' },
-    { id: 'about', label: 'About' },
-    { id: 'instagram', label: 'Instagram' },
-    { id: 'whatsapp', label: 'WhatsApp' },
+    { id: 'work', label: 'work', type: 'scroll' },
+    { id: 'testimonials', label: 'Testimonials', type: 'scroll' },
+    { id: 'about', label: 'About', type: 'scroll' },
+    { 
+      id: 'instagram', 
+      label: 'Instagram', 
+      type: 'link', 
+      url: 'https://www.instagram.com/flay.lor?igsh=a3F1MGRvNDFraGZm' 
+    },
+    { 
+      id: 'whatsapp', 
+      label: 'WhatsApp', 
+      type: 'link', 
+      url: "https://wa.me/213542029084" 
+    },
   ];
 
-  const scrollToSection = (id) => {
-    isopne(false);
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+  const handleItemClick = (item) => {
+    isopne(false); 
+
+    if (item.type === 'link') {
+       
+      window.open(item.url, '_blank', 'noopener,noreferrer');
+    } else {
+     
+      const element = document.getElementById(item.id);
+      if (element) {
+        const navHeight = 0;  
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - navHeight - 70; 
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
     }
   };
 
@@ -45,15 +69,17 @@ const Nav = () => {
       let foundActive = false;
 
       navItems.forEach((item) => {
-        const section = document.getElementById(item.id);
-        if (section) {
-          const top = section.offsetTop;
-          const height = section.offsetHeight;
-          const bottom = top + height;
+        if (item.type === 'scroll') {
+          const section = document.getElementById(item.id);
+          if (section) {
+            const top = section.offsetTop;
+            const height = section.offsetHeight;
+            const bottom = top + height;
 
-          if (scrollPosition >= top && scrollPosition < bottom) {
-            setActiveSection(item.id);
-            foundActive = true;
+            if (scrollPosition >= top && scrollPosition < bottom) {
+              setActiveSection(item.id);
+              foundActive = true;
+            }
           }
         }
       });
@@ -116,9 +142,9 @@ const Nav = () => {
             return (
               <li
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                onClick={() => handleItemClick(item)}
                 className={`transition-colors duration-200 font-normal leading-tight ${
-                  isActive 
+                  item.type === 'scroll' && isActive 
                     ? 'text-[#3F3F3F]' 
                     : 'text-[#8E8E8E] hover:text-[#5f5f5f]'
                 }`}

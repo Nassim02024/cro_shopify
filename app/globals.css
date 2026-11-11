@@ -5,6 +5,37 @@
   --foreground: #171717;
 }
 
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.60s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.60s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+
 body{
   background-color: #f8f9fa;
   font-family: Poppins;
