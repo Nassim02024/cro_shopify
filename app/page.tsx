@@ -456,8 +456,18 @@ export default function HomePage() {
 
    const scrollToContact = () => {
     const element = document.getElementById("contact");
+
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
+
+      const navHeight = 0;  
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - navHeight - 90; 
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
     }
   };
 
